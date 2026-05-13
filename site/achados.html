@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Banco de Achados — Portal de Prestações de Contas (TCE-AL)</title>
+<link rel="stylesheet" href="style.css" />
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <h1>Portal de Prestações de Contas — TCE-AL</h1>
+  <div class="sub">Banco de Achados e análises sobre os relatórios conclusivos</div>
+</header>
+<nav class="menu">
+  <a href="index.html">Visão geral</a>
+  <a href="achados.html">Banco de Achados</a>
+  <a href="municipios.html">Por município</a>
+  <a href="secoes.html">Por seção</a>
+  <a href="defesa.html">Defesa do gestor</a>
+  <a href="insights.html">Insights</a>
+  <a href="sobre.html">Sobre</a>
+</nav>
+
+<main>
+  <section class="filters">
+    <label>Busca textual
+      <input type="text" id="f-busca" placeholder="palavra-chave em código, tipo, descrição..." />
+    </label>
+    <label>Ano <select id="f-ano"><option value="">Todos</option></select></label>
+    <label>Município <select id="f-municipio"><option value="">Todos</option></select></label>
+    <label>Seção <select id="f-secao"><option value="">Todas</option></select></label>
+    <label>Tipo <select id="f-tipo"><option value="">Todos</option></select></label>
+    <label>Situação <select id="f-situacao">
+      <option value="">Todas</option>
+      <option value="sanado_total">Sanado totalmente</option>
+      <option value="sanado_parcial">Sanado parcialmente</option>
+      <option value="afastado">Afastado</option>
+      <option value="mantido">Mantido</option>
+      <option value="nao_consta">Não consta</option>
+    </select></label>
+    <label>Defesa <select id="f-defesa">
+      <option value="">Indiferente</option>
+      <option value="true">Houve defesa</option>
+      <option value="false">Sem defesa</option>
+    </select></label>
+  </section>
+
+  <div class="card">
+    <h2>Achados <span class="muted" id="contador"></span></h2>
+    <table class="tabela" id="tab-achados">
+      <thead><tr>
+        <th>Código</th><th>Tipo</th><th>Município</th><th>Ano</th>
+        <th>Seção</th><th>Defesa</th><th>Situação</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+    <div style="text-align:center; padding:1rem;">
+      <button id="btn-mais" style="padding:0.5rem 1.5rem; border:1px solid var(--border); border-radius:6px; background:var(--surface-2); cursor:pointer; display:none;">
+        Mostrar mais
+      </button>
+    </div>
+  </div>
+</main>
+
+<div id="modal-bg" class="modal-bg">
+  <div class="modal">
+    <button id="modal-close" class="close-btn">×</button>
+    <h3 id="modal-titulo"></h3>
+    <div id="modal-conteudo"></div>
+  </div>
+</div>
+
+<footer class="rodape">Dados do TCE-AL · <a href="sobre.html">Metodologia</a></footer>
+
+<script>
+let TODOS = [];
+let RELATORIOS = {};
+let MOSTRADOS = 0;
+const PAGE = 50;
+
+(async () => {
+  const d = await carregarDados();
+  TODOS = d.achados || [];
+  RELATORIOS = Object.fromEntries((d.relatorios || []).map(r => [r.id, r]));
+
+  const unicos = (chave) => [...new Set(TODOS.map(a => a[chave]).filter(Boolean))].sort();
+  popular("f-ano", unicos("ano"));
+  popular("f-municipio", unicos("municipio"));
+  popular("f-secao", unicos("secao"));
+  popular("f-tipo", unicos("tipo"));
+
+  document.querySelectorAll(".filters input, .filters select").forEach(el => {
+    el.addEventListener("input", aplicar);
+  });
+  document.getElementById("btn-mais").addEventListener("click", () => render(false));
+  aplicar();
+})();
+
+function popular(id, valores) {
+  const sel = document.getElementById(id);
+  for (const v of valores) {
+    const o = document.createElement("option");
+    o.value = v; o.textContent = v;
+    sel.appendChild(o);
+  }
+}
+
+let FILTRADOS = [];
+function aplicar() {
+  const q = document.getElementById("f-busca").value.toLowerCase().trim();
+  const fa = document.getElementById("f-ano").value;
+  const fm = document.getElementById("f-municipio").value;
+  const fs = document.getElementById("f-secao").value;
+  const ft = document.getElementById("f-tipo").value;
+  const fsi = document.getElementById("f-situacao").value;
+  const fd = document.getElementById("f-defesa").value;
+
+  FILTRADOS = TODOS.filter(a => {
+    if (fa && String(a.ano) !== fa) return false;
+    if (fm && a.municipio !== fm) return false;
+    if (fs && a.secao !== fs) return false;
+    if (ft && a.tipo !== ft) return false;
+    if (fsi && (a.situacao || "nao_consta") !== fsi) return false;
+    if (fd && String(!!a.houve_defesa) !== fd) return false;
+    if (q) {
+      const blob = `${a.codigo} ${a.tipo} ${a.descricao} ${a.base_normativa || ""}`.toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    return true;
+  });
+  MOSTRADOS = 0;
+  document.querySelector("#tab-achados tbody").innerHTML = "";
+  render(true);
+  document.getElementById("contador").textContent = `(${fmtNum(FILTRADOS.length)})`;
+}
+
+function render(reset) {
+  if (reset) MOSTRADOS = 0;
+  const tbody = document.querySelector("#tab-achados tbody");
+  const fim = Math.min(MOSTRADOS + PAGE, FILTRADOS.length);
+  const linhas = [];
+  for (let i = MOSTRADOS; i < fim; i++) {
+    const a = FILTRADOS[i];
+    linhas.push(`
+      <tr data-i="${i}" style="cursor:pointer">
+        <td><code>${a.codigo}</code></td>
+        <td>${a.tipo}</td>
+        <td>${a.municipio || "—"}</td>
+        <td>${a.ano || "—"}</td>
+        <td>${a.secao || "—"}</td>
+        <td>${a.houve_defesa ? "Sim" : "Não"}</td>
+        <td>${badgeSituacao(a.situacao)}</td>
+      </tr>`);
+  }
+  tbody.insertAdjacentHTML("beforeend", linhas.join(""));
+  MOSTRADOS = fim;
+  document.getElementById("btn-mais").style.display = MOSTRADOS < FILTRADOS.length ? "inline-block" : "none";
+  tbody.querySelectorAll("tr[data-i]").forEach(tr => {
+    tr.addEventListener("click", () => {
+      const a = FILTRADOS[+tr.dataset.i];
+      abrirModal(a, RELATORIOS[a.relatorio_id]);
+    });
+  });
+}
+</script>
+</body>
+</html>

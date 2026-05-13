@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Sobre — Portal de Prestações de Contas (TCE-AL)</title>
+<link rel="stylesheet" href="style.css" />
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <h1>Portal de Prestações de Contas — TCE-AL</h1>
+  <div class="sub">Banco de Achados e análises sobre os relatórios conclusivos</div>
+</header>
+<nav class="menu">
+  <a href="index.html">Visão geral</a>
+  <a href="achados.html">Banco de Achados</a>
+  <a href="municipios.html">Por município</a>
+  <a href="secoes.html">Por seção</a>
+  <a href="defesa.html">Defesa do gestor</a>
+  <a href="insights.html">Insights</a>
+  <a href="sobre.html">Sobre</a>
+</nav>
+
+<main>
+  <div class="card">
+    <h2>O que é este portal?</h2>
+    <p>
+      O portal consolida, em um único lugar, as informações relevantes dos
+      <strong>relatórios conclusivos de prestações de contas</strong> publicados pelo
+      Tribunal de Contas do Estado de Alagoas. O destaque é o
+      <a href="achados.html">Banco de Achados</a>: cada irregularidade, impropriedade
+      ou inconsistência identificada pelo auditor (códigos no padrão
+      <code>III.NN</code>) vira um registro estruturado, pesquisável e cruzável.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Como os dados são extraídos</h2>
+    <ol>
+      <li><strong>Relatórios pós-2024</strong> seguem um modelo padronizado em tabela. Um
+      parser determinístico lê a tabela diretamente do PDF — sem inteligência
+      artificial — garantindo alta precisão.</li>
+      <li><strong>Relatórios anteriores</strong> têm formato livre. O texto é enviado para um
+      modelo de linguagem (Gemini 2.0 Flash, em camada gratuita) que devolve
+      um JSON validado contra um <em>schema</em> rígido.</li>
+      <li>Toda extração passa por uma etapa de <strong>revisão humana</strong> via planilha CSV
+      antes de ser publicada no portal. Apenas linhas marcadas como
+      <code>revisado=true</code> entram nos indicadores.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Glossário</h2>
+    <dl>
+      <dt><strong>Achado</strong></dt>
+      <dd>Situação de irregularidade, impropriedade ou inconsistência identificada pelo auditor durante a análise da prestação de contas.</dd>
+      <dt><strong>Sanado totalmente</strong></dt>
+      <dd>Após a defesa do gestor, o achado foi considerado totalmente esclarecido ou corrigido.</dd>
+      <dt><strong>Sanado parcialmente</strong></dt>
+      <dd>Parte do achado foi esclarecida; parte permaneceu.</dd>
+      <dt><strong>Afastado</strong></dt>
+      <dd>O auditor concluiu que o achado original não procede.</dd>
+      <dt><strong>Mantido</strong></dt>
+      <dd>O achado permanece após a análise da defesa.</dd>
+    </dl>
+  </div>
+
+  <div class="card">
+    <h2>Limitações conhecidas</h2>
+    <ul>
+      <li>O Banco de Achados depende da qualidade do texto do PDF. PDFs escaneados (sem OCR) ainda não são processados.</li>
+      <li>Metadados como município, gestor e auditor podem ficar em branco quando não estiverem em formato reconhecível na capa do relatório.</li>
+      <li>Para relatórios pré-2024, a inferência de seção é feita pela posição textual do código <code>III.NN</code>; em casos ambíguos, a revisão humana corrige.</li>
+      <li>O <strong>parecer prévio do relator</strong> ainda não está incorporado — é a próxima fase do projeto.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Atualização</h2>
+    <p>
+      O banco é alimentado de forma incremental. Cada novo relatório
+      conclusivo é processado, revisado e publicado por meio de um pipeline
+      executável a partir da pasta do projeto. A última geração desta página
+      está datada em <span id="gerado-em">—</span>.
+    </p>
+  </div>
+</main>
+
+<footer class="rodape">
+  Dados extraídos dos relatórios conclusivos publicados pelo TCE-AL.
+</footer>
+
+<script>
+(async () => {
+  try {
+    const d = await carregarDados();
+    document.getElementById("gerado-em").textContent = new Date(d.gerado_em).toLocaleString("pt-BR");
+  } catch {}
+})();
+</script>
+</body>
+</html>

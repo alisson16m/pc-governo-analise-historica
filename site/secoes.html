@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Por seção — Portal de Prestações de Contas (TCE-AL)</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <h1>Portal de Prestações de Contas — TCE-AL</h1>
+  <div class="sub">Banco de Achados e análises sobre os relatórios conclusivos</div>
+</header>
+<nav class="menu">
+  <a href="index.html">Visão geral</a>
+  <a href="achados.html">Banco de Achados</a>
+  <a href="municipios.html">Por município</a>
+  <a href="secoes.html">Por seção</a>
+  <a href="defesa.html">Defesa do gestor</a>
+  <a href="insights.html">Insights</a>
+  <a href="sobre.html">Sobre</a>
+</nav>
+
+<main>
+  <div class="card">
+    <h2>Seções com mais achados</h2>
+    <div class="chart-box tall"><canvas id="chart-sec"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>Distribuição de tipos por seção <span class="muted">(top 10)</span></h2>
+    <table class="tabela">
+      <thead><tr><th>Seção</th><th>Top tipos</th><th style="text-align:right">Total</th></tr></thead>
+      <tbody id="tb-sec"></tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="rodape">Dados do TCE-AL · <a href="sobre.html">Metodologia</a></footer>
+
+<script>
+(async () => {
+  const d = await carregarDados();
+  const por = d.agregacoes.por_secao || {};
+  const tipoSec = d.agregacoes.tipo_por_secao || {};
+  const itens = Object.entries(por);
+
+  if (!itens.length) {
+    document.querySelector("main").innerHTML = `<div class="empty"><h3>Sem dados</h3></div>`;
+    return;
+  }
+
+  const top = itens.slice(0, 15);
+  montarChartBarras(document.getElementById("chart-sec"),
+    top.map(([k]) => k.length > 50 ? k.slice(0, 48) + "…" : k),
+    top.map(([, v]) => v),
+    "Achados", "#c0392b", true);
+
+  document.getElementById("tb-sec").innerHTML = itens.map(([sec, total]) => {
+    const tipos = tipoSec[sec] || {};
+    const tags = Object.entries(tipos).slice(0, 5)
+      .map(([t, n]) => `<span class="tag">${t} · ${n}</span>`).join(" ");
+    return `<tr>
+      <td>${sec}</td>
+      <td><div class="tag-list">${tags || "—"}</div></td>
+      <td style="text-align:right"><strong>${fmtNum(total)}</strong></td>
+    </tr>`;
+  }).join("");
+})();
+</script>
+</body>
+</html>

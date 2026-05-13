@@ -1,0 +1,27 @@
+{
+  "gerado_em": "1970-01-01T00:00:00+00:00",
+  "relatorios": [],
+  "achados": [],
+  "agregacoes": {
+    "totais": {
+      "relatorios": 0,
+      "achados": 0,
+      "saneados": 0,
+      "mantidos": 0,
+      "com_defesa": 0,
+      "municipios": 0,
+      "anos": []
+    },
+    "por_situacao": {},
+    "por_tipo": {},
+    "por_secao": {},
+    "por_municipio": {},
+    "por_ano": {},
+    "por_base_normativa": {},
+    "por_auditor": {},
+    "defesa_x_situacao": { "com_defesa": {}, "sem_defesa": {} },
+    "valores_top": [],
+    "tipo_por_secao": {},
+    "situacao_por_municipio": {}
+  }
+}

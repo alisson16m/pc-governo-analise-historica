@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Insights — Portal de Prestações de Contas (TCE-AL)</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <h1>Portal de Prestações de Contas — TCE-AL</h1>
+  <div class="sub">Banco de Achados e análises sobre os relatórios conclusivos</div>
+</header>
+<nav class="menu">
+  <a href="index.html">Visão geral</a>
+  <a href="achados.html">Banco de Achados</a>
+  <a href="municipios.html">Por município</a>
+  <a href="secoes.html">Por seção</a>
+  <a href="defesa.html">Defesa do gestor</a>
+  <a href="insights.html">Insights</a>
+  <a href="sobre.html">Sobre</a>
+</nav>
+
+<main>
+  <div class="row">
+    <div class="card">
+      <h2>Tipos mais recorrentes</h2>
+      <div class="chart-box tall"><canvas id="chart-tipo"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Bases normativas mais citadas</h2>
+      <div class="chart-box tall"><canvas id="chart-base"></canvas></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h2>Auditores mais ativos</h2>
+      <div class="chart-box"><canvas id="chart-aud"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Evolução dos achados</h2>
+      <div class="chart-box"><canvas id="chart-evo"></canvas></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Achados de maior valor financeiro</h2>
+    <table class="tabela">
+      <thead><tr><th>Código</th><th>Município</th><th>Descrição</th><th style="text-align:right">Valor</th></tr></thead>
+      <tbody id="tb-val"></tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="rodape">Dados do TCE-AL · <a href="sobre.html">Metodologia</a></footer>
+
+<script>
+(async () => {
+  const d = await carregarDados();
+  const ag = d.agregacoes;
+
+  const tipos = Object.entries(ag.por_tipo || {}).slice(0, 15);
+  montarChartBarras(document.getElementById("chart-tipo"),
+    tipos.map(([k]) => k.length > 40 ? k.slice(0, 38) + "…" : k),
+    tipos.map(([, v]) => v), "Tipos", "#1e4d8c", true);
+
+  const bases = Object.entries(ag.por_base_normativa || {}).slice(0, 15);
+  montarChartBarras(document.getElementById("chart-base"),
+    bases.map(([k]) => k.length > 40 ? k.slice(0, 38) + "…" : k),
+    bases.map(([, v]) => v), "Citações", "#2e8b57", true);
+
+  const auds = Object.entries(ag.por_auditor || {}).slice(0, 10);
+  montarChartBarras(document.getElementById("chart-aud"),
+    auds.map(([k]) => k.length > 30 ? k.slice(0, 28) + "…" : k),
+    auds.map(([, v]) => v), "Achados", "#c0392b", true);
+
+  const anos = Object.keys(ag.por_ano || {}).sort();
+  montarChartBarras(document.getElementById("chart-evo"),
+    anos, anos.map(a => ag.por_ano[a]), "Achados/ano");
+
+  document.getElementById("tb-val").innerHTML = (ag.valores_top || []).map(v => `
+    <tr><td><code>${v.codigo}</code></td>
+        <td>${v.municipio || "—"}</td>
+        <td>${v.descricao}</td>
+        <td style="text-align:right">${fmtMoeda(v.valor)}</td></tr>`).join("")
+    || `<tr><td colspan="4" class="empty">Nenhum valor identificado.</td></tr>`;
+})();
+</script>
+</body>
+</html>
