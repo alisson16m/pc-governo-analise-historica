@@ -29,6 +29,12 @@ _RE_CODIGO_LOOSE = re.compile(r"\bIII\.\s?(\d{2,3})\b")
 
 # Padrões para delimitar a seção de achados no RESUMO
 _RE_TITULO_RESUMO = re.compile(r"^(\d+)\.\s*RESUMO\s*$", re.IGNORECASE)
+
+# Capítulos "contêiner" que agrupam achados mas não são a seção analítica
+_RE_CAP_CONTEINER = re.compile(
+    r"CONTRADIT[ÓO]RIO|RESUMO|CONCLUS[ÃA]O|REFER[EÊ]NCIAS|AP[ÊE]NDICE",
+    re.IGNORECASE,
+)
 _RE_SUBCAP_ACHADOS = re.compile(
     r"Irregularidades[,\s]+Inconsist[eê]ncias[,\s]+e[,\s]+Impropriedades",
     re.IGNORECASE,
@@ -252,7 +258,8 @@ def _parse_formato_posicional(texto: RelatorioTexto) -> Optional[list[Achado]]:
                     continue
 
                 cols = [((c or "").strip()) for c in linha]
-                secao_raw = cols[1] if len(cols) > 1 else ""
+                # Normaliza espaços internos (pdfplumber fragmenta células multi-linha)
+                secao_raw = re.sub(r"\s+", " ", cols[1]).strip() if len(cols) > 1 else ""
                 descricao = cols[2] if len(cols) > 2 else ""
 
                 # cols[3] e cols[4]: um é tipo, outro é base_normativa
@@ -273,12 +280,18 @@ def _parse_formato_posicional(texto: RelatorioTexto) -> Optional[list[Achado]]:
                 houve_defesa = bool(situacao and situacao != Situacao.NAO_CONSTA)
 
                 idx = _achar_indice(texto, codigo)
-                secao = secao_de_linha(secoes, idx) if idx is not None else (secao_raw or "Tabela de Achados")
+                secao_textual = secao_de_linha(secoes, idx) if idx is not None else None
+                # Usa secao_raw quando o texto só posiciona o código em capítulos
+                # "contêiner" (Contraditório, Resumo…) que não são a seção analítica.
+                if secao_textual and not _RE_CAP_CONTEINER.search(secao_textual):
+                    secao = secao_textual
+                else:
+                    secao = secao_raw or secao_textual or "Tabela de Achados"
 
                 achado = Achado(
                     codigo=codigo,
                     tipo=tipo or "Não classificado",
-                    secao=secao or secao_raw or "Tabela de Achados",
+                    secao=secao,
                     base_normativa=base or None,
                     descricao=descricao,
                     houve_defesa=houve_defesa,
