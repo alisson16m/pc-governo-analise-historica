@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-14T18:09:32+00:00",
+  "gerado_em": "2026-05-14T18:32:39+00:00",
   "relatorios": [
     {
       "id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -358,7 +358,7 @@
       "auditor": null,
       "codigo": "III.15",
       "tipo": "Irregularidade",
-      "secao": "10. CONTRADITÓRIO E AMPLA DEFESA",
+      "secao": "7.1. Educação",
       "base_normativa": "Art. 212 da\nConstituição\nFederal e art.\n69 da Lei\n9.394/96",
       "descricao": "Não cumprimento da\naplicação mínima de 25%\ndas receitas de impostos e\ntransferências em\neducação.",
       "houve_defesa": true,
@@ -375,7 +375,7 @@
       "auditor": null,
       "codigo": "III.16",
       "tipo": "Irregularidade",
-      "secao": "10. CONTRADITÓRIO E AMPLA DEFESA",
+      "secao": "7.1. Educação",
       "base_normativa": "Art. 25 da\nLei\n14.113/20\n20 e ao\nMDF 14°\nEdição",
       "descricao": "Não aplicação e não\ndedução na apuração do\nmínimo o valor referente\nao superávit do exercício\nanterior não aplicado até o\nprimeiro quadrimestre.",
       "houve_defesa": true,
@@ -392,7 +392,7 @@
       "auditor": null,
       "codigo": "III.17",
       "tipo": "Impropriedade",
-      "secao": "10. CONTRADITÓRIO E AMPLA DEFESA",
+      "secao": "7.2. Fundo de Manutenção e Desenvolvime nto da Educação Básica – FUNDEB",
       "base_normativa": "Art. 165 CF,\nLei\nComplementar\nnº 101/2000,\nLei nº\n9.394/1996 e\nPortaria MEC\nnº 844/2008",
       "descricao": "Atrasos no envio dos\ndados ao Sistema de\nInformações sobre\nOrçamentos Públicos em\nEducação (SIOPE).",
       "houve_defesa": true,
@@ -409,7 +409,7 @@
       "auditor": null,
       "codigo": "III.18",
       "tipo": "Impropriedade",
-      "secao": "10. CONTRADITÓRIO E AMPLA DEFESA",
+      "secao": "7.3. Saúde",
       "base_normativa": "Lei 141/2012 e\nLei\nComplementar\nnº 101/2000",
       "descricao": "Atrasos no envio dos\ndados ao Sistema de\nInformações sobre\nOrçamentos Públicos em\nSaúde (SIOPS).",
       "houve_defesa": true,
@@ -447,12 +447,14 @@
     "por_secao": {
       "4. ASPECTOS PATRIMONIAIS": 7,
       "6. GESTÃO FISCAL": 4,
-      "10. CONTRADITÓRIO E AMPLA DEFESA": 4,
       "3. ASPECTOS ORÇAMENTÁRIOS E FINANCEIROS": 2,
       "7. ANÁLISE DOS LIMITES CONSTITUCIONAIS": 2,
       "2. INSTRUMENTOS DE PLANEJAMENTO": 2,
+      "7.1. Educação": 2,
       "9. TRANSPARÊNCIA E CONTROLE INTERNO": 1,
-      "5. REPASSES DO DUODÉCIMO": 1
+      "5. REPASSES DO DUODÉCIMO": 1,
+      "7.2. Fundo de Manutenção e Desenvolvime nto da Educação Básica – FUNDEB": 1,
+      "7.3. Saúde": 1
     },
     "por_municipio": {
       "Atalaia": 18,
@@ -539,9 +541,14 @@
         "Inconsistência": 1,
         "Impropriedade": 1
       },
-      "10. CONTRADITÓRIO E AMPLA DEFESA": {
-        "Irregularidade": 2,
-        "Impropriedade": 2
+      "7.1. Educação": {
+        "Irregularidade": 2
+      },
+      "7.2. Fundo de Manutenção e Desenvolvime nto da Educação Básica – FUNDEB": {
+        "Impropriedade": 1
+      },
+      "7.3. Saúde": {
+        "Impropriedade": 1
       }
     },
     "situacao_por_municipio": {
