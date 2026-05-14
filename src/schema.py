@@ -5,7 +5,7 @@ from decimal import Decimal
 from enum import Enum
 from typing import Optional
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class Situacao(str, Enum):
@@ -22,6 +22,13 @@ class Achado(BaseModel):
     codigo: str = Field(description="Código no padrão III.NN, ex: III.01")
     tipo: str = Field(description="Categoria do achado")
     secao: str = Field(description="Seção do relatório onde o achado aparece")
+
+    @field_validator("secao", mode="before")
+    @classmethod
+    def _title_case_secao(cls, v: object) -> object:
+        if isinstance(v, str) and v:
+            return v.strip().title()
+        return v
     base_normativa: Optional[str] = None
     descricao: str
     houve_defesa: bool = False
