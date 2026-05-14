@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-14T15:07:37+00:00",
+  "gerado_em": "2026-05-14T18:09:32+00:00",
   "relatorios": [
     {
       "id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -11,7 +11,7 @@
       "auditor": null,
       "relator": "a um juízo de valor",
       "fonte_extracao": "gemini_legacy",
-      "n_achados": 2
+      "n_achados": 5
     },
     {
       "id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -34,14 +34,14 @@
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "auditor": null,
       "codigo": "III.01",
-      "tipo": "Abertura de créditos suplementares sem comprovação de excesso de arrecadação",
+      "tipo": "Irregularidades, Inconsistências e Impropriedades",
       "secao": "3. ASPECTOS ORÇAMENTÁRIOS E FINANCEIROS",
-      "base_normativa": "art. 43, §3º, da Lei nº 4.320/64",
-      "descricao": "Houve abertura de créditos suplementares no montante de R$ 1.933.528,47 utilizando o excesso de arrecadação como recurso, sem a devida comprovação do excesso correspondente, o que configura infringência à legislação.",
+      "base_normativa": "Art. 43, §3º, da Lei nº 4.320/64",
+      "descricao": "Abertura de créditos suplementares no montante de R$ 1.933.528,47 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente.",
       "houve_defesa": true,
-      "situacao": "nao_consta",
+      "situacao": "sanado_total",
       "recomendacao": null,
-      "determinacao": "Encaminhamento do demonstrativo da apuração do excesso de arrecadação por fonte de recursos em âmbito de defesa.",
+      "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público apresente esclarecimentos sobre a inconsistência.",
       "valor_financeiro": 1933528.47
     },
     {
@@ -51,15 +51,66 @@
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "auditor": null,
       "codigo": "III.02",
-      "tipo": "Abertura de crédito especial sem comprovação de excesso de arrecadação",
+      "tipo": "Irregularidades, Inconsistências e Impropriedades",
       "secao": "3. ASPECTOS ORÇAMENTÁRIOS E FINANCEIROS",
-      "base_normativa": "art. 43, §3º, da Lei nº 4.320/64",
-      "descricao": "Houve abertura de crédito especial no montante de R$ 254.300,00 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente, configurando infringência ao disposto na legislação.",
-      "houve_defesa": false,
-      "situacao": "nao_consta",
+      "base_normativa": "Art. 43, §3º, da Lei nº 4.320/64",
+      "descricao": "Abertura de crédito especial no montante de R$ 254.300,00 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
       "recomendacao": null,
-      "determinacao": null,
+      "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público apresente esclarecimentos sobre a inconsistência.",
       "valor_financeiro": 254300.0
+    },
+    {
+      "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
+      "ano": 2023,
+      "municipio": "Piranhas",
+      "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
+      "auditor": null,
+      "codigo": "III.03",
+      "tipo": "Impropriedade",
+      "secao": "7. ANÁLISE DOS LIMITES CONSTITUCIONAIS",
+      "base_normativa": "Lei Complementar nº 101/2000 - LRF",
+      "descricao": "Publicação em atraso do Demonstrativo das Receitas e Despesas com Manutenção e Desenvolvimento do Ensino de todos os bimestres de 2023 no SIOPE.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": null,
+      "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público encaminhe o referido documento.",
+      "valor_financeiro": null
+    },
+    {
+      "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
+      "ano": 2023,
+      "municipio": "Piranhas",
+      "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
+      "auditor": null,
+      "codigo": "III.04",
+      "tipo": "Impropriedade",
+      "secao": "7. ANÁLISE DOS LIMITES CONSTITUCIONAIS",
+      "base_normativa": "Lei Complementar nº 101/2000 - LRF",
+      "descricao": "Publicação no Sistema de Informações sobre Orçamentos Públicos em Saúde (SIOPS) o Demonstrativo das Receitas e Despesas com Ações e Serviços Públicos de Saúde (ASPS) de três bimestres do exercício de 2023 em atraso.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público encaminhe o referido documento.",
+      "valor_financeiro": null
+    },
+    {
+      "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
+      "ano": 2023,
+      "municipio": "Piranhas",
+      "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
+      "auditor": null,
+      "codigo": "III.05",
+      "tipo": "Inconsistência",
+      "secao": "9. TRANSPARÊNCIA E CONTROLE INTERNO",
+      "base_normativa": "Lei Complementar nº 101/2000 - LRF",
+      "descricao": "O Município não mantém o Portal da Transparência devidamente atualizado, apresentando dados defasados e incompletos, inviabilizando o controle social e a transparência da gestão.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público encaminhe o referido documento.",
+      "valor_financeiro": null
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -371,10 +422,10 @@
   "agregacoes": {
     "totais": {
       "relatorios": 2,
-      "achados": 20,
-      "saneados": 8,
-      "mantidos": 10,
-      "com_defesa": 19,
+      "achados": 23,
+      "saneados": 12,
+      "mantidos": 11,
+      "com_defesa": 23,
       "municipios": 2,
       "anos": [
         2023,
@@ -382,39 +433,40 @@
       ]
     },
     "por_situacao": {
-      "nao_consta": 2,
-      "mantido": 10,
+      "sanado_total": 10,
+      "mantido": 11,
       "afastado": 1,
-      "sanado_total": 6,
       "sanado_parcial": 1
     },
     "por_tipo": {
-      "Impropriedade": 9,
+      "Impropriedade": 11,
       "Irregularidade": 6,
-      "Inconsistência": 3,
-      "Abertura de créditos suplementares sem comprovação de excesso de arrecadação": 1,
-      "Abertura de crédito especial sem comprovação de excesso de arrecadação": 1
+      "Inconsistência": 4,
+      "Irregularidades, Inconsistências e Impropriedades": 2
     },
     "por_secao": {
       "4. ASPECTOS PATRIMONIAIS": 7,
       "6. GESTÃO FISCAL": 4,
       "10. CONTRADITÓRIO E AMPLA DEFESA": 4,
       "3. ASPECTOS ORÇAMENTÁRIOS E FINANCEIROS": 2,
+      "7. ANÁLISE DOS LIMITES CONSTITUCIONAIS": 2,
       "2. INSTRUMENTOS DE PLANEJAMENTO": 2,
+      "9. TRANSPARÊNCIA E CONTROLE INTERNO": 1,
       "5. REPASSES DO DUODÉCIMO": 1
     },
     "por_municipio": {
       "Atalaia": 18,
-      "Piranhas": 2
+      "Piranhas": 5
     },
     "por_ano": {
-      "2023": 2,
+      "2023": 5,
       "2024": 18
     },
     "por_base_normativa": {
       "MCASP 10ª\nEdição": 6,
+      "Lei Complementar nº 101/2000 - LRF": 3,
       "Resolução\nNormativa\nTCE/AL nº\n003/2024": 3,
-      "art. 43, §3º, da Lei nº 4.320/64": 2,
+      "Art. 43, §3º, da Lei nº 4.320/64": 2,
       "Art. 4º da\nLei\nCompleme\nntar nº\n101/2000": 1,
       "§ 8º do artigo\n165 da CF/88": 1,
       "Lei\nComplementar\nnº 101/2000": 1,
@@ -428,22 +480,19 @@
     "por_auditor": {},
     "defesa_x_situacao": {
       "com_defesa": {
-        "nao_consta": 1,
-        "mantido": 10,
+        "sanado_total": 10,
+        "mantido": 11,
         "afastado": 1,
-        "sanado_total": 6,
         "sanado_parcial": 1
       },
-      "sem_defesa": {
-        "nao_consta": 1
-      }
+      "sem_defesa": {}
     },
     "valores_top": [
       {
         "codigo": "III.01",
         "municipio": "Piranhas",
         "valor": 1933528.47,
-        "descricao": "Houve abertura de créditos suplementares no montante de R$ 1.933.528,47 utilizando o excesso de arrecadação como recurso, sem a devida comprovação do excesso correspondente, o que configura infringênc"
+        "descricao": "Abertura de créditos suplementares no montante de R$ 1.933.528,47 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente."
       },
       {
         "codigo": "III.05",
@@ -455,7 +504,7 @@
         "codigo": "III.02",
         "municipio": "Piranhas",
         "valor": 254300.0,
-        "descricao": "Houve abertura de crédito especial no montante de R$ 254.300,00 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente, configurando infringência ao disposto na "
+        "descricao": "Abertura de crédito especial no montante de R$ 254.300,00 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente."
       },
       {
         "codigo": "III.14",
@@ -466,8 +515,13 @@
     ],
     "tipo_por_secao": {
       "3. ASPECTOS ORÇAMENTÁRIOS E FINANCEIROS": {
-        "Abertura de créditos suplementares sem comprovação de excesso de arrecadação": 1,
-        "Abertura de crédito especial sem comprovação de excesso de arrecadação": 1
+        "Irregularidades, Inconsistências e Impropriedades": 2
+      },
+      "7. ANÁLISE DOS LIMITES CONSTITUCIONAIS": {
+        "Impropriedade": 2
+      },
+      "9. TRANSPARÊNCIA E CONTROLE INTERNO": {
+        "Inconsistência": 1
       },
       "2. INSTRUMENTOS DE PLANEJAMENTO": {
         "Impropriedade": 1,
@@ -492,7 +546,8 @@
     },
     "situacao_por_municipio": {
       "Piranhas": {
-        "nao_consta": 2
+        "sanado_total": 4,
+        "mantido": 1
       },
       "Atalaia": {
         "mantido": 10,
