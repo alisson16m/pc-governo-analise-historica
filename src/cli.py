@@ -152,7 +152,7 @@ def build() -> None:
 def publicar() -> None:
     """Commit + push para o GitHub Pages (branch gh-pages)."""
     import subprocess
-    subprocess.run(["git", "add", "data/final.json", "site/data.json", "site/"], check=True)
+    subprocess.run(["git", "add", "site/data.json", "site/"], check=True)
     subprocess.run(["git", "commit", "-m", "atualiza banco de achados"], check=False)
     subprocess.run(["git", "push"], check=False)
     # Publica site/ no branch gh-pages (servido pelo GitHub Pages)

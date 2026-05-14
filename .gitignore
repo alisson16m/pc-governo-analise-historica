@@ -5,11 +5,6 @@ __pycache__/
 .uv/
 .DS_Store
 PDFs/
-data/raw/
-data/extracted/
-data/review.csv
-data/.gemini_state.json
+data/
 PC_Gov_*.xlsx
 .claude/
-!data/extracted/.gitkeep
-!data/raw/.gitkeep
