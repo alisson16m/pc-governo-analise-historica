@@ -86,7 +86,6 @@ function abrirModal(achado, relatorio) {
     <dl>
       <dt>Situação</dt><dd>${badgeSituacao(achado.situacao)}</dd>
       <dt>Município</dt><dd>${achado.municipio || "—"}</dd>
-      <dt>Órgão</dt><dd>${relatorio?.orgao || "—"}</dd>
       <dt>Ano</dt><dd>${achado.ano || "—"}</dd>
       <dt>Seção</dt><dd>${achado.secao || "—"}</dd>
       <dt>Houve defesa?</dt><dd>${achado.houve_defesa ? "Sim" : "Não"}</dd>

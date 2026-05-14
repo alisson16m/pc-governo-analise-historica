@@ -15,13 +15,20 @@ from .schema import Achado, Situacao, normalizar_situacao
 load_dotenv()
 
 _RE_CODIGO = re.compile(r"III\.\s?(\d{2,3})")
+_RE_SUBCAP_ACHADOS = re.compile(
+    r"Irregularidades[,\s]+Inconsist[eê]ncias[,\s]+e[,\s]+Impropriedades",
+    re.IGNORECASE,
+)
 
 PROMPT = """Você é um analista do Tribunal de Contas. Extraia TODOS os achados de auditoria do trecho abaixo do relatório conclusivo de prestação de contas.
 
 Cada achado é identificado pelo código no padrão III.NN (ex: III.01, III.02). Para cada achado, retorne um objeto JSON com os campos:
 - codigo: string no formato "III.NN" (zero-padded, ex: "III.01")
-- tipo: categoria/título do achado (ex: "Falhas no controle interno")
-- secao: nome da seção do relatório onde o achado foi tratado
+- tipo: classificação técnica do achado conforme coluna "Classificação do Achado" da tabela. \
+DEVE ser EXATAMENTE um destes três valores: "Impropriedade", "Irregularidade" ou "Inconsistência". \
+NÃO use o título do subcapítulo ("Irregularidades, Inconsistências e Impropriedades") \
+nem qualquer outro texto como tipo.
+- secao: nome da seção do relatório onde o achado foi tratado (ex: "3. Aspectos Orçamentários e Financeiros")
 - base_normativa: dispositivo legal citado (lei, artigo) ou null
 - descricao: texto resumido do achado (até 600 caracteres)
 - houve_defesa: true se o relatório indica que o gestor apresentou defesa, false caso contrário
@@ -38,15 +45,60 @@ TRECHO DO RELATÓRIO:
 ---
 """
 
+_TIPO_MAP: dict[str, str] = {
+    "impropriedade": "Impropriedade",
+    "irregularidade": "Irregularidade",
+    "inconsistência": "Inconsistência",
+    "inconsistencia": "Inconsistência",
+    # Os dois abaixo são mantidos apenas como fallback de normalização
+    # caso relatórios antigos os contenham; o prompt não os solicita mais.
+    "ineficiência": "Ineficiência",
+    "ineficiencia": "Ineficiência",
+    "ineficácia": "Ineficácia",
+    "ineficacia": "Ineficácia",
+}
 
-def _selecionar_trecho(texto: RelatorioTexto, max_chars: int = 15_000) -> str:
-    """Foca no capítulo de análise da defesa, mas inclui contexto.
 
-    Estratégia: localizar primeiro 'III.' no texto e enviar de lá em diante,
-    truncando em max_chars."""
+def _normalizar_tipo(raw: str) -> str:
+    """Mapeia o tipo retornado pelo Gemini para a classificação canônica.
+
+    Evita que o Gemini use o título do subcapítulo ("Irregularidades,
+    Inconsistências e Impropriedades") como tipo."""
+    norm = (raw or "").strip().lower()
+    # Correspondência exata primeiro
+    if norm in _TIPO_MAP:
+        return _TIPO_MAP[norm]
+    # Substring: captura "Impropriedade" dentro de um texto mais longo
+    for chave, valor in _TIPO_MAP.items():
+        if chave in norm:
+            return valor
+    return "Não classificado"
+
+
+def _selecionar_trecho(texto: RelatorioTexto, max_chars: int = 20_000) -> str:
+    """Seleciona o trecho mais relevante para enviar ao Gemini.
+
+    Prioridade:
+    1. Última ocorrência de 'Irregularidades, Inconsistências e Impropriedades'
+       que seja seguida por códigos III.NN dentro dos próximos 8 000 chars —
+       esse é o subcapítulo do RESUMO com a tabela completa de achados.
+    2. Fallback: janela de max_chars a partir do primeiro III.NN encontrado.
+    """
     full = texto.texto_completo
-    m = _RE_CODIGO.search(full)
-    inicio = max(0, (m.start() - 2000)) if m else 0
+
+    # Procura a última menção ao subcapítulo que tenha achados logo adiante.
+    melhor_inicio: Optional[int] = None
+    for m in _RE_SUBCAP_ACHADOS.finditer(full):
+        janela = full[m.start() : m.start() + 8_000]
+        if _RE_CODIGO.search(janela):
+            melhor_inicio = max(0, m.start() - 500)
+
+    if melhor_inicio is not None:
+        return full[melhor_inicio : melhor_inicio + max_chars]
+
+    # Fallback: janela a partir do primeiro código III.NN
+    m_codigo = _RE_CODIGO.search(full)
+    inicio = max(0, (m_codigo.start() - 2000)) if m_codigo else 0
     return full[inicio : inicio + max_chars]
 
 
@@ -108,7 +160,7 @@ def parse(texto: RelatorioTexto) -> list[Achado]:
         out.append(
             Achado(
                 codigo=codigo,
-                tipo=(it.get("tipo") or "Não classificado").strip()[:200],
+                tipo=_normalizar_tipo(it.get("tipo") or ""),
                 secao=secao_textual or it.get("secao") or "Indefinida",
                 base_normativa=_str_ou_none(it.get("base_normativa")),
                 descricao=(it.get("descricao") or "").strip(),
