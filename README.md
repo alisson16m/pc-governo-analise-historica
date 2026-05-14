@@ -47,6 +47,4 @@ uv run python -m src.cli publicar
 - `data/extracted/` — JSON bruto (não versionado)
 - `data/final.json` — fonte da verdade pós-revisão
 - `site/` — portal estático servido pelo GitHub Pages
-- `.claude/` — skill `pipeline-achados` e subagente `extrator-achados`
-
-Plano completo: ver `~/.claude/plans/os-relat-rios-das-presta-es-inherited-tower.md`.
+- `.claude/` — skill `pipeline-achados` e subagente `extrator-achados` (uso local)

@@ -8,5 +8,8 @@ PDFs/
 data/raw/
 data/extracted/
 data/review.csv
+data/.gemini_state.json
+PC_Gov_*.xlsx
+.claude/
 !data/extracted/.gitkeep
 !data/raw/.gitkeep
