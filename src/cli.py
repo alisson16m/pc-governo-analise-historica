@@ -150,11 +150,19 @@ def build() -> None:
 
 @app.command()
 def publicar() -> None:
-    """Commit + push para o GitHub Pages."""
+    """Commit + push para o GitHub Pages (branch gh-pages)."""
     import subprocess
     subprocess.run(["git", "add", "data/final.json", "site/data.json", "site/"], check=True)
     subprocess.run(["git", "commit", "-m", "atualiza banco de achados"], check=False)
     subprocess.run(["git", "push"], check=False)
+    # Publica site/ no branch gh-pages (servido pelo GitHub Pages)
+    result = subprocess.run(
+        ["git", "subtree", "split", "--prefix", "site", "HEAD"],
+        capture_output=True, text=True, check=True,
+    )
+    sha = result.stdout.strip()
+    subprocess.run(["git", "push", "origin", f"{sha}:refs/heads/gh-pages", "--force"], check=True)
+    print("[green]Publicado em https://alisson16m.github.io/pc-governo-analise-historica/")
 
 
 if __name__ == "__main__":
