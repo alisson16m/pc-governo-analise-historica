@@ -36,7 +36,7 @@ MUNICIPIOS_AL: tuple[str, ...] = (
 )
 
 
-_RE_ANO = re.compile(r"\bExerc[ií]cio[:\s]+(20\d{2})\b", re.IGNORECASE)
+_RE_ANO = re.compile(r"\bExerc[ií]cio(?:\s+financeiro)?(?:\s+de)?[:\s]+(20\d{2})\b", re.IGNORECASE)
 _RE_ANO_ALT = re.compile(r"\b(20\d{2})\b")
 _RE_AUDITOR = re.compile(
     r"(?:Auditor(?:a)?|Analista de Controle Externo)[:\s]+([A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ\s\.]{5,80})",
@@ -53,10 +53,9 @@ _RE_GESTOR = re.compile(
 
 
 def detectar_municipio(texto: str) -> Optional[str]:
-    cabeca = texto[:5000]
     matches: list[tuple[int, str]] = []
     for m in MUNICIPIOS_AL:
-        idx = cabeca.lower().find(m.lower())
+        idx = texto.lower().find(m.lower())
         if idx >= 0:
             matches.append((idx, m))
     if not matches:
@@ -66,7 +65,7 @@ def detectar_municipio(texto: str) -> Optional[str]:
 
 
 def detectar_ano(texto: str) -> Optional[int]:
-    m = _RE_ANO.search(texto[:5000])
+    m = _RE_ANO.search(texto)
     if m:
         return int(m.group(1))
     m = _RE_ANO_ALT.search(texto[:2000])
@@ -87,7 +86,7 @@ def _limpar(s: str) -> str:
 
 
 def metadados(texto: RelatorioTexto, ano_pasta: Optional[int]) -> dict:
-    cab = texto.texto_completo[:8000]
+    cab = texto.texto_completo[:15000]
     fim = texto.texto_completo[-5000:]
     return {
         "municipio": detectar_municipio(cab),
