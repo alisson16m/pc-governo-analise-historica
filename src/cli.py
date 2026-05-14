@@ -66,17 +66,22 @@ def extrair(
         for caminho, ano_pasta in alvos:
             t = prog.add_task(f"[cyan]{caminho.name}", total=None)
             try:
-                _processar(caminho, ano_pasta, forcar=forcar)
-                prog.update(t, description=f"[green]OK {caminho.name}")
+                fonte = _processar(caminho, ano_pasta, forcar=forcar)
+                if fonte == "gemini_legacy":
+                    from .rate_limit import estado_atual
+                    est = estado_atual()
+                    prog.update(t, description=f"[green]OK {caminho.name} [dim]({est['rpd_usado']}/{est['rpd_max']} req Gemini)[/]")
+                else:
+                    prog.update(t, description=f"[green]OK {caminho.name}")
             except Exception as e:
                 prog.update(t, description=f"[red]ERRO {caminho.name}: {e}")
 
 
-def _processar(caminho: Path, ano_pasta: Optional[int], *, forcar: bool) -> None:
+def _processar(caminho: Path, ano_pasta: Optional[int], *, forcar: bool) -> str:
     sha = extract_text.sha256_arquivo(caminho)
     if not forcar:
         if cache.carregar(sha) is not None:
-            return
+            return "cache"
     texto = extract_text.extrair(caminho)
     meta = enrich.metadados(texto, ano_pasta)
 
@@ -104,6 +109,7 @@ def _processar(caminho: Path, ano_pasta: Optional[int], *, forcar: bool) -> None
         achados=achados or [],
     )
     cache.salvar(rel)
+    return fonte
 
 
 @app.command()

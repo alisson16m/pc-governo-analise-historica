@@ -69,6 +69,15 @@ def marcar_esgotado() -> None:
     _escrever(s)
 
 
+def estado_atual() -> dict:
+    """Retorna o contador RPD do dia atual e o limite configurado."""
+    rpd_max = int(os.getenv("GEMINI_RPD", "1000"))
+    s = _ler()
+    hoje = date.today().isoformat()
+    rpd_usado = int(s.get("rpd", 0)) if s.get("dia") == hoje else 0
+    return {"rpd_usado": rpd_usado, "rpd_max": rpd_max}
+
+
 # Mantém compatibilidade com chamadas existentes
 def aguardar_e_marcar() -> None:
     aguardar()
