@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-14T18:32:39+00:00",
+  "gerado_em": "2026-05-14T18:41:35+00:00",
   "relatorios": [
     {
       "id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -34,7 +34,7 @@
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "auditor": null,
       "codigo": "III.01",
-      "tipo": "Irregularidades, Inconsistências e Impropriedades",
+      "tipo": "Impropriedade",
       "secao": "3. ASPECTOS ORÇAMENTÁRIOS E FINANCEIROS",
       "base_normativa": "Art. 43, §3º, da Lei nº 4.320/64",
       "descricao": "Abertura de créditos suplementares no montante de R$ 1.933.528,47 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente.",
@@ -51,7 +51,7 @@
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "auditor": null,
       "codigo": "III.02",
-      "tipo": "Irregularidades, Inconsistências e Impropriedades",
+      "tipo": "Impropriedade",
       "secao": "3. ASPECTOS ORÇAMENTÁRIOS E FINANCEIROS",
       "base_normativa": "Art. 43, §3º, da Lei nº 4.320/64",
       "descricao": "Abertura de crédito especial no montante de R$ 254.300,00 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente.",
@@ -439,10 +439,9 @@
       "sanado_parcial": 1
     },
     "por_tipo": {
-      "Impropriedade": 11,
+      "Impropriedade": 13,
       "Irregularidade": 6,
-      "Inconsistência": 4,
-      "Irregularidades, Inconsistências e Impropriedades": 2
+      "Inconsistência": 4
     },
     "por_secao": {
       "4. ASPECTOS PATRIMONIAIS": 7,
@@ -517,7 +516,7 @@
     ],
     "tipo_por_secao": {
       "3. ASPECTOS ORÇAMENTÁRIOS E FINANCEIROS": {
-        "Irregularidades, Inconsistências e Impropriedades": 2
+        "Impropriedade": 2
       },
       "7. ANÁLISE DOS LIMITES CONSTITUCIONAIS": {
         "Impropriedade": 2
