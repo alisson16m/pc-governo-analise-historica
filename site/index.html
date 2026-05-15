@@ -105,6 +105,10 @@
           <h2>Opinião do auditor <span class="muted">por relatório</span></h2>
           <div class="chart-box"><canvas id="chart-opiniao"></canvas></div>
         </div>
+        <div class="card">
+          <h2>Defesa do gestor <span class="muted">por achado</span></h2>
+          <div class="chart-box"><canvas id="chart-defesa"></canvas></div>
+        </div>
       </div>
 
       <div class="card">
@@ -223,6 +227,36 @@ function _renderizar(achados, relatorios) {
     return new Chart(c, {
       type: "doughnut",
       data: { labels: keys, datasets: [{ data: vals, backgroundColor: cores, borderWidth: 2 }] },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: true, position: "right", labels: { font: { size: 11 }, boxWidth: 12, padding: 10 } },
+          datalabels: {
+            color: "#fff",
+            font: { size: 11, weight: "700" },
+            formatter: (v) => {
+              if (!total) return "";
+              const p = (v / total * 100).toFixed(1);
+              return p < 5 ? "" : p + "%";
+            },
+          },
+        },
+      },
+    });
+  });
+
+  // Gráfico defesa do gestor
+  const comDefesa = achados.filter(a => a.houve_defesa).length;
+  const semDefesa = achados.length - comDefesa;
+  _mk("chart-defesa", c => {
+    const total = achados.length;
+    return new Chart(c, {
+      type: "doughnut",
+      data: {
+        labels: ["Com defesa", "Sem defesa"],
+        datasets: [{ data: [comDefesa, semDefesa], backgroundColor: ["#2c6cc4", "#a0a8b8"], borderWidth: 2 }],
+      },
       options: {
         responsive: true,
         maintainAspectRatio: false,
