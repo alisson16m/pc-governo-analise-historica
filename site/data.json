@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-15T13:52:17+00:00",
+  "gerado_em": "2026-05-15T13:56:48+00:00",
   "versao": "1.1.0",
   "relatorios": [
     {
@@ -85,6 +85,20 @@
       "opiniao_auditoria": "Regular com Ressalvas",
       "fonte_extracao": "gemini_legacy",
       "n_achados": 18
+    },
+    {
+      "id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "arquivo": "Campestre.pdf",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "gestor": "Prefeitura Municipal de Campestre",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "opiniao_auditoria": "Irregular",
+      "fonte_extracao": "parser_2024",
+      "n_achados": 14
     },
     {
       "id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -2189,6 +2203,300 @@
       "analise_tecnica": "O gestor apresentou as Leis Municipais nº 597/2011 e nº 682/2017, que tratam da instituição do Controle Interno e da organização da\nContabilidade e do Controle Interno, respectivamente. Informou, ainda, que o Município está elaborando proposta de lei para instituir formalmente\no Órgão Central do SCI, com estrutura administrativa própria, equipe técnica e autonomia funcional, em conformidade com a IN nº 03/2011/TCE-\nAL.\nAs leis apresentadas (peças 94 e 95) demonstram a existência de base legal que institui o controle interno no âmbito municipal, o que atende\nparcialmente ao disposto no art. 3º da IN nº 03/2011/TCE-AL."
     },
     {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.04",
+      "tipo": "Não classificado",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.06",
+      "tipo": "Não classificado",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.07",
+      "tipo": "Não classificado",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.10",
+      "tipo": "Não classificado",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.11",
+      "tipo": "Não classificado",
+      "secao": "5. Repasses Do Duodécimo",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.12",
+      "tipo": "Não classificado",
+      "secao": "5. Repasses Do Duodécimo",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.13",
+      "tipo": "Não classificado",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.14",
+      "tipo": "Não classificado",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.16",
+      "tipo": "Não classificado",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.18",
+      "tipo": "Não classificado",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.19",
+      "tipo": "Não classificado",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.21",
+      "tipo": "Não classificado",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.22",
+      "tipo": "Não classificado",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "8b6c25d7c986399794db693c4c88fddf2285af7aeddac46bdcf4346d83305c21",
+      "ano": 2023,
+      "municipio": null,
+      "orgao": "PREFEITURA MUNICIPAL DE CAMPESTRE PROCESSO TCE",
+      "auditor": "de Controle Interno",
+      "relator": "a um juízo de valor",
+      "numero_processo": null,
+      "codigo": "III.23",
+      "tipo": "Não classificado",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": false,
+      "situacao": null,
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
       "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
       "ano": 2023,
       "municipio": "Piranhas",
@@ -3136,8 +3444,8 @@
   ],
   "agregacoes": {
     "totais": {
-      "relatorios": 9,
-      "achados": 143,
+      "relatorios": 10,
+      "achados": 157,
       "saneados": 44,
       "mantidos": 99,
       "com_defesa": 143,
@@ -3151,21 +3459,23 @@
       "mantido": 99,
       "sanado_total": 36,
       "afastado": 7,
+      "nao_consta": 14,
       "sanado_parcial": 1
     },
     "por_tipo": {
       "Impropriedade": 78,
       "Inconsistência": 37,
-      "Irregularidade": 28
+      "Irregularidade": 28,
+      "Não classificado": 14
     },
     "por_secao": {
-      "6. Gestão Fiscal": 32,
-      "4. Aspectos Patrimoniais": 27,
-      "7. Análise Dos Limites Constitucionais": 26,
+      "6. Gestão Fiscal": 37,
+      "4. Aspectos Patrimoniais": 31,
+      "7. Análise Dos Limites Constitucionais": 29,
       "3. Aspectos Orçamentários E Financeiros": 23,
       "9. Transparência E Controle Interno": 19,
+      "5. Repasses Do Duodécimo": 6,
       "2. Instrumentos De Planejamento": 5,
-      "5. Repasses Do Duodécimo": 4,
       "8. Previdência": 3,
       "7.1. Educação": 2,
       "7.2. Fundo De Manutenção E Desenvolvime Nto Da Educação Básica – Fundeb": 1,
@@ -3181,7 +3491,7 @@
       "Piranhas": 5
     },
     "por_ano": {
-      "2023": 125,
+      "2023": 139,
       "2024": 18
     },
     "por_base_normativa": {
@@ -3216,7 +3526,9 @@
       "Art. 39, §1º, da Lei nº 4.320/64.": 1,
       "Art. 29-A, I, da Constituição Federal.": 1
     },
-    "por_auditor": {},
+    "por_auditor": {
+      "de Controle Interno": 14
+    },
     "defesa_x_situacao": {
       "com_defesa": {
         "mantido": 99,
@@ -3224,7 +3536,9 @@
         "afastado": 7,
         "sanado_parcial": 1
       },
-      "sem_defesa": {}
+      "sem_defesa": {
+        "nao_consta": 14
+      }
     },
     "valores_top": [
       {
@@ -3361,20 +3675,24 @@
       "4. Aspectos Patrimoniais": {
         "Impropriedade": 14,
         "Inconsistência": 12,
+        "Não classificado": 4,
         "Irregularidade": 1
       },
       "5. Repasses Do Duodécimo": {
         "Irregularidade": 3,
+        "Não classificado": 2,
         "Inconsistência": 1
       },
       "6. Gestão Fiscal": {
         "Inconsistência": 12,
         "Impropriedade": 11,
-        "Irregularidade": 9
+        "Irregularidade": 9,
+        "Não classificado": 5
       },
       "7. Análise Dos Limites Constitucionais": {
         "Impropriedade": 21,
         "Irregularidade": 3,
+        "Não classificado": 3,
         "Inconsistência": 2
       },
       "9. Transparência E Controle Interno": {
@@ -3430,14 +3748,15 @@
     },
     "por_opiniao": {
       "Regular com Ressalvas": 5,
-      "Irregular": 3,
+      "Irregular": 4,
       "Regular": 1
     },
     "por_relator": {
       "Rodrigo Siqueira Cavalcante": 3,
       "Maria Cleide Costa Beserra": 3,
       "Anselmo Roberto De Almeida Brito": 2,
-      "Rosa Maria Ribeiro De Albuquerque": 1
+      "Rosa Maria Ribeiro De Albuquerque": 1,
+      "a um juízo de valor": 1
     },
     "opiniao_por_relator": {
       "Rodrigo Siqueira Cavalcante": {
@@ -3453,6 +3772,9 @@
       },
       "Maria Cleide Costa Beserra": {
         "Regular com Ressalvas": 2,
+        "Irregular": 1
+      },
+      "a um juízo de valor": {
         "Irregular": 1
       }
     }
