@@ -98,8 +98,70 @@ body {
   font-size: 0.72rem;
   color: var(--muted);
   border-top: 1px solid var(--border);
-  line-height: 1.4;
+  line-height: 1.6;
 }
+.sb-label { font-weight: 600; color: var(--text); font-size: 0.75rem; }
+.sb-version {
+  display: inline-block;
+  margin-top: 0.4rem;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Filtros da Visão Geral ── */
+.overview-filters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.overview-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.overview-filters select {
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--text);
+  min-width: 140px;
+  cursor: pointer;
+  outline: none;
+}
+.overview-filters select:focus { border-color: var(--primary); }
+.btn-limpar {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: all 0.15s;
+}
+.btn-limpar:hover { border-color: var(--accent); color: var(--accent); }
 
 .sidebar-overlay {
   display: none;

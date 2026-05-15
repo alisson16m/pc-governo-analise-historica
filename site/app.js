@@ -26,6 +26,8 @@ async function carregarDados() {
   const r = await fetch("data.json", { cache: "no-cache" });
   if (!r.ok) throw new Error("Falha ao carregar data.json");
   DATA = await r.json();
+  const vEl = document.getElementById("sidebar-version");
+  if (vEl && DATA.versao) vEl.textContent = "v" + DATA.versao;
   return DATA;
 }
 

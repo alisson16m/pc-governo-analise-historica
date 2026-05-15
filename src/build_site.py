@@ -2,12 +2,23 @@
 from __future__ import annotations
 
 import json
+import re
 from collections import Counter, defaultdict
 from decimal import Decimal
 from pathlib import Path
 from typing import Any
 
+
+def _ler_versao() -> str:
+    try:
+        txt = Path("pyproject.toml").read_text(encoding="utf-8")
+        m = re.search(r'^version\s*=\s*["\']([^"\']+)["\']', txt, re.MULTILINE)
+        return m.group(1) if m else "0.0.0"
+    except Exception:
+        return "0.0.0"
+
 from . import cache
+from .planilha_pc import carregar_lookup, enriquecer
 from .schema import Situacao
 
 SITE_DATA = Path("site/data.json")
@@ -24,8 +35,13 @@ def build() -> Path:
     rels = cache.listar()
     achados_flat: list[dict] = []
     relatorios_out: list[dict] = []
+    lookup = carregar_lookup()
 
     for r in rels:
+        extra = enriquecer(r.municipio, r.ano_exercicio, lookup)
+        numero_processo = extra.get("numero_processo") or r.numero_processo
+        relator = extra.get("conselheiro") or r.relator
+
         relatorios_out.append({
             "id": r.id,
             "arquivo": Path(r.arquivo).name,
@@ -34,7 +50,9 @@ def build() -> Path:
             "orgao": r.orgao,
             "gestor": r.gestor,
             "auditor": r.auditor,
-            "relator": r.relator,
+            "relator": relator,
+            "numero_processo": numero_processo,
+            "opiniao_auditoria": r.opiniao_auditoria,
             "fonte_extracao": r.fonte_extracao,
             "n_achados": len(r.achados),
         })
@@ -45,6 +63,8 @@ def build() -> Path:
                 "municipio": r.municipio,
                 "orgao": r.orgao,
                 "auditor": r.auditor,
+                "relator": relator,
+                "numero_processo": numero_processo,
                 "codigo": a.codigo,
                 "tipo": a.tipo,
                 "secao": a.secao,
@@ -55,11 +75,14 @@ def build() -> Path:
                 "recomendacao": a.recomendacao,
                 "determinacao": a.determinacao,
                 "valor_financeiro": float(a.valor_financeiro) if a.valor_financeiro is not None else None,
+                "defesa_gestor": a.defesa_gestor,
+                "analise_tecnica": a.analise_tecnica,
             })
 
     agregacoes = _agregar(achados_flat, relatorios_out)
     payload = {
         "gerado_em": _agora_iso(),
+        "versao": _ler_versao(),
         "relatorios": relatorios_out,
         "achados": achados_flat,
         "agregacoes": agregacoes,

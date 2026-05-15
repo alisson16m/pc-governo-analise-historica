@@ -1,5 +1,6 @@
 {
-  "gerado_em": "2026-05-14T18:54:54+00:00",
+  "gerado_em": "2026-05-15T10:00:08+00:00",
+  "versao": "0.1.0",
   "relatorios": [
     {
       "id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -9,7 +10,9 @@
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "gestor": "Prefeitura Municipal de Piranhas",
       "auditor": null,
-      "relator": "a um juízo de valor",
+      "relator": "RODRIGO SIQUEIRA CAVALCANTE",
+      "numero_processo": "TC/1.006082/2024",
+      "opiniao_auditoria": "Regular",
       "fonte_extracao": "gemini_legacy",
       "n_achados": 5
     },
@@ -21,7 +24,9 @@
       "orgao": "Prefeitura Municipal de Atalaia",
       "gestor": "Prefeitura Municipal de Atalaia",
       "auditor": null,
-      "relator": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
+      "opiniao_auditoria": "Irregular",
       "fonte_extracao": "parser_2024",
       "n_achados": 18
     }
@@ -33,6 +38,8 @@
       "municipio": "Piranhas",
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "auditor": null,
+      "relator": "RODRIGO SIQUEIRA CAVALCANTE",
+      "numero_processo": "TC/1.006082/2024",
       "codigo": "III.01",
       "tipo": "Impropriedade",
       "secao": "3. Aspectos Orçamentários E Financeiros",
@@ -42,7 +49,9 @@
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público apresente esclarecimentos sobre a inconsistência.",
-      "valor_financeiro": 1933528.47
+      "valor_financeiro": 1933528.47,
+      "defesa_gestor": "Em relação ao apontamento sobre o Excesso de Arrecadação, foram realizados dois\nquestionamentos: a) Abertura de crédito suplementar no montante de R$\n1.933.528,47; e b) Abertura de Crédito Especial no montante de R$ 254.300,00. Para\nesclarecer tais apontamentos, encaminhamos em anexo (Doc. 01), onde constam o\nResumo dos Decretos abertos por Excesso de Arrecadação por Fonte, Relatório da\nReceita Orçamentária por Fonte de Recurso, Decretos nº 18, 32 e 36, e ainda a Lei\nMunicipal nº 372, que autoriza a abertura de Crédito Especial. Informamos que\nutilizamos o Excesso de Arrecadação apurado por Fonte de Recurso, em um total de\nR$ 2.187.828,47, sendo R$ 254.300,00 utilizado para abertura de Crédito Especial e\nR$ 1.933.528,47 para a abertura de crédito suplementar.",
+      "analise_tecnica": "Em âmbito de defesa, o jurisdicionado informou que utilizou o Excesso de Arrecadação\napurado por Fonte de Recurso, em um total de R$ 2.187.828,47, sendo R$ 254.300,00 utilizado\npara abertura de Crédito Especial e R$ 1.933.528,47 para a abertura de crédito suplementar.\nAdemais, foi encaminhado pelo jurisdicionado o quadro da apuração do excesso de\narrecadação por fonte de recursos (peça 78), no qual se verificou que houve excesso de\narrecadação suficiente para cobertura dos créditos adicionais abertos pelo referido recurso.\nDiante do exposto, considera-se sanado o presente apontamento."
     },
     {
       "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -50,6 +59,8 @@
       "municipio": "Piranhas",
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "auditor": null,
+      "relator": "RODRIGO SIQUEIRA CAVALCANTE",
+      "numero_processo": "TC/1.006082/2024",
       "codigo": "III.02",
       "tipo": "Impropriedade",
       "secao": "3. Aspectos Orçamentários E Financeiros",
@@ -59,7 +70,9 @@
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público apresente esclarecimentos sobre a inconsistência.",
-      "valor_financeiro": 254300.0
+      "valor_financeiro": 254300.0,
+      "defesa_gestor": "Em relação ao apontamento sobre o Excesso de Arrecadação, foram realizados dois\nquestionamentos: a) Abertura de crédito suplementar no montante de R$\n1.933.528,47; e b) Abertura de Crédito Especial no montante de R$ 254.300,00. Para\nesclarecer tais apontamentos, encaminhamos em anexo (Doc. 01), onde constam o\nResumo dos Decretos abertos por Excesso de Arrecadação por Fonte, Relatório da\nReceita Orçamentária por Fonte de Recurso, Decretos nº 18, 32 e 36, e ainda a Lei\nMunicipal nº 372, que autoriza a abertura de Crédito Especial. Informamos que\nutilizamos o Excesso de Arrecadação apurado por Fonte de Recurso, em um total de\nR$ 2.187.828,47, sendo R$ 254.300,00 utilizado para abertura de Crédito Especial e\nR$ 1.933.528,47 para a abertura de crédito suplementar.",
+      "analise_tecnica": "Em âmbito de defesa, o jurisdicionado informou que utilizou o Excesso de Arrecadação\napurado por Fonte de Recurso, em um total de R$ 2.187.828,47, sendo R$ 254.300,00 utilizado\npara abertura de Crédito Especial e R$ 1.933.528,47 para a abertura de crédito suplementar.\nAdemais, foi encaminhado pelo jurisdicionado o quadro da apuração do excesso de\narrecadação por fonte de recursos (peça 78), no qual se verificou que houve excesso de\narrecadação suficiente para cobertura dos créditos adicionais abertos pelo referido recurso.\nDiante do exposto, considera-se sanado o presente apontamento.\nSeção do Situação Base Classificação\nColuna1 Recomendação/Determinação\nRelatório identificada Normativa do Achado\nPublicação em atraso do Determina-se que no\nLei\nDemonstrativo das Receitas processo de\n7."
     },
     {
       "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -67,6 +80,8 @@
       "municipio": "Piranhas",
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "auditor": null,
+      "relator": "RODRIGO SIQUEIRA CAVALCANTE",
+      "numero_processo": "TC/1.006082/2024",
       "codigo": "III.03",
       "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
@@ -76,7 +91,9 @@
       "situacao": "mantido",
       "recomendacao": null,
       "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público encaminhe o referido documento.",
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Em relação ao atraso no envio das informações ao Sistema de Informações sobre\nOrçamentos Públicos em Educação (SIOPE) ocorreu em virtude de imprevistos\noperacionais que impactaram o processo de consolidação e envio dos dados.\nEsclarecemos que todos os esforços foram realizados para regularizar a situação e\ngarantir que as informações fossem enviadas de forma completa e precisa dentro do\nprazo estabelecido, e que a partir do 3º bimestre, conseguimos alcançar condições\naceitáveis, concluindo o exercício dentro do prazo correto.",
+      "analise_tecnica": "Em âmbito de defesa, o jurisdicionado informa que os atrasos no envio das informações\nao SIOPE ocorreram em virtude de imprevistos operacionais. Outrossim, esclarece, em sua\ndefesa, que foram realizados esforços para regularizar a situação e garantir que as informações\nfossem enviadas de forma completa e precisa dentro do prazo estabelecido.\nDiante do exposto, considerando que o jurisdicionado não apresentou esclarecimentos\nplausíveis que justificassem os atrasos supracitados, mantém-se o apontamento inicial.\nSeção do Base Classificação\nColuna1 Situação identificada Recomendação/Determinação\nRelatório Normativa do Achado\nPublicação no Sistema de\nInformações sobre\nDetermina-se que no\nOrçamentos Públicos em\nLei processo de\nSaúde (SIOPS) o\nComplementar Contraditório e Ampla\nIII.04 7."
     },
     {
       "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -84,6 +101,8 @@
       "municipio": "Piranhas",
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "auditor": null,
+      "relator": "RODRIGO SIQUEIRA CAVALCANTE",
+      "numero_processo": "TC/1.006082/2024",
       "codigo": "III.04",
       "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
@@ -93,7 +112,9 @@
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público encaminhe o referido documento.",
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Em relação ao atraso no envio das informações ao Sistema de Informações sobre\nOrçamentos Públicos em Saúde (SIOPS) ocorreu em virtude de adiamentos na\nliberação do arquivo estrutura para preenchimento de dados pelo Ministério da Saúde,\nconforme Comunicados (doc. 02). Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal",
+      "analise_tecnica": "Em âmbito de defesa, o jurisdicionado informa que o atraso no envio das informações\nao SIOPS ocorreu em virtude de adiamentos na liberação do arquivo estrutura para\npreenchimento de dados pelo Ministério da Saúde.\nDa análise dos documentos encaminhados pelo jurisdicionado (peça 79), verificou-se\nque houve, de fato, atrasos na liberação do arquivo estrutura supracitado por parte do Ministério\nda Saúde.\nAdemais, cumpre destacar que, especificamente em relação ao 6º Bimestre a\ndisponibilização do arquivo estrutura ocorreu no dia 15 de janeiro de 2024, ou seja, em tempo\nhábil que possibilitasse o jurisdicionado encaminhar as informações ao SIOPS dentro do prazo\nlegal."
     },
     {
       "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -101,6 +122,8 @@
       "municipio": "Piranhas",
       "orgao": "PREFEITURA MUNICIPAL DE PIRANHAS PROCESSO TCE",
       "auditor": null,
+      "relator": "RODRIGO SIQUEIRA CAVALCANTE",
+      "numero_processo": "TC/1.006082/2024",
       "codigo": "III.05",
       "tipo": "Inconsistência",
       "secao": "9. Transparência E Controle Interno",
@@ -110,7 +133,9 @@
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": "Determina-se que no processo de Contraditório e Ampla Defesa o gestor público encaminhe o referido documento.",
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "A Controladoria Geral do Município de Piranhas (CGM) exerce suas atribuições de\nacordo com a Lei nº 136/2013, que institui o sistema de Controle Interno no âmbito\ndo Poder Executivo de Piranhas e estabelece suas diretrizes.\nTodos os itens foram solucionados e disponibilizados no Portal da Transparência. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal\n1. Prestação de contas e o respectivo parecer prévio.\nhttps://prefeitura.piranhas.al.gov.br/cat_doc/prestacao-de-contas/\nhttps://piranhas.sistemasalfa.com.br/lrf\n2. Informações detalhadas sobre a execução orçamentária e financeira em tempo real.\nhttps://piranhas.sistemasalfa.com.br/despesas\n3. Realização de audiências públicas.\nhttps://prefeitura.piranhas.al.gov.br/cat_doc/atas/\n[...]",
+      "analise_tecnica": "Em âmbito de defesa, o jurisdicionado informou que todos os itens foram solucionados\ne disponibilizados no Portal da Transparência. Consultado os links acima, verificou-se que tais\nitens foram efetivamente publicados no Portal da Transparência do Jurisdicionado, restando\nsanado o presente apontamento. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal RESUMO"
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -118,6 +143,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.01",
       "tipo": "Impropriedade",
       "secao": "2. Instrumentos De Planejamento",
@@ -127,7 +154,9 @@
       "situacao": "mantido",
       "recomendacao": "Promover a inclusão dos\ndispositivos ausentes nos\npróximos exercícios.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Registra-se a recomendação, ao tempo em que informamos que o Município irá adotar medidas indispensáveis ao cumprimento das\nexigências determinada por essa Corte Contas, de promover à inclusão na LDO dos próximos exercícios as regras para avaliar a\neficiência das ações desenvolvidas, na forma de controle operacional de custos, conforme art. 4º, inciso I, alínea “e”, da Lei\nResponsabilidade Fiscal nº 101/00.",
+      "analise_tecnica": "O ente não contestou o achado e informou que registra a recomendação e irá adotar medidas para cumprimento das exigências legais.\nDessa forma, registra-se o compromisso de correção e o achado é mantido. Relatório Técnico sobre as Prestações de Contas de Governo Municipal\nAchado 2\nClassificação do Recomendação/Determina\nNº Seção do Formulário Situação Identificada Base Normativa\nAchado ção\nDa análise do conteúdo da\nlei, identifica-se a presença\nde artigo acerca da\nautorização de realização\nde transposição,\nremanejamento ou\n2.3. Lei transferência. Diante do Atentar aos regramentos\n(III.02) § 8º do artigo 165 da Irregularidade\nOrçamentária Anual exposto, observa-se, que legais, observando o\nCF/88\nnão foi respeitado o princípio da exclusividade."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -135,6 +164,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.02",
       "tipo": "Irregularidade",
       "secao": "2. Instrumentos De Planejamento",
@@ -144,7 +175,9 @@
       "situacao": "mantido",
       "recomendacao": "Atentar aos regramentos\nlegais, observando o\nprincípio da exclusividade.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "utilização da autorização de RTT e acrescenta que a lei orçamentária do exercício de 2025 já consta sem tal dispositivo que fere o princípio de\nexclusividade.\nCabe destacar que o apontamento não é sobre a utilização do RTT e sim sobre o conteúdo da lei orçamentária. Dessa forma, a não\nutilização não altera o fato que havia uma autorização indevida na LOA de 2024. Em relação à supressão para observância do princípio de\nexclusividade no exercício seguinte, registra-se o esforço de correção. Contudo, como o objeto de análise trata-se do exercício de 2024, o achado\né mantido.",
+      "analise_tecnica": null
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -152,6 +185,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.03",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
@@ -161,7 +196,9 @@
       "situacao": "mantido",
       "recomendacao": "Atentar-se aos normativos\nvigentes do Tribunal\nacerca da documentação\nrequerida.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -169,6 +206,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.04",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
@@ -178,7 +217,9 @@
       "situacao": "mantido",
       "recomendacao": "Atentar-se aos\nnormativos vigentes do\nTribunal acerca da\ndocumentação requerida.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -186,6 +227,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.05",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
@@ -195,7 +238,9 @@
       "situacao": "mantido",
       "recomendacao": "Priorizar a implementação\nde processo informatizado\nde controle patrimonial,\nrealização de inventário de\nBens Móveis e Imóveis\npara o correto\nreconhecimento da\ndepreciação e\nrepresentação fidedigna\ndas demonstrações\ncontábeis.",
       "determinacao": null,
-      "valor_financeiro": 1871633.18
+      "valor_financeiro": 1871633.18,
+      "defesa_gestor": "inventário de bens imóveis a defesa informa dificuldade de localização e organização do acervo documental, agravada por enchentes ocorridas no\nmunicípio que danificaram arquivos físicos. Ademais, que a ausência inventários inviabilizou o cálculo da depreciação.\nTais justificativas reforçam ainda mais a necessidade de implantação de controles patrimoniais sistêmicos que não estão sujeitos a esses\nriscos de danos aos arquivos físicos.\nDiante disso, ficam consignados os esforços envidados. Contudo, considerando que o exercício objeto de análise é 2024 e o\nreconhecimento, mensuração e evidenciação de bens móveis e imóveis já era uma exigência para os municípios com até 50 mil habitantes a partir\nde 01/01/2021, conforme a Portaria STN nº 548/2015, os achados nº 3, 4 e 5 são mantidos.",
+      "analise_tecnica": null
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -203,6 +248,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.06",
       "tipo": "Inconsistência",
       "secao": "4. Aspectos Patrimoniais",
@@ -212,7 +259,9 @@
       "situacao": "afastado",
       "recomendacao": "Identificar as causas de\ntais reconhecimentos\ninconsistentes e efetuar as\ncorreções necessárias para\nque os demonstrativos\ncontábeis sejam fidedignos\ne lastreados em\ndocumentação probatória.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "vírgula na secretaria de administração, gerando erro de cálculo. Dessa forma, a achado é afastado.\nAchado 7\nClassificação do Recomendação/Determina\nNº Seção do Formulário Situação Identificada Base Normativa\nAchado ção\nO município informou que\nencerrou o exercício de\n2024 com 28,7 milhões de\nIdentificar as causas de\nreais em caixa nas\ntais reconhecimentos\ndemonstrações contábeis:\ninconsistentes e efetuar as\n4.2. Caixa e Balanço Financeiro, MCASP 10ª Edição Inconsistência\n(III.07) correções necessárias para\nEquivalentes de Balanço Patrimonial e\nque os demonstrativos\nCaixa Demonstração dos Fluxos\ncontábeis sejam\nde Caixa (peças 15, 16 e\nfidedignos e consistentes.",
+      "analise_tecnica": null
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -220,6 +269,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.07",
       "tipo": "Inconsistência",
       "secao": "4. Aspectos Patrimoniais",
@@ -229,7 +280,9 @@
       "situacao": "sanado_total",
       "recomendacao": "Identificar as causas de\ntais reconhecimentos\ninconsistentes e efetuar as\ncorreções necessárias para",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "A inconsistência entre os valores em caixa registrados nas demonstrações contábeis e os valores dos demonstrativos dos saldos\nbancários tem a informar que esta inconsistência corresponde os valores dos saldos bancários do Poder Legislativo e dos saldos\nbancários do Regime Próprio de Previdência Social em 31 de dezembro de 2024.\nNesse sentido, informamos que o (Anexo – 04) constará os extratos e resumos das demonstrações do Poder Legislativo e do RPPS\ndo Município de Atalaia/AL, a fim de evidenciar que o valor registrado nos Balanços e na Demonstração dos Fluxos de Caixa,\nconverge com o valor informado.",
+      "analise_tecnica": "A defesa apresentou esclarecimentos que a divergência identificada decorre dos saldos bancários do Legislativo e do RPPS não estarem 66\n Relatório Técnico sobre as Prestações de Contas de Governo Municipal\npresentes inicialmente no quadro enviado, bem como procedeu ao envio de quadro com os saldos respectivos. Dessa forma, o achado é sanado,\nmas registra-se a recomendação para envio do quadro de saldos bancários com a consolidação de saldos bancários do município nos próximos\nexercícios."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -237,6 +290,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.08",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
@@ -246,7 +301,9 @@
       "situacao": "sanado_parcial",
       "recomendacao": "Escriturar em registro\npróprio a Dívida Ativa\nTributária e divulgar em\nNotas Explicativas todas\nas informações acerca da\nDívida Ativa em\nobediência ao MCASP.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "havia dívida ativa não registrada na conta específica. Diante disso, o achado é sanado parcialmente, em relação somente ao saldo invertido,\npermanecendo ausência em conta específica.\nAchado 9\nClassificação do Recomendação/Determina\nNº Seção do Formulário Situação Identificada Base Normativa\nAchado ção\nEscriturar em registro\npróprio a Dívida Ativa\nTributária e divulgar em\nNão há notas explicativas\n(III.09) 4.3. Dívida Ativa MCASP 10ª Edição Impropriedade Notas Explicativas todas\nacerca de dívida ativa.\nas informações acerca da\nDívida Ativa em\nDefesa apresentada\nEm relação a este item, temos as esclarecer que do montante de R$ 606.843.545,48 registrado no grupo do Ativo não Circulante –\nCréditos a Longo Prazo, o valor de R$ 12.639.",
+      "analise_tecnica": null
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -254,6 +311,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.09",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
@@ -263,7 +322,9 @@
       "situacao": "mantido",
       "recomendacao": "Escriturar em registro\npróprio a Dívida Ativa\nTributária e divulgar em\nNotas Explicativas todas\nas informações acerca da\nDívida Ativa em",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Em relação a este item, temos as esclarecer que do montante de R$ 606.843.545,48 registrado no grupo do Ativo não Circulante –\nCréditos a Longo Prazo, o valor de R$ 12.639.631,32 corresponde a inscrição da Divida Ativa Tributária do Município, obtido dos\nregistros da área de Tributação e Arrecadação, enquanto que a diferença no valor de R$ 594.203.914,16 corresponde aos Créditos\nPrevidenciários e os Créditos para Amortização de Déficit Atuarial do RPPS.\nRegistra-se a recomendação, ao tempo em que informamos que nos próximos exercícios estaremos atendendo as exigências\ndeterminada por essa Corte Contas, de divulgar em Notas Explicativas das informações acerca da Dívida Ativa.",
+      "analise_tecnica": "A defesa informa o montante de dívida ativa tributária registrada em créditos a longo prazo e compromete-se a elaborar notas explicativas\nnos próximos exercícios. Considerando que mesmo que a DCA do exercício de 2024 tenha sido retificada em relação ao saldo invertido (achado\nnº 8), a ausência de notas explicativas permanece e é prejudicial ao controle social e transparência. Dessa forma, o achado é mantido.\nAchado 10 Relatório Técnico sobre as Prestações de Contas de Governo Municipal\nClassificação do Recomendação/Determina\nNº Seção do Formulário Situação Identificada Base Normativa\nAchado ção\nNo entanto, não foram\nenviados documentos\nEncaminhar os extratos\ncomprobatórios dos\nbancários ou ordens de\nrepasses de duodécimos\nRepasses do Resolução Normativa pagamento\n(III."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -271,6 +332,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.10",
       "tipo": "Irregularidade",
       "secao": "5. Repasses Do Duodécimo",
@@ -280,7 +343,9 @@
       "situacao": "sanado_total",
       "recomendacao": "Encaminhar os extratos\nbancários ou ordens de\npagamento\ncorrespondentes a cada\nmês do exercício de 2024.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Em cumprimento a solicitação, estamos anexando (Anexo – 06) os comprovantes dos valores repassados ao Poder Legislativo\ncorrespondente a cada mês do exercício de 2024, como as respectivas datas dos repasses, informando que o Executivo cumpriu os\nrepasses à titulo de Duodécimo, em cumprimento à Constituição Federal 1988.",
+      "analise_tecnica": "Considerando o envio da documentação probatória, verificou-se o cumprimento ao prazo constitucional de repasse do duodécimo ao\nlegislativo municipal e o achado é sanado.\nAchado 11\nClassificação do Recomendação/Determina\nNº Seção do Formulário Situação Identificada Base Normativa\nAchado ção\nLogo, conclui-se que o\nente ultrapassa o limite Retornar ao limite legal de\n6.2. Limite de Lei Complementar nº\n(III.11) máximo de despesa com Irregularidade despesa com pessoal.\nDespesa com Pessoal 101/2000\npessoal estabelecido pela\nLRF. Relatório Técnico sobre as Prestações de Contas de Governo Municipal"
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -288,6 +353,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.11",
       "tipo": "Irregularidade",
       "secao": "6. Gestão Fiscal",
@@ -297,7 +364,9 @@
       "situacao": "mantido",
       "recomendacao": "Retornar ao limite legal de\ndespesa com pessoal.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Registra-se a recomendação de que este município retorne ao limite legal de despesa com pessoal. Contudo, é imperioso destacar que\num dos maiores desafios dos gestores públicos está na capacidade de administrar e controlar gastos com pessoal. Um dos fatores que\nvem dificultando tal controle é o baixo crescimento das receitas municipais, ao lado dos elevados índice de reajustes pleiteados pelos\nsindicatos, que, na maioria dos casos, são requeridos com base no IPCA e no reajuste do Piso Nacional de determinadas categorias,\nconforme ocorre com o piso nacional dos profissionais do magistério, onde o crescimento das receitas não acompanha tais\nacréscimos na mesma proporção, ocasionando o desequilíbrio fiscal no tocante ao gasto com pessoal.",
+      "analise_tecnica": "A defesa informa que a gestão de gastos de pessoal é um desafio em decorrência de reajustes pleiteados maiores que crescimento de\nreceitas, bem como de alíquotas suplementares atribuídas ao regime de previdência própria. Ressalta ainda a redução de despesas com pessoal em\nrelação ao exercício de 2023 e que a situação encontraria respaldo na Lei complementar nº 178/2021.\nDiante disso, o ente reconhece que estava acima do limite da LRF no exercício de 2024 e que está em busca de meios para adequação\ncomo a redução em relação ao exercício de 2023 e a redução de alíquota relativa ao RPPS em 2025. Em relação ao respaldo da situação na Lei\ncomplementar 178/2021, não cabe tal afirmação, visto que, o município não ultrapassava o limite de pessoal em 2021 e, conforme redação do art."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -305,6 +374,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.12",
       "tipo": "Inconsistência",
       "secao": "6. Gestão Fiscal",
@@ -314,7 +385,9 @@
       "situacao": "sanado_total",
       "recomendacao": "Identificar as causas de\ntais reconhecimentos\ninconsistentes e efetuar as\ncorreções necessárias para\nque os demonstrativos\ncontábeis sejam\nfidedignos.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Diante disso, anexamos (Anexo – 09) o Relatório de Gestão Fiscal republicado no Sistema de Informações Contábeis e Fiscais do\nSetor Público Brasileiro – SICONFI com as correções necessárias.",
+      "analise_tecnica": "Considerando que a defesa apresentou Relatório de Gestão Fiscal retificado no SICONFI com valores consistentes com o RGF enviado na\nprestação de contas, o achado é sanado.\nAchado 13\nClassificação do Recomendação/Determina\nNº Seção do Formulário Situação Identificada Base Normativa\nAchado ção\nConclui-se que o ente não\natingiu as metas\nestabelecidas para Despesa\nTotal, Despesa Primária,\nRealizar o monitoramento\nResultado Primário e bimestral de sua Relatório Técnico sobre as Prestações de Contas de Governo Municipal\nNominal, descumpriu a arrecadação e, ao verificar\n6.6. Cumprimento Lei Complementar nº\n(III."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -322,6 +395,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.13",
       "tipo": "Impropriedade",
       "secao": "6. Gestão Fiscal",
@@ -331,7 +406,9 @@
       "situacao": "mantido",
       "recomendacao": "Realizar o monitoramento\nbimestral de sua",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "De fato, inegável a ocorrência no exercício de 2024, refletido no cumprimento das metas de resultado primário ou nominal. Tal\nconjuntura, entretanto, não derivou de desídia ou má gestão fiscal, mas de um cenário atípico e de uma decisão administrativa\npautada na supremacia do interesse público.\nO art. 9º da LRF estabelece o dever de o Poder Executivo promover a limitação de empenho e movimentação financeira caso\nverifique, ao final de um bimestre, que a realização da receita poderá não comportar o cumprimento das metas de resultado primário\nou nominal.",
+      "analise_tecnica": "A defesa informa que o não cumprimento das metas fiscais decorreu de cenário atípico e da supremacia do interesse público, ainda que\nreconheça a obrigação legal e técnica de realizar a limitação de empenho.\nAs disposições da LRF visam justamente atender ao interesse público com equilíbrio fiscal e não torne inviável a atuação pública nos\nserviços essenciais."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -339,6 +416,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.14",
       "tipo": "Irregularidade",
       "secao": "6. Gestão Fiscal",
@@ -348,7 +427,9 @@
       "situacao": "mantido",
       "recomendacao": "Observar as determinações\nlegais, com a assunção de\nobrigações apenas diante\nda existência de\ndisponibilidade financeira\ncom a gestão fiscal\nresponsável e evitar que o\nsucessor do administrador\npúblico inicie mandato\ncom obrigações\nfinanceiras não cobertas.",
       "determinacao": null,
-      "valor_financeiro": 8.5
+      "valor_financeiro": 8.5,
+      "defesa_gestor": "Como já exposto no item anterior à aplicação de um corte nas despesas resultaria na paralisação de serviços essenciais, com\nconsequências sociais graves e potencialmente irreversíveis para a população de Atalaia. A administração, portanto, agiu com base Relatório Técnico sobre as Prestações de Contas de Governo Municipal\nnos princípios da razoabilidade, da proporcionalidade e, sobretudo, da supremacia do interesse público. Esta decisão, amparada no §\n2º do art. 9º da Lei de Responsabilidade Fiscal (LRF), foi pela preservação das obrigações constitucionais e legais do Município,\nespecialmente nas áreas de saúde e educação, cujos serviços não admitem interrupção ou adiamento sem grave prejuízo à\ncomunidade.",
+      "analise_tecnica": "A defesa apresenta como justificativa para a assunção de obrigações sem disponibilidade de caixa o interesse público como no achado\nanterior.\nComo destacado também na análise técnica anterior, as disposições da LRF visam justamente atender ao interesse público com equilíbrio\nfiscal e não torne inviável a atuação pública nos serviços essenciais."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -356,6 +437,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.15",
       "tipo": "Irregularidade",
       "secao": "7.1. Educação",
@@ -365,7 +448,9 @@
       "situacao": "sanado_total",
       "recomendacao": "Observar o limite mínimo\nconstitucional.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Em relação a este item, observou-se que na analise dos valores das despesas realizadas com Manutenção e Desenvolvimento do\nEnsino (MDE), houve a dedução de Superávit Financeiro na ordem de R$ 260.591,97, que após essa dedução o valor considerado\npara fins de apuração do mínimo constitucional, totalizou R$ 27.205.583,74, que corresponde a 24,93% da base de cálculo. Todavia, Relatório Técnico sobre as Prestações de Contas de Governo Municipal\ntemos a informar que o valor dessa dedução corresponde a valor constante do saldo bancário (Anexo – 10) e que foi registrado\nindevidamente na Linha 08 da (peça 91), mas que não houve a dedução na Linha 24 desta mesma peça em razão desse valor já ter\nsido comprometido com despesas do exercício de 2023.",
+      "analise_tecnica": "A defesa apresentou esclarecimentos e comprovou que o valor apresentado como Superávit Financeiro do exercício anterior no\nDemonstrativo de Receitas e Despesas com MDE (peça 91) era na verdade um saldo bancário que foi preenchido indevidamente. Diante dos\nesclarecimentos e da evidenciação de que no demonstrativo do SIOPE de 2023 (peça 133) não constava saldo de superávit financeiro, segue nova\ntabela com as despesas com MDE demonstrando o cumprimento do limite mínimo constitucional."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -373,6 +458,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.16",
       "tipo": "Irregularidade",
       "secao": "7.1. Educação",
@@ -382,7 +469,9 @@
       "situacao": "sanado_total",
       "recomendacao": "Observar os regramentos\nde aplicação e dedução do\nsuperávit.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Com a justificativa registrada no item anterior, entendemos que a questão exposta neste item esteja superada.",
+      "analise_tecnica": "Em decorrência dos esclarecimentos anteriores e conforme análise técnica do achado nº 15, o presente achado é sanado.\nAchado 17\nClassificação do Recomendação/Determina\nNº Seção do Formulário Situação Identificada Base Normativa\nAchado ção\nAdotar medidas para\ngarantir o envio pontual\ndas informações nos\n7.2. Fundo de Atrasos no envio dos Art. 165 CF, Lei exercícios subsequentes,\nManutenção e dados ao Sistema de Complementar nº assegurando maior\n(III.17) Desenvolvimento da Informações sobre 101/2000, Lei nº Impropriedade transparência na gestão\nEducação Básica – Orçamentos Públicos em 9.394/1996 e Portaria orçamentária da educação\nFUNDEB Educação (SIOPE). MEC nº 844/2008 e evitando riscos de\nsanções administrativas e\nfinanceiras."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -390,6 +479,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.17",
       "tipo": "Impropriedade",
       "secao": "7.2. Fundo De Manutenção E Desenvolvime Nto Da Educação Básica – Fundeb",
@@ -399,7 +490,9 @@
       "situacao": "mantido",
       "recomendacao": "Adotar medidas para\ngarantir o envio pontual\ndas informações nos\nexercícios subsequentes,\nassegurando maior\ntransparência na gestão\norçamentária da educação\ne evitando riscos de\nsanções administrativas e\nfinanceiras.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Em relação a este tópico Temos a informar que a publicação do SIOPE depende da homologação e/ou validação pelo Gestor da\nEducação e do respectivo Conselho. No entanto, as informações ao SIOPE, encontram-se regular por homologação de dados no\nprazo legal do exercício em questão, podendo está constatação ser verificada no portal do Fundo Nacional de Desenvolvimento da\nEducação.\nAdemais, registramos a recomendação de que o município adote medidas para garantir o envio pontual das informações nos\nexercícios subsequentes, assegurando maior transparência na gestão orçamentária da educação e evitando riscos de sanções\nadministrativas e financeiras.",
+      "analise_tecnica": "A defesa alega que as informações ao SIOPE estão regulares por homologação no prazo legal e que afirmação poderia ser verificada no\nportal do Fundo Nacional de Desenvolvimento da Educação. No entanto, a consulta ao portal contradita a defesa, pois ao consultar o portal Relatório Técnico sobre as Prestações de Contas de Governo Municipal\nobserva-se que foi homologada em atraso, conforme figura a seguir:\nFigura – Consulta ao SIOPE\nFonte: SIOPE Disponível em: :https://www.fnde.gov.br/siope/recibosTransmissao.do?tipoDeRecibo=1&cod_uf=12&cod_uf_mun=27&municipios=270040&consultar=Consultar.\nAcesso em 16 out. 2025.\nDiante disso, o achado é mantido."
     },
     {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -407,6 +500,8 @@
       "municipio": "Atalaia",
       "orgao": "Prefeitura Municipal de Atalaia",
       "auditor": null,
+      "relator": "MARIA CLEIDE COSTA BESERRA",
+      "numero_processo": "TC/1.006982/2025",
       "codigo": "III.18",
       "tipo": "Impropriedade",
       "secao": "7.3. Saúde",
@@ -416,7 +511,9 @@
       "situacao": "sanado_total",
       "recomendacao": "Adotar medidas\nadministrativas e\noperacionais para garantir\no envio tempestivo dos\ndados ao Sistema de\nInformações sobre\nOrçamentos Públicos em\nSaúde (SIOPS), a fim de\nassegurar a transparência\nda gestão fiscal e evitar\nsanções como a suspensão\nde transferências\nconstitucionais e legais da\nUnião.",
       "determinacao": null,
-      "valor_financeiro": null
+      "valor_financeiro": null,
+      "defesa_gestor": "Em relação ao atraso no envio do SIOPS o atraso ocorreu por conta da intempestividade na disponibilização da versão de\ntransmissão por parte do Ministério da Saúde, que pode ser comprovado através do Comunicado CSIOPS 007/2024, (Anexo – 121),\ninformando que em 22/08/2024 foram disponibilizados os arquivos de estrutura para preenchimento e transmissão dos dados\nreferentes ao 1º bimestre de 2024; assim como nova versão do programa SIOPS.\nSegue também o Comunicado CSIOPS 007/2024, (Anexo – 13), que assim informa: “alguns sistemas do Ministério da Saúde\nficaram fora do ar no período de 27 a 29 de novembro de 2024, dentre os quais o SIOPS. Entretanto, apesar dos sistemas terem sidos\nrestabelecidos, a partir do dia 29 de novembro, ainda não foram restauradas todas as funcionalidades do SIOPS”.",
+      "analise_tecnica": "Considerando que a defesa esclareceu e comprovou que atraso no envio das informações ao SIOPS, durante o exercício de 2024, decorreu\nde problemas técnicos de sistema do Ministério da Saúde, impossibilitando a homologação tempestiva, o achado é sanado. Relatório Técnico sobre as Prestações de Contas de Governo Municipal"
     }
   ],
   "agregacoes": {
