@@ -1,101 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>Sobre — Portal de Prestações de Contas (TCE-AL)</title>
-<link rel="stylesheet" href="style.css" />
-<script src="app.js"></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Sobre — Portal PCG · TCE-AL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<header class="topbar">
-  <h1>Portal de Prestações de Contas — TCE-AL</h1>
-  <div class="sub">Banco de Achados e análises sobre os relatórios conclusivos</div>
-</header>
-<nav class="menu">
-  <a href="index.html">Visão geral</a>
-  <a href="achados.html">Banco de Achados</a>
-  <a href="municipios.html">Por município</a>
-  <a href="secoes.html">Por seção</a>
-  <a href="defesa.html">Defesa do gestor</a>
-  <a href="insights.html">Insights</a>
-  <a href="sobre.html">Sobre</a>
-</nav>
+<div class="layout">
 
-<main>
-  <div class="card">
-    <h2>O que é este portal?</h2>
-    <p>
-      O portal consolida, em um único lugar, as informações relevantes dos
-      <strong>relatórios conclusivos de prestações de contas</strong> publicados pelo
-      Tribunal de Contas do Estado de Alagoas. O destaque é o
-      <a href="achados.html">Banco de Achados</a>: cada irregularidade, impropriedade
-      ou inconsistência identificada pelo auditor (códigos no padrão
-      <code>III.NN</code>) vira um registro estruturado, pesquisável e cruzável.
-    </p>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">TC</div>
+      <div class="brand-text"><strong>TCE-AL</strong><span>Portal PCG</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Principal</div>
+      <a href="index.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Visão Geral
+      </a>
+      <a href="achados.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="3" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="3" cy="18" r="1.5" fill="currentColor" stroke="none"/></svg>
+        Banco de Achados
+      </a>
+      <a href="municipios.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Por Município
+      </a>
+      <a href="secoes.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        Por Seção
+      </a>
+      <div class="nav-section-label">Análise</div>
+      <a href="defesa.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Defesa do Gestor
+      </a>
+      <a href="insights.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        Insights
+      </a>
+      <a href="sobre.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        Sobre
+      </a>
+    </nav>
+    <div class="sidebar-bottom">Banco de Achados<br><span>TCE-AL · 2024–2025</span></div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="main-area">
+    <div class="topbar">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <span class="topbar-title">Sobre</span>
+      <span class="topbar-sub" id="topbar-sub"></span>
+    </div>
+    <main>
+      <div class="sobre-grid">
+        <div class="sobre-card sobre-full">
+          <h2>O que é este portal?</h2>
+          <p>
+            O portal consolida, em um único lugar, as informações relevantes dos
+            <strong>relatórios conclusivos de prestações de contas</strong> publicados pelo
+            Tribunal de Contas do Estado de Alagoas. O destaque é o
+            <a href="achados.html">Banco de Achados</a>: cada irregularidade, impropriedade
+            ou inconsistência identificada pelo auditor (códigos no padrão
+            <code>III.NN</code>) vira um registro estruturado, pesquisável e cruzável.
+          </p>
+        </div>
+
+        <div class="sobre-card">
+          <h2>Como os dados são extraídos</h2>
+          <ol>
+            <li><strong>Relatórios pós-2024</strong> seguem um modelo padronizado em tabela. Um
+            parser determinístico lê a tabela diretamente do PDF — sem inteligência
+            artificial — garantindo alta precisão.</li>
+            <li><strong>Relatórios anteriores</strong> têm formato livre. O texto é enviado para um
+            modelo de linguagem (Gemini 2.0 Flash, em camada gratuita) que devolve
+            um JSON validado contra um <em>schema</em> rígido.</li>
+            <li>Toda extração passa por uma etapa de <strong>revisão humana</strong> via planilha CSV
+            antes de ser publicada no portal. Apenas linhas marcadas como
+            <code>revisado=true</code> entram nos indicadores.</li>
+          </ol>
+        </div>
+
+        <div class="sobre-card">
+          <h2>Glossário</h2>
+          <dl>
+            <dt>Achado</dt>
+            <dd>Situação de irregularidade, impropriedade ou inconsistência identificada pelo auditor durante a análise da prestação de contas.</dd>
+            <dt>Sanado totalmente</dt>
+            <dd>Após a defesa do gestor, o achado foi considerado totalmente esclarecido ou corrigido.</dd>
+            <dt>Sanado parcialmente</dt>
+            <dd>Parte do achado foi esclarecida; parte permaneceu.</dd>
+            <dt>Afastado</dt>
+            <dd>O auditor concluiu que o achado original não procede.</dd>
+            <dt>Mantido</dt>
+            <dd>O achado permanece após a análise da defesa.</dd>
+          </dl>
+        </div>
+
+        <div class="sobre-card">
+          <h2>Limitações conhecidas</h2>
+          <ul>
+            <li>O Banco de Achados depende da qualidade do texto do PDF. PDFs escaneados (sem OCR) ainda não são processados.</li>
+            <li>Metadados como município, gestor e auditor podem ficar em branco quando não estiverem em formato reconhecível na capa do relatório.</li>
+            <li>Para relatórios pré-2024, a inferência de seção é feita pela posição textual do código <code>III.NN</code>; em casos ambíguos, a revisão humana corrige.</li>
+            <li>O <strong>parecer prévio do relator</strong> ainda não está incorporado — é a próxima fase do projeto.</li>
+          </ul>
+        </div>
+
+        <div class="sobre-card sobre-full">
+          <h2>Atualização</h2>
+          <p>
+            O banco é alimentado de forma incremental. Cada novo relatório
+            conclusivo é processado, revisado e publicado por meio de um pipeline
+            executável a partir da pasta do projeto. A última geração desta página
+            está datada em <span id="gerado-em">—</span>.
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer class="rodape">Dados extraídos dos relatórios conclusivos publicados pelo TCE-AL</footer>
   </div>
+</div>
 
-  <div class="card">
-    <h2>Como os dados são extraídos</h2>
-    <ol>
-      <li><strong>Relatórios pós-2024</strong> seguem um modelo padronizado em tabela. Um
-      parser determinístico lê a tabela diretamente do PDF — sem inteligência
-      artificial — garantindo alta precisão.</li>
-      <li><strong>Relatórios anteriores</strong> têm formato livre. O texto é enviado para um
-      modelo de linguagem (Gemini 2.0 Flash, em camada gratuita) que devolve
-      um JSON validado contra um <em>schema</em> rígido.</li>
-      <li>Toda extração passa por uma etapa de <strong>revisão humana</strong> via planilha CSV
-      antes de ser publicada no portal. Apenas linhas marcadas como
-      <code>revisado=true</code> entram nos indicadores.</li>
-    </ol>
-  </div>
-
-  <div class="card">
-    <h2>Glossário</h2>
-    <dl>
-      <dt><strong>Achado</strong></dt>
-      <dd>Situação de irregularidade, impropriedade ou inconsistência identificada pelo auditor durante a análise da prestação de contas.</dd>
-      <dt><strong>Sanado totalmente</strong></dt>
-      <dd>Após a defesa do gestor, o achado foi considerado totalmente esclarecido ou corrigido.</dd>
-      <dt><strong>Sanado parcialmente</strong></dt>
-      <dd>Parte do achado foi esclarecida; parte permaneceu.</dd>
-      <dt><strong>Afastado</strong></dt>
-      <dd>O auditor concluiu que o achado original não procede.</dd>
-      <dt><strong>Mantido</strong></dt>
-      <dd>O achado permanece após a análise da defesa.</dd>
-    </dl>
-  </div>
-
-  <div class="card">
-    <h2>Limitações conhecidas</h2>
-    <ul>
-      <li>O Banco de Achados depende da qualidade do texto do PDF. PDFs escaneados (sem OCR) ainda não são processados.</li>
-      <li>Metadados como município, gestor e auditor podem ficar em branco quando não estiverem em formato reconhecível na capa do relatório.</li>
-      <li>Para relatórios pré-2024, a inferência de seção é feita pela posição textual do código <code>III.NN</code>; em casos ambíguos, a revisão humana corrige.</li>
-      <li>O <strong>parecer prévio do relator</strong> ainda não está incorporado — é a próxima fase do projeto.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Atualização</h2>
-    <p>
-      O banco é alimentado de forma incremental. Cada novo relatório
-      conclusivo é processado, revisado e publicado por meio de um pipeline
-      executável a partir da pasta do projeto. A última geração desta página
-      está datada em <span id="gerado-em">—</span>.
-    </p>
-  </div>
-</main>
-
-<footer class="rodape">
-  Dados extraídos dos relatórios conclusivos publicados pelo TCE-AL.
-</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script src="app.js"></script>
 <script>
 (async () => {
   try {
     const d = await carregarDados();
     document.getElementById("gerado-em").textContent = new Date(d.gerado_em).toLocaleString("pt-BR");
+    document.getElementById("topbar-sub").textContent = "Atualizado em " + new Date(d.gerado_em).toLocaleDateString("pt-BR");
   } catch {}
 })();
 </script>
