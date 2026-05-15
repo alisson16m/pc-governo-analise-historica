@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-15T14:47:14+00:00",
+  "gerado_em": "2026-05-15T14:55:38+00:00",
   "versao": "1.1.0",
   "relatorios": [
     {
@@ -4273,6 +4273,74 @@
         "mantido": 16,
         "sanado_total": 5,
         "afastado": 1
+      }
+    },
+    "por_municipio_por_ano": {
+      "2023": {
+        "por_municipio": {
+          "Campestre": 29,
+          "Boca da Mata": 28,
+          "Atalaia": 23,
+          "Arapiraca": 22,
+          "Anadia": 21,
+          "Água Branca": 18,
+          "Belém": 10,
+          "Cajueiro": 8,
+          "Piranhas": 5
+        },
+        "situacao_por_municipio": {
+          "Anadia": {
+            "mantido": 9,
+            "sanado_total": 9,
+            "afastado": 3
+          },
+          "Atalaia": {
+            "mantido": 14,
+            "sanado_total": 9
+          },
+          "Belém": {
+            "sanado_total": 9,
+            "mantido": 1
+          },
+          "Cajueiro": {
+            "mantido": 8
+          },
+          "Boca da Mata": {
+            "mantido": 28
+          },
+          "Água Branca": {
+            "mantido": 13,
+            "afastado": 2,
+            "sanado_total": 3
+          },
+          "Campestre": {
+            "mantido": 12,
+            "sanado_total": 12,
+            "sanado_parcial": 5
+          },
+          "Piranhas": {
+            "sanado_total": 4,
+            "mantido": 1
+          },
+          "Arapiraca": {
+            "mantido": 16,
+            "sanado_total": 5,
+            "afastado": 1
+          }
+        }
+      },
+      "2024": {
+        "por_municipio": {
+          "Atalaia": 18
+        },
+        "situacao_por_municipio": {
+          "Atalaia": {
+            "mantido": 10,
+            "afastado": 1,
+            "sanado_total": 6,
+            "sanado_parcial": 1
+          }
+        }
       }
     },
     "por_opiniao": {

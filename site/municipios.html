@@ -70,6 +70,12 @@
       <span class="topbar-sub" id="topbar-sub"></span>
     </div>
     <main>
+      <div class="overview-filters">
+        <label>Exercício
+          <div class="year-pills" id="year-pills"></div>
+        </label>
+      </div>
+
       <div class="card">
         <h2>Achados por município <span class="muted" id="cont"></span></h2>
         <div class="chart-box tall"><canvas id="chart-mun"></canvas></div>
@@ -99,37 +105,67 @@
 <script>
 (async () => {
   const d = await carregarDados();
-  const por = d.agregacoes.por_municipio || {};
-  const sit = d.agregacoes.situacao_por_municipio || {};
-  const itens = Object.entries(por);
-  document.getElementById("cont").textContent = `(${itens.length} municípios)`;
-  document.getElementById("topbar-sub").textContent = itens.length + " municípios";
+  const ppa = d.agregacoes.por_municipio_por_ano || {};
+  const anos = Object.keys(ppa).sort();
 
-  if (itens.length === 0) {
+  if (anos.length === 0) {
     document.querySelector("main").innerHTML = `<div class="empty"><h3>Sem dados</h3></div>`;
     return;
   }
 
-  const top = itens.slice(0, 20);
-  montarChartBarras(document.getElementById("chart-mun"),
-    top.map(([k]) => k),
-    top.map(([, v]) => v),
-    "Achados", "#1C588C", true);
+  // Seletor de exercício
+  const pillsEl = document.getElementById("year-pills");
+  const anoAtivo = anos[anos.length - 1];
+  pillsEl.innerHTML = anos.map(a =>
+    `<button class="year-pill${a === anoAtivo ? ' active' : ''}" data-ano="${a}">${a}</button>`
+  ).join("");
 
-  const linhas = itens.map(([m, total]) => {
-    const s = sit[m] || {};
-    const sane = (s.sanado_total || 0) + (s.sanado_parcial || 0) + (s.afastado || 0);
-    const mant = s.mantido || 0;
-    const tx = total ? (sane / total * 100).toFixed(1) + "%" : "—";
-    return `<tr>
-      <td>${m}</td>
-      <td style="text-align:right">${fmtNum(total)}</td>
-      <td style="text-align:right">${fmtNum(sane)}</td>
-      <td style="text-align:right">${fmtNum(mant)}</td>
-      <td style="text-align:right">${tx}</td>
-    </tr>`;
-  }).join("");
-  document.getElementById("tb-mun").innerHTML = linhas;
+  let chartInst = null;
+
+  function renderAno(ano) {
+    const dadosAno = ppa[ano] || {};
+    const por = dadosAno.por_municipio || {};
+    const sit = dadosAno.situacao_por_municipio || {};
+    const itens = Object.entries(por).sort((a, b) => b[1] - a[1]);
+
+    document.getElementById("cont").textContent = `(${itens.length} municípios — exercício ${ano})`;
+    document.getElementById("topbar-sub").textContent = `${itens.length} municípios · ${ano}`;
+
+    // Gráfico
+    const canvas = document.getElementById("chart-mun");
+    if (chartInst) { chartInst.destroy(); chartInst = null; }
+    const top = itens.slice(0, 20);
+    chartInst = montarChartBarras(canvas,
+      top.map(([k]) => k),
+      top.map(([, v]) => v),
+      "Achados", "#1C588C", true);
+
+    // Tabela
+    const linhas = itens.map(([m, total]) => {
+      const s = sit[m] || {};
+      const sane = (s.sanado_total || 0) + (s.sanado_parcial || 0) + (s.afastado || 0);
+      const mant = s.mantido || 0;
+      const tx = total ? (sane / total * 100).toFixed(1) + "%" : "—";
+      return `<tr>
+        <td>${m}</td>
+        <td style="text-align:right">${fmtNum(total)}</td>
+        <td style="text-align:right">${fmtNum(sane)}</td>
+        <td style="text-align:right">${fmtNum(mant)}</td>
+        <td style="text-align:right">${tx}</td>
+      </tr>`;
+    }).join("");
+    document.getElementById("tb-mun").innerHTML = linhas;
+  }
+
+  pillsEl.addEventListener("click", e => {
+    const btn = e.target.closest(".year-pill");
+    if (!btn) return;
+    pillsEl.querySelectorAll(".year-pill").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderAno(btn.dataset.ano);
+  });
+
+  renderAno(anoAtivo);
 })();
 </script>
 </body>

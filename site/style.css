@@ -163,6 +163,26 @@ body {
 }
 .btn-limpar:hover { border-color: var(--accent); color: var(--accent); }
 
+.year-pills { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.25rem; }
+.year-pill {
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.year-pill:hover { border-color: var(--primary); color: var(--primary); }
+.year-pill.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
 .sidebar-overlay {
   display: none;
   position: fixed; inset: 0;
