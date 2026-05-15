@@ -110,9 +110,10 @@ function montarChartBarras(canvas, labels, valores, titulo, cor, horizontal) {
 }
 
 function montarChartPizza(canvas, mapa) {
-  const labels = Object.keys(mapa).map(k => SITUACAO_LABEL[k] || k);
-  const valores = Object.values(mapa);
-  const cores = Object.keys(mapa).map(k => SITUACAO_CORES[k] || "#888");
+  const entries = Object.entries(mapa).sort((a, b) => b[1] - a[1]);
+  const labels = entries.map(([k]) => SITUACAO_LABEL[k] || k);
+  const valores = entries.map(([, v]) => v);
+  const cores = entries.map(([k]) => SITUACAO_CORES[k] || "#888");
   const total = valores.reduce((a, b) => a + b, 0);
 
   return new Chart(canvas, {

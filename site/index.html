@@ -107,6 +107,11 @@
         </div>
       </div>
 
+      <div class="card">
+        <h2>Relatórios por relator</h2>
+        <div class="chart-box tall"><canvas id="chart-relator"></canvas></div>
+      </div>
+
       <div class="row">
         <div class="card">
           <h2>Top 10 tipos de achado</h2>
@@ -200,11 +205,13 @@ function _renderizar(achados, relatorios) {
   const anosKeys = Object.keys(ag.por_ano).sort();
   _mk("chart-ano", c => montarChartBarras(c, anosKeys, anosKeys.map(a => ag.por_ano[a]), "Achados", "#1C588C", false));
 
-  // Gráfico opinião do auditor (cruzado com os relatórios dos achados filtrados)
+  // Relatórios correspondentes aos achados filtrados
   const relsIds = new Set(achados.map(a => a.relatorio_id).filter(Boolean));
+  const relsFiltrados = relatorios.filter(r => relsIds.has(r.id));
+
+  // Gráfico opinião do auditor
   const por_opiniao = {};
-  for (const r of relatorios) {
-    if (!relsIds.has(r.id)) continue;
+  for (const r of relsFiltrados) {
     const op = r.opiniao_auditoria || "Não identificada";
     por_opiniao[op] = (por_opiniao[op] || 0) + 1;
   }
@@ -234,6 +241,19 @@ function _renderizar(achados, relatorios) {
       },
     });
   });
+
+  // Gráfico relatórios por relator
+  const por_relator = {};
+  for (const r of relsFiltrados) {
+    const rel = r.relator || "Não identificado";
+    if (rel === "Não identificado") continue;
+    por_relator[rel] = (por_relator[rel] || 0) + 1;
+  }
+  const topRelatores = Object.entries(por_relator).sort((a, b) => b[1] - a[1]).slice(0, 15);
+  _mk("chart-relator", c => montarChartBarras(c,
+    topRelatores.map(([k]) => k.length > 35 ? k.slice(0, 33) + "…" : k),
+    topRelatores.map(([, v]) => v),
+    "Relatórios", "#1C588C", true));
 
   // Gráficos tipo e seção
   const tipos = Object.entries(ag.por_tipo).sort((a,b) => b[1]-a[1]).slice(0, 10);
