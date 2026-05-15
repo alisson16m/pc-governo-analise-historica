@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-15T18:38:14+00:00",
+  "gerado_em": "2026-05-15T18:54:49+00:00",
   "versao": "1.1.0",
   "relatorios": [
     {
@@ -51,8 +51,8 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.005949/2024",
       "opiniao_auditoria": "Regular com Ressalvas",
-      "fonte_extracao": "pendente_legacy",
-      "n_achados": 0
+      "fonte_extracao": "gemini_legacy",
+      "n_achados": 18
     },
     {
       "id": "4f2df3670d4b7af12922bed6b20ba7df6b19f23369dd9b1c933ae18c45936e0b",
@@ -1225,6 +1225,366 @@
       "determinacao": "Solicita-se esclarecimentos por parte do gestor em âmbito de defesa.",
       "valor_financeiro": null,
       "defesa_gestor": "apenas com um servidor comissionado, situação de caráter provisório, em desconformidade com o disposto no art. 2º da Instrução Normativa nº\n03/2011 – TCE/AL.\nO ente informou que adotou providências para a regularização definitiva da unidade de controle interno, mediante a realização de concurso\npúblico com previsão de vaga específica para o cargo de Controlador Interno, em provimento efetivo.\nEm verificação realizada por esta unidade técnica no Portal da Transparência do Município, constatou-se que já houve a nomeação de\nservidor efetivo oriundo do referido concurso público, qual seja, Sr. Gleyson Jorge Holanda Ribeiro, para o exercício das atribuições de Controle\nInterno, evidenciando o atendimento às exigências normativas desta Corte de Contas.",
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.01",
+      "tipo": "Irregularidade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Art. 48, “b”, da Lei nº 4.320/1964 e ao art. 1º, § 1º, da LRF.",
+      "descricao": "Execução de despesa orçamentária (empenho) no valor de R$ 20.972.897,25 sem a evidência de receitas orçamentárias correspondentes.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": null,
+      "determinacao": "Determina-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa irregularidade.",
+      "valor_financeiro": 20972897.25,
+      "defesa_gestor": "No Item III.01, Balanço Orçamentário, do referido Relatório de Análise de Prestação\nde Contas, o Resultado Orçamentário levantado na Imagem 1 - Demonstrativo de\nResultado Orçamentário, foi deficitário. Justificando o fato, após analisarmos o Anexo\nXII - Balanço Orçamentário, parte integrante da Prestação de Contas do exercício de\n2023, encaminhada tempestivamente ao TCE/AL, podemos visualizar que a despesa\nempenhada figura maior que a receita arrecadada. Porém, examinando o quadro\nabaixo, podemos perceber que do total das despesas empenhadas e não pagas de R$\n20.972.897,25, foram liquidadas R$ 7.337.837,19, e que estas, foram inscritas em\nrestos a pagar processados. Entretanto, o ocorrido se deu pela obediência ao Princípio\nda Competência da despesa já que R$ 5.908.",
+      "analise_tecnica": "Em âmbito de defesa, o jurisdicionado apresenta um quadro demonstrativo do Balanço\nOrçamentário atinente às despesas (Imagem 1 – Destaque do Balanço Orçamentário 2023) e\nafirma que, do total de R$ 20.972.897,25 correspondente às despesas empenhadas e não pagas\nno exercício, R$ 7.337.837,19 foram liquidadas e inscritas em restos a pagar processados.\nAcrescenta o jurisdicionado que tal situação se deu pela obediência ao Princípio da\nCompetência da despesa, na medida em que R$ 5.908.851,76 destas despesas empenhadas e\nliquidadas a pagar, são do grupo de Pessoal e Encargos Sociais, inclusive obrigações patronais\nintraorçamentárias e Amortização da Dívida; causando, assim, o referido déficit orçamentário."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.02",
+      "tipo": "Impropriedade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Infringência à norma contábil, tendo em vista a não atualização das receitas em face da utilização do excesso de arrecadação como recurso para abertura de créditos adicionais.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor público proceda à atualização das receitas no Balanço Orçamentário e encaminhe o referido demonstrativo no processo de Contraditório e Ampla Defesa.",
+      "valor_financeiro": null,
+      "defesa_gestor": "A impropriedade demonstrada no Item III.02 ocorreu devido a inconsistência no\nsoftware de contabilidade nos impossibilitando de proceder com a devida atualização\nda receita. Dessa forma, estamos encaminhando em anexo cópias do Anexo XII -\nBalanço Orçamentário, devidamente retificado, conforme determinação.",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado informa que o apontamento em tela ocorreu\ndevido à inconsistência no software de contabilidade, impossibilitando-o de proceder à devida\natualização da receita. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal\nDestarte, considerando que o jurisdicionado encaminhou cópia do Anexo XII -\nBalanço Orçamentário devidamente retificado (peça 73), considera-se sanado o presente\napontamento."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.03",
+      "tipo": "Inconsistência",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Confrontado o valor total da dotação inicial das despesas constante da LOA 2023 com o montante evidenciado no Balanço Orçamentário, verifica-se uma inconsistência na quantia de R$ 1.100.000,00. Tal fato ocorreu na medida em que o ente não computou o valor referente à Reserva de Contingência no somatório das despesas fixadas para o exercício.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor público proceda à correção dessa inconsistência no Balanço Orçamentário e encaminhe tal demonstrativo no processo de Contraditório e Ampla Defesa.",
+      "valor_financeiro": 1100000.0,
+      "defesa_gestor": "No tocante a inconsistência evidenciada no Item III.03, reconhecemos que o erro\naconteceu na geração do referido demonstrativo, ocorrido devido a uma falha na\nparametrização pelo desenvolvedor do software. Assim, levando em consideração que\no documento a ser retificado é o mesmo do Item III.02, o erro citado virá retificado\nno cumprimento da determinação.",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado informa que o apontamento em tela ocorreu\ndevido a uma falha no software de contabilidade.\nDestarte, considerando que o jurisdicionado encaminhou cópia do Anexo XII -\nBalanço Orçamentário devidamente retificado (peça 73), considera-se sanado o presente\napontamento.\nSeção do Base Classificação\nNº Situação identificada Recomendação/Determinação\nRelatório Normativa do Achado\nVerifica-se que a fonte de\nrecursos ‘‘26210000 - Determina-se que, no\nTransferências Fundo a processo de\n3. Aspectos Fundo de Recursos do SUS Art. 43, §2º, Contraditório e Ampla\nIII.04 Orçamentários e provenientes do Governo da Lei nº Impropriedade Defesa, o gestor público\nFinanceiros Estadual’’ não evidenciou 4.320/64."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.04",
+      "tipo": "Impropriedade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Art. 43, §2º, da Lei nº 4.320/64.",
+      "descricao": "Verifica-se que a fonte de recursos “26210000 - Transferências Fundo a Fundo de Recursos do SUS provenientes do Governo Estadual” não evidenciou superávit financeiro no exercício de 2022; não justificando, pois, sua utilização para abertura do referido crédito suplementar.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "valor_financeiro": null,
+      "defesa_gestor": "No que diz respeito a utilização de superávit financeiro da fonte de recurso 2621 -\nTransferências Fundo a Fundo de Recursos do SUS provenientes do Governo\nEstadual, para abertura de crédito adicional suplementar, sem sua devida evidenciação\nem 2022, evidenciado no Item III.04, esclarecemos que na Prestação de Contas do\nexercício 2022 o código utilizado para a citada fonte de recurso foi 0426. A transição\nde um código para outro aconteceu em 2023.\nÉ válido ressaltar que em 2022 a utilização dos códigos de fonte de recursos\nestabelecidos na Portaria nº 710 era facultativa, como determinado no inciso II, art. 3º\nda Portaria Conjunta STN/SOF nº 20, de 23 de fevereiro de 2021:\nArt.",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado informa na Prestação de Contas do exercício\n2022 fora utilizado o código 0426 para a fonte de recurso referente a ‘‘Transferências Fundo a\nFundo de Recursos do SUS provenientes do Governo Estadual’’. E que a transição para o\ncódigo 2621 aconteceu apenas em 2023.\nOutrossim, o jurisdicionado evidencia que no exercício de 2022 a utilização dos\ncódigos de fonte de recursos estabelecidos na Portaria nº 710 eram facultativos, conforme\ndeterminado no art. 3º, II, da Portaria Conjunta STN/SOF nº 20, de 23 de fevereiro de 2021.\nAfirma ainda o jurisdicionado que a impossibilidade de evidenciar, em 2022, superávit\nfinanceiro na fonte 2621 foi causada pela diferença dos códigos utilizados em cada exercício."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.05",
+      "tipo": "Impropriedade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Art. 43, §3º, da Lei nº 4.320/64.",
+      "descricao": "Abertura de créditos suplementares no montante de R$ 20.243.226,60 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": null,
+      "determinacao": "Determina-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "valor_financeiro": 20243226.6,
+      "defesa_gestor": "Quanto ao controle de abertura de créditos adicionais suplementares, item III.5,\nusando a fonte de excesso de arrecadação, informamos que fazemos o\nacompanhamento do excesso de arrecadação POR FONTE DE RECURSO, dessa\nforma evitando que a frustração de arrecadação de fontes distintas e com objeto\nespecífico não prejudique o excesso de outras. Assim, se o FUNDEB tiver uma\nfrustração de arrecadação, este fato não deve prejudicar o excesso das transferências\ndo FNAS, por exemplo. A imagem 3 abaixo demonstra o citado controle da utilização\ndo excesso de arrecadação por fonte de recurso e as respectivas receitas orçamentárias\norigem do excesso.\nImagem 3 – Execução orçamentária por excesso de Arrecadação por fonte.",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado informa que faz o acompanhamento do excesso\nde arrecadação por fonte de recurso, dessa forma evitando que a frustração de arrecadação de\nfontes distintas e com objeto específico não prejudique o excesso de outras. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal\nAdemais, é apresentado um quando evidenciando a apuração do excesso de\narrecadação por fonte de recurso e as respectivas receitas orçamentárias que deram originaram\nao excesso.\nEm primeira análise é oportuno salientar que, nos documentos inicialmente\nencaminhados pelo jurisdicionado na presente Prestação de Contas, não fora evidenciada a\napuração do excesso de arrecadação por Fonte de Recursos; restando, pois, prejudicada a\nreferida apuração."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.06",
+      "tipo": "Impropriedade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Art. 43, §3º, da Lei nº 4.320/64.",
+      "descricao": "Abertura de crédito especial no montante de R$ 544.085,38 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso de arrecadação correspondente.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "valor_financeiro": 544085.38,
+      "defesa_gestor": "As duas últimas fontes, 715 e 716, do quadro acima, foram utilizadas para abertura\nde Crédito Adicional Especial. Assim, evidenciamos o excesso por receitas\narrecadadas e contraditamos o Item III.06.",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado informa que a abertura do referido crédito\nespecial se deu mediante excesso de arrecadação verificado nas fontes de recurso 715 e 716,\nconstantes do quadro de Execução orçamentária por excesso de Arrecadação por fonte.\nConforme alhures mencionado, no exercício em apreço houve abertura de crédito\nespecial, na quantia de R$ 544.085,38, autorizado pela Lei nº 2024/2023 e aberto mediante\nDecreto nº 286/2023, utilizando como recurso o excesso de arrecadação indicado nas seguintes\nfontes: ‘‘17150000 Transferências Destinadas ao Setor Cultural - LC nº 195/2022 - Art. 5º -\nAudiovisual’’, na quantia de R$ 386.361,70; e ‘‘17160000 Transferências Destinadas ao Setor\ncultural - LC nº 195/2022 - Art. 8º - Demais Setores da Cultura’’, no valor de R$: 157.723,68."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.07",
+      "tipo": "Impropriedade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Resolução Normativa nº 01/2016 - TCE/AL",
+      "descricao": "Não encaminhamento das leis que autorizaram a abertura dos créditos especiais, junto ao rol de documentos que compõem a presente prestação de contas.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que o gestor público encaminhe as referidas leis no processo de Contraditório e Ampla Defesa.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "Em atendimento ao recomendado no Item III.07, estamos encaminhando junto a esta\ndefesa o referido documento faltante na prestação de contas. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado encaminhou as cópias das leis que autorizaram\na abertura dos créditos especiais (peças 75); restando, portando, sanado o presente\napontamento.\nSeção do Base Classificação\nNº Situação identificada Recomendação/Determinação\nRelatório Normativa do Achado\nDetermina-se que o\nManual de gestor público proceda\nIncompatibilidade entre o\nContabilidade à correção dessa\nsaldo de caixa\nAplicada ao inconsistência no\nevidenciado no\nSetor Público Demonstrativo da\nDemonstrativo da\n4. Aspectos (MCASP - 9ª Disponibilidade de\nIII."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.08",
+      "tipo": "Inconsistência",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) e Manual de Demonstrativos Fiscais (MDF 13ª edição).",
+      "descricao": "Incompatibilidade entre o saldo de caixa evidenciado no Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar e aquele evidenciado nos demais demonstrativos do ente.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor público proceda à correção dessa inconsistência no Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar e encaminhe tal demonstrativo no processo de Contraditório e Ampla Defesa.",
+      "valor_financeiro": null,
+      "defesa_gestor": "A diferença entre o Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar\ne os demais demonstrativos se deu devido a uma inconsistência do software na\ngeração do relatório. Em atendimento a determinação no Item III.08, estamos\nencaminhando junto a esta defesa o referido documento faltante na prestação de contas\ndevidamente corrigido.",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado encaminhou o Demonstrativo da\nDisponibilidade de Caixa e dos Restos a Pagar retificado (peça 76). Convém ressaltar que o\nreferido demonstrativo evidencia um saldo de caixa na importância de R$ 19.333.104,72,\nenquanto o saldo de caixa nos demais demonstrativos do ente corresponde ao valor de R$\n19.333.108,72; diferença, todavia, considerada imaterial por esta unidade técnica.\nDiante do exposto, considera-se sanado o presente apontamento.\nSeção do Base Classificação\nNº Situação identificada Recomendação/Determinação\nRelatório Normativa do Achado\nInconsistência entre o Resolução Recomenda-se que o\nmontante constante do Normativa nº jurisdicionado\n4. Aspectos\nIII."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.09",
+      "tipo": "Inconsistência",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": "Resolução Normativa nº 01/2016 desta Corte de Contas.",
+      "descricao": "Inconsistência entre o montante constante do Quadro Demonstrativo dos Saldos Bancários e o somatório dos Extratos Bancários encaminhados pelo jurisdicionado.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que o jurisdicionado encaminhe a relação de extratos bancários faltantes, em âmbito de defesa, os quais se encontram listados no Apêndice 1 do presente relatório técnico.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "Em atendimento ao recomendado no Item III.09, estamos encaminhando junto a esta\ndefesa os referidos extratos bancários faltantes na prestação de contas.",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado informa que encaminhou a relação de extratos\nfaltantes na prestação de contas. Entretanto, da análise dos extratos encaminhados em fase de\ndefesa (peça 77), verifica-se a ausência de diversos extratos bancários, os quais totalizaram R$\n458.809,59, conforme tabela a seguir.\nTabela 44 - Relação de Extratos Bancários Não Encaminhados em Âmbito de Defesa\nConta Bancária Valor\n(R$)\n111111902190000 - BB C/C - 15440-7 - MAC 25,00\n111111902250000 - BB C/C - 17916-7 - FUNDO MUNICIPAL DE SAÚDE - FUS 2.620,34\n111111902530000 - BB C/C - 5510-7 - FUNDEB 40% 143,34\n111111902850000 - BB C/C - 13724-3 - AFM ANTIGA 9,01\n111111902950000 - BB AG 4036 C/C - 22796-X - C PART T C PAR 201601185 60,90\n11111500202020100 - CEF AG 4639 C/P - 71020-7 - CONTRAPARTIDA CAPSI 155."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.10",
+      "tipo": "Impropriedade",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) e Manual de Demonstrativos Fiscais (MDF 13ª edição) e art. 39, §1º, da Lei nº 4.320/64.",
+      "descricao": "Ausência de Registro, no Balanço Patrimonial, de valores em conta específica de “Dívida Ativa”, contudo, de acordo com o Comparativo da Receita Orçada com a Arrecadada, verifica-se que houve no exercício R$ 35.996,50 de arrecadação atinente a receitas de “Dívida Ativa”.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "determinacao": null,
+      "valor_financeiro": 35996.5,
+      "defesa_gestor": "No tocante a impropriedade citada no Item III.10, onde a auditoria alega ausência de\nregistro da Dívida Ativa, em conta específica do Balanço Patrimonial, cabe-nos\nesclarecer que de acordo com a Instrução de Procedimentos Contábeis, IPC 04 -\nMetodologia para Elaboração do Balanço Patrimonial, que estabelece regras para o\npreenchimento do BP, não há a indicação de conta específica da Dívida Ativa de\nforma segregada na estrutura do balanço, como podemos ver abaixo:\nTambém, conforme o Manual de Contabilidade Aplicado ao setor Público – MCASP,\n10ª edição, página 530, o quadro principal do Balanço Patrimonial será elaborado\nutilizando-se a classe 1 (Ativo) e a classe 2 (Passivo e Patrimônio Líquido) do Plano\nde Contas Aplicado ao Setor Público (PCASP).",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado informa que, de acordo com a Instrução de\nProcedimentos Contábeis, IPC 04 - Metodologia para Elaboração do Balanço Patrimonial, não Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal\nhá a indicação de conta específica da Dívida Ativa de forma segregada na estrutura do balanço\ne apresente quadro da referida Instrução, evidenciado a situação por ele exposta.\nOutrossim, apresenta informação constante do MCASP 10ª edição, atinente ao nível\nde detalhamento das classes do Balanço Patrimonial, em consonância com o Plano de Contas\nAplicado ao Setor Público (PCASP)."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.11",
+      "tipo": "Inconsistência",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) e Manual de Demonstrativos Fiscais (MDF 13ª edição).",
+      "descricao": "Ao analisar especificamente as compensações financeiras entre regimes previdenciários, observa-se uma dedução no valor de R$ 1.945.137,06 no Demonstrativo da Receita Corrente Líquida. Ao consultar o Anexo 10 – Comparativo da Receita Orçada com a Arrecadada e o site do BG-COMPREV (apêndice II), verifica-se que o ente não recebeu compensações.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor público proceda à correção dessa inconsistência no Demonstrativo da Receita Corrente Líquida, corrigindo a dedução de R$ 1.945.137,06 identificada no Demonstrativo da Receita Corrente Líquida, já que não houve recebimento dessas compensações.",
+      "valor_financeiro": 1945137.06,
+      "defesa_gestor": "Na inconsistência verificada no Item III.11, constatamos que houve um erro gerado\npelo software no Demonstrativo da RCL, onde o citado valor aparece na linha de\nCompensações entre regimes. Esclarecemos que, apesar de mostrar-se em linha\nindevida, o valor realmente é uma dedução da RCL pois o montante de R$\n1.945.137,06 é encontrado no Anexo X - Comparativo da Receita Orçada com a\nArrecadada, efetuando a soma das receitas: 121502110000 Contribuição Patronal -\nServidor Civil Ativo – Principal, R$ 443.549,56 e 121551110000 Contribuição\nPatronal - Servidor Civil Ativo - Parcelamentos – Principal, 1.501.587,50. Segue\nabaixo destaque do Anexo X.",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado informa que a inconsistência em tela é derivada\nde um erro gerado pelo software no Demonstrativo da RCL, em que a quantia de R$\n1.945.137,06 aparece na linha de Compensações entre regimes. Esclarece o jurisdicionado que,\nembora tal valor se mostre em linha indevida, tal quantia realmente se trata de uma dedução à\nRCL, considerando que o montante de R$ 1.945.137,06 é evidenciado no Anexo X -\nComparativo da Receita Orçada com a Arrecadada, por meio da soma das receitas:\n121502110000 Contribuição Patronal - Servidor Civil Ativo – Principal, R$ 443.549,56 e\n121551110000 Contribuição Patronal - Servidor Civil Ativo - Parcelamentos – Principal, R$\n1.501."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.12",
+      "tipo": "Impropriedade",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": "Lei nº 14.113/2020",
+      "descricao": "No Demonstrativo das Receitas e Despesas com Manutenção e Desenvolvimento do Ensino – MDE consta como valor enviado ao Fundeb o montante de R$ 16.097.736,76 (diferença de R$ 532.697,69 para o cálculo da área técnica) das deduções do Fundeb, que não condiz com o perceptual de 20% da cesta que compõe o fundo.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "determinacao": null,
+      "valor_financeiro": 16097736.76,
+      "defesa_gestor": "Em referência ao constatado no Item III.12, onde demonstra-se uma diferença do valor\ntotal das deduções para o FUNDEB, explanamos que tal erro, levando em\nconsideração que o denominado “Demonstrativo das Receitas e Despesas com\nManutenção e Desenvolvimento do Ensino – MDE”, analisado pela auditoria, é o\nmesmo gerado pelo SIOPE – Sistema de Informações Sobre Orçamentos Públicos em\nEducação.",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado reconhece que o documento supracitado\nevidencia um valor diferente do total das deduções para o FUNDEB, considerando que o\nmontante que consta no Anexo X condiz exatamente com o levantado pela auditoria, conforme\npor ele evidenciado na ‘‘Imagem 6 – Parte do Anexo X – Deduções FUNDEB’’.\nAdemais, o jurisdicionado informa que as linhas 3, 4 e 5 da ‘‘Imagem 7 - Tabela 8.2\n– SIOPE’’ são calculadas automaticamente pelo sistema SIOPE, não sendo possível para o\nusuário alterar tais valores, mesmo eles estando errados.\nAcrescenta o jurisdicionado que o próprio SIOPE emite críticas sobre valores\ndivergentes, e nesse caso não o fez, por conseguinte, permanecendo o resultado do cálculo\nautomático."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.13",
+      "tipo": "Impropriedade",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF 13ª edição).",
+      "descricao": "Existência de valores na coluna “Valor Total de Superávit não Aplicado até o Final do Exercício'', indicando o descumprimento das regras estabelecidas para o Fundeb, pois os recursos não utilizados no exercício de recebimento devem ser aplicados até o final do primeiro quadrimestre do exercício seguinte.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "Na impropriedade evidenciada no Item III.13, onde se indica o descumprimento das\nregras do FUNDEB no tocante a utilização do superávit do exercício anterior.\nDesde já pedimos vênia, e compreendemos que seria prudente utilizar o superávit no\ninício do próximo exercício, porém, para esclarecer a lide é necessário analisarmos a\nletra fria do § 3º, Art. 25, da Lei nº 14.113 de 25 de dezembro de 2020, a saber:\nArt. 25. Os recursos dos Fundos, inclusive aqueles oriundos de complementação da\nUnião, serão utilizados pelos Estados, pelo Distrito Federal e pelos Municípios, no\nexercício financeiro em que lhes forem creditados, em ações consideradas de\nmanutenção e de desenvolvimento do ensino para a educação básica pública,\nconforme disposto no art. 70 da Lei nº 9.394, de 20 de dezembro de 1996.\n...",
+      "analise_tecnica": "Em âmbito de defesa o jurisdicionado declara que o disposto no art. 25, §3º, da Lei nº\n14.113/2020 se trata de mera faculdade, e não de um dever, em razão da presença do vocábulo\n‘‘poderão’’, no referido dispositivo legal.\nEm primeira análise, por se tratar de educação, direito social, garantido pela\nConstituição Federal em seus artigos 6°, 205, 208 e 212, pela Lei 9.394/96 – LDB em seus\nartigos 2° e 69, ainda pela Lei do Fundeb 14.113/20, faz-se necessário um olhar para além de\nnúmeros."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.14",
+      "tipo": "Impropriedade",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": "Lei Complementar nº 101/2000 - LRF.",
+      "descricao": "Observam-se atrasos por parte do Município de Campo Alegre quanto à transmissão, via SIOPE, dos dados referentes à saúde do exercício de 2023.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "Os atrasos ocorridos no envio do SIOPE e SIOPS, evidenciados nos Itens III.14 e\nIII.15, o SIOPS deve-se levar em consideração o prazo em que é liberado a plataforma\npara o preenchimento e homologação dos dados, uma vez que, conforme comunicados\noficiais, existem atrasos na disponibilização da transmissão do SIOPS. Quanto ao\nSIOPE o município está se estruturando para que todos os prazos sejam atendidos.",
+      "analise_tecnica": "Considerando que, em âmbito de defesa, o jurisdicionado se limitou a informar que o\nMunicípio está se estruturando para que todos os prazos atinentes ao SIOPE sejam atendidos;\nnão apresentando, todavia, justificativa plausível acerca dos referidos atrasos, mantém-se o\napontamento inicial.\nSeção do Base Classificação\nNº Situação identificada Recomendação/Determinação\nRelatório Normativa do Achado\nObservam-se atrasos por Recomenda-se que, no\nparte do Município de processo de\nLei\nCampo Alegre quanto à Contraditório e Ampla\nComplementar\nIII.15 7.2 Saúde transmissão, via SIOPS, Impropriedade Defesa, o gestor público\nnº 101/2000 -\ndos dados referentes à apresente\nLRF.\nsaúde do exercício de esclarecimentos sobre\n2023. essa impropriedade."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.15",
+      "tipo": "Impropriedade",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": "Lei Complementar nº 101/2000 - LRF.",
+      "descricao": "Observam-se atrasos por parte do Município de Campo Alegre quanto à transmissão, via SIOPS, dos dados referentes à saúde do exercício de 2023.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "Os atrasos ocorridos no envio do SIOPE e SIOPS, evidenciados nos Itens III.14 e\nIII.15, o SIOPS deve-se levar em consideração o prazo em que é liberado a plataforma\npara o preenchimento e homologação dos dados, uma vez que, conforme comunicados\noficiais, existem atrasos na disponibilização da transmissão do SIOPS. Quanto ao\nSIOPE o município está se estruturando para que todos os prazos sejam atendidos.",
+      "analise_tecnica": "Em âmbito de defesa, o jurisdicionado se limitou a informar que, relativamente ao\nSIOPS, ‘‘deve-se levar em consideração o prazo em que é liberado a plataforma para o\npreenchimento e homologação dos dados, uma vez que, conforme comunicados oficiais, Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal\nexistem atrasos na disponibilização da transmissão do SIOPS’’; não apresentando, todavia,\ndocumentação comprobatória acerca dos referidos comunicados oficiais.\nAnte o exposto, mantém-se o presente apontamento."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.16",
+      "tipo": "Impropriedade",
+      "secao": "8. Previdência",
+      "base_normativa": "Lei nº 9717/1998",
+      "descricao": "Após consulta ao Sistema de Informações dos Regimes Públicos de Previdência Social – CADPREV, verificou-se que o Regime Próprio de Previdência Social (RPPS) do município não possui um Certificado de Regularidade Previdenciária.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "O município de Campo Alegre em obediência ao controle exercido pela Lei nº\n9.717/1998, tem empenhado todos os esforços para cumprir os 23 critérios\nimpeditivos para emissão do Certificado de Regularidade Previdenciária. 16.1.\nEntretanto, apesar de todos os esforços empregados por essa administração, ainda\nconstam em fase de regularização, 10 dos critérios impeditivos para emissão da CRP,\nconforme demonstrado no Relatório de Regularidade do CADPREV, motivo pelo\nqual não foi juntado tempestivamente junto à prestação de contas, o Certificado de\nRegularidade Previdenciária. 16.2. Objetivando atender a Lei 9.717/1998, o gestor\nmunicípio irá apresentar um plano de ações para que em 90 dias, todas a\nimpropriedades estejam sanadas, possibilitando a emissão da CRP.",
+      "analise_tecnica": "Em âmbito de defesa, o jurisdicionado se limitou a informar que o Município, em\nobediência ao controle exercido pela Lei nº 9.717/1998, tem empenhado todos os esforços para\ncumprir os 23 critérios impeditivos para emissão do Certificado de Regularidade\nPrevidenciária, encontrando-se ainda em fase de regularização, e que o gestor do Município irá\napresentar um plano de ações para que em 90 dias, todas a impropriedades estejam sanadas,\npossibilitando a emissão da CRP.\nDiante do exposto, mantém-se o apontamento inicial."
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.17",
+      "tipo": "Impropriedade",
+      "secao": "9. Transparência E Controle Interno",
+      "base_normativa": "Art. 48 da LRF.",
+      "descricao": "Ausência de publicação do Parecer Prévio, bem como das atas das audiências públicas atinentes aos instrumentos de planejamento e orçamento e das Metas Fiscais, no Portal da Transparência.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa impropriedade.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "Quanto a divergência entre os valores expressos na tabela que evidencia o\ndesempenho da arrecadação em relação à previsão constante do parecer do controle\ninterno na seção ‘‘Tributação’’ (peça 48), e os valores evidenciados no Anexo 10 -\nComparativo da Receita Orçada com a Arrecadada (peça 10), foi verificado que o que\nhouve foi um equívoco na inserção das informações, devendo ser consideradas as\ninformações constantes no anexo X. A fim de sanar tal inconsistência, segue em anexo\nparecer com a devida correção.",
+      "analise_tecnica": "Em âmbito de defesa, o jurisdicionado informa que a divergência supracitada é\nresultante de um equívoco na inserção das informações, devendo ser consideradas as\ninformações constantes no Anexo X (Comparativo entre a Receita Orçada com a Arrecadada).\nAdemais, com propósito de sanar a inconsistência em tela, fora acostado pelo\njurisdicionado o Parecer do Controle Interno contendo a devida retificação (peça 80).\nAnte o exposto, mantém-se o apontamento inicial. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal RESUMO"
+    },
+    {
+      "relatorio_id": "48042b746c78247b5a71393c09efe0de639ea49b8e65113d0fdf3b2afb4a3541",
+      "ano": 2023,
+      "municipio": "Campo Alegre",
+      "auditor": null,
+      "relator": "Rodrigo Siqueira Cavalcante",
+      "numero_processo": "TC/1.005949/2024",
+      "codigo": "III.18",
+      "tipo": "Inconsistência",
+      "secao": "9. Transparência E Controle Interno",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Divergência entre os valores expressos na tabela que evidencia o desempenho da arrecadação em relação à previsão, constante da seção ‘‘Tributação’’ do Relatório de Controle Interno, e os valores evidenciados no Anexo 10 - Comparativo da Receita Orçada com a Arrecadada.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que, no processo de Contraditório e Ampla Defesa, o gestor público apresente esclarecimentos sobre essa inconsistência.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
       "analise_tecnica": null
     },
     {
@@ -3791,10 +4151,10 @@
   "agregacoes": {
     "totais": {
       "relatorios": 11,
-      "achados": 182,
-      "saneados": 70,
-      "mantidos": 112,
-      "com_defesa": 148,
+      "achados": 200,
+      "saneados": 79,
+      "mantidos": 121,
+      "com_defesa": 166,
       "municipios": 10,
       "anos": [
         2023,
@@ -3802,25 +4162,25 @@
       ]
     },
     "por_situacao": {
-      "mantido": 112,
-      "sanado_total": 57,
+      "mantido": 121,
+      "sanado_total": 66,
       "afastado": 7,
       "sanado_parcial": 6
     },
     "por_tipo": {
-      "Impropriedade": 98,
-      "Inconsistência": 43,
-      "Irregularidade": 41
+      "Impropriedade": 110,
+      "Inconsistência": 48,
+      "Irregularidade": 42
     },
     "por_secao": {
-      "6. Gestão Fiscal": 42,
-      "7. Análise Dos Limites Constitucionais": 35,
-      "4. Aspectos Patrimoniais": 34,
-      "3. Aspectos Orçamentários E Financeiros": 28,
-      "9. Transparência E Controle Interno": 24,
+      "6. Gestão Fiscal": 43,
+      "7. Análise Dos Limites Constitucionais": 39,
+      "4. Aspectos Patrimoniais": 37,
+      "3. Aspectos Orçamentários E Financeiros": 35,
+      "9. Transparência E Controle Interno": 26,
       "5. Repasses Do Duodécimo": 6,
       "2. Instrumentos De Planejamento": 5,
-      "8. Previdência": 4,
+      "8. Previdência": 5,
       "7.1. Educação": 2,
       "7.2. Fundo De Manutenção E Desenvolvimento Da Educação Básica – Fundeb": 1,
       "7.3. Saúde": 1
@@ -3831,23 +4191,26 @@
       "Boca da Mata": 28,
       "Arapiraca": 22,
       "Anadia": 21,
+      "Campo Alegre": 18,
       "Água Branca": 18,
       "Belém": 10,
       "Cajueiro": 8,
       "Piranhas": 5
     },
     "por_ano": {
-      "2023": 164,
+      "2023": 182,
       "2024": 18
     },
     "por_base_normativa": {
       "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)": 17,
-      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)": 13,
+      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)": 16,
       "MCASP 10ª Edição": 6,
       "MCASP - 9ª Edição": 5,
+      "Art. 43, §3º, da Lei nº 4.320/64.": 3,
       "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição).": 3,
       "LC 101/2000 / LC 141/2012": 3,
       "Lei Complementar n° 101/2000 - LRF": 3,
+      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) e Manual de Demonstrativos Fiscais (MDF 13ª edição": 3,
       "MDF 13a edição": 3,
       "Instrução Normativa nº 03/2011 – TCE/AL": 3,
       "Lei 4.320/64, Lei 101/00, CF Art. 70, 71 e 205, Lei 9.304/96 Art. 69 e Lei 14.113/20": 3,
@@ -3859,6 +4222,7 @@
       "LC 101/2000 / Portaria MEC nº 844/2008": 2,
       "IN 03/2011": 2,
       "Instrução Normativa nº 03/2011 - TCE/AL.": 2,
+      "Lei Complementar nº 101/2000 - LRF.": 2,
       "Art. 43 da Lei Federal nº 4.320/64": 2,
       "Art. 52 da Lei Complementar nº 101/2000 - LRF": 2,
       "Instrução Normativa nº 03/2011": 2,
@@ -3867,18 +4231,15 @@
       "Artigo 247 da Portaria MTP nº 1.467/2022": 2,
       "Art. 48 da LRF": 2,
       "Manual de Contabilidade Aplicada ao Setor Público (MCASP) - 9ª Edição": 2,
-      "Lei 4.320/64 e Lei 101/00 - LRF": 2,
-      "Art. 29-A, I, da Constituição Federal": 2,
-      "Lei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal (LRF)": 2,
-      "Art. 43, §3º, da Lei nº 4.320/64": 2
+      "Lei 4.320/64 e Lei 101/00 - LRF": 2
     },
     "por_auditor": {
       "de Controle Interno": 39
     },
     "defesa_x_situacao": {
       "com_defesa": {
-        "mantido": 78,
-        "sanado_total": 57,
+        "mantido": 87,
+        "sanado_total": 66,
         "afastado": 7,
         "sanado_parcial": 6
       },
@@ -3936,6 +4297,24 @@
         "descricao": "Houve abertura de crédito adicional suplementar com a fonte supracitada no valor de 22,1 milhões de reais, configurando, em tese, a inexistência de recursos provenientes do excesso de arrecadação para"
       },
       {
+        "codigo": "III.01",
+        "municipio": "Campo Alegre",
+        "valor": 20972897.25,
+        "descricao": "Execução de despesa orçamentária (empenho) no valor de R$ 20.972.897,25 sem a evidência de receitas orçamentárias correspondentes."
+      },
+      {
+        "codigo": "III.05",
+        "municipio": "Campo Alegre",
+        "valor": 20243226.6,
+        "descricao": "Abertura de créditos suplementares no montante de R$ 20.243.226,60 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente."
+      },
+      {
+        "codigo": "III.12",
+        "municipio": "Campo Alegre",
+        "valor": 16097736.76,
+        "descricao": "No Demonstrativo das Receitas e Despesas com Manutenção e Desenvolvimento do Ensino – MDE consta como valor enviado ao Fundeb o montante de R$ 16.097.736,76 (diferença de R$ 532.697,69 para o cálculo "
+      },
+      {
         "codigo": "III.09",
         "municipio": "Boca da Mata",
         "valor": 11688464.55,
@@ -3984,28 +4363,10 @@
         "descricao": "A Receita Corrente Líquida Ajustada para Cálculo dos Limites da Despesa com Pessoal apurada foi de R$ 147.992.853,10, cujo valor difere do montante apresentado pelo ente que é de R$ 150.385.173,10 (pe"
       },
       {
-        "codigo": "III.01",
-        "municipio": "Piranhas",
-        "valor": 1933528.47,
-        "descricao": "Abertura de créditos suplementares no montante de R$ 1.933.528,47 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente."
-      },
-      {
-        "codigo": "III.05",
-        "municipio": "Atalaia",
-        "valor": 1871633.18,
-        "descricao": "Observou-se que a conta (–) Depreciação, Exaustão e Amortização Acumuladas, manteve o valor de R$ 1.871.633,18 do exercício anterior no Balanço Patrimonial, conforme DCA SICONFI. Ademais, não há recon"
-      },
-      {
-        "codigo": "III.03",
-        "municipio": "Anadia",
-        "valor": 1355089.14,
-        "descricao": "Abertura de créditos suplementares no montante de R$ 1.355.089,14 utilizando o excesso de arrecadação como recurso, sem a devida comprovação do excesso correspondente, configurando infração ao dispost"
-      },
-      {
-        "codigo": "III.08",
-        "municipio": "Boca da Mata",
-        "valor": 798639.75,
-        "descricao": "Conforme consulta realizada ao SICONFI, observa-se que o Balanço Patrimonial detalhado não apresenta registro em contas de dívida ativa no exercício de 2023. Contudo, o demonstrativo da Receita Arreca"
+        "codigo": "III.11",
+        "municipio": "Campo Alegre",
+        "valor": 1945137.06,
+        "descricao": "Ao analisar especificamente as compensações financeiras entre regimes previdenciários, observa-se uma dedução no valor de R$ 1.945.137,06 no Demonstrativo da Receita Corrente Líquida. Ao consultar o A"
       }
     ],
     "tipo_por_secao": {
@@ -4014,13 +4375,13 @@
         "Irregularidade": 2
       },
       "3. Aspectos Orçamentários E Financeiros": {
-        "Impropriedade": 21,
-        "Inconsistência": 4,
-        "Irregularidade": 3
+        "Impropriedade": 26,
+        "Inconsistência": 5,
+        "Irregularidade": 4
       },
       "4. Aspectos Patrimoniais": {
-        "Impropriedade": 20,
-        "Inconsistência": 13,
+        "Impropriedade": 21,
+        "Inconsistência": 15,
         "Irregularidade": 1
       },
       "5. Repasses Do Duodécimo": {
@@ -4028,22 +4389,22 @@
         "Inconsistência": 1
       },
       "6. Gestão Fiscal": {
-        "Inconsistência": 16,
+        "Inconsistência": 17,
         "Impropriedade": 15,
         "Irregularidade": 11
       },
       "7. Análise Dos Limites Constitucionais": {
-        "Impropriedade": 25,
+        "Impropriedade": 29,
         "Irregularidade": 8,
         "Inconsistência": 2
       },
       "9. Transparência E Controle Interno": {
-        "Impropriedade": 9,
-        "Irregularidade": 8,
-        "Inconsistência": 7
+        "Impropriedade": 10,
+        "Inconsistência": 8,
+        "Irregularidade": 8
       },
       "8. Previdência": {
-        "Impropriedade": 3,
+        "Impropriedade": 4,
         "Irregularidade": 1
       },
       "7.1. Educação": {
@@ -4071,6 +4432,10 @@
       "Belém": {
         "sanado_total": 9,
         "mantido": 1
+      },
+      "Campo Alegre": {
+        "mantido": 9,
+        "sanado_total": 9
       },
       "Cajueiro": {
         "mantido": 8
@@ -4106,6 +4471,7 @@
           "Atalaia": 23,
           "Arapiraca": 22,
           "Anadia": 21,
+          "Campo Alegre": 18,
           "Água Branca": 18,
           "Belém": 10,
           "Cajueiro": 8,
@@ -4124,6 +4490,10 @@
           "Belém": {
             "sanado_total": 9,
             "mantido": 1
+          },
+          "Campo Alegre": {
+            "mantido": 9,
+            "sanado_total": 9
           },
           "Cajueiro": {
             "mantido": 8
