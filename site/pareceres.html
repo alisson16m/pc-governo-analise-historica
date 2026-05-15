@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Pareceres — Portal PCG · TCE-AL</title>
+  <title>Opinião do Auditor — Portal PCG · TCE-AL</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
       </a>
       <a href="pareceres.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
-        Pareceres
+        Opinião do Auditor
       </a>
       <a href="insights.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -66,7 +66,7 @@
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
-      <span class="topbar-title">Pareceres</span>
+      <span class="topbar-title">Opinião do Auditor</span>
       <span class="topbar-sub" id="topbar-sub"></span>
     </div>
     <main>
@@ -160,11 +160,9 @@ function badgeOpiniao(op) {
     // KPIs
     document.getElementById("kpis").innerHTML = [
       { label: "Relatórios analisados", value: fmtNum(totalRels) },
-      { label: "Opinião identificada", value: pct(nIdent, totalRels), delta: fmtNum(nIdent) + " relatórios" },
       { label: "Regular", value: fmtNum(nRegular), delta: pct(nRegular, nIdent) },
       { label: "Regular com Ressalvas", value: fmtNum(nRessalvas), delta: pct(nRessalvas, nIdent) },
       { label: "Irregular", value: fmtNum(nIrregular), delta: pct(nIrregular, nIdent) },
-      { label: "Relatores distintos", value: fmtNum(Object.keys(porRelator).filter(r => r !== "Não identificado").length) },
     ].map(k => `<div class="kpi">
       <div class="label">${k.label}</div>
       <div class="value">${k.value}</div>
