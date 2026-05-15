@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Pareceres — Portal PCG · TCE-AL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">TC</div>
+      <div class="brand-text"><strong>TCE-AL</strong><span>Portal PCG</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Principal</div>
+      <a href="index.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Visão Geral
+      </a>
+      <a href="achados.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="3" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="3" cy="18" r="1.5" fill="currentColor" stroke="none"/></svg>
+        Banco de Achados
+      </a>
+      <a href="municipios.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Por Município
+      </a>
+      <a href="secoes.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        Por Seção
+      </a>
+      <div class="nav-section-label">Análise</div>
+      <a href="defesa.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Defesa do Gestor
+      </a>
+      <a href="pareceres.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+        Pareceres
+      </a>
+      <a href="insights.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        Insights
+      </a>
+      <a href="sobre.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        Sobre
+      </a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="sb-label">Banco de Achados TCE-AL</div>
+      <span class="sb-version" id="sidebar-version">v—</span>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="main-area">
+    <div class="topbar">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <span class="topbar-title">Pareceres</span>
+      <span class="topbar-sub" id="topbar-sub"></span>
+    </div>
+    <main>
+
+      <section class="kpi-grid" id="kpis"></section>
+
+      <div class="row">
+        <div class="card">
+          <h2>Opinião do auditor <span class="muted">por relatório</span></h2>
+          <div class="chart-box"><canvas id="chart-opiniao"></canvas></div>
+        </div>
+        <div class="card">
+          <h2>Relatórios por relator</h2>
+          <div class="chart-box"><canvas id="chart-relator"></canvas></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Opinião do auditor por relator</h2>
+        <div class="chart-box tall"><canvas id="chart-opiniao-relator"></canvas></div>
+      </div>
+
+      <div class="card">
+        <h2>Relatórios — Parecer e Relator</h2>
+        <table class="tabela" id="tab-pareceres">
+          <thead>
+            <tr>
+              <th>Município</th>
+              <th>Ano</th>
+              <th>Relator</th>
+              <th>Opinião do Auditor</th>
+              <th style="text-align:right">Nº Processo</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+    </main>
+    <footer class="rodape">Dados extraídos dos relatórios conclusivos publicados pelo TCE-AL · gerado em <span id="gerado-em">—</span></footer>
+  </div>
+</div>
+
+<div id="modal-bg" class="modal-bg">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-titulo"></h3>
+      <button id="modal-close" class="close-btn">×</button>
+    </div>
+    <div id="modal-conteudo"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script src="app.js"></script>
+<script>
+const OPINIAO_CORES = {
+  "Regular":                "#2e8b57",
+  "Regular com Ressalvas":  "#d18b1d",
+  "Irregular":              "#b94a48",
+  "Não identificada":       "#a0a8b8",
+};
+
+function badgeOpiniao(op) {
+  const cls = op === "Regular" ? "sanado_total"
+    : op === "Regular com Ressalvas" ? "sanado_parcial"
+    : op === "Irregular" ? "mantido"
+    : "nao_consta";
+  return `<span class="badge ${cls}">${op || "Não identificada"}</span>`;
+}
+
+(async () => {
+  try {
+    const d = await carregarDados();
+    const ag = d.agregacoes;
+    document.getElementById("gerado-em").textContent = new Date(d.gerado_em).toLocaleString("pt-BR");
+    document.getElementById("topbar-sub").textContent = "Atualizado em " + new Date(d.gerado_em).toLocaleDateString("pt-BR");
+
+    const porOpiniao = ag.por_opiniao || {};
+    const porRelator = ag.por_relator || {};
+    const opiniaoPorRelator = ag.opiniao_por_relator || {};
+    const relatorios = d.relatorios || [];
+
+    const totalRels = relatorios.length;
+    const nRegular = porOpiniao["Regular"] || 0;
+    const nRessalvas = porOpiniao["Regular com Ressalvas"] || 0;
+    const nIrregular = porOpiniao["Irregular"] || 0;
+    const nIdent = nRegular + nRessalvas + nIrregular;
+
+    // KPIs
+    document.getElementById("kpis").innerHTML = [
+      { label: "Relatórios analisados", value: fmtNum(totalRels) },
+      { label: "Opinião identificada", value: pct(nIdent, totalRels), delta: fmtNum(nIdent) + " relatórios" },
+      { label: "Regular", value: fmtNum(nRegular), delta: pct(nRegular, nIdent) },
+      { label: "Regular com Ressalvas", value: fmtNum(nRessalvas), delta: pct(nRessalvas, nIdent) },
+      { label: "Irregular", value: fmtNum(nIrregular), delta: pct(nIrregular, nIdent) },
+      { label: "Relatores distintos", value: fmtNum(Object.keys(porRelator).filter(r => r !== "Não identificado").length) },
+    ].map(k => `<div class="kpi">
+      <div class="label">${k.label}</div>
+      <div class="value">${k.value}</div>
+      ${k.delta ? `<div class="delta">${k.delta}</div>` : ""}
+    </div>`).join("");
+
+    // Gráfico pizza — opinião do auditor
+    {
+      const keys = Object.keys(porOpiniao);
+      const vals = Object.values(porOpiniao);
+      const cores = keys.map(k => OPINIAO_CORES[k] || "#888");
+      const total = vals.reduce((a, b) => a + b, 0);
+      new Chart(document.getElementById("chart-opiniao"), {
+        type: "doughnut",
+        data: { labels: keys, datasets: [{ data: vals, backgroundColor: cores, borderWidth: 2 }] },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true, position: "right", labels: { font: { size: 11 }, boxWidth: 12, padding: 10 } },
+            datalabels: {
+              color: "#fff",
+              font: { size: 11, weight: "700" },
+              formatter: (v) => {
+                if (!total) return "";
+                const p = (v / total * 100).toFixed(1);
+                return p < 5 ? "" : p + "%";
+              },
+            },
+          },
+        },
+      });
+    }
+
+    // Gráfico barras horizontal — relatórios por relator (top 15)
+    {
+      const ents = Object.entries(porRelator)
+        .filter(([k]) => k !== "Não identificado")
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 15);
+      montarChartBarras(
+        document.getElementById("chart-relator"),
+        ents.map(([k]) => k.length > 35 ? k.slice(0, 33) + "…" : k),
+        ents.map(([, v]) => v),
+        "Relatórios", "#1C588C", true
+      );
+    }
+
+    // Gráfico barras empilhadas — opinião por relator (top 10 relatores)
+    {
+      const topRelatores = Object.entries(porRelator)
+        .filter(([k]) => k !== "Não identificado")
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10)
+        .map(([k]) => k);
+
+      const opinioes = ["Regular", "Regular com Ressalvas", "Irregular", "Não identificada"];
+      const datasets = opinioes.map(op => ({
+        label: op,
+        data: topRelatores.map(rel => (opiniaoPorRelator[rel] || {})[op] || 0),
+        backgroundColor: OPINIAO_CORES[op] || "#888",
+        borderRadius: 3,
+        borderSkipped: false,
+      }));
+
+      new Chart(document.getElementById("chart-opiniao-relator"), {
+        type: "bar",
+        data: {
+          labels: topRelatores.map(r => r.length > 35 ? r.slice(0, 33) + "…" : r),
+          datasets,
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: { padding: { right: 8 } },
+          plugins: {
+            legend: { display: true, position: "top", labels: { font: { size: 11 }, boxWidth: 12, padding: 10 } },
+            datalabels: {
+              color: "#fff",
+              font: { size: 10, weight: "700" },
+              formatter: (v) => v > 0 ? v : "",
+              anchor: "center",
+              align: "center",
+            },
+          },
+          scales: {
+            x: { stacked: true, ticks: { font: { size: 11 } }, grid: { color: "rgba(0,0,0,0.05)" } },
+            y: { stacked: true, ticks: { font: { size: 11 } }, grid: { color: "rgba(0,0,0,0.05)" } },
+          },
+        },
+      });
+    }
+
+    // Tabela de relatórios
+    const sorted = [...relatorios].sort((a, b) => {
+      const oa = a.opiniao_auditoria || "";
+      const ob = b.opiniao_auditoria || "";
+      return oa.localeCompare(ob) || (a.municipio || "").localeCompare(b.municipio || "");
+    });
+    document.querySelector("#tab-pareceres tbody").innerHTML = sorted.map(r => `
+      <tr>
+        <td>${r.municipio || "—"}</td>
+        <td>${r.ano || "—"}</td>
+        <td>${r.relator || "—"}</td>
+        <td>${badgeOpiniao(r.opiniao_auditoria)}</td>
+        <td style="text-align:right; font-size:0.82rem; color:var(--muted)">${r.numero_processo || "—"}</td>
+      </tr>`).join("")
+      || `<tr><td colspan="5" class="empty">Sem dados.</td></tr>`;
+
+  } catch (e) {
+    document.querySelector("main").innerHTML =
+      `<div class="empty"><h3>Erro ao carregar dados</h3><p>${e.message}</p></div>`;
+  }
+})();
+</script>
+</body>
+</html>
