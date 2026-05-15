@@ -101,6 +101,10 @@
           <h2>Achados por ano</h2>
           <div class="chart-box"><canvas id="chart-ano"></canvas></div>
         </div>
+        <div class="card">
+          <h2>Opinião do auditor <span class="muted">por relatório</span></h2>
+          <div class="chart-box"><canvas id="chart-opiniao"></canvas></div>
+        </div>
       </div>
 
       <div class="row">
@@ -140,6 +144,13 @@
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <script src="app.js"></script>
 <script>
+const OPINIAO_CORES = {
+  "Regular":               "#2e8b57",
+  "Regular com Ressalvas": "#d18b1d",
+  "Irregular":             "#b94a48",
+  "Não identificada":      "#a0a8b8",
+};
+
 const _charts = {};
 function _mk(id, fn) {
   if (_charts[id]) _charts[id].destroy();
@@ -166,29 +177,65 @@ function _computar(achados) {
            municipios: muns.size, relatorios: rels.size, saneados, mantidos };
 }
 
-function _renderizar(achados) {
+function _renderizar(achados, relatorios) {
   const ag = _computar(achados);
 
   // KPIs
   document.getElementById("kpis").innerHTML = [
-    { label: "Relatórios",           value: fmtNum(ag.relatorios) },
-    { label: "Achados catalogados",  value: fmtNum(ag.total) },
-    { label: "Saneados",             value: pct(ag.saneados, ag.total), delta: fmtNum(ag.saneados) + " achados" },
-    { label: "Mantidos",             value: pct(ag.mantidos, ag.total), delta: fmtNum(ag.mantidos) + " achados" },
-    { label: "Municípios",           value: fmtNum(ag.municipios) },
-    { label: "Anos cobertos",        value: Object.keys(ag.por_ano).sort().join(", ") || "—" },
+    { label: "Relatórios",          value: fmtNum(ag.relatorios) },
+    { label: "Achados catalogados", value: fmtNum(ag.total) },
+    { label: "Saneados",            value: pct(ag.saneados, ag.total), delta: fmtNum(ag.saneados) + " achados" },
+    { label: "Mantidos",            value: pct(ag.mantidos, ag.total), delta: fmtNum(ag.mantidos) + " achados" },
+    { label: "Municípios",          value: fmtNum(ag.municipios) },
   ].map(k => `<div class="kpi">
     <div class="label">${k.label}</div>
     <div class="value">${k.value}</div>
     ${k.delta ? `<div class="delta">${k.delta}</div>` : ""}
   </div>`).join("");
 
-  // Gráficos
+  // Gráfico situação
   _mk("chart-situacao", c => montarChartPizza(c, ag.por_situacao));
 
+  // Gráfico achados por ano
   const anosKeys = Object.keys(ag.por_ano).sort();
   _mk("chart-ano", c => montarChartBarras(c, anosKeys, anosKeys.map(a => ag.por_ano[a]), "Achados", "#1C588C", false));
 
+  // Gráfico opinião do auditor (cruzado com os relatórios dos achados filtrados)
+  const relsIds = new Set(achados.map(a => a.relatorio_id).filter(Boolean));
+  const por_opiniao = {};
+  for (const r of relatorios) {
+    if (!relsIds.has(r.id)) continue;
+    const op = r.opiniao_auditoria || "Não identificada";
+    por_opiniao[op] = (por_opiniao[op] || 0) + 1;
+  }
+  _mk("chart-opiniao", c => {
+    const keys = Object.keys(por_opiniao);
+    const vals = Object.values(por_opiniao);
+    const cores = keys.map(k => OPINIAO_CORES[k] || "#888");
+    const total = vals.reduce((a, b) => a + b, 0);
+    return new Chart(c, {
+      type: "doughnut",
+      data: { labels: keys, datasets: [{ data: vals, backgroundColor: cores, borderWidth: 2 }] },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: true, position: "right", labels: { font: { size: 11 }, boxWidth: 12, padding: 10 } },
+          datalabels: {
+            color: "#fff",
+            font: { size: 11, weight: "700" },
+            formatter: (v) => {
+              if (!total) return "";
+              const p = (v / total * 100).toFixed(1);
+              return p < 5 ? "" : p + "%";
+            },
+          },
+        },
+      },
+    });
+  });
+
+  // Gráficos tipo e seção
   const tipos = Object.entries(ag.por_tipo).sort((a,b) => b[1]-a[1]).slice(0, 10);
   _mk("chart-tipo", c => montarChartBarras(c,
     tipos.map(([k]) => k.length > 40 ? k.slice(0,38)+"…" : k),
@@ -246,7 +293,7 @@ function _renderizar(achados) {
         if (fsi && (a.situacao || "nao_consta") !== fsi) return false;
         return true;
       });
-      _renderizar(filtrados);
+      _renderizar(filtrados, d.relatorios);
     }
 
     selAno.addEventListener("change", filtrar);
@@ -257,7 +304,7 @@ function _renderizar(achados) {
       filtrar();
     });
 
-    _renderizar(d.achados);
+    _renderizar(d.achados, d.relatorios);
 
   } catch (e) {
     document.querySelector("main").innerHTML =

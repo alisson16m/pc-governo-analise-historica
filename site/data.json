@@ -1,7 +1,21 @@
 {
-  "gerado_em": "2026-05-15T10:10:59+00:00",
+  "gerado_em": "2026-05-15T10:40:52+00:00",
   "versao": "1.1.0",
   "relatorios": [
+    {
+      "id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "arquivo": "Água Branca.pdf",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "gestor": "Prefeitura Municipal de ÁGUA BRANCA",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "opiniao_auditoria": "Regular com Ressalvas",
+      "fonte_extracao": "gemini_legacy",
+      "n_achados": 18
+    },
     {
       "id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
       "arquivo": "Piranhas.pdf",
@@ -32,6 +46,384 @@
     }
   ],
   "achados": [
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.01",
+      "tipo": "Impropriedade",
+      "secao": "2. Instrumentos De Planejamento",
+      "base_normativa": "Resolução Normativa nº 01/2016, Anexo I, item 19.",
+      "descricao": "Cópia do PPA 2022/2025 não foi inserida no processo de prestação de contas de governo do município, configurando descumprimento da Resolução Normativa nº 001/2016.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se ao gestor que, em conformidade com a Resolução Normativa nº 03/2023, inclua a Cópia do Plano Plurianual (PPA) no processo de prestação de contas de governo, garantindo a observância das exigências legais e o devido planejamento das políticas públicas.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.02",
+      "tipo": "Impropriedade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP), 9ª Edição",
+      "descricao": "As receitas foram demonstradas pelos seus valores brutos, com a inclusão de uma linha segregada para as deduções, em vez de serem apresentadas pelo valor líquido de suas respectivas deduções.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que, para os próximos exercícios, adote integralmente os procedimentos estabelecidos pelo MCASP, realizando a apresentação das receitas orçamentárias pelo valor líquido de suas respectivas deduções.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.03",
+      "tipo": "Inconsistência",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP) - 9ª Edição",
+      "descricao": "Diferença de R$ 5.964.487,15 entre a dotação atualizada apurada pela área técnica e o valor registrado no balanço orçamentário.",
+      "houve_defesa": false,
+      "situacao": "afastado",
+      "recomendacao": "Recomenda-se que seja realizada uma revisão detalhada dos procedimentos de ajuste orçamentário, com especial atenção aos processos de atualização da dotação.",
+      "determinacao": null,
+      "valor_financeiro": 5964487.15,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.04",
+      "tipo": "Impropriedade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP) - 9ª Edição",
+      "descricao": "Ausência do Quadro demonstrativo dos créditos adicionais, configurando descumprimento da RN nº 01/2016, anexo I, item 23.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que, nos próximos exercícios, o município assegure a inclusão do referido demonstrativo nos autos da prestação de contas, a fim de evitar apontamentos por falhas formais e assegurar o atendimento integral às normas estabelecidas pelo Tribunal de Contas do Estado de Alagoas.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.05",
+      "tipo": "Irregularidade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Arts. 167, V, e 165, §8º, da Constituição Federal, e o art. 42 da Lei Federal nº 4.320/64.",
+      "descricao": "Créditos suplementares autorizados antes da edição da Lei nº 788/2023 ultrapassavam 71% da dotação orçamentária inicial, evidenciando possível afronta aos princípios da legalidade orçamentária e da transparência fiscal.",
+      "houve_defesa": false,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se à administração municipal que promova melhoria na técnica legislativa aplicada às normas orçamentárias, especialmente quanto à clareza e delimitação precisa dos limites autorizativos, bem como que observe, com rigor, os limites fixados previamente em lei específica, conforme exigem os arts. 167, V, e 165, §8º, da Constituição Federal, e o art. 42 da Lei Federal nº 4.320/64.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.06",
+      "tipo": "Impropriedade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Art. 43, § 3º, da Lei nº 4.320/64",
+      "descricao": "Abertura de créditos suplementares no valor total de R$ 35.907.378,06, superior em R$ 5.248.176,79 à disponibilidade efetiva demonstrada pelo superávit financeiro, configurando inconsistência na cobertura legal e possível afronta ao princípio da legalidade orçamentária.",
+      "houve_defesa": false,
+      "situacao": "afastado",
+      "recomendacao": "Recomenda-se que, nos exercícios subsequentes, o Poder Executivo observe rigorosamente a correspondência entre os créditos adicionais abertos e as fontes de recursos efetivamente disponíveis, de modo a garantir a conformidade legal e a transparência na execução orçamentária.",
+      "determinacao": null,
+      "valor_financeiro": 5248176.79,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.07",
+      "tipo": "Inconsistência",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição).",
+      "descricao": "Diferença entre o valor total das transferências relativas a recursos destinados ao pagamento dos agentes comunitários de saúde e de combate às endemias (R$ 1.674.624,00) e o valor apresentado no demonstrativo (R$ 1.662.084,00).",
+      "houve_defesa": false,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que o Demonstrativo da Receita Corrente Líquida e os demais que possuem os valores de Receita Corrente Líquida Ajustada para Cálculo dos Limites de Endividamento e Receita Corrente Líquida Ajustada para Cálculo dos Limites da Despesa com Pessoal sejam devidamente corrigidos e republicados nos Portais Públicos, como SICONFI e Portal da Transparência do ente.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.08",
+      "tipo": "Impropriedade",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF -13ª Edição)",
+      "descricao": "Divergência de R$ 2.845.238,06 na Despesa com Pessoal, decorrente da inclusão indevida de R$ 2.752.574,28 sob a rubrica de indenizações por demissão e incentivos à demissão voluntária.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que o Município adote procedimentos de controle quanto à correta identificação e contabilização das fontes de recursos vinculadas ao FUNDEB, especialmente no que tange à utilização de superávit financeiro de exercícios anteriores.",
+      "determinacao": null,
+      "valor_financeiro": 2845238.06,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.09",
+      "tipo": "Irregularidade",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Lei de Responsabilidade Fiscal (LC nº 101/2000)",
+      "descricao": "O Poder Executivo executou R$ 65.028.385,33 em Despesas com Pessoal, correspondendo a 66,04% da Receita Corrente Líquida (RCL) ajustada, ultrapassando o limite estabelecido pela Lei de Responsabilidade Fiscal (LRF).",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que o Poder Executivo continue adotando medidas de contenção e controle de gastos com pessoal. É importante manter a disciplina fiscal e monitorar periodicamente os gastos para assegurar que permaneçam dentro dos limites legais, evitando assim novas infrações à LRF e promovendo um equilíbrio sustentável das finanças públicas.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.10",
+      "tipo": "Impropriedade",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Responsabilidade Fiscal (LC nº 101/2000)",
+      "descricao": "O ente não cumpriu as metas fiscais definidas na LDO, com destaque para o elevado déficit primário e nominal e a ampliação significativa das despesas.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que o gestor promova a reavaliação das receitas e despesas a cada bimestre, ajustando-as conforme os critérios estabelecidos na Lei de Diretrizes Orçamentárias (LDO) para evitar futuros riscos de não cumprimento das metas fiscais.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.11",
+      "tipo": "Impropriedade",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": "Portaria Conjunta STN/SOF nº 20/2021 e pela Portaria STN nº 710/2021",
+      "descricao": "O ente não associa o CO 1070 – destinado à identificação do percentual utilizado no pagamento da remuneração dos profissionais da educação básica em efetivo exercício – na execução das despesas relacionadas à remuneração dos profissionais da educação básica, descumprindo a Portaria Conjunta STN/SOF nº 20/2021.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se ao gestor que adote as medidas necessárias para garantir a correta associação do CO 1070 na execução das despesas relacionadas à remuneração dos profissionais da educação básica. Essa ação é essencial para que o município esteja em conformidade com a Portaria Conjunta STN/SOF nº 20/2021.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.12",
+      "tipo": "Inconsistência",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição).",
+      "descricao": "Diferença residual de R$ 30.828,42 que excede o montante de superávit formalmente identificado, indicando eventual falha na contabilização da fonte de recursos, contrariando normativas ou utilização de fontes diversas do FUNDEB para cobertura desse valor, o que não foi devidamente evidenciado.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que o Município adote procedimentos de controle quanto à correta identificação e contabilização das fontes de recursos vinculadas ao FUNDEB, especialmente no que tange à utilização de superávit financeiro de exercícios anteriores.",
+      "determinacao": null,
+      "valor_financeiro": 30828.42,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.13",
+      "tipo": "Impropriedade",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": "Lei Complementar nº 101/2000 / Portaria MEC nº 844/2008",
+      "descricao": "O Município de Água Branca publicou em atraso os Demonstrativos das Receitas e Despesas com Manutenção e Desenvolvimento do Ensino referentes aos bimestres de 2023 no SIOPE.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que o gestor se atente e cumpra com os prazos de envio estabelecidos pela LRF para evitar que o município seja prejudicado e tenha suas transferências voluntárias suspensas.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.14",
+      "tipo": "Impropriedade",
+      "secao": "7. Análise Dos Limites Constitucionais",
+      "base_normativa": "Lei Complementar nº 101/2000 / Lei Complementar nº 141/2012",
+      "descricao": "O Município de Água Branca publicou em atraso dois Demonstrativo das Receitas e Despesas com Ações e Serviços Públicos de Saúde (ASPS) referentes aos bimestres de 2023 no Sistema de Informações sobre Orçamentos Públicos em Saúde (SIOPS).",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que o gestor se atente e cumpra com os prazos de envio estabelecidos pela LRF para evitar que o município seja prejudicado e tenha suas transferências voluntárias suspensas.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.15",
+      "tipo": "Impropriedade",
+      "secao": "9. Transparência E Controle Interno",
+      "base_normativa": "Art. 48, inciso I da Lei de Responsabilidade Fiscal",
+      "descricao": "O Município de Água Branca não atende plenamente às exigências da Lei de Responsabilidade Fiscal, apresentando falhas no cumprimento das obrigações de publicidade e transparência fiscal.",
+      "houve_defesa": false,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que o ente municipal implemente medidas corretivas para assegurar a realização e a devida publicidade das audiências públicas obrigatórias, assim como a regular publicação dos relatórios exigidos pela LRF e das Leis orçamentárias, garantindo maior conformidade legal e transparência na gestão dos recursos públicos.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.16",
+      "tipo": "Irregularidade",
+      "secao": "9. Transparência E Controle Interno",
+      "base_normativa": "Instrução Normativa nº 03/2011 – TCE/AL",
+      "descricao": "O parecer do Sistema de Controle Interno não atende aos critérios mínimos de abrangência, consistência e fundamentação técnica, sendo genérico e desprovido de dados objetivos, indicadores, valores, percentuais, quadros demonstrativos ou referências a documentos que sustentem as conclusões.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que o Município promova a reestruturação do seu Sistema de Controle Interno, em conformidade com os preceitos da Instrução Normativa nº 003/2011, assegurando a elaboração de pareceres técnicos abrangentes e devidamente fundamentados, que contemplem todas as dimensões da gestão pública – orçamentária, financeira, patrimonial, operacional e fiscal –, conforme previsto no art. 5º e no Anexo I da referida normativa.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.17",
+      "tipo": "Impropriedade",
+      "secao": "9. Transparência E Controle Interno",
+      "base_normativa": "Instrução Normativa nº 03/2011 – TCE/AL",
+      "descricao": "Não foi possível verificar se o Município cumpre o disposto no art. 2º, §1º, da IN nº 003/2011, que exige, nos entes de pequeno porte, que a coordenação do SCI seja exercida por servidor efetivo.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se ao gestor municipal que adote as providências necessárias para adequar a estrutura do Sistema de Controle Interno, conforme preceituado no art. 2º, §1º, da Instrução Normativa nº 003/2011.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "74d9b355088523e904294c262df9b581b93face1eac86f4dbe13acc68f276aa6",
+      "ano": 2023,
+      "municipio": "Água Branca",
+      "orgao": "PREFEITURA MUNICIPAL DE ÁGUA BRANCA PROCESSO TCE",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006634/2024",
+      "codigo": "III.18",
+      "tipo": "Irregularidade",
+      "secao": "9. Transparência E Controle Interno",
+      "base_normativa": "Instrução Normativa nº 03/2011 – TCE/AL",
+      "descricao": "Descumprimento ao art. 3º da IN nº 003/2011, pois o Município não possui um Órgão Central do SCI formalmente instituído por lei municipal, tampouco estrutura organizacional própria para a coordenação do sistema, comprometendo a independência, a autonomia e a eficácia do controle interno.",
+      "houve_defesa": false,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que o Município institua formalmente o Órgão Central do SCI, com estrutura compatível ao seu porte e à complexidade da sua administração, nos termos do art. 3º do mesmo normativo, garantindo a efetividade do controle e o fortalecimento da governança pública local.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": null,
+      "analise_tecnica": null
+    },
     {
       "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
       "ano": 2023,
@@ -518,53 +910,68 @@
   ],
   "agregacoes": {
     "totais": {
-      "relatorios": 2,
-      "achados": 23,
-      "saneados": 12,
-      "mantidos": 11,
+      "relatorios": 3,
+      "achados": 41,
+      "saneados": 17,
+      "mantidos": 24,
       "com_defesa": 23,
-      "municipios": 2,
+      "municipios": 3,
       "anos": [
         2023,
         2024
       ]
     },
     "por_situacao": {
-      "sanado_total": 10,
-      "mantido": 11,
-      "afastado": 1,
+      "mantido": 24,
+      "afastado": 3,
+      "sanado_total": 13,
       "sanado_parcial": 1
     },
     "por_tipo": {
-      "Impropriedade": 13,
-      "Irregularidade": 6,
-      "Inconsistência": 4
+      "Impropriedade": 24,
+      "Irregularidade": 10,
+      "Inconsistência": 7
     },
     "por_secao": {
+      "6. Gestão Fiscal": 8,
+      "3. Aspectos Orçamentários E Financeiros": 7,
       "4. Aspectos Patrimoniais": 7,
-      "6. Gestão Fiscal": 4,
-      "3. Aspectos Orçamentários E Financeiros": 2,
-      "7. Análise Dos Limites Constitucionais": 2,
-      "2. Instrumentos De Planejamento": 2,
+      "7. Análise Dos Limites Constitucionais": 6,
+      "9. Transparência E Controle Interno": 5,
+      "2. Instrumentos De Planejamento": 3,
       "7.1. Educação": 2,
-      "9. Transparência E Controle Interno": 1,
       "5. Repasses Do Duodécimo": 1,
       "7.2. Fundo De Manutenção E Desenvolvime Nto Da Educação Básica – Fundeb": 1,
       "7.3. Saúde": 1
     },
     "por_municipio": {
+      "Água Branca": 18,
       "Atalaia": 18,
       "Piranhas": 5
     },
     "por_ano": {
-      "2023": 5,
+      "2023": 23,
       "2024": 18
     },
     "por_base_normativa": {
       "MCASP 10ª\nEdição": 6,
+      "Instrução Normativa nº 03/2011 – TCE/AL": 3,
       "Lei Complementar nº 101/2000 - LRF": 3,
       "Resolução\nNormativa\nTCE/AL nº\n003/2024": 3,
+      "Manual de Contabilidade Aplicada ao Setor Público (MCASP) - 9ª Edição": 2,
+      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição).": 2,
       "Art. 43, §3º, da Lei nº 4.320/64": 2,
+      "Resolução Normativa nº 01/2016, Anexo I, item 19.": 1,
+      "Manual de Contabilidade Aplicada ao Setor Público (MCASP), 9ª Edição": 1,
+      "Arts. 167, V, e 165, §8º, da Constituição Federal, e o art. 42 da Lei Federal nº 4.320/64.": 1,
+      "Art. 43, § 3º, da Lei nº 4.320/64": 1,
+      "Manual de Demonstrativos Fiscais (MDF -13ª Edição)": 1,
+      "Lei de Responsabilidade Fiscal (LC nº 101/2000)": 1,
+      "Responsabilidade Fiscal (LC nº 101/2000)": 1,
+      "Portaria Conjunta STN/SOF nº 20/2021 e pela Portaria STN nº 710/2021": 1,
+      "Lei Complementar nº 101/2000 / Portaria MEC nº 844/2008": 1,
+      "Lei Complementar nº 101/2000 / Lei Complementar nº 141/2012": 1,
+      "Art. 48, inciso I da Lei de Responsabilidade Fiscal": 1,
       "Art. 4º da\nLei\nCompleme\nntar nº\n101/2000": 1,
       "§ 8º do artigo\n165 da CF/88": 1,
       "Lei\nComplementar\nnº 101/2000": 1,
@@ -583,9 +990,31 @@
         "afastado": 1,
         "sanado_parcial": 1
       },
-      "sem_defesa": {}
+      "sem_defesa": {
+        "mantido": 13,
+        "afastado": 2,
+        "sanado_total": 3
+      }
     },
     "valores_top": [
+      {
+        "codigo": "III.03",
+        "municipio": "Água Branca",
+        "valor": 5964487.15,
+        "descricao": "Diferença de R$ 5.964.487,15 entre a dotação atualizada apurada pela área técnica e o valor registrado no balanço orçamentário."
+      },
+      {
+        "codigo": "III.06",
+        "municipio": "Água Branca",
+        "valor": 5248176.79,
+        "descricao": "Abertura de créditos suplementares no valor total de R$ 35.907.378,06, superior em R$ 5.248.176,79 à disponibilidade efetiva demonstrada pelo superávit financeiro, configurando inconsistência na cober"
+      },
+      {
+        "codigo": "III.08",
+        "municipio": "Água Branca",
+        "valor": 2845238.06,
+        "descricao": "Divergência de R$ 2.845.238,06 na Despesa com Pessoal, decorrente da inclusão indevida de R$ 2.752.574,28 sob a rubrica de indenizações por demissão e incentivos à demissão voluntária."
+      },
       {
         "codigo": "III.01",
         "municipio": "Piranhas",
@@ -605,6 +1034,12 @@
         "descricao": "Verifica-se que houve abertura de crédito especial no montante de R$ 254.300,00 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente."
       },
       {
+        "codigo": "III.12",
+        "municipio": "Água Branca",
+        "valor": 30828.42,
+        "descricao": "Diferença residual de R$ 30.828,42 que excede o montante de superávit formalmente identificado, indicando eventual falha na contabilização da fonte de recursos, contrariando normativas ou utilização d"
+      },
+      {
         "codigo": "III.14",
         "municipio": "Atalaia",
         "valor": 8.5,
@@ -612,18 +1047,28 @@
       }
     ],
     "tipo_por_secao": {
+      "2. Instrumentos De Planejamento": {
+        "Impropriedade": 2,
+        "Irregularidade": 1
+      },
       "3. Aspectos Orçamentários E Financeiros": {
-        "Impropriedade": 2
+        "Impropriedade": 5,
+        "Inconsistência": 1,
+        "Irregularidade": 1
+      },
+      "6. Gestão Fiscal": {
+        "Impropriedade": 3,
+        "Irregularidade": 3,
+        "Inconsistência": 2
       },
       "7. Análise Dos Limites Constitucionais": {
-        "Impropriedade": 2
-      },
-      "9. Transparência E Controle Interno": {
+        "Impropriedade": 5,
         "Inconsistência": 1
       },
-      "2. Instrumentos De Planejamento": {
-        "Impropriedade": 1,
-        "Irregularidade": 1
+      "9. Transparência E Controle Interno": {
+        "Impropriedade": 2,
+        "Irregularidade": 2,
+        "Inconsistência": 1
       },
       "4. Aspectos Patrimoniais": {
         "Impropriedade": 5,
@@ -631,11 +1076,6 @@
       },
       "5. Repasses Do Duodécimo": {
         "Irregularidade": 1
-      },
-      "6. Gestão Fiscal": {
-        "Irregularidade": 2,
-        "Inconsistência": 1,
-        "Impropriedade": 1
       },
       "7.1. Educação": {
         "Irregularidade": 2
@@ -648,6 +1088,11 @@
       }
     },
     "situacao_por_municipio": {
+      "Água Branca": {
+        "mantido": 13,
+        "afastado": 2,
+        "sanado_total": 3
+      },
       "Piranhas": {
         "sanado_total": 4,
         "mantido": 1
@@ -660,19 +1105,21 @@
       }
     },
     "por_opiniao": {
+      "Regular com Ressalvas": 1,
       "Regular": 1,
       "Irregular": 1
     },
     "por_relator": {
-      "Rodrigo Siqueira Cavalcante": 1,
-      "Maria Cleide Costa Beserra": 1
+      "Maria Cleide Costa Beserra": 2,
+      "Rodrigo Siqueira Cavalcante": 1
     },
     "opiniao_por_relator": {
+      "Maria Cleide Costa Beserra": {
+        "Regular com Ressalvas": 1,
+        "Irregular": 1
+      },
       "Rodrigo Siqueira Cavalcante": {
         "Regular": 1
-      },
-      "Maria Cleide Costa Beserra": {
-        "Irregular": 1
       }
     }
   }
