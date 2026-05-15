@@ -152,7 +152,6 @@ function abrirModal(achado, relatorio) {
       <dt>Município</dt><dd>${achado.municipio || "—"}</dd>
       <dt>Ano</dt><dd>${achado.ano || "—"}</dd>
       <dt>Seção</dt><dd>${achado.secao || "—"}</dd>
-      ${!achado.houve_defesa ? "<dt>Houve defesa?</dt><dd>Não</dd>" : ""}
       <dt>Nº do processo</dt><dd>${achado.numero_processo || relatorio?.numero_processo || "—"}</dd>
       <dt>Relator</dt><dd>${achado.relator || relatorio?.relator || "—"}</dd>
       <dt>Base normativa</dt><dd>${achado.base_normativa || "—"}</dd>
@@ -167,7 +166,9 @@ function abrirModal(achado, relatorio) {
       ? `<h4>Defesa do Gestor</h4><p>${achado.resumo_defesa}</p>`
       : achado.defesa_gestor
         ? `<h4>Defesa do Gestor</h4><p>${achado.defesa_gestor}</p>`
-        : ""}
+        : !achado.houve_defesa
+          ? `<h4>Defesa do Gestor</h4><p class="muted">Não foi apresentada manifestação de defesa em relação a esse achado.</p>`
+          : ""}
     ${achado.resumo_analise
       ? `<h4>Análise Técnica</h4><p>${achado.resumo_analise}</p>`
       : achado.analise_tecnica

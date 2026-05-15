@@ -283,6 +283,7 @@ main { max-width: 1280px; margin: 0 auto; padding: 1.5rem 1.5rem 4rem; width: 10
   color: var(--text);
 }
 .card h2 .muted { font-weight: 400; color: var(--muted); font-size: 0.88rem; margin-left: 0.5rem; }
+.muted { color: var(--muted); }
 
 /* ── Grid row ── */
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
