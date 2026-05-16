@@ -13,6 +13,8 @@ for _stream in (sys.stdout, sys.stderr):
 
 from pathlib import Path
 from typing import Optional
+import concurrent.futures
+import os
 
 import typer
 from rich.console import Console
@@ -69,8 +71,6 @@ def extrair(
     pdf: Optional[Path] = typer.Option(None, help="Processa um PDF específico"),
 ) -> None:
     """Extrai achados dos PDFs em PDFs/AAAA/."""
-    _configurar_logging()
-    _log = logging.getLogger("pcg.extrair")
     if pdf:
         alvos = [(pdf, None)]
     else:
@@ -81,21 +81,29 @@ def extrair(
         print("[yellow]Nenhum PDF encontrado.[/]")
         raise typer.Exit(0)
 
+    workers = int(os.getenv("PCG_WORKERS", "4"))
+    _configurar_logging()
+    _log = logging.getLogger("pcg.extrair")
+
+    def _processar_com_prog(args: tuple) -> None:
+        caminho, ano_pasta = args
+        t = prog.add_task(f"[cyan]{caminho.name}", total=None)
+        try:
+            fonte = _processar(caminho, ano_pasta, forcar=forcar)
+            if fonte == "gemini_legacy":
+                from .rate_limit import estado_atual
+                est = estado_atual()
+                prog.update(t, description=f"[green]OK {caminho.name} [dim]({est['rpd_usado']}/{est['rpd_max']} req Gemini)[/]")
+            else:
+                prog.update(t, description=f"[green]OK {caminho.name}")
+            _log.info("OK %s — fonte=%s", caminho.name, fonte)
+        except Exception as e:
+            prog.update(t, description=f"[red]ERRO {caminho.name}: {e}")
+            _log.error("ERRO %s — %s", caminho.name, e)
+
     with Progress(SpinnerColumn(spinner_name="line"), TextColumn("{task.description}"), console=_console) as prog:
-        for caminho, ano_pasta in alvos:
-            t = prog.add_task(f"[cyan]{caminho.name}", total=None)
-            try:
-                fonte = _processar(caminho, ano_pasta, forcar=forcar)
-                if fonte == "gemini_legacy":
-                    from .rate_limit import estado_atual
-                    est = estado_atual()
-                    prog.update(t, description=f"[green]OK {caminho.name} [dim]({est['rpd_usado']}/{est['rpd_max']} req Gemini)[/]")
-                else:
-                    prog.update(t, description=f"[green]OK {caminho.name}")
-                _log.info("OK %s — fonte=%s", caminho.name, fonte)
-            except Exception as e:
-                prog.update(t, description=f"[red]ERRO {caminho.name}: {e}")
-                _log.error("ERRO %s — %s", caminho.name, e)
+        with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
+            list(executor.map(_processar_com_prog, alvos))
 
 
 def _processar(caminho: Path, ano_pasta: Optional[int], *, forcar: bool) -> str:
