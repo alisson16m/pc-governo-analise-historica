@@ -7,29 +7,32 @@ import time
 from datetime import date
 from pathlib import Path
 
+from filelock import FileLock
+
 STATE = Path("data/.gemini_state.json")
+_LOCK = FileLock(str(STATE) + ".lock")
+
+_ESTADO_PADRAO = {"dia": "", "rpd": 0, "ultimo_request": 0.0, "esgotado": False}
 
 
 def _ler() -> dict:
-    if not STATE.exists():
-        return {"dia": "", "rpd": 0, "ultimo_request": 0.0, "esgotado": False}
-    try:
-        return json.loads(STATE.read_text(encoding="utf-8"))
-    except Exception:
-        return {"dia": "", "rpd": 0, "ultimo_request": 0.0, "esgotado": False}
+    with _LOCK:
+        if not STATE.exists():
+            return dict(_ESTADO_PADRAO)
+        try:
+            return json.loads(STATE.read_text(encoding="utf-8"))
+        except Exception:
+            return dict(_ESTADO_PADRAO)
 
 
 def _escrever(d: dict) -> None:
-    STATE.parent.mkdir(parents=True, exist_ok=True)
-    STATE.write_text(json.dumps(d), encoding="utf-8")
+    with _LOCK:
+        STATE.parent.mkdir(parents=True, exist_ok=True)
+        STATE.write_text(json.dumps(d), encoding="utf-8")
 
 
 def aguardar() -> None:
-    """Aguarda o intervalo mínimo entre requisições (RPM) e verifica a cota diária.
-
-    Não incrementa o contador — chame marcar_sucesso() após a chamada bem-sucedida
-    ou marcar_esgotado() ao receber um erro 429 da API.
-    """
+    """Aguarda o intervalo mínimo entre requisições (RPM) e verifica a cota diária."""
     rpm = int(os.getenv("GEMINI_RPM", "15"))
     rpd = int(os.getenv("GEMINI_RPD", "1000"))
     minimo_intervalo = 60.0 / max(rpm, 1)
