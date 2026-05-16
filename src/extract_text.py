@@ -5,8 +5,12 @@ import hashlib
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Optional
 
 import pdfplumber
+from rich.console import Console as _Console
+
+_console = _Console(legacy_windows=False)
 
 
 @dataclass
@@ -47,7 +51,10 @@ def extrair(caminho: Path) -> RelatorioTexto:
             texto = page.extract_text() or ""
             try:
                 tabelas = page.extract_tables() or []
-            except Exception:
+            except Exception as _exc:
+                _console.print(
+                    f"[yellow]⚠ Tabela ignorada: {caminho.name} p.{i} — {_exc}[/yellow]"
+                )
                 tabelas = []
             paginas.append(Pagina(numero=i, texto=texto, tabelas=tabelas))
             partes.append(texto)
@@ -73,6 +80,14 @@ def extrair_secoes(texto_relatorio: RelatorioTexto) -> list[tuple[int, str]]:
         if _RE_CABECALHO.match(ln):
             secs.append((idx, ln.strip()))
     return secs
+
+
+def achar_indice_codigo(texto: RelatorioTexto, codigo: str) -> Optional[int]:
+    """Retorna o índice global (em linhas()) da primeira linha que contém o código."""
+    for i, (_p, ln) in enumerate(texto.linhas()):
+        if codigo in ln:
+            return i
+    return None
 
 
 def secao_de_linha(secoes: list[tuple[int, str]], idx_linha: int) -> str:
