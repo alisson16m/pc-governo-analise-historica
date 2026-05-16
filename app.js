@@ -256,12 +256,26 @@ function renderAchados() {
     $('f-municipio').dataset.paramApplied = '1';
   }
 
+  const termoBusca = (document.getElementById('f-busca')?.value || '').toLowerCase().trim();
+
   FILTERED_ACHADOS = filterAchados({
     ano,
     municipio: $('f-municipio')?.value ?? '',
     tipo:      $('f-tipo')?.value ?? '',
     situacao:  $('f-situacao')?.value ?? '',
     secao:     $('f-secao')?.value ?? '',
+  }).filter(a => {
+    if (termoBusca) {
+      const textoAchado = [
+        a.tipo || '',
+        a.descricao || '',
+        a.recomendacao || '',
+        a.determinacao || '',
+        a.base_normativa || '',
+      ].join(' ').toLowerCase();
+      if (!textoAchado.includes(termoBusca)) return false;
+    }
+    return true;
   });
 
   $('badge-achados').textContent = fmtN(FILTERED_ACHADOS.length) + ' achados';
@@ -270,6 +284,7 @@ function renderAchados() {
   ['f-municipio', 'f-tipo', 'f-situacao', 'f-secao'].forEach(id =>
     bindSelect(id, () => { _achadoPage = 1; renderAchados(); })
   );
+  document.getElementById('f-busca')?.addEventListener('input', () => { _achadoPage = 1; renderAchados(); });
 
   const rst = $('btn-reset');
   if (rst && !rst.dataset.bound) {
@@ -277,6 +292,7 @@ function renderAchados() {
     rst.addEventListener('click', () => {
       ['f-municipio', 'f-tipo', 'f-situacao', 'f-secao', 'nav-year', 'nav-year-drawer']
         .forEach(id => { const el = $(id); if (el) el.value = ''; });
+      document.getElementById('f-busca').value = '';
       _achadoPage = 1; renderAchados();
     });
   }
