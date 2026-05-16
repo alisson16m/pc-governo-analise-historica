@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Sobre — Portal PCG · TCE-AL</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">TC</div>
+    <span class="nav-title">TCE-AL</span>
+    <span class="nav-subtitle">· Portal PCG</span>
+  </a>
+  <div class="nav-links" id="nav-links"></div>
+  <div class="nav-right">
+    <select class="nav-year" id="nav-year"></select>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<nav class="nav-drawer" id="nav-drawer">
+  <div id="nav-drawer-links"></div>
+  <div class="nav-drawer-year">
+    <select class="filter-select" id="nav-year-drawer" style="width:100%"></select>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-header-label">Portal PCG · TCE-AL</p>
+    <h1 class="page-header-title">Sobre o Portal</h1>
+    <p class="page-header-sub">Metodologia e fontes de dados</p>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="card" style="max-width:800px">
+    <div class="card-body" style="line-height:1.8;color:var(--text-2)">
+
+      <h2 style="font-family:'Sora',sans-serif;font-size:1.1rem;color:var(--text);margin-bottom:0.75rem">O que é o Portal PCG?</h2>
+      <p style="margin-bottom:1rem">O Portal PCG (Prestação de Contas dos Gestores) é uma ferramenta de transparência que consolida os achados das auditorias realizadas pelo Tribunal de Contas do Estado de Alagoas (TCE-AL) nas prestações de contas anuais dos municípios alagoanos.</p>
+
+      <h2 style="font-family:'Sora',sans-serif;font-size:1.1rem;color:var(--text);margin-bottom:0.75rem;margin-top:1.75rem">Metodologia de extração</h2>
+      <p style="margin-bottom:1rem">Os dados são extraídos automaticamente dos relatórios em PDF publicados pelo TCE-AL. O processo utiliza heurísticas de texto e um modelo de linguagem (Gemini) para estruturar os achados em formato JSON, incluindo tipo, situação, base normativa, recomendações e o resultado do contraditório.</p>
+
+      <h2 style="font-family:'Sora',sans-serif;font-size:1.1rem;color:var(--text);margin-bottom:0.75rem;margin-top:1.75rem">Situações dos achados</h2>
+      <ul style="margin-left:1.25rem;margin-bottom:1rem;display:flex;flex-direction:column;gap:0.5rem;list-style:none;padding:0">
+        <li style="display:flex;align-items:center;gap:0.6rem"><span class="badge badge-red">Mantido</span> <span>A irregularidade foi confirmada após o contraditório</span></li>
+        <li style="display:flex;align-items:center;gap:0.6rem"><span class="badge badge-green">Sanado Total</span> <span>O gestor corrigiu completamente o problema identificado</span></li>
+        <li style="display:flex;align-items:center;gap:0.6rem"><span class="badge badge-orange">Sanado Parcial</span> <span>Uma correção parcial foi aceita pela equipe de auditoria</span></li>
+        <li style="display:flex;align-items:center;gap:0.6rem"><span class="badge badge-gray">Afastado</span> <span>A defesa do gestor foi acolhida integralmente</span></li>
+      </ul>
+
+      <h2 style="font-family:'Sora',sans-serif;font-size:1.1rem;color:var(--text);margin-bottom:0.75rem;margin-top:1.75rem">Opiniões de auditoria</h2>
+      <ul style="margin-left:1.25rem;margin-bottom:1rem;display:flex;flex-direction:column;gap:0.5rem;list-style:none;padding:0">
+        <li style="display:flex;align-items:center;gap:0.6rem"><span class="badge badge-green">Regular</span> <span>Contas aprovadas sem ressalvas</span></li>
+        <li style="display:flex;align-items:center;gap:0.6rem"><span class="badge badge-orange">Regular com Ressalvas</span> <span>Contas aprovadas com irregularidades de menor gravidade</span></li>
+        <li style="display:flex;align-items:center;gap:0.6rem"><span class="badge badge-red">Irregular</span> <span>Contas reprovadas pelo TCE-AL</span></li>
+      </ul>
+
+      <p style="font-size:0.82rem;color:var(--muted);margin-top:2rem;border-top:1px solid var(--border);padding-top:1rem">
+        Dados atualizados em <span id="gerado-em">—</span>. Este portal é um projeto de análise de dados e não possui vínculo oficial com o TCE-AL.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

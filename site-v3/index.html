@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Visão Geral — Portal PCG · TCE-AL</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">TC</div>
+    <span class="nav-title">TCE-AL</span>
+    <span class="nav-subtitle">· Portal PCG</span>
+  </a>
+  <div class="nav-links" id="nav-links"></div>
+  <div class="nav-right">
+    <select class="nav-year" id="nav-year"></select>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<nav class="nav-drawer" id="nav-drawer">
+  <div id="nav-drawer-links"></div>
+  <div class="nav-drawer-year">
+    <select class="filter-select" id="nav-year-drawer" style="width:100%"></select>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-super">Prestação de Contas · Alagoas</p>
+    <h1 class="hero-title">Banco de Achados TCE-AL</h1>
+    <p class="hero-sub">Análise de achados das prestações de contas municipais</p>
+    <div class="hero-kpis">
+      <div class="kpi-glass">
+        <div class="kpi-label">Relatórios</div>
+        <div class="kpi-value" id="kpi-relatorios">—</div>
+      </div>
+      <div class="kpi-glass red">
+        <div class="kpi-label">Achados</div>
+        <div class="kpi-value" id="kpi-achados">—</div>
+      </div>
+      <div class="kpi-glass">
+        <div class="kpi-label">Municípios</div>
+        <div class="kpi-value" id="kpi-municipios">—</div>
+      </div>
+      <div class="kpi-glass">
+        <div class="kpi-label">Saneados</div>
+        <div class="kpi-value" id="kpi-saneados">—</div>
+      </div>
+    </div>
+    <p class="hero-anos" id="hero-anos"></p>
+  </div>
+</section>
+
+<div class="page-content">
+  <div class="filters">
+    <div class="filter-group">
+      <span class="filter-label">Município</span>
+      <select class="filter-select" id="f-municipio">
+        <option value="">Todos os municípios</option>
+      </select>
+    </div>
+    <button class="filter-reset" id="btn-reset">Limpar filtros</button>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Situação dos Achados</span>
+        <span class="card-badge" id="badge-total-sit">—</span>
+      </div>
+      <div class="card-body" id="chart-situacao"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Top Municípios</span>
+        <span class="card-badge" id="badge-total-muni">—</span>
+      </div>
+      <div class="card-body" id="chart-municipios"></div>
+    </div>
+  </div>
+
+  <div class="two-col-equal">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Achados por Tipo</span>
+      </div>
+      <div class="card-body" id="chart-tipo"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Opinião de Auditoria</span>
+      </div>
+      <div class="card-body" id="chart-opiniao"></div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
