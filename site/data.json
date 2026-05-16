@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-15T18:54:49+00:00",
+  "gerado_em": "2026-05-16T23:04:34+00:00",
   "versao": "1.1.0",
   "relatorios": [
     {
@@ -118,6 +118,19 @@
       "opiniao_auditoria": "Regular",
       "fonte_extracao": "gemini_legacy",
       "n_achados": 5
+    },
+    {
+      "id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "arquivo": "Canapi.pdf",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "gestor": "Prefeitura Municipal de Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "opiniao_auditoria": "Irregular",
+      "fonte_extracao": "gemini_legacy",
+      "n_achados": 20
     },
     {
       "id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -3348,6 +3361,406 @@
       "analise_tecnica": "Em âmbito de defesa, o jurisdicionado informou que todos os itens foram solucionados\ne disponibilizados no Portal da Transparência. Consultado os links acima, verificou-se que tais\nitens foram efetivamente publicados no Portal da Transparência do Jurisdicionado, restando\nsanado o presente apontamento. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal RESUMO\n11. RESUMO\n12.1 Irregularidades, Inconsistências e Impropriedades\nEm observância aos princípios constitucionais do contraditório e da ampla defesa, bem como ao disposto no art. 114 da Lei nº 8."
     },
     {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.01",
+      "tipo": "Impropriedade",
+      "secao": "1. Introdução",
+      "base_normativa": "Anexo I da Resolução Normativa nº 01/2016",
+      "descricao": "Ausência dos documentos: Relatório Resumido da Execução Orçamentária – RREO (consolidado) e Demonstrativo da Projeção Atuarial do RPPS. Recomenda-se o envio em formato PDF nato-digital.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que o gestor se atente a listagem e envie todos os documentos exigidos pela Resolução Normativa nº 01/2016 nas próximas Prestações de Contas de Governo Municipal. Recomenda-se, também, que os documentos sejam enviados em formato PDF nato-digital e não escaneados, pois esse último formato dificulta a leitura e análise dos dados e das informações contidas nas peças.",
+      "determinacao": "Determina-se que o gestor envie esses documentos no processo de Contraditório e Ampla Defesa.",
+      "valor_financeiro": null,
+      "defesa_gestor": "Em atenção aos achados do item III.01 - Relatório de Auditoria, apresentamos nossas desculpas pelo equívoco e encaminhamos, em anexo, o\nRelatório Resumido da Execução Orçamentária (RREO) “consolidado” e o Demonstrativo da Projeção Atuarial do RPPS, em atendimento ao item\n17 e subitem 17.11 do Anexo I da Resolução Normativa nº 001/2016- TCE/AL.\nConsiderando o cumprimento das exigências apontadas, solicitamos a reconsideração da questão, uma vez que não houve dolo na situação em\nquestão.\nsuper",
+      "analise_tecnica": "Em sua defesa, o gestor reconheceu o equívoco apontado, apresentou suas desculpas e encaminhou, em anexo, o Relatório Resumido da\nExecução Orçamentária (RREO) consolidado (peça 74) e o Demonstrativo da Projeção Atuarial do RPPS (peça 75), em atendimento ao item 17 e\nsubitem 17.11 do Anexo I da Resolução Normativa nº 001/2016 do TCE/AL.\nApós análise, verificou-se o envio dos documentos exigidos, restando, assim, sanadas as pendências inicialmente apontadas. Considera-se,\nportanto, o achado devidamente sanado."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.02",
+      "tipo": "Irregularidade",
+      "secao": "2. Instrumentos De Planejamento",
+      "base_normativa": "§ 8º do artigo 165 da Constituição Federal de 1988",
+      "descricao": "O ente incluiu autorização para abertura de Remanejamento, Transferência e Transposição (RTT) na Lei Orçamentária Anual, desobedecendo ao Princípio da Exclusividade.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que sejam feitas adequações nas LOA’s dos exercícios seguintes com base nas observações e apontamentos feitos, para evitar a inclusão de dispositivos que tratem de matérias estranhas à alocação orçamentária.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "Em atendimento ao item III.02 – Instrumentos de Planejamento, que trata da inclusão de autorização para abertura de Remanejamento, Transferência\ne Transposição (RTT) na Lei Orçamentária Anual (LOA), esclarecemos o seguinte:\nA auditoria identificou que a LOA contém dispositivo alheio à previsão de receita e fixação da despesa, em desacordo com o § 8º do artigo 165 da\nConstituição Federal. No entanto, destacamos que a inclusão desse dispositivo na LOA seguiu o que já havia sido estabelecido na Lei de Diretrizes\nOrçamentárias (LDO) para o exercício de 2023, uma vez que a autorização já havia sido previamente concedida. Ainda assim, foi recomendado que\ntais disposições fossem suprimidas das LOAs dos exercícios seguintes, conforme apontamentos da auditoria.",
+      "analise_tecnica": "Em sua defesa, o gestor esclareceu que a inclusão de autorização para abertura de Remanejamento, Transferência e Transposição (RTT) na\nLei Orçamentária Anual (LOA) de 2023 seguiu o que já havia sido previamente estabelecido na Lei de Diretrizes Orçamentárias (LDO), ressaltando,\ncontudo, que tais dispositivos não foram utilizados durante o exercício. Informou, ainda, que acatou a recomendação da auditoria, promovendo a\nexclusão da autorização para RTT na LOA de 2024 (peça 77), permanecendo a previsão apenas na LDO, em conformidade com o §8º do art. 165\nda Constituição Federal e com os conceitos do Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.03",
+      "tipo": "Inconsistência",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte V - Tópico 2",
+      "descricao": "Divergência de R$ 18,95 milhões na Previsão Atualizada apurada pela área técnica e a exposta pelo ente no Balanço Orçamentário. Determina-se a retificação e republicação dos Balanços Orçamentários e do Relatório Resumido de Execução Orçamentária.",
+      "houve_defesa": true,
+      "situacao": "sanado_parcial",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor apresente a memória de cálculo da atualização da receita, justificando o valor de 129,33 milhões de reais. Caso seja identificado que o valor correto seria o apurado pela área técnica, determina-se que os Balanços Orçamentários e o Relatório Resumido de Execução Orçamentária sejam retificados, reenviados e republicados.",
+      "valor_financeiro": 18950000.0,
+      "defesa_gestor": "Em resposta aos apontamentos desta Corte de Contas e em cumprimento ao item III.03, informamos que, após a atualização do software de\ncontabilidade pública, foram identificadas falhas na emissão de alguns relatórios, especificamente no Balanço Orçamentário da Lei 4.320/64 –\nAnexo XII e no Balanço Orçamentário do Relatório Resumido da Execução Orçamentária – Anexo I.\nEssas inconsistências ocorreram devido à seleção inadequada de filtros e parâmetros, resultando em divergências nos valores e cálculos\napresentados. No Anexo XII – Balanço Orçamentário, constatou-se uma discrepância nos valores da coluna “Previsão Atualizada” (b), o que levou\nà exibição de saldos zerados na coluna “Saldo” (d = c - b).",
+      "analise_tecnica": "Em sua defesa, o gestor informou que as inconsistências identificadas no Balanço Orçamentário da Lei 4.320/64 – Anexo XII (peça 12) e no\nBalanço Orçamentário do Relatório Resumido da Execução Orçamentária – Anexo I (peça 20) decorreram de falhas na seleção de filtros e\nparâmetros que puderam ser identificadas após a atualização do software de contabilidade pública. Além disso, alegou-se que as divergências foram\ncorrigidas, tendo sido anexado novo relatório com os dados ajustados (peça 74), além da republicação das informações no SICONFI (6º bimestre\nde 2023) e no portal da transparência do município. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal\nApós análise técnica do Balanço Orçamentário da Lei 4."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.04",
+      "tipo": "Inconsistência",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte V - Tópico 2",
+      "descricao": "Divergência de R$ 6,16 milhões entre os valores de Superávit Financeiro apurado no Exercício Anterior utilizado para abertura de Créditos Adicionais expostos nos Demonstrativos e nos Quadros informados pelo gestor.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se ao gestor que, na ocorrência de superávit financeiro, recorra às notas explicativas para esclarecimentos a respeito do uso desse recurso, bem como suas influências no resultado orçamentário e apuração detalhada desses valores.",
+      "determinacao": "Determina-se que o gestor público evidencie e comprove qual o valor correto de superávit financeiro utilizado para abertura de crédito adicional referente ao exercício de 2023. Determina-se que sejam retificados, reenviados e republicados.",
+      "valor_financeiro": 6160000.0,
+      "defesa_gestor": "O esclarecimento sobre a divergência de R$ 6,16 milhões no superavit financeiro entre o Balanço Orçamentário – Anexo XII da Lei 4.320/64 e o\nBalanço Orçamentário – Anexo I do Relatório Resumido da Execução Orçamentária (RREO) decorre de inconsistências identificadas após a\natualização do software de gestão orçamentária.\nEssas inconsistências foram causadas por configurações incorretas em filtros e parâmetros do sistema, impactando os cálculos e resultando em\ndiscrepâncias nos valores apresentados nos balanços. Para corrigir a situação, foi realizada a reimpressão do Balanço Orçamentário – Anexo I do\nRREO, garantindo a compatibilidade dos valores do superavit financeiro com aqueles utilizados para abertura de créditos adicionais e demonstrados\nno Balanço Orçamentário – Anexo XII da Lei 4.",
+      "analise_tecnica": "O achado em questão tratou da identificação de divergência no montante de 6,16 milhões de reais entre os valores de superávit financeiro\napurado no exercício anterior e aqueles utilizados na abertura de créditos adicionais, conforme os registros dos demonstrativos contábeis e quadros\ninformados pelo ente. Tais inconsistências comprometeram, inicialmente, a transparência e a fidedignidade das informações orçamentárias\napresentadas.\nEm sua defesa, o gestor atribuiu a origem da divergência a falhas de configuração no sistema de gestão orçamentária."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.05",
+      "tipo": "Inconsistência",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte V - Tópico 2",
+      "descricao": "Divergência entre a Previsão Atualizada da Receita exposta no Balanço Orçamentário e no Relatório Resumido de Execução Orçamentária.",
+      "houve_defesa": true,
+      "situacao": "sanado_parcial",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor público evidencie e comprove qual o valor correto da Dotação Atualizada do exercício de 2023. Determina-se sejam retificados, reenviados e republicados.",
+      "valor_financeiro": null,
+      "defesa_gestor": "Conforme mencionado no Item III.03, o relatório Balanço Orçamentário – Anexo XII da Lei 4.320/64 foi retificado na coluna ‘Previsão Atualizada’\n(b). Dessa forma, o Balanço Orçamentário – Anexo I do Relatório Resumido da Execução Orçamentária também foi ajustado em sua previsão\natualizada de receita. As republicações foram realizadas no SICONFI e no Portal da Transparência Municipal, com os documentos devidamente\nencaminhados em anexo a esta defesa prévia.",
+      "analise_tecnica": "Conforme apontado no achado, foi identificada divergência entre a Previsão Atualizada da Receita exposta no Balanço Orçamentário – Anexo\nXII da Lei nº 4.320/64 (peça 12) e aquela apresentada no Balanço Orçamentário – Anexo I do Relatório Resumido da Execução Orçamentária\n(RREO) (peça 18). Tal inconsistência compromete a fidedignidade das informações contábeis e orçamentárias do ente, em afronta aos princípios\nda transparência e da consistência dos demonstrativos fiscais, previstos na Lei de Responsabilidade Fiscal (LRF) e no Manual de Contabilidade\nAplicada ao Setor Público – MCASP."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.06",
+      "tipo": "Inconsistência",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "Art. 166-A, inciso I, Constituição Federal",
+      "descricao": "Divergência entre o valor de Transferências da União provenientes de Emendas Individuais impositivas contabilizadas pelo ente e o exposto no Painel das Emendas Parlamentares Individuais e de Bancada.",
+      "houve_defesa": true,
+      "situacao": "sanado_parcial",
+      "recomendacao": null,
+      "determinacao": "Determina-se que sejam apresentados a memória de cálculo e o detalhamento das emendas individuais recebidas pelo ente no exercício de 2023. Caso seja identificado que o valor registrado foi incorreto, determina-se que seja feita a devida reclassificação dos valores, retificação, reenvio e republicação.",
+      "valor_financeiro": null,
+      "defesa_gestor": "Em atendimento ao item III.06, que identificou divergências entre os valores das transferências da União provenientes de emendas parlamentares\nindividuais e de bancada, conforme apresentado no Anexo X da Lei 4.320/64 – Comparativo da Receita Orçada com a Arrecadada, e com base nas\ncodificações do ementário de Classificação por Natureza da Receita vigentes para o ano de 2023, que determinam a utilização das seguintes\ncodificações:\n• 1.7.1.9.57.0.0 – Transferência Especial da União (para recursos correntes)\n• 2.4.1.9.51.0.0 – Transferência Especial da União (para recursos de capital)\nEsclarecemos os pontos a seguir, com base na tabela 6 - Emendas Individuais e de Bancada recebidas pelo ente no exercício de 2023:\n1. EMENDAS CORRENTES\nA codificação 1.7.1.9.57.0.",
+      "analise_tecnica": "Na fase de contraditório, o gestor apresentou memória de cálculo detalhada das receitas oriundas de emendas parlamentares, segregadas por\ntipo (individual ou de bancada), natureza da transferência (especial ou com finalidade definida) e categoria econômica (corrente ou capital), com\nbase nos códigos previstos no Ementário da Receita vigente para o exercício de 2023. Esclareceu que parte das divergências apontadas decorre da\ncorreta aplicação das codificações previstas no art. 166-A da Constituição Federal, distinguindo transferências especiais daquelas com finalidade\ndefinida. Informou, ainda, que promoveu a retificação e republicação do Anexo X da Lei nº 4.320/64 – Comparativo da Receita Orçada com a\nArrecadada com os devidos ajustes (peça 80)."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.07",
+      "tipo": "Irregularidade",
+      "secao": "3. Aspectos Orçamentários E Financeiros",
+      "base_normativa": "inciso XVII do artigo 1º do Decreto-Lei nº 201/1967; inciso II, art. 167 da CF 88",
+      "descricao": "Decreto de abertura de Crédito Adicional Especial foi executado antes da Lei autorizativa ser emitida.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que o gestor obedeça ao que determina o artigo 43 da Lei nº 4.320/1964 e apresente justificativas para a abertura de Créditos Adicionais Suplementares e Especiais.",
+      "determinacao": "Determina-se que o gestor apresente justificativas e esclarecimentos sobre a situação identificada.",
+      "valor_financeiro": null,
+      "defesa_gestor": "Em atendimento ao item III.07, que aborda o Decreto de Abertura de Crédito Adicional Especial realizado antes da Lei autorizativa, assim como as\njustificativas para a abertura de créditos adicionais especiais das Leis nº 271, 277 e 286, esclarecemos:\n1. Cadastramento dos Decretos de Créditos Adicionais: Os decretos relativos aos Créditos Adicionais Suplementares, Especiais e\nExtraordinários são registrados mensalmente no sistema contábil, com individualização por elemento de despesa. A data de cadastramento\né registrada conforme a autorização legal, conforme exemplificado no Decreto de 04 de abril de 2023, que trata da Lei nº 271/2023, conforme\ndemonstrado no Demonstrativo de Tela 01. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal\nDemonstrativo de tela 01.",
+      "analise_tecnica": "Na fase de contraditório, o gestor esclareceu que a aparente antecipação decorreu de configuração padrão do sistema contábil utilizado, que\nimprime os decretos com data automática do dia 01 de cada mês, ainda que o efetivo cadastramento ocorra posteriormente, já com base na\nautorização legislativa vigente. Foram anexadas capturas de tela que demonstram a data correta de cadastramento no sistema, além da republicação\ndos decretos com as datas corrigidas.\nAdicionalmente, foram apresentadas as leis autorizativas nº 271 (peça 84), 277 (peça 85) e 286/2023 (peça 86), acompanhadas das respectivas\njustificativas, atendendo ao disposto no art. 43 da Lei nº 4.320/64 quanto à motivação e fundamentação dos créditos adicionais especiais."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.08",
+      "tipo": "Impropriedade",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte V, Tópico 4.3",
+      "descricao": "Balanço Patrimonial não apresenta Notas Explicativas ou esclarecimentos sobre Provisões a Longo Prazo no montante de R$ 278,83 milhões registrado no Passivo Não Circulante e se há prazo para quitação.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor público apresente informações sobre a que se refere esse valor e se há prazo para quitação.",
+      "valor_financeiro": 278830000.0,
+      "defesa_gestor": "Em resposta ao item III.08, que apontou a ausência de notas explicativas sobre as provisões a longo prazo no montante de R$ 278,83 milhões,\ninformamos que o Instituto de Previdência, Aposentadoria e Pensões de Canapi realizou uma avaliação atuarial no período de 25/05/2023, tendo\ncomo data base cadastral o encerramento de 31/12/2022. Os registros contábeis das Provisões Matemáticas Previdenciárias foram devidamente Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal\nlançados no Balanço Patrimonial referente ao exercício de 2023, em conformidade com as orientações do Manual de Contabilidade Aplicada ao\nSetor Público (MCASP), 9ª Edição.",
+      "analise_tecnica": "A análise do Balanço Patrimonial (peça 14) revelou a ausência de Notas Explicativas ou esclarecimentos sobre o montante de R$ 278,83\nmilhões registrado no Passivo Não Circulante, classificado como Provisões a Longo Prazo, o que compromete inicialmente a transparência e a\ncompreensão dos demonstrativos contábeis.\nNa fase de contraditório, o gestor esclareceu que o valor se refere às Provisões Matemáticas Previdenciárias do Regime Próprio de Previdência\nSocial (RPPS), com base em avaliação atuarial realizada em 25/05/2023, tendo como data-base 31/12/2022. Informou que os lançamentos foram\nefetuados em conformidade com o Manual de Contabilidade Aplicada ao Setor Público (MCASP), com utilização da conta 2.2.7.2.0.00."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.09",
+      "tipo": "Inconsistência",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte II, Tópico 4, Parte III e IV, Manual de Demonstrativos Fiscais (MDF - 13ª Edição) - Tópico 04.05.00",
+      "descricao": "Divergência do valor de Caixa e Equivalente de Caixa entre os Demonstrativos Parte III e IV.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Determina-se que o gestor justifique o motivo dessa divergência e, caso seja necessário, corrija o valor, republique e reenvie os Demonstrativos retificados.",
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "Em resposta às divergências encontradas no item III.09, relativas aos saldos bancários apresentados entre o Balanço Patrimonial (peça 14), o Balanço\nFinanceiro (peça 13), o Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar (peça 39) e o Quadro Demonstrativo dos Saldos Bancários\n(peça 54), esclarecemos:\nFoi identificado, ao revisar o saldo apresentado no Relatório de Gestão Fiscal – Anexo V, que a aplicação incorreta de certos filtros, que não fazem\nparte do relatório em questão, resultou na inclusão de valores indevidos. Essa falha ocasionou uma diferença de R$ 383.223,50 em relação ao valor\ncorreto.\nComo já explicado no item III.03, essa discrepância é atribuída à atualização do software de gestão orçamentária.",
+      "analise_tecnica": "O gestor reconhece a divergência nos valores de Caixa e Equivalente de Caixa entre o Balanço Patrimonial (peça 14), o Balanço Financeiro\n(peça 13), o Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar (peça 39) e o Quadro Demonstrativo dos Saldos Bancários (peça 54).\nInforma que a inconsistência foi causada pela aplicação incorreta de filtros durante a geração do Relatório de Gestão Fiscal – Anexo V, o que\nresultou na inclusão indevida de valores, gerando uma diferença de R$ 383.223,50.\nA defesa afirma que, após identificar o erro, os dados foram corrigidos e os valores atualizados, resultando em uma nova versão\nDemonstrativo da Disponibilidade de Caixa e dos Restos a Pagar, com saldo de R$ 41.033.319,57."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.10",
+      "tipo": "Inconsistência",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte II, Tópico 4, Parte III e IV, Manual de Demonstrativos Fiscais (MDF - 13ª Edição) - Tópico 04.05.00",
+      "descricao": "Divergências entre o Quadro Demonstrativo dos Saldos Bancários e Extratos Bancários. Determina-se a apresentação de justificativas, novo Quadro Demonstrativo, envio de extratos e adequação do valor de Caixa e Equivalente de Caixa.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que o gestor e sua equipe de contabilidade se atentem a consistência dos dados expostos nos diversos Demonstrativos Orçamentários, Contábeis e Fiscais.",
+      "determinacao": "Determina-se que gestor realize as seguintes ações: a) apresente justificativas e esclarecimentos sobre as divergências apresentadas; b) apresente um novo Quadro Demonstrativo dos Saldos Bancários com a relação completa de extratos bancários; c) envie os extratos bancários que não constavam na relação inicial; d) verifique e adeque o valor de Caixa e Equivalente de Caixa no Balanço Patrimonial, no Balanço Financeiro e no Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar conforme o valor constante nos extratos bancários.",
+      "valor_financeiro": null,
+      "defesa_gestor": "Em relação ao item III.10, que aborda as divergências entre o Quadro Demonstrativo dos Saldos Bancários (Peça 54) e os Extratos Bancários (Peça\n55), informamos que:\nConforme exposto no item III.09, foi identificado que o Quadro Demonstrativo dos Saldos Bancários apresentava informações incompletas,\nmencionando apenas o saldo de R$ 12.530.909,30, referente à unidade gestora da educação. Para corrigir essa omissão, anexamos a esta defesa\nprévia um novo Quadro Demonstrativo, que agora inclui a tabela de saldos bancários por unidade gestora, conforme detalhado no item III.09.\nTambém foram incluídos os extratos bancários e as conciliações pertinentes, de forma a garantir a completa correção e transparência dos dados.",
+      "analise_tecnica": "O gestor reconhece que o Quadro Demonstrativo dos Saldos Bancários (peça 54) inicialmente apresentou apenas o saldo da unidade gestora\nda educação, no valor de R$ 12.530.909,30, o que ocasionou divergência em relação aos extratos bancários (peça 55).\nComo medida corretiva, foi elaborado e anexado um novo Quadro Demonstrativo dos Saldos Bancários, agora incluindo os saldos de todas\nas unidades gestoras, totalizando R$ 41.033.319,57. Também foram anexados os extratos bancários e as respectivas conciliações, com exceção dos\ndados da Câmara Municipal, que, segundo o gestor, constam da prestação de contas enviada diretamente pelo Poder Legislativo. Entretanto, não\nfoi localizado o processo da Prestação de Contas de Gestão da Câmara Municipal de Canapi."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.11",
+      "tipo": "Inconsistência",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte III, Tópico 5",
+      "descricao": "Não foram localizados registros de contas e saldos contábeis referentes à Dívida Ativa, seja no Curto quanto no Longo Prazo do Balanço Patrimonial do ente. Determina-se o envio dos dados e detalhamento dos valores registrados nas contas \"Créditos a Curto Prazo\" e \"Demais Valores e Créditos a Curto Prazo\".",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": "Recomenda-se que o ente atue no monitoramento e na cobrança desses recursos, realizando o devido registro nos Demonstrativos Contábeis e Fiscais. Recomenda-se utilizar, sempre que for possível, as Notas Explicativas nos Demonstrativos Contábeis e Fiscais.",
+      "determinacao": "Determina-se que sejam enviados documentos comprobatórios das transferências dos recursos para o Poder Legislativo, informando a data em que foram realizados os repasses e os motivos dos repasses serem realizados após a data limite estabelecida constitucionalmente.",
+      "valor_financeiro": null,
+      "defesa_gestor": "Em esclarecimento a determinação no item III.11, detalhamos abaixo, os valores registrados nas contas de Créditos a Curto Prazo e Demais Valores\na Curto Prazo conforme Anexo 14 do Balanço Patrimonial da Lei 4.320/64:\nOutrossim, enviamos em anexo os registros da dívida ativa tributária.",
+      "analise_tecnica": "O Relatório Técnico Preliminar apontou a inexistência de registros contábeis específicos relativos à Dívida Ativa no Balanço Patrimonial do\nmunicípio, tanto no curto quanto no longo prazo, em descumprimento às normas da Lei nº 4.320/64 e às orientações do Manual de Contabilidade\nAplicada ao Setor Público (MCASP).\nEm sede de contraditório, o gestor apresentou resposta acompanhada de documentação que evidencia os valores registrados nas contas de\ncréditos a curto prazo, incluindo a rubrica \"Dívida Ativa de Imposto de Renda de Qualquer Natureza\", além de outras contas correlatas. Ademais,\nfoi encaminhada a peça 97, contendo um resumo da Dívida Ativa do ente, demonstrando o atendimento à determinação exarada no achado."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.12",
+      "tipo": "Inconsistência",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte V, Tópicos 4 e 5",
+      "descricao": "Divergência de R$ 42,74 milhões entre o Resultado Patrimonial apurado na Demonstração das Variações Patrimoniais e o exposto no Balanço Patrimonial.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor público apresente justificativas para essa divergência e, caso seja necessário, corrija o valor, republique e reenviados os Demonstrativos retificados.",
+      "valor_financeiro": 42740000.0,
+      "defesa_gestor": "Em resposta aos achados do item III.12, esclarecemos a divergência entre o Resultado Patrimonial apurado na Demonstração das Variações\nPatrimoniais (peça 15) e o valor apresentado no Balanço Patrimonial (peça 14).\nO Anexo XV – Demonstrativo das Variações Patrimoniais apresenta, em sua última linha, o Resultado Patrimonial do período (III), calculado como\na diferença entre o total das variações patrimoniais aumentativas (I) e o total das variações patrimoniais diminutivas (II). Esse resultado reflete\nexclusivamente as movimentações ocorridas no exercício em análise.\nJá o Anexo XIV – Balanço Patrimonial, conforme a Lei nº 4.",
+      "analise_tecnica": "O Relatório Técnico Preliminar identificou divergência entre o valor do Resultado Patrimonial apurado na Demonstração das Variações\nPatrimoniais (peça 15), que apontou um resultado negativo de R$ 265,21 milhões, e o valor informado no Balanço Patrimonial (peça 14), também\nnegativo, mas no montante de R$ 222,46 milhões, resultando em uma diferença de R$ 42,74 milhões. A ausência de esclarecimentos sobre tal\ndiferença comprometeu, inicialmente, a transparência e a fidedignidade dos demonstrativos contábeis.\nEm resposta, o gestor esclareceu que a diferença decorre do fato de o Balanço Patrimonial refletir os resultados acumulados de exercícios\nanteriores, enquanto a Demonstração das Variações Patrimoniais evidencia apenas as variações patrimoniais do exercício corrente."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.13",
+      "tipo": "Irregularidade",
+      "secao": "5. Repasses Do Duodécimo",
+      "base_normativa": "Art. 29-A, §2º, Inciso I da Constituição Federal de 1988",
+      "descricao": "Repasse de R$ 3,04 milhões para a Câmara Municipal, em desacordo com o limite constitucional, transferindo R$ 18.340,89 a mais do que o limite.",
+      "houve_defesa": true,
+      "situacao": "sanado_total",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor apresente a memória de cálculo da apuração do valor de duodécimo referente ao exercício de 2023.",
+      "valor_financeiro": 18340.89,
+      "defesa_gestor": "Após a análise e revisão da Peça 62 – Relação dos Valores Mensais dos Repasses do Duodécimo – integrante da Prestação de Contas de 2023\nenviada ao TCE/AL, foi identificada uma inconsistência na memória de cálculo apresentada. Verificou-se que o valor mensal do duodécimo foi\nsuperestimado em R$ 1.528,40, resultando em um total a maior de R$ 18.340,89, conforme apontado pela auditoria do TCE/AL. Entretanto, é\nimportante ressaltar que a contabilidade registrou corretamente o valor total do duodécimo repassado.\nDessa forma, constatou-se que o total repassado à Câmara Municipal no exercício em questão foi de R$ 3.048.537,48, enquanto o valor correto\ndeveria ter sido R$ 3.030.196,59, representando uma diferença de 0,04% a maior.",
+      "analise_tecnica": "O Relatório Técnico Preliminar apontou que os repasses realizados ao Poder Legislativo Municipal ultrapassaram o limite constitucional\nestabelecido pelo art. 29-A, § 1º, inciso I, da Constituição Federal. De acordo com a apuração da equipe técnica, foi transferido ao Legislativo o\nmontante de R$ 18.340,89 a mais do que o permitido para o exercício em análise.\nEm sua defesa, o gestor reconheceu a inconsistência verificada na memória de cálculo do duodécimo e demonstrou que, ao final do exercício,\no valor excedente foi integralmente devolvido pelo Poder Legislativo ao Executivo. A documentação apresentada evidencia que a devolução\nocorreu juntamente com as sobras não utilizadas, regularizando, portanto, o montante total repassado no exercício."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.14",
+      "tipo": "Irregularidade",
+      "secao": "5. Repasses Do Duodécimo",
+      "base_normativa": "Art. 168 - Constituição Federal de 1988",
+      "descricao": "Repasses para a Câmara Municipal realizados após o dia 20 de cada mês.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": null,
+      "determinacao": "Determina-se que sejam enviados documentos comprobatórios das transferências dos recursos para o Poder Legislativo, informando a data em que foram realizados os repasses e os motivos dos repasses serem realizados após a data limite estabelecida constitucionalmente.",
+      "valor_financeiro": null,
+      "defesa_gestor": "Em relação aos achados do item III.14 (peça 62), reconhecemos que houve necessidade de complementar os repasses transferidos após a data limite,\ndevido a questões técnicas, operacionais e eventuais frustrações na arrecadação de receitas. É importante destacar que o município de Canapi\ndepende fortemente das transferências de recursos da União e do Estado, conforme mencionado na auditoria.\nEsses complementos foram acordados entre a Câmara de Vereadores e o Poder Executivo, não afetando o funcionamento do Poder Legislativo\nMunicipal. No entanto, em atendimento à legislação vigente e às determinações desta auditoria, reforçamos a necessidade de cumprir integralmente\no repasse do duodécimo ao Poder Legislativo Municipal até o dia 20 de cada mês.",
+      "analise_tecnica": "O Relatório Técnico Preliminar apontou que os repasses mensais do duodécimo ao Poder Legislativo Municipal foram, em diversos\nmomentos, realizados fora do prazo estabelecido no art. 168 da Constituição Federal, que determina a obrigatoriedade do repasse até o dia 20 de\ncada mês.\nNa resposta encaminhada, o gestor justificou os atrasos com base em dificuldades operacionais e frustrações na arrecadação, destacando\nainda que houve acordo entre os Poderes Executivo e Legislativo para regularizar os repasses e que não houve prejuízo ao funcionamento da\nCâmara Municipal.\nContudo, a norma constitucional é objetiva e de cumprimento obrigatório, não permitindo flexibilizações, mesmo diante de dificuldades\nfinanceiras ou acordos políticos."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.15",
+      "tipo": "Inconsistência",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Tópico 03.03.00 / Art. 2º, Inciso IV da Lei nº 101/2000 (Lei de Responsabilidade Fiscal)",
+      "descricao": "Divergência de R$ 8.013.419,27 entre o valor apurado na conta analítica \"Outras Transferências Correntes\" e o exposto no Demonstrativo referente a Receita Corrente Líquida.",
+      "houve_defesa": true,
+      "situacao": "sanado_parcial",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor apresente de forma detalhada os valores registrados nessa conta. Se for identificado que o valor está incorreto, determina-se que o Demonstrativo da Receita Corrente Líquida seja retificado, reenviado e republicado.",
+      "valor_financeiro": 8013419.27,
+      "defesa_gestor": "Em relação à divergência de R$ 8.013.419,27 entre os valores apresentados na Tabela 29 e no Demonstrativo da Receita Corrente Líquida – Anexo\nIII do RREO, esclarecemos que:\nConforme exposto no item III.03, a atualização do software resultou na modificação de filtros e parâmetros, impactando os cálculos da Receita\nCorrente Líquida no Anexo III do RREO. Essas alterações geraram inconsistências nos valores apresentados, conforme demonstrado na tela a Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal\nseguir.:\nIdentificamos um equívoco na marcação dos valores das emendas individuais, incluindo as de capital, no Anexo III do Relatório Resumido da\nExecução Orçamentária – RCL.",
+      "analise_tecnica": "do Chefe do Executivo Municipal\nO Relatório Técnico Preliminar apontou inconsistências no Relatório Resumido de Execução Orçamentária (RREO), com destaque para\ndivergências nos dados apresentados, comprometendo a confiabilidade das informações divulgadas. As falhas detectadas referem-se a incorreções\nna consolidação dos dados fiscais do município, o que inviabilizava a adequada análise da situação fiscal e o cumprimento dos limites legais\nprevistos na Lei de Responsabilidade Fiscal.\nEm resposta, o gestor encaminhou o demonstrativo retificado (peça 104), com os ajustes necessários, demonstrando que as inconsistências\nanteriormente apontadas foram corrigidas."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.16",
+      "tipo": "Inconsistência",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 13ª Edição) - Tópico 03.03.05",
+      "descricao": "Diferença de R$ 1.887.564,27 entre a Receita Corrente Líquida (RCL) ajustada para cálculo dos limites de endividamento apurada e a exposta pelo ente.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se o gestor se atentar às normas contábeis e fiscais e realizar o devido registro do recebimento das transferências obrigatórias da União relativas às emendas individuais e de bancada em seus demonstrativos.",
+      "determinacao": "Determina-se que os Demonstrativos da Receita Corrente Líquida, da Dívida Consolidada Líquida e da Despesa com Pessoal sejam retificados, reenviados e republicados.",
+      "valor_financeiro": 1887564.27,
+      "defesa_gestor": "Em atendimento aos itens III.16 e III.17, informamos que os seguintes anexos foram devidamente republicados no SICONF e no portal da\ntransparência municipal:\n• Anexo III do Relatório Resumido da Execução Orçamentária – Receita Corrente Líquida;\n• Anexo I do Relatório de Gestão Fiscal – Despesa com Pessoal;\n• Anexo II do Relatório de Gestão Fiscal – Dívida Consolidada Líquida.\nOs documentos estão disponíveis para consulta no portal da transparência municipal, no seguinte endereço:\nhttps://www.canapi.al.gov.br/lai/28/Relatorio-Resumido-da-Execucao-Orcamentaria-RREO\nhttps://www.canapi.al.gov.br/lai/29/Relatorio-de-Gestao-Fiscal-RGF Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal",
+      "analise_tecnica": "O Relatório Técnico Preliminar apontou inconsistência na apuração da Receita Corrente Líquida (RCL) Ajustada, utilizada como base para\no cálculo dos limites de endividamento e de despesa com pessoal, conforme previsto nos arts. 19 e 20 da Lei de Responsabilidade Fiscal (LRF).\nA"
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.17",
+      "tipo": "Inconsistência",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 13ª Edição) - Tópico 03.03.05",
+      "descricao": "Diferença de R$ 3.412.284,27 entre a Receita Corrente Líquida (RCL) ajustada para cálculo dos limites da Despesa com Pessoal apurada e a exposta pelo ente.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se o gestor se atentar às normas contábeis e fiscais e realizar o devido registro do recebimento das transferências obrigatórias da União relativas às emendas individuais e de bancada em seus demonstrativos.",
+      "determinacao": "Determina-se que os Demonstrativos da Receita Corrente Líquida, da Dívida Consolidada Líquida e da Despesa com Pessoal sejam retificados, reenviados e republicados.",
+      "valor_financeiro": 3412284.27,
+      "defesa_gestor": "identificadas divergências relevantes, especialmente na conta “Outras Transferências Correntes”, cujo valor se encontra discrepante em R$\n1.887.564,27. Essa inconsistência impacta diretamente a correta apuração da RCL Ajustada, prejudicando a fidedignidade dos indicadores apurados\nnos Demonstrativos da Despesa com Pessoal e da Receita Corrente Líquida.\nDiante disso, verifica-se que os demonstrativos permanecem comprometidos pela manutenção da divergência identificada, afetando os\nindicadores fiscais que dependem da apuração precisa da receita corrente líquida, tal como os limites constitucionais e legais de despesa com\npessoal e endividamento.",
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.18",
+      "tipo": "Irregularidade",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Tópico 04.01.04.03",
+      "descricao": "O ente não atingiu o estabelecido pela LC 178/2021 e apresentou um percentual de aumento de 6,00% na despesa com pessoal, em vez de reduzir.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": null,
+      "determinacao": "Determina-se que o gestor apresente explicações e justificativas para o descumprimento do artigo 15 da Lei Complementar nº 178.",
+      "valor_financeiro": null,
+      "defesa_gestor": "segundo e terceiro quadrimestres do exercício, apesar de uma aparente diminuição no valor absoluto das despesas com pessoal.\nNo entanto, conforme estabelece o art. 15 da Lei Complementar nº 178/2021, o cumprimento da trajetória de convergência aos limites de\ndespesa com pessoal deve ser verificado no último quadrimestre de cada exercício financeiro, a partir de 2023. Dessa forma, ainda que tenham\nocorrido variações nos quadrimestres intermediários, o indicador de avaliação é exclusivamente o do terceiro quadrimestre, onde o Município de\nCanapi apresentou o percentual de 63,46% da RCL com despesa total de pessoal, superior ao valor de 57,11% previsto para aquele exercício.",
+      "analise_tecnica": null
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.19",
+      "tipo": "Inconsistência",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Tópico 04.01.04.03 e 04.01.05.02",
+      "descricao": "A “Tabela 1.2 - Trajetória de Retorno ao Limite da Despesa Total com Pessoal” constante no RGF – Anexo 01 do 1º, do 2º e do 3º quadrimestre está sem dados, sendo exigida pelo Manual dos Demonstrativos Fiscais.",
+      "houve_defesa": true,
+      "situacao": "mantido",
+      "recomendacao": null,
+      "determinacao": "Determina-se que essa tabela seja devidamente preenchida, que o RGF – Anexo 01 de todos os quadrimestres de 2023 sejam retificados, reenviados e republicados.",
+      "valor_financeiro": null,
+      "defesa_gestor": "Em conformidade com o item III.19, encaminhamos o Anexo 1 do RGF, devidamente retificado e republicado no SICONFI, assim como no Portal\nda Transparência do município.\nRessaltamos que todas as correções foram realizadas em conformidade com as orientações pertinentes e as informações estão atualizadas para\ngarantir a plena transparência dos dados.",
+      "analise_tecnica": "O Achado III.19 apontou que o Município de Canapi não preencheu a Tabela 1.2 – Trajetória de Retorno ao Limite da Despesa Total com\nPessoal, exigida nos Anexos do Relatório de Gestão Fiscal (RGF), conforme orientações da 13ª edição do Manual de Demonstrativos Fiscais\n(MDF) e do art. 15 da Lei Complementar nº 178/2021.\nNa defesa, o gestor alegou que teria republicado o Anexo I do RGF no SICONFI, bem como no Portal da Transparência do município, com\nas devidas correções. No entanto, ao examinar a peça 120, anexada à prestação de contas, e consultar o Portal da Transparência, constatou-se que\nfoi publicado o mesmo documento enviado originalmente, sem a inclusão da Tabela 1.2."
+    },
+    {
+      "relatorio_id": "bc39d80c5ff5ac5ad2f3177fa1fd75633f5b27dbcfda76fc4834738ed8865a39",
+      "ano": 2023,
+      "municipio": "Canapi",
+      "auditor": null,
+      "relator": "Rosa Maria Ribeiro De Albuquerque",
+      "numero_processo": "TC/1.007254/2024",
+      "codigo": "III.20",
+      "tipo": "Inconsistência",
+      "secao": "6. Gestão Fiscal",
+      "base_normativa": "Tópico 03.06.00 do Manual dos Demonstrativos Fiscais (MDF – 13ª Edição)",
+      "descricao": "O Demonstrativo dos Resultados Primário e Nominal não está de acordo com o modelo exigido pelo Manual dos Demonstrativos Fiscais.",
+      "houve_defesa": true,
+      "situacao": "sanado_parcial",
+      "recomendacao": null,
+      "determinacao": "Determina-se que seja reelaborado o Demonstrativo dos Resultados Primário e Nominal conforme determina o Tópico 03.06.00 do Manual dos Demonstrativos Fiscais (MDF – 13ª Edição). Determina-se que esse demonstrativo seja reenviado e republicado.",
+      "valor_financeiro": null,
+      "defesa_gestor": "Em atendimento ao item III.20, informamos que o Anexo VI do Relatório Resumido da Execução Orçamentária – Demonstrativo dos Resultados\nPrimário e Nominal foi atualizado de acordo com a 13ª edição do MDF e devidamente republicado no SICONF, bem como no portal da transparência\nmunicipal, disponível no seguinte endereço:\nhttps://www.canapi.al.gov.br/lai/28/Relatorio-Resumido-da-Execucao-Orcamentaria-RREO",
+      "analise_tecnica": "do Chefe do Executivo Municipal\nO Achado III.20 apontou que o Demonstrativo dos Resultados Primário e Nominal (peça 24), integrante do Relatório Resumido da Execução\nOrçamentária (RREO), não estava em conformidade com o modelo exigido pelo Manual de Demonstrativos Fiscais (MDF – 13ª edição).\nEm sua defesa, o gestor apresentou a peça 109, contendo a versão retificada do demonstrativo, a qual foi analisada e se encontra estruturada\nde forma adequada, com a devida separação entre receitas e despesas, incluindo todas as fontes de recursos e fazendo distinção entre o total geral\ne os valores exceto RPPS. Verificou-se, ainda, que essa versão retificada foi publicada no Portal da Transparência do Município, coincidindo com\no conteúdo enviado na peça 109."
+    },
+    {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
       "ano": 2023,
       "municipio": "Arapiraca",
@@ -4150,38 +4563,39 @@
   ],
   "agregacoes": {
     "totais": {
-      "relatorios": 11,
-      "achados": 200,
-      "saneados": 79,
-      "mantidos": 121,
-      "com_defesa": 166,
-      "municipios": 10,
+      "relatorios": 12,
+      "achados": 220,
+      "saneados": 94,
+      "mantidos": 126,
+      "com_defesa": 186,
+      "municipios": 11,
       "anos": [
         2023,
         2024
       ]
     },
     "por_situacao": {
-      "mantido": 121,
-      "sanado_total": 66,
+      "mantido": 126,
+      "sanado_total": 76,
       "afastado": 7,
-      "sanado_parcial": 6
+      "sanado_parcial": 11
     },
     "por_tipo": {
-      "Impropriedade": 110,
-      "Inconsistência": 48,
-      "Irregularidade": 42
+      "Impropriedade": 112,
+      "Inconsistência": 61,
+      "Irregularidade": 47
     },
     "por_secao": {
-      "6. Gestão Fiscal": 43,
+      "6. Gestão Fiscal": 49,
+      "4. Aspectos Patrimoniais": 42,
+      "3. Aspectos Orçamentários E Financeiros": 40,
       "7. Análise Dos Limites Constitucionais": 39,
-      "4. Aspectos Patrimoniais": 37,
-      "3. Aspectos Orçamentários E Financeiros": 35,
       "9. Transparência E Controle Interno": 26,
-      "5. Repasses Do Duodécimo": 6,
-      "2. Instrumentos De Planejamento": 5,
+      "5. Repasses Do Duodécimo": 8,
+      "2. Instrumentos De Planejamento": 6,
       "8. Previdência": 5,
       "7.1. Educação": 2,
+      "1. Introdução": 1,
       "7.2. Fundo De Manutenção E Desenvolvimento Da Educação Básica – Fundeb": 1,
       "7.3. Saúde": 1
     },
@@ -4191,6 +4605,7 @@
       "Boca da Mata": 28,
       "Arapiraca": 22,
       "Anadia": 21,
+      "Canapi": 20,
       "Campo Alegre": 18,
       "Água Branca": 18,
       "Belém": 10,
@@ -4198,7 +4613,7 @@
       "Piranhas": 5
     },
     "por_ano": {
-      "2023": 182,
+      "2023": 202,
       "2024": 18
     },
     "por_base_normativa": {
@@ -4215,6 +4630,7 @@
       "Instrução Normativa nº 03/2011 – TCE/AL": 3,
       "Lei 4.320/64, Lei 101/00, CF Art. 70, 71 e 205, Lei 9.304/96 Art. 69 e Lei 14.113/20": 3,
       "Lei Complementar nº 101/2000 - LRF": 3,
+      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte V - Tópico 2": 3,
       "Resolução Normativa TCE/AL nº 003/2024": 3,
       "Lei Federal nº 14.113/2020.": 2,
       "Art.9º da LRF": 2,
@@ -4230,24 +4646,29 @@
       "Parágrafo Único do art. 109 da EC 119/2022": 2,
       "Artigo 247 da Portaria MTP nº 1.467/2022": 2,
       "Art. 48 da LRF": 2,
-      "Manual de Contabilidade Aplicada ao Setor Público (MCASP) - 9ª Edição": 2,
-      "Lei 4.320/64 e Lei 101/00 - LRF": 2
+      "Manual de Contabilidade Aplicada ao Setor Público (MCASP) - 9ª Edição": 2
     },
     "por_auditor": {
       "de Controle Interno": 39
     },
     "defesa_x_situacao": {
       "com_defesa": {
-        "mantido": 87,
-        "sanado_total": 66,
+        "mantido": 92,
+        "sanado_total": 76,
         "afastado": 7,
-        "sanado_parcial": 6
+        "sanado_parcial": 11
       },
       "sem_defesa": {
         "mantido": 34
       }
     },
     "valores_top": [
+      {
+        "codigo": "III.08",
+        "municipio": "Canapi",
+        "valor": 278830000.0,
+        "descricao": "Balanço Patrimonial não apresenta Notas Explicativas ou esclarecimentos sobre Provisões a Longo Prazo no montante de R$ 278,83 milhões registrado no Passivo Não Circulante e se há prazo para quitação."
+      },
       {
         "codigo": "III.03",
         "municipio": "Boca da Mata",
@@ -4271,6 +4692,12 @@
         "municipio": "Boca da Mata",
         "valor": 54102613.06,
         "descricao": "Conforme exposto na tabela 15, o ente realizou a abertura de créditos adicionais por Anulação de Dotação no montante de R$ 54.102.613,06, o que equivale a 22% da previsão inicial. Todavia, o artigo 5º"
+      },
+      {
+        "codigo": "III.12",
+        "municipio": "Canapi",
+        "valor": 42740000.0,
+        "descricao": "Divergência de R$ 42,74 milhões entre o Resultado Patrimonial apurado na Demonstração das Variações Patrimoniais e o exposto no Balanço Patrimonial."
       },
       {
         "codigo": "III.14",
@@ -4309,6 +4736,12 @@
         "descricao": "Abertura de créditos suplementares no montante de R$ 20.243.226,60 utilizando o excesso de arrecadação como recurso, sem a comprovação do excesso correspondente."
       },
       {
+        "codigo": "III.03",
+        "municipio": "Canapi",
+        "valor": 18950000.0,
+        "descricao": "Divergência de R$ 18,95 milhões na Previsão Atualizada apurada pela área técnica e a exposta pelo ente no Balanço Orçamentário. Determina-se a retificação e republicação dos Balanços Orçamentários e d"
+      },
+      {
         "codigo": "III.12",
         "municipio": "Campo Alegre",
         "valor": 16097736.76,
@@ -4321,10 +4754,22 @@
         "descricao": "Considerando o valor de R$ 11.688.464,55 registrado na conta de Despesa de Uso de Material de Consumo e que não há registro contábil da conta de estoques."
       },
       {
+        "codigo": "III.15",
+        "municipio": "Canapi",
+        "valor": 8013419.27,
+        "descricao": "Divergência de R$ 8.013.419,27 entre o valor apurado na conta analítica \"Outras Transferências Correntes\" e o exposto no Demonstrativo referente a Receita Corrente Líquida."
+      },
+      {
         "codigo": "III.02",
         "municipio": "Boca da Mata",
         "valor": 6550468.0,
         "descricao": "Verifica-se que no Balanço Orçamentário (peça 80), consta uma linha no grupo de Receitas de Capital denominada Recursos Arrecadadores em Exercícios Anteriores, com valor de R$ 6.550.468,00 informado n"
+      },
+      {
+        "codigo": "III.04",
+        "municipio": "Canapi",
+        "valor": 6160000.0,
+        "descricao": "Divergência de R$ 6,16 milhões entre os valores de Superávit Financeiro apurado no Exercício Anterior utilizado para abertura de Créditos Adicionais expostos nos Demonstrativos e nos Quadros informado"
       },
       {
         "codigo": "III.03",
@@ -4337,61 +4782,31 @@
         "municipio": "Água Branca",
         "valor": 5248176.79,
         "descricao": "Abertura de créditos suplementares no valor total de R$ 35.907.378,06, superior em R$ 5.248.176,79 à disponibilidade efetiva demonstrada pelo superávit financeiro, configurando inconsistência na cober"
-      },
-      {
-        "codigo": "III.07",
-        "municipio": "Boca da Mata",
-        "valor": 3081203.06,
-        "descricao": "Confrontando os extratos bancários (peça 119 a 131) enviados pelo gestor, identificou-se a ausência dos extratos bancários listados na tabela 24."
-      },
-      {
-        "codigo": "III.08",
-        "municipio": "Água Branca",
-        "valor": 2845238.06,
-        "descricao": "Divergência de R$ 2.845.238,06 na Despesa com Pessoal, decorrente da inclusão indevida de R$ 2.752.574,28 sob a rubrica de indenizações por demissão e incentivos à demissão voluntária."
-      },
-      {
-        "codigo": "III.19",
-        "municipio": "Boca da Mata",
-        "valor": 2726427.33,
-        "descricao": "Verificado no MDE (peça 93) que houve Superávit do exercício imediatamente anterior no valor de R$ 2.726.427,33, cujo valor não foi aplicado no exercício atual. A existência de valores indica descumpr"
-      },
-      {
-        "codigo": "III.12",
-        "municipio": "Boca da Mata",
-        "valor": 2392320.0,
-        "descricao": "A Receita Corrente Líquida Ajustada para Cálculo dos Limites da Despesa com Pessoal apurada foi de R$ 147.992.853,10, cujo valor difere do montante apresentado pelo ente que é de R$ 150.385.173,10 (pe"
-      },
-      {
-        "codigo": "III.11",
-        "municipio": "Campo Alegre",
-        "valor": 1945137.06,
-        "descricao": "Ao analisar especificamente as compensações financeiras entre regimes previdenciários, observa-se uma dedução no valor de R$ 1.945.137,06 no Demonstrativo da Receita Corrente Líquida. Ao consultar o A"
       }
     ],
     "tipo_por_secao": {
       "2. Instrumentos De Planejamento": {
-        "Impropriedade": 3,
-        "Irregularidade": 2
+        "Irregularidade": 3,
+        "Impropriedade": 3
       },
       "3. Aspectos Orçamentários E Financeiros": {
         "Impropriedade": 26,
-        "Inconsistência": 5,
-        "Irregularidade": 4
+        "Inconsistência": 9,
+        "Irregularidade": 5
       },
       "4. Aspectos Patrimoniais": {
-        "Impropriedade": 21,
-        "Inconsistência": 15,
+        "Impropriedade": 22,
+        "Inconsistência": 19,
         "Irregularidade": 1
       },
       "5. Repasses Do Duodécimo": {
-        "Irregularidade": 5,
+        "Irregularidade": 7,
         "Inconsistência": 1
       },
       "6. Gestão Fiscal": {
-        "Inconsistência": 17,
+        "Inconsistência": 22,
         "Impropriedade": 15,
-        "Irregularidade": 11
+        "Irregularidade": 12
       },
       "7. Análise Dos Limites Constitucionais": {
         "Impropriedade": 29,
@@ -4406,6 +4821,9 @@
       "8. Previdência": {
         "Impropriedade": 4,
         "Irregularidade": 1
+      },
+      "1. Introdução": {
+        "Impropriedade": 1
       },
       "7.1. Educação": {
         "Irregularidade": 2
@@ -4457,6 +4875,11 @@
         "sanado_total": 4,
         "mantido": 1
       },
+      "Canapi": {
+        "sanado_total": 10,
+        "sanado_parcial": 5,
+        "mantido": 5
+      },
       "Arapiraca": {
         "mantido": 16,
         "sanado_total": 5,
@@ -4471,6 +4894,7 @@
           "Atalaia": 23,
           "Arapiraca": 22,
           "Anadia": 21,
+          "Canapi": 20,
           "Campo Alegre": 18,
           "Água Branca": 18,
           "Belém": 10,
@@ -4515,6 +4939,11 @@
             "sanado_total": 4,
             "mantido": 1
           },
+          "Canapi": {
+            "sanado_total": 10,
+            "sanado_parcial": 5,
+            "mantido": 5
+          },
           "Arapiraca": {
             "mantido": 16,
             "sanado_total": 5,
@@ -4538,14 +4967,14 @@
     },
     "por_opiniao": {
       "Regular com Ressalvas": 6,
-      "Irregular": 4,
+      "Irregular": 5,
       "Regular": 1
     },
     "por_relator": {
       "Rodrigo Siqueira Cavalcante": 4,
       "Anselmo Roberto De Almeida Brito": 3,
       "Maria Cleide Costa Beserra": 3,
-      "Rosa Maria Ribeiro De Albuquerque": 1
+      "Rosa Maria Ribeiro De Albuquerque": 2
     },
     "opiniao_por_relator": {
       "Rodrigo Siqueira Cavalcante": {
@@ -4557,7 +4986,7 @@
         "Regular com Ressalvas": 1
       },
       "Rosa Maria Ribeiro De Albuquerque": {
-        "Irregular": 1
+        "Irregular": 2
       },
       "Maria Cleide Costa Beserra": {
         "Regular com Ressalvas": 2,
