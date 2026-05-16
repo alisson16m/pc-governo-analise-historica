@@ -21,7 +21,7 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 _console = Console(legacy_windows=False)
 print = _console.print
 
-from . import cache, enrich, extract_text, parse_2024
+from . import cache, enrich, extract_text, parse_2024, parse_contraditorio
 from .schema import Relatorio
 
 app = typer.Typer(add_completion=False, help="Pipeline de extração e publicação do Banco de Achados.")
@@ -96,20 +96,149 @@ def _processar(caminho: Path, ano_pasta: Optional[int], *, forcar: bool) -> str:
             achados = []
             fonte = "pendente_legacy"
 
+    contraditorio = parse_contraditorio.extrair(texto)
+    achados_final = _aplicar_contraditorio(achados or [], contraditorio)
+
     rel = Relatorio(
         id=sha,
         arquivo=str(caminho),
         ano_exercicio=int(meta.get("ano_exercicio") or 0),
         municipio=meta.get("municipio"),
-        orgao=meta.get("orgao") or "Não identificado",
         gestor=meta.get("gestor"),
         auditor=meta.get("auditor"),
         relator=meta.get("relator"),
+        opiniao_auditoria=enrich.detectar_opiniao_auditoria(texto),
         fonte_extracao=fonte,
-        achados=achados or [],
+        achados=achados_final,
     )
-    cache.salvar(rel)
+    # Não persiste pendente_legacy: garante que o próximo `extrair` (sem --forcar)
+    # ainda tente processar o PDF quando a cota Gemini estiver disponível.
+    if fonte != "pendente_legacy":
+        cache.salvar(rel)
     return fonte
+
+
+def _aplicar_contraditorio(achados: list, contraditorio: dict) -> list:
+    if not contraditorio:
+        return achados
+    # Caso 1: gestor não apresentou defesa para nenhum achado
+    if contraditorio.get("_sem_defesa_global"):
+        for a in achados:
+            a.houve_defesa = False
+        return achados
+    # Casos 2 e 3: por achado
+    for a in achados:
+        bloco = contraditorio.get(a.codigo)
+        if bloco:
+            a.defesa_gestor = bloco.get("defesa_gestor")
+            a.analise_tecnica = bloco.get("analise_tecnica")
+            if bloco.get("houve_defesa") is False:
+                a.houve_defesa = False
+            elif a.defesa_gestor:
+                a.houve_defesa = True
+            try:
+                if a.defesa_gestor and a.resumo_defesa is None:
+                    a.resumo_defesa = parse_contraditorio.resumir_texto(
+                        a.defesa_gestor, "defesa do gestor"
+                    )
+                if a.analise_tecnica and a.resumo_analise is None:
+                    a.resumo_analise = parse_contraditorio.resumir_texto(
+                        a.analise_tecnica, "análise técnica do auditor"
+                    )
+            except RuntimeError as _e:
+                if "cota" in str(_e).lower() or "quota" in str(_e).lower():
+                    pass  # cota Gemini esgotada; resumos via backfill-resumo
+                else:
+                    raise
+    return achados
+
+
+@app.command()
+def backfill_contraditorio() -> None:
+    """Preenche defesa_gestor e analise_tecnica nos achados já em cache (sem re-executar Gemini)."""
+    rels = cache.listar()
+    atualizados = sem_pdf = sem_cap = 0
+    for r in rels:
+        pdf = Path(r.arquivo)
+        if not pdf.exists():
+            sem_pdf += 1
+            continue
+        try:
+            texto = extract_text.extrair(pdf)
+            contraditorio = parse_contraditorio.extrair(texto)
+            if not contraditorio:
+                sem_cap += 1
+                print(f"[yellow]{pdf.name}[/] — capítulo Contraditório não encontrado")
+                continue
+            _aplicar_contraditorio(r.achados, contraditorio)
+            cache.salvar(r)
+            atualizados += 1
+            com_defesa = sum(1 for a in r.achados if a.defesa_gestor)
+            sem_defesa = sum(1 for a in r.achados if a.houve_defesa is False)
+            extra = f", {sem_defesa} sem defesa" if sem_defesa else ""
+            print(f"[green]{pdf.name}[/] — {com_defesa}/{len(r.achados)} com defesa{extra}")
+        except Exception as e:
+            print(f"[red]{pdf.name}: {e}")
+    print(
+        f"\n[bold]{atualizados} relatório(s) atualizado(s)[/]"
+        + (f" ({sem_pdf} PDF(s) não encontrado(s))" if sem_pdf else "")
+        + (f" ({sem_cap} sem capítulo Contraditório)" if sem_cap else "")
+    )
+
+
+@app.command()
+def backfill_opiniao() -> None:
+    """Preenche opiniao_auditoria nos relatórios já em cache (sem re-executar Gemini)."""
+    rels = cache.listar()
+    atualizados = 0
+    sem_pdf = 0
+    for r in rels:
+        if r.opiniao_auditoria is not None:
+            continue
+        pdf = Path(r.arquivo)
+        if not pdf.exists():
+            sem_pdf += 1
+            continue
+        try:
+            texto = extract_text.extrair(pdf)
+            opiniao = enrich.detectar_opiniao_auditoria(texto)
+            if opiniao:
+                r.opiniao_auditoria = opiniao
+                cache.salvar(r)
+                atualizados += 1
+                print(f"[green]{pdf.name}[/] → {opiniao}")
+            else:
+                print(f"[yellow]{pdf.name}[/] — opinião não encontrada")
+        except Exception as e:
+            print(f"[red]{pdf.name}: {e}")
+    print(f"\n[bold]{atualizados} relatórios atualizados[/]" + (f" ({sem_pdf} PDF(s) não encontrado(s))" if sem_pdf else ""))
+
+
+@app.command()
+def backfill_resumo() -> None:
+    """Gera resumo_defesa e resumo_analise para achados em cache que ainda não têm resumo."""
+    rels = cache.listar()
+    atualizados = processados = 0
+    for r in rels:
+        modificado = False
+        for a in r.achados:
+            if a.defesa_gestor and a.resumo_defesa is None:
+                resumo = parse_contraditorio.resumir_texto(a.defesa_gestor, "defesa do gestor")
+                if resumo:
+                    a.resumo_defesa = resumo
+                    modificado = True
+                    processados += 1
+            if a.analise_tecnica and a.resumo_analise is None:
+                resumo = parse_contraditorio.resumir_texto(a.analise_tecnica, "análise técnica do auditor")
+                if resumo:
+                    a.resumo_analise = resumo
+                    modificado = True
+                    processados += 1
+        if modificado:
+            cache.salvar(r)
+            atualizados += 1
+            print(f"[green]{Path(r.arquivo).name}[/]")
+    print(f"\n[bold]{atualizados} relatório(s) atualizado(s) ({processados} resumos gerados)[/]")
 
 
 @app.command()
