@@ -31,8 +31,15 @@ MUNICIPIOS_AL: tuple[str, ...] = (
     "Olho d'Água Grande", "Feira Grande", "Girau do Ponciano",
     "Traipu", "Campo Grande", "Igreja Nova", "Piaçabuçu", "São Brás",
     "Feliz Deserto", "Porto Real do Colégio", "São Sebastião",
-    "Teotônio Vilela", "Arapiraca", "Maribondo", "Tanque d'Arca",
-    "Chã Preta", "Paulo Jacinto", "Pindoba", "Mar Vermelho",
+    "Teotônio Vilela", "Maribondo",
+    "Chã Preta", "Paulo Jacinto",
+    "Campestre",
+)
+
+# Ordena por comprimento decrescente para testar nomes mais específicos primeiro
+# (ex: "São Luís do Quitunde" antes de "Luís").
+_MUNICIPIOS_SORTED: tuple[str, ...] = tuple(
+    sorted(MUNICIPIOS_AL, key=len, reverse=True)
 )
 
 
@@ -46,6 +53,16 @@ _RE_RELATOR = re.compile(
     r"Relator[:\s]+(?:Conselheiro[a]?\s+)?([A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ\s\.]{5,80})",
     re.IGNORECASE,
 )
+# Extrai a opinião da unidade técnica no capítulo de Conclusão
+_RE_OPINIAO = re.compile(
+    r"sugerindo\s+pela\s+(IRREGULARIDADE|REGULARIDADE\s+COM\s+RESSALVAS|REGULARIDADE)",
+    re.IGNORECASE,
+)
+_OPINIAO_MAP = {
+    "irregularidade": "Irregular",
+    "regularidade com ressalvas": "Regular com Ressalvas",
+    "regularidade": "Regular",
+}
 _RE_GESTOR = re.compile(
     r"(?:Gestor(?:a)?|Respons[áa]vel)[:\s]+([A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ\s\.]{5,80})",
     re.IGNORECASE,
@@ -53,15 +70,10 @@ _RE_GESTOR = re.compile(
 
 
 def detectar_municipio(texto: str) -> Optional[str]:
-    matches: list[tuple[int, str]] = []
-    for m in MUNICIPIOS_AL:
-        idx = texto.lower().find(m.lower())
-        if idx >= 0:
-            matches.append((idx, m))
-    if not matches:
-        return None
-    matches.sort()
-    return matches[0][1]
+    for m in _MUNICIPIOS_SORTED:
+        if re.search(r"\b" + re.escape(m) + r"\b", texto, re.IGNORECASE):
+            return m
+    return None
 
 
 def detectar_ano(texto: str) -> Optional[int]:
@@ -85,30 +97,28 @@ def _limpar(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip(" .;:,")
 
 
+def detectar_opiniao_auditoria(texto: RelatorioTexto) -> Optional[str]:
+    """Extrai a opinião emitida no capítulo de Conclusão (Regular / Regular com Ressalvas / Irregular)."""
+    # Localiza a última ocorrência do capítulo de conclusão para evitar o sumário
+    matches = list(re.finditer(r"(?:^\d+\.\s*)?CONCLUS[ÃA]O\s*$", texto.texto_completo, re.IGNORECASE | re.MULTILINE))
+    if matches:
+        trecho = texto.texto_completo[matches[-1].start():]
+    else:
+        trecho = texto.texto_completo[-8000:]
+    m = _RE_OPINIAO.search(trecho)
+    if not m:
+        return None
+    chave = re.sub(r"\s+", " ", m.group(1)).strip().lower()
+    return _OPINIAO_MAP.get(chave)
+
+
 def metadados(texto: RelatorioTexto, ano_pasta: Optional[int]) -> dict:
     cab = texto.texto_completo[:15000]
     fim = texto.texto_completo[-5000:]
     return {
         "municipio": detectar_municipio(cab),
         "ano_exercicio": detectar_ano(cab) or ano_pasta or 0,
-        "orgao": _detectar_orgao(cab),
         "gestor": _primeiro(_RE_GESTOR, cab),
         "auditor": _primeiro(_RE_AUDITOR, fim) or _primeiro(_RE_AUDITOR, cab),
         "relator": _primeiro(_RE_RELATOR, cab),
     }
-
-
-def _detectar_orgao(texto: str) -> str:
-    # Heurística: procurar "Prefeitura Municipal de X", "Câmara Municipal de X",
-    # "Secretaria de Estado de X", "Governo do Estado de Alagoas".
-    rx = re.compile(
-        r"(Prefeitura Municipal de [A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ\s]+|"
-        r"C[âa]mara Municipal de [A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ\s]+|"
-        r"Secretaria de Estado [A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ\s]+|"
-        r"Governo do Estado de Alagoas)",
-        re.IGNORECASE,
-    )
-    m = rx.search(texto)
-    if m:
-        return _limpar(m.group(1))
-    return "Não identificado"
