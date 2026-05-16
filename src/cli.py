@@ -81,7 +81,10 @@ def extrair(
         print("[yellow]Nenhum PDF encontrado.[/]")
         raise typer.Exit(0)
 
-    workers = int(os.getenv("PCG_WORKERS", "4"))
+    try:
+        workers = int(os.getenv("PCG_WORKERS", "4"))
+    except ValueError:
+        workers = 4
     _configurar_logging()
     _log = logging.getLogger("pcg.extrair")
 
