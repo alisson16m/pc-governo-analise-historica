@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Banco de Achados — Portal PCG · TCE-AL</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">TC</div>
+    <span class="nav-title">TCE-AL</span>
+    <span class="nav-subtitle">· Portal PCG</span>
+  </a>
+  <div class="nav-links" id="nav-links"></div>
+  <div class="nav-right">
+    <select class="nav-year" id="nav-year"></select>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<nav class="nav-drawer" id="nav-drawer">
+  <div id="nav-drawer-links"></div>
+  <div class="nav-drawer-year">
+    <select class="filter-select" id="nav-year-drawer" style="width:100%"></select>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-header-label">Portal PCG · TCE-AL</p>
+    <h1 class="page-header-title">Banco de Achados</h1>
+    <p class="page-header-sub">Todos os achados das prestações de contas municipais</p>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="filters">
+    <div class="filter-group">
+      <span class="filter-label">Município</span>
+      <select class="filter-select" id="f-municipio"><option value="">Todos</option></select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Tipo</span>
+      <select class="filter-select" id="f-tipo"><option value="">Todos</option></select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Situação</span>
+      <select class="filter-select" id="f-situacao"><option value="">Todas</option></select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Seção</span>
+      <select class="filter-select" id="f-secao"><option value="">Todas</option></select>
+    </div>
+    <button class="filter-reset" id="btn-reset">Limpar</button>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Achados</span>
+      <span class="card-badge" id="badge-achados">—</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Município</th>
+            <th>Ano</th>
+            <th>Código</th>
+            <th>Tipo</th>
+            <th>Situação</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="achados-body"></tbody>
+      </table>
+    </div>
+    <div class="pagination" id="achados-pag"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

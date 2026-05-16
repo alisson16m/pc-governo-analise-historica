@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Opinião do Auditor — Portal PCG · TCE-AL</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">TC</div>
+    <span class="nav-title">TCE-AL</span>
+    <span class="nav-subtitle">· Portal PCG</span>
+  </a>
+  <div class="nav-links" id="nav-links"></div>
+  <div class="nav-right">
+    <select class="nav-year" id="nav-year"></select>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<nav class="nav-drawer" id="nav-drawer">
+  <div id="nav-drawer-links"></div>
+  <div class="nav-drawer-year">
+    <select class="filter-select" id="nav-year-drawer" style="width:100%"></select>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-header-label">Portal PCG · TCE-AL</p>
+    <h1 class="page-header-title">Opinião do Auditor</h1>
+    <p class="page-header-sub">Pareceres emitidos por relatório e relator</p>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="two-col-equal">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Distribuição de Opiniões</span>
+      </div>
+      <div class="card-body" id="chart-opiniao-par"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Por Relator</span>
+      </div>
+      <div class="card-body" id="chart-relator"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Relatórios</span>
+      <span class="card-badge" id="badge-rel">—</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Município</th>
+            <th>Ano</th>
+            <th>Processo</th>
+            <th>Relator</th>
+            <th>Opinião</th>
+          </tr>
+        </thead>
+        <tbody id="rel-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
