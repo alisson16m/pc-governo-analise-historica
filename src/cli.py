@@ -17,9 +17,26 @@ from typing import Optional
 import typer
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
+import logging
+import logging.handlers
 
 _console = Console(legacy_windows=False)
 print = _console.print
+
+
+def _configurar_logging() -> None:
+    logs_dir = Path("data/logs")
+    logs_dir.mkdir(parents=True, exist_ok=True)
+    handler_arquivo = logging.handlers.RotatingFileHandler(
+        logs_dir / "pipeline.log",
+        maxBytes=1 * 1024 * 1024,  # 1 MB
+        backupCount=5,
+        encoding="utf-8",
+    )
+    handler_arquivo.setFormatter(
+        logging.Formatter("%(asctime)s  %(levelname)-7s  %(name)s — %(message)s")
+    )
+    logging.basicConfig(level=logging.INFO, handlers=[handler_arquivo])
 
 from . import cache, enrich, extract_text, parse_2024, parse_contraditorio
 from .schema import Relatorio
@@ -52,6 +69,8 @@ def extrair(
     pdf: Optional[Path] = typer.Option(None, help="Processa um PDF específico"),
 ) -> None:
     """Extrai achados dos PDFs em PDFs/AAAA/."""
+    _configurar_logging()
+    _log = logging.getLogger("pcg.extrair")
     if pdf:
         alvos = [(pdf, None)]
     else:
@@ -73,8 +92,10 @@ def extrair(
                     prog.update(t, description=f"[green]OK {caminho.name} [dim]({est['rpd_usado']}/{est['rpd_max']} req Gemini)[/]")
                 else:
                     prog.update(t, description=f"[green]OK {caminho.name}")
+                _log.info("OK %s — fonte=%s", caminho.name, fonte)
             except Exception as e:
                 prog.update(t, description=f"[red]ERRO {caminho.name}: {e}")
+                _log.error("ERRO %s — %s", caminho.name, e)
 
 
 def _processar(caminho: Path, ano_pasta: Optional[int], *, forcar: bool) -> str:
