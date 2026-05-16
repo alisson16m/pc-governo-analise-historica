@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import warnings
 from pathlib import Path
 from typing import Optional
 
@@ -20,14 +21,22 @@ def carregar(sha: str) -> Optional[Relatorio]:
         return None
     try:
         return Relatorio.model_validate_json(p.read_text(encoding="utf-8"))
-    except Exception:
+    except Exception as e:
+        warnings.warn(f"Cache corrompido ignorado: {p.name} — {e}")
         return None
 
 
 def salvar(rel: Relatorio) -> Path:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     p = caminho(rel.id)
-    p.write_text(rel.model_dump_json(indent=2), encoding="utf-8")
+    tmp = p.with_suffix(".tmp")
+    json_str = rel.model_dump_json(indent=2)
+    try:
+        json.loads(json_str)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"JSON inválido gerado para {p.name}: {e}") from e
+    tmp.write_text(json_str, encoding="utf-8")
+    tmp.replace(p)
     return p
 
 
@@ -38,6 +47,7 @@ def listar() -> list[Relatorio]:
     for p in sorted(CACHE_DIR.glob("*.json")):
         try:
             out.append(Relatorio.model_validate_json(p.read_text(encoding="utf-8")))
-        except Exception:
+        except Exception as e:
+            warnings.warn(f"Cache corrompido ignorado: {p.name} — {e}")
             continue
     return out
