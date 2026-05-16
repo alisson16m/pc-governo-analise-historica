@@ -284,7 +284,11 @@ function renderAchados() {
   ['f-municipio', 'f-tipo', 'f-situacao', 'f-secao'].forEach(id =>
     bindSelect(id, () => { _achadoPage = 1; renderAchados(); })
   );
-  document.getElementById('f-busca')?.addEventListener('input', () => { _achadoPage = 1; renderAchados(); });
+  const fBusca = document.getElementById('f-busca');
+  if (fBusca && !fBusca.dataset.bound) {
+    fBusca.dataset.bound = '1';
+    fBusca.addEventListener('input', () => { _achadoPage = 1; renderAchados(); });
+  }
 
   const rst = $('btn-reset');
   if (rst && !rst.dataset.bound) {
