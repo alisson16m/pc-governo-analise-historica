@@ -85,3 +85,20 @@ def estado_atual() -> dict:
 def aguardar_e_marcar() -> None:
     aguardar()
     marcar_sucesso()
+
+
+import functools
+from typing import Callable, TypeVar
+
+_F = TypeVar("_F", bound=Callable)
+
+
+def com_rate_limit(func: _F) -> _F:
+    """Decorator: aguarda rate-limit antes da chamada e marca sucesso ao terminar."""
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        aguardar()
+        resultado = func(*args, **kwargs)
+        marcar_sucesso()
+        return resultado
+    return wrapper  # type: ignore[return-value]

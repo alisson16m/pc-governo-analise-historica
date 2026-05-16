@@ -8,13 +8,17 @@ from typing import Optional
 
 from dotenv import load_dotenv
 
-from .extract_text import RelatorioTexto, extrair_secoes, secao_de_linha
-from .rate_limit import aguardar, marcar_esgotado, marcar_sucesso
-from .schema import Achado, Situacao, normalizar_situacao
+from decimal import Decimal
+
+from .extract_text import RelatorioTexto, achar_indice_codigo, extrair_secoes, secao_de_linha
+from .rate_limit import com_rate_limit, marcar_esgotado
+from .schema import Achado, normalizar_situacao
 
 load_dotenv()
 
 _RE_CODIGO = re.compile(r"III\.\s?(\d{2,3})")
+_MAX_CHARS_GEMINI = 20_000
+
 _RE_SUBCAP_ACHADOS = re.compile(
     r"Irregularidades[,\s]+Inconsist[eê]ncias[,\s]+e[,\s]+Impropriedades",
     re.IGNORECASE,
@@ -75,7 +79,7 @@ def _normalizar_tipo(raw: str) -> str:
     return "Não classificado"
 
 
-def _selecionar_trecho(texto: RelatorioTexto, max_chars: int = 20_000) -> str:
+def _selecionar_trecho(texto: RelatorioTexto, max_chars: int = _MAX_CHARS_GEMINI) -> str:
     """Seleciona o trecho mais relevante para enviar ao Gemini.
 
     Prioridade:
@@ -111,31 +115,36 @@ def _client():
     return genai.Client(api_key=key)
 
 
+@com_rate_limit
+def _chamar_gemini(trecho: str):
+    from google.genai import types
+
+    client = _client()
+    model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite")
+    return client.models.generate_content(
+        model=model_name,
+        contents=PROMPT.replace("{TRECHO}", trecho),
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            temperature=0,
+        ),
+    )
+
+
 def parse(texto: RelatorioTexto) -> list[Achado]:
     trecho = _selecionar_trecho(texto)
     if not trecho.strip() or not _RE_CODIGO.search(trecho):
         return []
 
-    from google.genai import types
-
-    aguardar()
-    client = _client()
-    model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite")
     try:
-        resp = client.models.generate_content(
-            model=model_name,
-            contents=PROMPT.replace("{TRECHO}", trecho),
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                temperature=0.1,
-            ),
-        )
-        marcar_sucesso()
+        resp = _chamar_gemini(trecho)
     except Exception as exc:
         msg = str(exc).lower()
         if "429" in msg or "quota" in msg or "resource_exhausted" in msg:
-            marcar_esgotado()
-            raise RuntimeError(f"Cota diária do Gemini esgotada: {exc}") from exc
+            # Marca esgotado apenas para erros de cota diária; RPM é transitório
+            if "daily" in msg or "per_day" in msg or "quota" in msg:
+                marcar_esgotado()
+            raise RuntimeError(f"Cota do Gemini atingida: {exc}") from exc
         raise
     bruto = resp.text or "{}"
     try:
@@ -154,8 +163,8 @@ def parse(texto: RelatorioTexto) -> list[Achado]:
         codigo = _normalizar_codigo(it.get("codigo") or "")
         if not codigo:
             continue
-        situacao = _coagir_situacao(it.get("situacao"))
-        idx = _achar_indice(texto, codigo)
+        situacao = normalizar_situacao(it.get("situacao"))
+        idx = achar_indice_codigo(texto, codigo)
         secao_textual = secao_de_linha(secoes, idx) if idx is not None else (it.get("secao") or "Indefinida")
         out.append(
             Achado(
@@ -185,16 +194,6 @@ def _normalizar_codigo(raw: str) -> Optional[str]:
     return f"III.{int(m.group(1)):02d}"
 
 
-def _coagir_situacao(v) -> Optional[Situacao]:
-    if not v:
-        return None
-    if isinstance(v, str):
-        try:
-            return Situacao(v)
-        except ValueError:
-            return normalizar_situacao(v)
-    return None
-
 
 def _str_ou_none(v) -> Optional[str]:
     if v is None:
@@ -207,14 +206,8 @@ def _num_ou_none(v):
     if v is None or v == "":
         return None
     try:
-        from decimal import Decimal
         return Decimal(str(v))
     except Exception:
         return None
 
 
-def _achar_indice(texto: RelatorioTexto, codigo: str):
-    for i, (_p, ln) in enumerate(texto.linhas()):
-        if codigo in ln:
-            return i
-    return None
