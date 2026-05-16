@@ -315,5 +315,57 @@ def publicar() -> None:
     print("[green]Publicado em https://alisson16m.github.io/pc-governo-analise-historica/")
 
 
+@app.command()
+def diagnosticar() -> None:
+    """Exibe painel de diagnóstico do estado atual do pipeline."""
+    import csv as _csv
+    from rich.panel import Panel
+
+    rels = cache.listar()
+
+    total = len(rels)
+    por_fonte: dict[str, int] = {}
+    anos: set[int] = set()
+    municipios_com_relatorio: set[str] = set()
+    achados_com_campo_vazio = 0
+
+    for r in rels:
+        por_fonte[r.fonte_extracao] = por_fonte.get(r.fonte_extracao, 0) + 1
+        if r.ano_exercicio:
+            anos.add(r.ano_exercicio)
+        if r.municipio:
+            municipios_com_relatorio.add(r.municipio)
+        for a in r.achados:
+            if not a.descricao or not a.tipo or not a.situacao:
+                achados_com_campo_vazio += 1
+
+    from . import review as _review
+    csv_path = _review.CSV_PATH
+    total_csv = revisados = 0
+    if csv_path.exists():
+        with csv_path.open(encoding="utf-8-sig", newline="") as f:
+            for row in _csv.DictReader(f):
+                total_csv += 1
+                if row.get("revisado", "").strip().lower() == "true":
+                    revisados += 1
+
+    anos_str = f"{min(anos)}–{max(anos)}" if anos else "—"
+
+    _console.print()
+    _console.print(Panel.fit(
+        f"[bold]Total de relatórios em cache:[/bold]         {total}\n"
+        f"  ├─ Parser moderno (2024):           {por_fonte.get('parser_2024', 0)}\n"
+        f"  ├─ IA Gemini (legados):             {por_fonte.get('gemini_legacy', 0)}\n"
+        f"  └─ Pendentes (sem extração):        {por_fonte.get('pendente_legacy', 0)}\n\n"
+        f"[bold]Achados com campos em branco:[/bold]         {achados_com_campo_vazio}\n"
+        f"[bold]Revisões marcadas como revisado=true:[/bold] {revisados} de {total_csv}\n\n"
+        f"[bold]Municípios com relatório:[/bold]             {len(municipios_com_relatorio)}\n"
+        f"[bold]Anos cobertos:[/bold]                        {anos_str}",
+        title="[bold cyan]Diagnóstico do Pipeline PCG[/bold cyan]",
+        border_style="cyan",
+    ))
+    _console.print()
+
+
 if __name__ == "__main__":
     app()
