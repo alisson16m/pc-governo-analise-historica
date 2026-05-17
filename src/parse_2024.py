@@ -177,6 +177,9 @@ def _parse_formato_cabecalho(texto: RelatorioTexto) -> Optional[list[Achado]]:
             for linha in linhas_dados:
                 if not any(linha):
                     continue
+                # Pula linhas com menos colunas do que o mapeamento requer
+                if mapa and len(linha) <= max(mapa.values()):
+                    continue
                 codigo_raw = linha[mapa["numero"]] if mapa.get("numero") is not None else ""
                 codigo = _normalizar_codigo(codigo_raw or "")
                 if not codigo:
