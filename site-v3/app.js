@@ -73,6 +73,20 @@ function buildBarList(items, maxVal, colorFn) {
     </div>`).join('')}</div>`;
 }
 
+function buildBarListColor(items, maxVal) {
+  if (!items.length) return '<div class="empty-state"><p>Sem dados</p></div>';
+  return `<div class="bar-list">${items.map(([label, count, color]) => `
+    <div class="bar-row">
+      <div class="bar-meta">
+        <span class="bar-name">${escHtml(label)}</span>
+        <span class="bar-count">${fmtN(count)} · ${pct(count, maxVal)}</span>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${pct(count, maxVal)};background:${color}"></div>
+      </div>
+    </div>`).join('')}</div>`;
+}
+
 /* ── Populate select ── */
 function populateSelect(id, values, labelMap = {}) {
   const el = $(id);
@@ -330,34 +344,50 @@ function renderIndex() {
   $('badge-total-sit').textContent = fmtN(total) + ' achados';
   const sitCount = {};
   achados.forEach(a => { const s = a.situacao || 'nao_consta'; sitCount[s] = (sitCount[s] || 0) + 1; });
-  const sitOrder  = ['mantido', 'sanado_total', 'sanado_parcial', 'afastado', 'nao_consta'];
-  const sitItems  = sitOrder.filter(s => sitCount[s]).map(s => [SITUACAO_LABEL[s] || s, sitCount[s]]);
-  $('chart-situacao').innerHTML = buildBarList(sitItems, total, l => {
-    const k = Object.entries(SITUACAO_LABEL).find(([, v]) => v === l)?.[0];
-    return SITUACAO_COLOR[k] || 'gray';
-  });
+  const sitOrder   = ['mantido', 'sanado_total', 'sanado_parcial', 'afastado', 'nao_consta'];
+  const sitColorCss = { mantido: 'var(--red)', sanado_total: 'var(--ok)', sanado_parcial: 'var(--warn)', afastado: 'var(--neutral)', nao_consta: 'var(--muted)' };
+  const sitItems   = sitOrder.filter(s => sitCount[s]).map(s => [SITUACAO_LABEL[s] || s, sitCount[s], sitColorCss[s]]);
+  $('chart-situacao').innerHTML = buildBarListColor(sitItems, total);
 
   // ── Gráfico tipo ──
   const tipoCount = {};
   achados.forEach(a => { if (a.tipo) tipoCount[a.tipo] = (tipoCount[a.tipo] || 0) + 1; });
-  const tipoItems = Object.entries(tipoCount).sort((a, b) => b[1] - a[1]);
-  const tipoMax = tipoItems[0]?.[1] || 1;
-  $('chart-tipo').innerHTML = buildBarList(tipoItems, tipoMax, () => 'blue');
+  const tipoItems = Object.entries(tipoCount)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map(([label, count], i) => {
+      const opacity = Math.max(0.25, 1 - i * 0.1).toFixed(2);
+      return [label, count, `rgba(28,88,140,${opacity})`];
+    });
+  $('chart-tipo').innerHTML = buildBarListColor(tipoItems, total || 1);
 
   // ── Gráfico top municípios ──
-  const muniCount = {};
-  achados.forEach(a => { muniCount[a.municipio] = (muniCount[a.municipio] || 0) + 1; });
-  const muniItems = Object.entries(muniCount).sort((a, b) => b[1] - a[1]).slice(0, 8);
-  const munis    = [...new Set(achados.map(a => a.municipio))];
-  $('badge-total-muni').textContent = fmtN(munis.length) + ' municípios';
-  $('chart-municipios').innerHTML = muniItems.length
-    ? `<div class="rank-list">${muniItems.map(([nome, cnt], i) => `
-        <div class="rank-row" onclick="location.href='achados.html?municipio=${encodeURIComponent(nome)}'">
-          <span class="rank-num">${i + 1}</span>
-          <span class="rank-name">${escHtml(nome)}</span>
-          <span class="rank-count">${fmtN(cnt)}</span>
-        </div>`).join('')}</div>`
-    : '<div class="empty-state"><p>Sem dados para o filtro selecionado</p></div>';
+  const muniAgg = {};
+  achados.forEach(a => {
+    if (!a.municipio) return;
+    if (!muniAgg[a.municipio]) muniAgg[a.municipio] = { total: 0, sit: {} };
+    muniAgg[a.municipio].total++;
+    const s = a.situacao || 'nao_consta';
+    muniAgg[a.municipio].sit[s] = (muniAgg[a.municipio].sit[s] || 0) + 1;
+  });
+  const muniTop = Object.entries(muniAgg)
+    .sort((a, b) => b[1].total - a[1].total)
+    .slice(0, 10);
+  $('badge-total-muni').textContent = muniTop.length + ' municípios';
+  $('chart-municipios').innerHTML = muniTop.length
+    ? `<div class="bar-list">${muniTop.map(([nome, d], i) => {
+        const dom = Object.entries(d.sit).sort((a,b) => b[1]-a[1])[0]?.[0] ?? 'nao_consta';
+        const barColor = { mantido:'var(--red)', sanado_total:'var(--ok)', sanado_parcial:'var(--warn)', afastado:'var(--neutral)', nao_consta:'var(--muted)' }[dom] ?? 'var(--muted)';
+        const w = pct(d.total, muniTop[0][1].total);
+        return `<div class="bar-row" style="cursor:pointer" onclick="location.href='achados.html?municipio=${encodeURIComponent(nome)}'">
+          <div class="bar-meta">
+            <span class="bar-name">${i+1}. ${escHtml(nome)}</span>
+            <span class="bar-count">${fmtN(d.total)}</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="width:${w};background:${barColor}"></div></div>
+        </div>`;
+      }).join('')}</div>`
+    : '<div class="empty-state"><p>Sem dados</p></div>';
 
   // ── Opinião (placeholder — pizza na Task 6) ──
   const opinCount = {};
