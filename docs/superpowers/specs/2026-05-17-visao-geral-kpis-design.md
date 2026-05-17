@@ -48,7 +48,7 @@ Layout: linha única, 3 cards com `flex: 1`. Fundo do hero: `linear-gradient(135
 | Posição | Label | Valor principal | Fonte no `data.json` | Comparação anual |
 |---|---|---|---|---|
 | 1 | Relatórios analisados | `totais.relatorios` | `agregacoes.totais.relatorios` | `↑/↓ N vs [ano-1]` |
-| 2 | Opinião mais frequente | `%` da opinião mais recorrente + nome curto | `agregacoes.por_opiniao` → maior valor ÷ total de relatórios | — sem comparação |
+| 2 | Opinião mais frequente | nome da opinião + `%` (mesmo tamanho de fonte, ambos `1.75rem Sora`) | `agregacoes.por_opiniao` → maior valor ÷ total de relatórios | — sem comparação |
 | 3 | Achados identificados | `totais.achados` | `agregacoes.totais.achados` | `↑/↓ N vs [ano-1]` |
 
 O card 3 usa fundo `--red-dim` (`rgba(166,18,31,0.18)`) e borda `rgba(166,18,31,0.35)` para destacar visualmente o volume de achados como métrica de atenção.
@@ -62,33 +62,27 @@ O card 3 usa fundo `--red-dim` (`rgba(166,18,31,0.18)`) e borda `rgba(166,18,31,
 
 ## Cards secundários
 
-### Linha 1 — 2 cards grandes (50/50)
+4 cards em linha única (`grid-template-columns: repeat(4, 1fr)`), na seguinte ordem:
 
-**Card: Situação dominante**
-- Valor: percentual da situação com maior contagem + nome da situação
-- Fonte: `agregacoes.por_situacao` → situação com maior valor ÷ `totais.achados`
-- Comparação: `↑/↓ N p.p. vs ano anterior` (quando filtro de ano ativo)
-- Cor do número: semântica por situação
-  - `mantido` → `--red` (`#A6121F`)
-  - `sanado_total` → `--ok` (`#1B7A4A`)
-  - `sanado_parcial` → `--warn` (`#B86A10`)
-  - `afastado` / `nao_consta` → `--neutral` (`#6B7E99`)
-
-**Card: Municípios**
+**Card 1 — Municípios**
 - Valor: número de municípios distintos cobertos
 - Fonte: `agregacoes.totais.municipios`
 - Comparação: sem comparação
 - Cor do número: `--primary` (`#1C588C`)
 
-### Linha 2 — 2 cards menores (50/50)
+**Card 2 — Achados mantidos**
+- Valor: % de achados com situação `mantido`
+- Fonte: `por_situacao.mantido ÷ totais.achados`
+- Comparação: `↑/↓ N p.p. vs ano anterior` (quando filtro de ano ativo)
+- Cor do número: `--red` (`#A6121F`)
 
-**Card: Achados sanados**
+**Card 3 — Achados sanados**
 - Valor: % de achados com situação `sanado_total` + `sanado_parcial` + `afastado`
 - Fonte: `(por_situacao.sanado_total + por_situacao.sanado_parcial + por_situacao.afastado) ÷ totais.achados`
 - Comparação: `↑/↓ N p.p. vs ano anterior`
 - Cor do número: `--ok` (`#1B7A4A`)
 
-**Card: Com defesa apresentada**
+**Card 4 — Defesa apresentada**
 - Valor: % de achados com `houve_defesa = true`
 - Fonte: `totais.com_defesa ÷ totais.achados`
 - Comparação: sem comparação
