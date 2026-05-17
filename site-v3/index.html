@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8"/>
@@ -12,7 +12,7 @@
   <a href="index.html" class="nav-brand">
     <div class="nav-logo">TC</div>
     <span class="nav-title">TCE-AL</span>
-    <span class="nav-subtitle">· Portal PCG</span>
+    <span class="nav-subtitle">· Observatório de Contas Municipais</span>
   </a>
   <div class="nav-links" id="nav-links"></div>
   <div class="nav-right">
@@ -88,7 +88,7 @@
     <div class="sec-card">
       <div class="sec-card-label">Achados sanados</div>
       <div class="sec-card-value green" id="sc-sanados">—</div>
-      <div class="sec-card-desc">total + parcial + afastado</div>
+      <div class="sec-card-desc">total + parcial</div>
       <div class="sec-card-delta" id="sc-sanados-delta"></div>
     </div>
     <div class="sec-card">
@@ -99,11 +99,17 @@
   </div>
 
   <div class="section-header">
-    <span class="section-title">Análise dos achados</span>
+    <span class="section-title">Visão Geral</span>
     <span class="section-badge" id="section-badge-ano"></span>
   </div>
 
-  <div class="two-col" style="margin-bottom:1rem">
+  <div class="three-col" style="margin-bottom:1rem">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Opinião da Auditoria</span>
+      </div>
+      <div class="card-body" id="chart-opiniao-pizza"></div>
+    </div>
     <div class="card">
       <div class="card-header">
         <span class="card-title">Situação dos achados</span>
@@ -119,7 +125,7 @@
     </div>
   </div>
 
-  <div class="three-col">
+  <div class="two-col">
     <div class="card">
       <div class="card-header">
         <span class="card-title">Achados por tipo</span>
@@ -128,16 +134,10 @@
     </div>
     <div class="card">
       <div class="card-header">
-        <span class="card-title">Top municípios</span>
+        <span class="card-title">Municípios com mais achados</span>
         <span class="card-badge" id="badge-total-muni">—</span>
       </div>
       <div class="card-body" id="chart-municipios"></div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">Opinião da Auditoria</span>
-      </div>
-      <div class="card-body" id="chart-opiniao-pizza"></div>
     </div>
   </div>
 </div>
