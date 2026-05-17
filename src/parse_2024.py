@@ -147,17 +147,34 @@ def _parse_formato_cabecalho(texto: RelatorioTexto) -> Optional[list[Achado]]:
     secoes = extrair_secoes(texto)
     achados: list[Achado] = []
     encontrou_tabela = False
+    mapa_ativo: Optional[dict[str, int]] = None
 
     for pag in texto.paginas:
         for tabela in pag.tabelas:
-            if not tabela or len(tabela) < 2:
+            if not tabela:
                 continue
             header = [c or "" for c in tabela[0]]
             mapa = _mapear_colunas(header)
-            if not mapa:
+
+            if mapa:
+                mapa_ativo = mapa
+                linhas_dados = tabela[1:]
+            elif (
+                mapa_ativo
+                and header
+                and _RE_CODIGO_LOOSE.search(header[0])
+            ):
+                # Exceção: página de continuação sem cabeçalho
+                mapa = mapa_ativo
+                linhas_dados = tabela
+            else:
                 continue
+
+            if not linhas_dados:
+                continue
+
             encontrou_tabela = True
-            for linha in tabela[1:]:
+            for linha in linhas_dados:
                 if not any(linha):
                     continue
                 codigo_raw = linha[mapa["numero"]] if mapa.get("numero") is not None else ""
