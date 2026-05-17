@@ -22,15 +22,14 @@ const SITUACAO_LABEL = {
   sanado_total: 'Sanado Total',
   sanado_parcial: 'Sanado Parcial',
   afastado: 'Afastado',
-  nao_consta: 'Não Consta',
 };
 const SITUACAO_COLOR = {
   mantido: 'red', sanado_total: 'green', sanado_parcial: 'orange',
-  afastado: 'gray', nao_consta: 'gray',
+  afastado: 'gray',
 };
 const SITUACAO_BADGE = {
   mantido: 'badge-red', sanado_total: 'badge-green', sanado_parcial: 'badge-orange',
-  afastado: 'badge-gray', nao_consta: 'badge-gray',
+  afastado: 'badge-gray',
 };
 
 /* ── Utilitários ── */
@@ -93,12 +92,13 @@ function buildStackedBars(rows) {
     { key: 'sanado_total',  color: 'var(--ok)',      label: 'Sanado total' },
     { key: 'sanado_parcial',color: 'var(--warn)',    label: 'Sanado parcial' },
     { key: 'afastado',      color: 'var(--neutral)', label: 'Afastado' },
-    { key: 'nao_consta',    color: 'var(--muted)',   label: 'Não consta' },
   ];
   const rowsHtml = rows.map(r => {
     const segs = LEGEND.map(l => {
-      const w = r.total ? Math.round((r.sit[l.key] || 0) / r.total * 100) : 0;
-      return w ? `<div class="stacked-seg" style="width:${w}%;background:${l.color}"></div>` : '';
+      const count = r.sit[l.key] || 0;
+      const w = r.total ? Math.round(count / r.total * 100) : 0;
+      const tip = `${l.label} · ${fmtN(count)} achados (${r.total ? Math.round(count / r.total * 100) : 0}%)`;
+      return w ? `<div class="stacked-seg" style="width:${w}%;background:${l.color}" data-tip="${tip}"></div>` : '';
     }).join('');
     return `<div class="stacked-row">
       <div class="stacked-year">${r.ano}</div>
@@ -111,6 +111,20 @@ function buildStackedBars(rows) {
       <div class="stacked-leg-dot" style="background:${l.color}"></div>${l.label}
     </div>`).join('');
   return `<div class="stacked-wrap">${rowsHtml}</div><div class="stacked-legend">${legendHtml}</div>`;
+}
+
+function buildColumnChart(items, maxVal) {
+  const BAR_H = 150;
+  if (!items.length) return '<div class="empty-state"><p>Sem dados para o filtro selecionado</p></div>';
+  return `<div class="col-chart">${items.map(([label, count, color]) => {
+    const h = maxVal ? Math.round(count / maxVal * BAR_H) : 0;
+    const short = label.length > 18 ? label.slice(0, 16) + '…' : label;
+    return `<div class="col-item">
+      <span class="col-count">${fmtN(count)}</span>
+      <div class="col-bar" style="height:${h}px;background:${color}"></div>
+      <span class="col-name" title="${escHtml(label)}">${escHtml(short)}</span>
+    </div>`;
+  }).join('')}</div>`;
 }
 
 function buildPieChart(entries) {
@@ -231,7 +245,7 @@ function anosData(anoAtual) {
 
 /* ── Nav ── */
 const NAV_ITEMS = [
-  { id: 'index',      href: 'index.html',     label: 'Observatório de Contas',
+  { id: 'index',      href: 'index.html',     label: 'Visão Geral',
     icon: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
   { id: 'achados',    href: 'achados.html',    label: 'Banco de Achados',
     icon: '<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="3" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="3" cy="18" r="1.5" fill="currentColor" stroke="none"/>' },
@@ -382,7 +396,7 @@ function renderIndex() {
   const muniSetCount = [...new Set(achados.map(a => a.municipio).filter(Boolean))].length;
   const mantidos  = achados.filter(a => a.situacao === 'mantido').length;
   const sanados   = achados.filter(a =>
-    a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial' || a.situacao === 'afastado'
+    a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial'
   ).length;
   const comDefesa = achados.filter(a => a.houve_defesa).length;
 
@@ -401,7 +415,7 @@ function renderIndex() {
     const totAnt = achAnt.length;
     const mantAnt = totAnt ? Math.round(achAnt.filter(a => a.situacao === 'mantido').length / totAnt * 100) : 0;
     const sanAnt  = totAnt ? Math.round(achAnt.filter(a =>
-      a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial' || a.situacao === 'afastado'
+      a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial'
     ).length / totAnt * 100) : 0;
 
     renderSecDelta('sc-mantidos-delta', pctMantidos - mantAnt);
@@ -416,9 +430,11 @@ function renderIndex() {
   $('badge-total-sit').textContent = fmtN(total) + ' achados';
   const sitCount = {};
   achados.forEach(a => { const s = a.situacao || 'nao_consta'; sitCount[s] = (sitCount[s] || 0) + 1; });
-  const sitOrder   = ['mantido', 'sanado_total', 'sanado_parcial', 'afastado', 'nao_consta'];
-  const sitColorCss = { mantido: 'var(--red)', sanado_total: 'var(--ok)', sanado_parcial: 'var(--warn)', afastado: 'var(--neutral)', nao_consta: 'var(--muted)' };
-  const sitItems   = sitOrder.filter(s => sitCount[s]).map(s => [SITUACAO_LABEL[s] || s, sitCount[s], sitColorCss[s]]);
+  const sitColorCss = { mantido: 'var(--red)', sanado_total: 'var(--ok)', sanado_parcial: 'var(--warn)', afastado: 'var(--neutral)' };
+  const sitItems = Object.entries(sitCount)
+    .filter(([s]) => sitColorCss[s])
+    .sort((a, b) => b[1] - a[1])
+    .map(([s, n]) => [SITUACAO_LABEL[s] || s, n, sitColorCss[s]]);
   $('chart-situacao').innerHTML = buildBarListColor(sitItems, total);
 
   // ── Gráfico tipo ──
@@ -431,7 +447,8 @@ function renderIndex() {
       const opacity = Math.max(0.25, 1 - i * 0.1).toFixed(2);
       return [label, count, `rgba(28,88,140,${opacity})`];
     });
-  $('chart-tipo').innerHTML = buildBarListColor(tipoItems, total || 1);
+  const tipoMax = tipoItems[0]?.[1] || 1;
+  $('chart-tipo').innerHTML = buildColumnChart(tipoItems, tipoMax);
 
   // ── Gráfico top municípios ──
   const muniAgg = {};
@@ -444,7 +461,7 @@ function renderIndex() {
   });
   const muniTop = Object.entries(muniAgg)
     .sort((a, b) => b[1].total - a[1].total)
-    .slice(0, 10);
+    .slice(0, 5);
   $('badge-total-muni').textContent = muniTop.length + ' municípios';
   $('chart-municipios').innerHTML = muniTop.length
     ? `<div class="bar-list">${muniTop.map(([nome, d], i) => {
@@ -826,6 +843,36 @@ function renderSobre() {
 }
 
 /* ════════════════════════════════════════
+   TOOLTIP FLUTUANTE
+════════════════════════════════════════ */
+function initTooltip() {
+  const tip = document.createElement('div');
+  tip.id = 'seg-tip';
+  tip.style.cssText = [
+    'position:fixed', 'display:none', 'pointer-events:none', 'z-index:9999',
+    'background:#18293C', 'color:#fff', 'font-size:0.72rem', 'font-weight:600',
+    'padding:5px 10px', 'border-radius:6px', 'white-space:nowrap',
+    'box-shadow:0 2px 8px rgba(0,0,0,0.25)',
+  ].join(';');
+  document.body.appendChild(tip);
+
+  document.addEventListener('mouseover', e => {
+    const el = e.target.closest('[data-tip]');
+    if (!el) return;
+    tip.textContent = el.dataset.tip;
+    tip.style.display = 'block';
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest('[data-tip]')) tip.style.display = 'none';
+  });
+  document.addEventListener('mousemove', e => {
+    if (tip.style.display === 'none') return;
+    tip.style.left = (e.clientX + 14) + 'px';
+    tip.style.top  = (e.clientY - 36) + 'px';
+  });
+}
+
+/* ════════════════════════════════════════
    BOOTSTRAP
 ════════════════════════════════════════ */
 async function init() {
@@ -836,6 +883,7 @@ async function init() {
     document.body.innerHTML = '<div style="padding:2rem;font-family:sans-serif;color:#A6121F"><h2>Erro ao carregar dados</h2><p>Inicie o servidor: <code>python -m http.server -d site-v3 8003</code></p></div>';
     return;
   }
+  initTooltip();
   buildNav();
   const pg = currentPage();
   if (pg === 'index')      renderIndex();
