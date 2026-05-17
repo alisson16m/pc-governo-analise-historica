@@ -123,6 +123,20 @@ function renderDelta(elId, delta, tipo = 'abs') {
   el.className = `kpi-delta ${delta.dir}`;
 }
 
+function setText(id, val) {
+  const el = $(id); if (el) el.textContent = val;
+}
+
+function renderSecDelta(id, diff, invertido = false) {
+  const el = $(id);
+  if (!el) return;
+  if (diff === 0) { el.textContent = '→ Estável'; el.className = 'sec-card-delta'; return; }
+  const sinal  = diff > 0 ? '↑' : '↓';
+  const classe = diff > 0 ? (invertido ? 'up' : 'dn') : (invertido ? 'dn' : 'up');
+  el.textContent = `${sinal} ${Math.abs(diff)} p.p. vs ${DATA.agregacoes.totais.anos.slice(-2)[0]}`;
+  el.className   = `sec-card-delta ${classe}`;
+}
+
 function anosData(anoAtual) {
   const anos = DATA.agregacoes.totais.anos ?? [];
   const idx  = anos.indexOf(Number(anoAtual));
@@ -278,7 +292,39 @@ function renderIndex() {
   const secBadge = $('section-badge-ano');
   if (secBadge) secBadge.textContent = ano || 'Todos os anos';
 
-  // ── Cards secundários (placeholder — serão preenchidos na Task 4) ──
+  // ── Cards secundários ──
+  const muniSetCount = [...new Set(achados.map(a => a.municipio).filter(Boolean))].length;
+  const mantidos  = achados.filter(a => a.situacao === 'mantido').length;
+  const sanados   = achados.filter(a =>
+    a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial' || a.situacao === 'afastado'
+  ).length;
+  const comDefesa = achados.filter(a => a.houve_defesa).length;
+
+  const pctMantidos = total ? Math.round(mantidos / total * 100) : 0;
+  const pctSanados  = total ? Math.round(sanados  / total * 100) : 0;
+  const pctDefesa   = total ? Math.round(comDefesa / total * 100) : 0;
+
+  setText('sc-municipios', fmtN(muniSetCount));
+  setText('sc-mantidos',   total ? pctMantidos + '%' : '—');
+  setText('sc-sanados',    total ? pctSanados  + '%' : '—');
+  setText('sc-defesa',     total ? pctDefesa   + '%' : '—');
+
+  // Deltas dos cards (só com ano ativo e sem filtro de município)
+  if (showDelta && anoAnterior) {
+    const achAnt = filterAchados({ ano: String(anoAnterior), municipio: '' });
+    const totAnt = achAnt.length;
+    const mantAnt = totAnt ? Math.round(achAnt.filter(a => a.situacao === 'mantido').length / totAnt * 100) : 0;
+    const sanAnt  = totAnt ? Math.round(achAnt.filter(a =>
+      a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial' || a.situacao === 'afastado'
+    ).length / totAnt * 100) : 0;
+
+    renderSecDelta('sc-mantidos-delta', pctMantidos - mantAnt);
+    renderSecDelta('sc-sanados-delta',  pctSanados  - sanAnt, true);
+  } else {
+    ['sc-mantidos-delta', 'sc-sanados-delta'].forEach(id => {
+      const el = $(id); if (el) { el.textContent = ''; el.className = 'sec-card-delta'; }
+    });
+  }
 
   // ── Gráfico situação ──
   $('badge-total-sit').textContent = fmtN(total) + ' achados';
