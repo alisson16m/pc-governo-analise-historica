@@ -5,17 +5,26 @@ import re
 from decimal import Decimal, InvalidOperation
 from typing import Optional
 
-from .extract_text import RelatorioTexto, extrair_secoes, secao_de_linha
+from .extract_text import RelatorioTexto, achar_indice_codigo, extrair_secoes, secao_de_linha
 from .schema import Achado, Situacao, normalizar_situacao
 
 # Cabeçalhos esperados na tabela padrão pós-2024 (formato com header explícito)
 COLUNAS_ESPERADAS = {
     "numero": ("nº", "numero", "número", "no", "n°"),
-    "tipo": ("tipo",),
+    "tipo": ("tipo", "classificação do achado", "classificacao do achado"),
     "base_normativa": ("base normativa", "fundamentação", "base legal"),
-    "descricao": ("descrição", "descricao", "achado"),
-    "situacao": ("situação", "situacao", "status"),
-    "recomendacao": ("recomendação", "recomendacao", "recomendações"),
+    "descricao": (
+        "descrição", "descricao", "achado",
+        "situação identificada", "situacao identificada",
+    ),
+    "situacao": (
+        "situação", "situacao", "status",
+        "situação após análise", "situacao apos analise",
+    ),
+    "recomendacao": (
+        "recomendação", "recomendacao", "recomendações",
+        "recomendação/determinação", "recomendacao/determinacao",
+    ),
     "determinacao": ("determinação", "determinacao", "determinações"),
 }
 
@@ -28,7 +37,7 @@ _TIPOS_CLASSIFICACAO = frozenset({
 _RE_CODIGO_LOOSE = re.compile(r"\bIII\.\s?(\d{2,3})\b")
 
 # Padrões para delimitar a seção de achados no RESUMO
-_RE_TITULO_RESUMO = re.compile(r"^(\d+)\.\s*RESUMO\s*$", re.IGNORECASE)
+_RE_TITULO_RESUMO = re.compile(r"^(\d+)\.?\s*RESUMO\s*$", re.IGNORECASE)
 
 # Capítulos "contêiner" que agrupam achados mas não são a seção analítica
 _RE_CAP_CONTEINER = re.compile(
@@ -39,10 +48,35 @@ _RE_SUBCAP_ACHADOS = re.compile(
     r"Irregularidades[,\s]+Inconsist[eê]ncias[,\s]+e[,\s]+Impropriedades",
     re.IGNORECASE,
 )
+# Título de subcapítulo numerado: "11.1 Irregularidades, Inconsistências e Impropriedades"
+_RE_SUBCAP_NUMERADO = re.compile(
+    r"^(\d+)\.(\d+)[\s\-–]+Irregularidades[,\s]+Inconsist[eê]ncias[,\s]+e[,\s]+Impropriedades",
+    re.IGNORECASE,
+)
+
+# Clusters consonantais que NUNCA iniciam palavras portuguesas.
+# Quando aparecem após um espaço numa célula PDF, indicam sílaba quebrada pelo
+# pdfplumber (ex: "Compleme ntar" → "Complementar", "impor tante" → "importante").
+# Clusters válidos de início (pr, br, tr, cl, fl…) são excluídos propositalmente.
+_RE_SILABA = re.compile(
+    r"([A-Za-záéíóúâêôãõçÀ-ÿ]) "
+    r"(nt|nd|nç|ng|nf|nv|nm|mp|mb|mn|lt|ld|lm|lv|rt|rd|rm|rn|rv|rç|ct|pt|bt|ss|rr|ll|nn)"
+    r"(?=[a-záéíóúâêôãõçà-ÿ])",
+)
 
 
 def _norm(s: str) -> str:
     return (s or "").strip().lower()
+
+
+def _cel(s: Optional[str]) -> str:
+    """Normaliza texto de célula PDF: colapsa newlines e une sílabas quebradas."""
+    if not s:
+        return ""
+    t = re.sub(r"-\n", "", s)           # hífens explícitos de quebra de linha
+    t = re.sub(r"\s+", " ", t).strip()  # espaço único
+    t = _RE_SILABA.sub(r"\1\2", t)      # clusters inválidos → sílaba quebrada
+    return t
 
 
 def _e_tipo(s: str) -> bool:
@@ -122,15 +156,15 @@ def _parse_formato_cabecalho(texto: RelatorioTexto) -> Optional[list[Achado]]:
                 codigo = _normalizar_codigo(codigo_raw or "")
                 if not codigo:
                     continue
-                descricao = (linha[mapa["descricao"]] or "").strip()
-                tipo = (linha[mapa["tipo"]].strip() if "tipo" in mapa and linha[mapa["tipo"]] else "Não classificado")
-                base = linha[mapa["base_normativa"]].strip() if "base_normativa" in mapa and linha[mapa["base_normativa"]] else None
+                descricao = _cel(linha[mapa["descricao"]])
+                tipo = _cel(linha[mapa["tipo"]]) if "tipo" in mapa and linha[mapa["tipo"]] else "Não classificado"
+                base = _cel(linha[mapa["base_normativa"]]) if "base_normativa" in mapa and linha[mapa["base_normativa"]] else None
                 sit_raw = linha[mapa["situacao"]] if "situacao" in mapa else None
-                rec = linha[mapa["recomendacao"]].strip() if "recomendacao" in mapa and linha[mapa["recomendacao"]] else None
-                det = linha[mapa["determinacao"]].strip() if "determinacao" in mapa and linha[mapa["determinacao"]] else None
+                rec = _cel(linha[mapa["recomendacao"]]) if "recomendacao" in mapa and linha[mapa["recomendacao"]] else None
+                det = _cel(linha[mapa["determinacao"]]) if "determinacao" in mapa and linha[mapa["determinacao"]] else None
                 situacao = normalizar_situacao(sit_raw)
                 houve_defesa = bool(situacao and situacao != Situacao.NAO_CONSTA)
-                idx_global = _achar_indice(texto, codigo)
+                idx_global = achar_indice_codigo(texto, codigo)
                 secao = secao_de_linha(secoes, idx_global) if idx_global is not None else "Tabela de Achados"
                 achados.append(Achado(
                     codigo=codigo,
@@ -179,19 +213,38 @@ def _paginas_subcap_achados(texto: RelatorioTexto) -> list:
         if pag_resumo:
             break
 
+    subcap_num_fallback: Optional[int] = None
     if pag_resumo is None:
-        # Fallback: qualquer página que tenha o subcapítulo sem título numerado
+        # Fallback 1: busca título numerado "N.N Irregularidades..." tomando a ÚLTIMA
+        # ocorrência — a primeira pode ser o sumário/índice; a última é a seção real.
+        last_match_pag: Optional[int] = None
+        last_cap_num: Optional[int] = None
+        last_subcap_num: Optional[int] = None
         for p in texto.paginas:
-            if _RE_SUBCAP_ACHADOS.search(p.texto):
-                pag_resumo = p.numero
-                break
+            for ln in p.texto.splitlines():
+                m = _RE_SUBCAP_NUMERADO.match(ln.strip())
+                if m:
+                    last_match_pag = p.numero
+                    last_cap_num = int(m.group(1))
+                    last_subcap_num = int(m.group(2))
+        if last_match_pag is not None:
+            pag_resumo = last_match_pag
+            cap_num = last_cap_num
+            subcap_num_fallback = last_subcap_num
+
+        if pag_resumo is None:
+            # Fallback 2 (último recurso): qualquer página com o termo
+            for p in texto.paginas:
+                if _RE_SUBCAP_ACHADOS.search(p.texto):
+                    pag_resumo = p.numero
+                    break
 
     if pag_resumo is None:
         return []
 
     # Detectar número do subcapítulo (ex: 11.1) para construir padrão de fim
-    subcap_num: Optional[int] = None
-    if cap_num is not None:
+    subcap_num: Optional[int] = subcap_num_fallback
+    if cap_num is not None and subcap_num is None:
         for p in texto.paginas:
             if p.numero < pag_resumo:
                 continue
@@ -257,9 +310,8 @@ def _parse_formato_posicional(texto: RelatorioTexto) -> Optional[list[Achado]]:
                 if not codigo:
                     continue
 
-                cols = [((c or "").strip()) for c in linha]
-                # Normaliza espaços internos (pdfplumber fragmenta células multi-linha)
-                secao_raw = re.sub(r"\s+", " ", cols[1]).strip() if len(cols) > 1 else ""
+                cols = [_cel(c) for c in linha]
+                secao_raw = cols[1] if len(cols) > 1 else ""
                 descricao = cols[2] if len(cols) > 2 else ""
 
                 # cols[3] e cols[4]: um é tipo, outro é base_normativa
@@ -279,7 +331,7 @@ def _parse_formato_posicional(texto: RelatorioTexto) -> Optional[list[Achado]]:
                 situacao = normalizar_situacao(sit_raw) if sit_raw else None
                 houve_defesa = bool(situacao and situacao != Situacao.NAO_CONSTA)
 
-                idx = _achar_indice(texto, codigo)
+                idx = achar_indice_codigo(texto, codigo)
                 secao_textual = secao_de_linha(secoes, idx) if idx is not None else None
                 # Usa secao_raw quando o texto só posiciona o código em capítulos
                 # "contêiner" (Contraditório, Resumo…) que não são a seção analítica.
@@ -309,8 +361,3 @@ def _parse_formato_posicional(texto: RelatorioTexto) -> Optional[list[Achado]]:
     return sorted(achados_mapa.values(), key=lambda a: a.codigo)
 
 
-def _achar_indice(texto: RelatorioTexto, codigo: str) -> Optional[int]:
-    for i, (_p, ln) in enumerate(texto.linhas()):
-        if codigo in ln:
-            return i
-    return None
