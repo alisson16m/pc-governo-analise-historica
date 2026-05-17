@@ -17,7 +17,7 @@ from .schema import Achado, normalizar_situacao
 load_dotenv()
 
 _RE_CODIGO = re.compile(r"III\.\s?(\d{2,3})")
-_MAX_CHARS_GEMINI = 20_000
+_MAX_CHARS_GEMINI = 80_000
 
 _RE_SUBCAP_ACHADOS = re.compile(
     r"Irregularidades[,\s]+Inconsist[eê]ncias[,\s]+e[,\s]+Impropriedades",
