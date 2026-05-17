@@ -87,6 +87,78 @@ function buildBarListColor(items, maxVal) {
     </div>`).join('')}</div>`;
 }
 
+function buildStackedBars(rows) {
+  const LEGEND = [
+    { key: 'mantido',       color: 'var(--red)',     label: 'Mantido' },
+    { key: 'sanado_total',  color: 'var(--ok)',      label: 'Sanado total' },
+    { key: 'sanado_parcial',color: 'var(--warn)',    label: 'Sanado parcial' },
+    { key: 'afastado',      color: 'var(--neutral)', label: 'Afastado' },
+    { key: 'nao_consta',    color: 'var(--muted)',   label: 'Não consta' },
+  ];
+  const rowsHtml = rows.map(r => {
+    const segs = LEGEND.map(l => {
+      const w = r.total ? Math.round((r.sit[l.key] || 0) / r.total * 100) : 0;
+      return w ? `<div class="stacked-seg" style="width:${w}%;background:${l.color}"></div>` : '';
+    }).join('');
+    return `<div class="stacked-row">
+      <div class="stacked-year">${r.ano}</div>
+      <div class="stacked-bar">${segs}</div>
+      <div class="stacked-total">${fmtN(r.total)}</div>
+    </div>`;
+  }).join('');
+  const legendHtml = LEGEND.map(l =>
+    `<div class="stacked-leg-item">
+      <div class="stacked-leg-dot" style="background:${l.color}"></div>${l.label}
+    </div>`).join('');
+  return `<div class="stacked-wrap">${rowsHtml}</div><div class="stacked-legend">${legendHtml}</div>`;
+}
+
+function buildPieChart(entries) {
+  const total = entries.reduce((s, e) => s + e.count, 0);
+  if (!total) return '<div class="empty-state"><p>Sem dados</p></div>';
+
+  const R = 15.9;
+  let offset = 0;
+  const slices = entries.map(e => {
+    const pctVal = e.count / total;
+    const dash   = (pctVal * 100).toFixed(1);
+    const gap    = (100 - pctVal * 100).toFixed(1);
+    const rot    = -90 + (offset / 100) * 360;
+    const svg = `<circle cx="21" cy="21" r="${R}" fill="transparent"
+      stroke="${e.color}" stroke-width="10"
+      stroke-dasharray="${dash} ${gap}"
+      stroke-dashoffset="0"
+      transform="rotate(${rot} 21 21)"/>`;
+    offset += pctVal * 100;
+    return svg;
+  }).join('');
+
+  const legendHtml = entries.map(e => {
+    const p = Math.round(e.count / total * 100);
+    return `<div class="pie-item">
+      <div class="pie-dot" style="background:${e.color}"></div>
+      <div class="pie-item-label">${escHtml(e.label)}</div>
+      <div class="pie-item-val">${p}%</div>
+    </div>`;
+  }).join('');
+
+  const badgesHtml = entries.map(e =>
+    `<span class="pie-badge ${e.badgeClass}">${fmtN(e.count)} ${escHtml(e.label.split(' ')[0].toLowerCase())}</span>`
+  ).join('');
+
+  return `<div class="pie-wrap">
+    <svg width="110" height="110" viewBox="0 0 42 42" style="flex-shrink:0">
+      <circle cx="21" cy="21" r="${R}" fill="transparent" stroke="var(--border)" stroke-width="10"/>
+      ${slices}
+      <circle cx="21" cy="21" r="11" fill="white"/>
+      <text x="21" y="23.5" text-anchor="middle" font-size="5"
+        font-family="Sora,sans-serif" font-weight="800" fill="#18293C">${fmtN(total)}</text>
+    </svg>
+    <div class="pie-legend">${legendHtml}</div>
+  </div>
+  <div class="pie-badges">${badgesHtml}</div>`;
+}
+
 /* ── Populate select ── */
 function populateSelect(id, values, labelMap = {}) {
   const el = $(id);
@@ -389,17 +461,36 @@ function renderIndex() {
       }).join('')}</div>`
     : '<div class="empty-state"><p>Sem dados</p></div>';
 
-  // ── Opinião (placeholder — pizza na Task 6) ──
-  const opinCount = {};
-  achados.forEach(a => {
-    const rel = DATA.relatorios.find(r => r.id === a.relatorio_id);
-    if (rel?.opiniao_auditoria) opinCount[rel.opiniao_auditoria] = (opinCount[rel.opiniao_auditoria] || 0) + 1;
+  // ── Evolução por ano ──
+  const anosDisp = DATA.agregacoes.totais.anos ?? [];
+  const evolRows = anosDisp.map(a => {
+    const achAno = filterAchados({ ano: String(a), municipio: muni });
+    const sit = {};
+    achAno.forEach(x => { const s = x.situacao || 'nao_consta'; sit[s] = (sit[s] || 0) + 1; });
+    return { ano: a, sit, total: achAno.length };
   });
-  const opinItems = Object.entries(opinCount).sort((a, b) => b[1] - a[1]);
-  const opinMax = opinItems[0]?.[1] || 1;
-  const opinColor = l => l === 'Irregular' ? 'red' : l === 'Regular' ? 'green' : 'orange';
-  const opinionPizzaEl = $('chart-opiniao-pizza');
-  if (opinionPizzaEl) opinionPizzaEl.innerHTML = buildBarList(opinItems, opinMax, opinColor);
+  $('chart-evolucao').innerHTML = evolRows.length
+    ? buildStackedBars(evolRows)
+    : '<div class="empty-state"><p>Sem dados</p></div>';
+
+  // ── Pizza opinião da auditoria ──
+  const OPINIAO_CONFIG = [
+    { match: v => /regular\s+c(om|\/)\s*ressalva/i.test(v), color: 'var(--warn)', badgeClass: 'warn' },
+    { match: v => /^regular$/i.test(v.trim()),               color: 'var(--ok)',   badgeClass: 'ok'   },
+    { match: v => /irregular/i.test(v),                      color: 'var(--red)',  badgeClass: 'red'  },
+  ];
+  const opinionAgg = {};
+  relsAtivos.forEach(r => {
+    const op = r.opiniao_auditoria || 'Não identificada';
+    opinionAgg[op] = (opinionAgg[op] || 0) + 1;
+  });
+  const pizzaEntries = Object.entries(opinionAgg)
+    .sort((a, b) => b[1] - a[1])
+    .map(([label, count]) => {
+      const cfg = OPINIAO_CONFIG.find(c => c.match(label));
+      return { label, count, color: cfg?.color ?? 'var(--neutral)', badgeClass: cfg?.badgeClass ?? 'neu' };
+    });
+  $('chart-opiniao-pizza').innerHTML = buildPieChart(pizzaEntries);
 }
 
 /* ════════════════════════════════════════
