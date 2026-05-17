@@ -9,6 +9,12 @@ from .extract_text import RelatorioTexto, achar_indice_codigo, extrair_secoes, s
 from .schema import Achado, Situacao, normalizar_situacao
 
 # Cabeçalhos esperados na tabela padrão pós-2024 (formato com header explícito)
+# ATENÇÃO: a ordem das chaves importa.
+# "descricao" deve vir antes de "situacao" para que "Situação identificada"
+# seja capturada pelo match exato de descricao antes do substring "situação"
+# da chave situacao. A função _mapear_colunas() usa a primeira correspondência;
+# se reordenar as chaves ou adicionar novas, verificar os testes para evitar
+# mapear "Situação identificada" erroneamente para "situacao" em 2023.
 COLUNAS_ESPERADAS = {
     "numero": ("nº", "numero", "número", "no", "n°"),
     "tipo": ("tipo", "classificação do achado", "classificacao do achado"),
