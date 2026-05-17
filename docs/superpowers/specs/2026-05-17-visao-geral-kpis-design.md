@@ -6,6 +6,17 @@
 
 ---
 
+## Identidade da página
+
+| Campo | Valor |
+|---|---|
+| Nome do portal | Observatório de Contas Municipais — Alagoas |
+| Supertítulo (hero) | Diretoria de Coordenação de Técnicos — DCT |
+| Subtítulo (hero) | Análise dos Relatórios Técnicos Conclusivos das Prestações de Contas de Governo Municipal |
+| Link no nav | Observatório de Contas |
+
+---
+
 ## Contexto
 
 Público-alvo: auditores e técnicos do TCE-AL. A página deve responder de relance:
