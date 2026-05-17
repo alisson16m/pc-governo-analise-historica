@@ -55,8 +55,10 @@ _RE_SUBCAP_ACHADOS = re.compile(
     re.IGNORECASE,
 )
 # Título de subcapítulo numerado: "11.1 Irregularidades, Inconsistências e Impropriedades"
+# Aceita opcionalmente sufixo "– III" (formato Belém 2023)
 _RE_SUBCAP_NUMERADO = re.compile(
-    r"^(\d+)\.(\d+)[\s\-–]+Irregularidades[,\s]+Inconsist[eê]ncias[,\s]+e[,\s]+Impropriedades",
+    r"^(\d+)\.(\d+)\.?[\s\-–]+Irregularidades[,\s]+Inconsist[eê]ncias[,\s]+e[,\s]+Impropriedades"
+    r"(?:\s*[–\-]\s*III)?",
     re.IGNORECASE,
 )
 

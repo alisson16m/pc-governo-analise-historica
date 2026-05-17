@@ -44,3 +44,25 @@ def test_mapear_colunas_situacao_identificada_nao_vira_situacao():
     # A coluna índice 2 é "Situação identificada" — deve ser descricao, nunca situacao
     assert mapa.get("descricao") == 2
     assert mapa.get("situacao") != 2
+
+
+from src.parse_2024 import _RE_SUBCAP_NUMERADO
+
+
+def test_subcap_numerado_sem_sufixo():
+    """Título padrão sem sufixo continua funcionando."""
+    titulo = "11.1 Irregularidades, Inconsistências e Impropriedades"
+    assert _RE_SUBCAP_NUMERADO.match(titulo) is not None
+
+
+def test_subcap_numerado_com_sufixo_iii():
+    """Título com sufixo '– III' deve ser reconhecido (formato Belém 2023)."""
+    titulo = "12.1. Irregularidades, Inconsistências e Impropriedades – III"
+    assert _RE_SUBCAP_NUMERADO.match(titulo) is not None, \
+        "Título com sufixo '– III' não foi reconhecido"
+
+
+def test_subcap_numerado_com_hifen_simples():
+    """Título com hífen simples antes de III também deve funcionar."""
+    titulo = "10.1 Irregularidades, Inconsistências e Impropriedades - III"
+    assert _RE_SUBCAP_NUMERADO.match(titulo) is not None
