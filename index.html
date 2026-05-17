@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Visão Geral — Portal PCG · TCE-AL</title>
+  <title>Observatório de Contas Municipais — TCE-AL</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -33,25 +33,23 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <p class="hero-super">Prestação de Contas · Alagoas</p>
-    <h1 class="hero-title">Banco de Achados TCE-AL</h1>
-    <p class="hero-sub">Análise de achados das prestações de contas municipais</p>
+    <p class="hero-super">Diretoria de Coordenação de Técnicos — DCT</p>
+    <h1 class="hero-title">Observatório de Contas Municipais — Alagoas</h1>
+    <p class="hero-sub">Análise dos Relatórios Técnicos Conclusivos das Prestações de Contas de Governo Municipal</p>
     <div class="hero-kpis">
       <div class="kpi-glass">
-        <div class="kpi-label">Relatórios</div>
         <div class="kpi-value" id="kpi-relatorios">—</div>
+        <div class="kpi-label">Relatórios analisados</div>
+        <div class="kpi-delta" id="kpi-relatorios-delta"></div>
+      </div>
+      <div class="kpi-glass">
+        <div class="kpi-opiniao" id="kpi-opiniao">—</div>
+        <div class="kpi-label">Opinião mais frequente</div>
       </div>
       <div class="kpi-glass red">
-        <div class="kpi-label">Achados</div>
         <div class="kpi-value" id="kpi-achados">—</div>
-      </div>
-      <div class="kpi-glass">
-        <div class="kpi-label">Municípios</div>
-        <div class="kpi-value" id="kpi-municipios">—</div>
-      </div>
-      <div class="kpi-glass">
-        <div class="kpi-label">Saneados</div>
-        <div class="kpi-value" id="kpi-saneados">—</div>
+        <div class="kpi-label">Achados identificados</div>
+        <div class="kpi-delta" id="kpi-achados-delta"></div>
       </div>
     </div>
     <p class="hero-anos" id="hero-anos"></p>
@@ -61,6 +59,12 @@
 <div class="page-content">
   <div class="filters">
     <div class="filter-group">
+      <span class="filter-label">Ano</span>
+      <select class="filter-select" id="f-ano">
+        <option value="">Todos os anos</option>
+      </select>
+    </div>
+    <div class="filter-group">
       <span class="filter-label">Município</span>
       <select class="filter-select" id="f-municipio">
         <option value="">Todos os municípios</option>
@@ -69,35 +73,71 @@
     <button class="filter-reset" id="btn-reset">Limpar filtros</button>
   </div>
 
-  <div class="two-col">
+  <div class="sec-cards-4">
+    <div class="sec-card">
+      <div class="sec-card-label">Municípios</div>
+      <div class="sec-card-value blue" id="sc-municipios">—</div>
+      <div class="sec-card-desc">com relatório no exercício</div>
+    </div>
+    <div class="sec-card">
+      <div class="sec-card-label">Achados mantidos</div>
+      <div class="sec-card-value red" id="sc-mantidos">—</div>
+      <div class="sec-card-desc">situação mais frequente</div>
+      <div class="sec-card-delta" id="sc-mantidos-delta"></div>
+    </div>
+    <div class="sec-card">
+      <div class="sec-card-label">Achados sanados</div>
+      <div class="sec-card-value green" id="sc-sanados">—</div>
+      <div class="sec-card-desc">total + parcial + afastado</div>
+      <div class="sec-card-delta" id="sc-sanados-delta"></div>
+    </div>
+    <div class="sec-card">
+      <div class="sec-card-label">Defesa apresentada</div>
+      <div class="sec-card-value blue" id="sc-defesa">—</div>
+      <div class="sec-card-desc">achados com manifestação do gestor</div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-title">Análise dos achados</span>
+    <span class="section-badge" id="section-badge-ano"></span>
+  </div>
+
+  <div class="two-col" style="margin-bottom:1rem">
     <div class="card">
       <div class="card-header">
-        <span class="card-title">Situação dos Achados</span>
+        <span class="card-title">Situação dos achados</span>
         <span class="card-badge" id="badge-total-sit">—</span>
       </div>
       <div class="card-body" id="chart-situacao"></div>
     </div>
     <div class="card">
       <div class="card-header">
-        <span class="card-title">Top Municípios</span>
-        <span class="card-badge" id="badge-total-muni">—</span>
+        <span class="card-title">Evolução por ano</span>
       </div>
-      <div class="card-body" id="chart-municipios"></div>
+      <div class="card-body" id="chart-evolucao"></div>
     </div>
   </div>
 
-  <div class="two-col-equal">
+  <div class="three-col">
     <div class="card">
       <div class="card-header">
-        <span class="card-title">Achados por Tipo</span>
+        <span class="card-title">Achados por tipo</span>
       </div>
       <div class="card-body" id="chart-tipo"></div>
     </div>
     <div class="card">
       <div class="card-header">
-        <span class="card-title">Opinião de Auditoria</span>
+        <span class="card-title">Top municípios</span>
+        <span class="card-badge" id="badge-total-muni">—</span>
       </div>
-      <div class="card-body" id="chart-opiniao"></div>
+      <div class="card-body" id="chart-municipios"></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Opinião da Auditoria</span>
+      </div>
+      <div class="card-body" id="chart-opiniao-pizza"></div>
     </div>
   </div>
 </div>
