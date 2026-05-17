@@ -89,9 +89,49 @@ function bindSelect(id, fn) {
   if (el && !el.dataset.bound) { el.dataset.bound = '1'; el.addEventListener('change', fn); }
 }
 
+function opiniaoMaisFrequente(relatorios) {
+  const cnt = {};
+  relatorios.forEach(r => {
+    const op = r.opiniao_auditoria || 'Não identificada';
+    cnt[op] = (cnt[op] || 0) + 1;
+  });
+  const total = relatorios.length;
+  if (!total) return { nome: '—', pct: '' };
+  const [nome] = Object.entries(cnt).sort((a, b) => b[1] - a[1])[0];
+  const p = Math.round(cnt[nome] / total * 100);
+  return { nome, pct: p + '%' };
+}
+
+function calcDelta(atual, anterior, tipo = 'abs') {
+  if (anterior == null || anterior === 0) return null;
+  if (tipo === 'pp') {
+    const diff = Math.round((atual - anterior) * 10) / 10;
+    return { diff, dir: diff > 0 ? 'dn' : diff < 0 ? 'up' : 'neu' };
+  }
+  const diff = atual - anterior;
+  return { diff, dir: diff > 0 ? 'dn' : diff < 0 ? 'up' : 'neu' };
+}
+
+function renderDelta(elId, delta, tipo = 'abs') {
+  const el = $(elId);
+  if (!el) return;
+  if (!delta) { el.textContent = ''; el.className = 'kpi-delta'; return; }
+  const sinal = delta.diff > 0 ? '↑' : delta.diff < 0 ? '↓' : '→';
+  const abs = Math.abs(delta.diff);
+  const sufixo = tipo === 'pp' ? ' p.p. vs ano anterior' : ' vs ano anterior';
+  el.textContent = `${sinal} ${abs}${sufixo}`;
+  el.className = `kpi-delta ${delta.dir}`;
+}
+
+function anosData(anoAtual) {
+  const anos = DATA.agregacoes.totais.anos ?? [];
+  const idx  = anos.indexOf(Number(anoAtual));
+  return { anos, anoAnterior: idx > 0 ? anos[idx - 1] : null };
+}
+
 /* ── Nav ── */
 const NAV_ITEMS = [
-  { id: 'index',      href: 'index.html',     label: 'Visão Geral',
+  { id: 'index',      href: 'index.html',     label: 'Observatório de Contas',
     icon: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
   { id: 'achados',    href: 'achados.html',    label: 'Banco de Achados',
     icon: '<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="3" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="3" cy="18" r="1.5" fill="currentColor" stroke="none"/>' },
@@ -165,46 +205,104 @@ function renderIndex() {
   const achados = filterAchados({ ano, municipio: muni });
   const total   = achados.length;
 
-  // KPIs
-  const relIds   = [...new Set(achados.map(a => a.relatorio_id))];
-  const munis    = [...new Set(achados.map(a => a.municipio))];
-  const saneados = achados.filter(a => a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial').length;
-  $('kpi-relatorios').textContent = fmtN(relIds.length);
-  $('kpi-achados').textContent    = fmtN(total);
-  $('kpi-municipios').textContent = fmtN(munis.length);
-  $('kpi-saneados').textContent   = fmtN(saneados);
-  $('hero-anos').textContent = '· Anos disponíveis: ' + DATA.agregacoes.totais.anos.join(' · ') + ' ·';
-
-  // preencher select municípios (uma vez)
-  const fMuni = $('f-municipio');
-  const allMunis = [...new Set(DATA.achados.map(a => a.municipio))].sort();
-  populateSelect('f-municipio', allMunis);
-  if (muni) fMuni.value = muni;
-  bindSelect('f-municipio', renderIndex);
-  const rst = $('btn-reset');
-  if (rst && !rst.dataset.bound) {
-    rst.dataset.bound = '1';
-    rst.addEventListener('click', () => {
-      ['f-municipio', 'nav-year', 'nav-year-drawer'].forEach(id => { const el = $(id); if (el) el.value = ''; });
+  // preencher f-ano e sincronizar com nav-year
+  const anos = DATA.agregacoes.totais.anos ?? [];
+  const fAno = $('f-ano');
+  if (fAno && fAno.options.length === 1) {
+    anos.forEach(a => {
+      const o = document.createElement('option');
+      o.value = a; o.textContent = a;
+      fAno.appendChild(o);
+    });
+  }
+  if (fAno && fAno.value !== ano) fAno.value = ano;
+  if (!fAno?.dataset.bound) {
+    if (fAno) fAno.dataset.bound = '1';
+    fAno?.addEventListener('change', () => {
+      const y = $('nav-year'); const yd = $('nav-year-drawer');
+      if (y)  y.value  = fAno.value;
+      if (yd) yd.value = fAno.value;
       renderIndex();
     });
   }
 
-  // Situação
-  const sitCount = {};
-  achados.forEach(a => { sitCount[a.situacao] = (sitCount[a.situacao] || 0) + 1; });
-  const sitOrder = ['mantido', 'sanado_total', 'sanado_parcial', 'afastado', 'nao_consta'];
-  const sitItems = sitOrder.filter(s => sitCount[s]).map(s => [SITUACAO_LABEL[s] || s, sitCount[s]]);
+  // preencher f-municipio
+  const allMunis = [...new Set(DATA.achados.map(a => a.municipio).filter(Boolean))].sort();
+  populateSelect('f-municipio', allMunis);
+  if (muni) $('f-municipio').value = muni;
+  bindSelect('f-municipio', renderIndex);
+
+  // botão limpar
+  const rst = $('btn-reset');
+  if (rst && !rst.dataset.bound) {
+    rst.dataset.bound = '1';
+    rst.addEventListener('click', () => {
+      ['f-municipio', 'f-ano', 'nav-year', 'nav-year-drawer'].forEach(id => {
+        const el = $(id); if (el) el.value = '';
+      });
+      renderIndex();
+    });
+  }
+
+  // ── Hero KPIs ──
+  const relIds = [...new Set(achados.map(a => a.relatorio_id))];
+  $('kpi-relatorios').textContent = fmtN(relIds.length);
+  $('kpi-achados').textContent    = fmtN(total);
+
+  // Opinião mais frequente — baseada nos relatórios filtrados por ano/município
+  const relsAtivos = DATA.relatorios.filter(r =>
+    (!ano  || String(r.ano) === ano) &&
+    (!muni || r.municipio === muni)
+  );
+  const { nome: opNome, pct: opPct } = opiniaoMaisFrequente(relsAtivos);
+  const opEl = $('kpi-opiniao');
+  if (opEl) opEl.innerHTML = `<span>${escHtml(opNome)}</span><span class="sep">·</span><span>${escHtml(opPct)}</span>`;
+
+  // Deltas (só quando há ano selecionado e sem filtro de município)
+  const { anoAnterior } = anosData(ano);
+  const showDelta = ano && !muni;
+
+  if (showDelta && anoAnterior) {
+    const achAnt = filterAchados({ ano: String(anoAnterior), municipio: '' });
+    const relAnt = [...new Set(achAnt.map(a => a.relatorio_id))];
+    renderDelta('kpi-relatorios-delta', calcDelta(relIds.length, relAnt.length, 'abs'), 'abs');
+    renderDelta('kpi-achados-delta',    calcDelta(total, achAnt.length, 'abs'), 'abs');
+  } else {
+    renderDelta('kpi-relatorios-delta', null);
+    renderDelta('kpi-achados-delta',    null);
+  }
+
+  $('hero-anos').textContent = '· Anos disponíveis: ' + anos.join(' · ') + ' ·';
+
+  // ── Badge de seção ──
+  const secBadge = $('section-badge-ano');
+  if (secBadge) secBadge.textContent = ano || 'Todos os anos';
+
+  // ── Cards secundários (placeholder — serão preenchidos na Task 4) ──
+
+  // ── Gráfico situação ──
   $('badge-total-sit').textContent = fmtN(total) + ' achados';
+  const sitCount = {};
+  achados.forEach(a => { const s = a.situacao || 'nao_consta'; sitCount[s] = (sitCount[s] || 0) + 1; });
+  const sitOrder  = ['mantido', 'sanado_total', 'sanado_parcial', 'afastado', 'nao_consta'];
+  const sitItems  = sitOrder.filter(s => sitCount[s]).map(s => [SITUACAO_LABEL[s] || s, sitCount[s]]);
   $('chart-situacao').innerHTML = buildBarList(sitItems, total, l => {
     const k = Object.entries(SITUACAO_LABEL).find(([, v]) => v === l)?.[0];
     return SITUACAO_COLOR[k] || 'gray';
   });
 
-  // Top municípios
+  // ── Gráfico tipo ──
+  const tipoCount = {};
+  achados.forEach(a => { if (a.tipo) tipoCount[a.tipo] = (tipoCount[a.tipo] || 0) + 1; });
+  const tipoItems = Object.entries(tipoCount).sort((a, b) => b[1] - a[1]);
+  const tipoMax = tipoItems[0]?.[1] || 1;
+  $('chart-tipo').innerHTML = buildBarList(tipoItems, tipoMax, () => 'blue');
+
+  // ── Gráfico top municípios ──
   const muniCount = {};
   achados.forEach(a => { muniCount[a.municipio] = (muniCount[a.municipio] || 0) + 1; });
   const muniItems = Object.entries(muniCount).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  const munis    = [...new Set(achados.map(a => a.municipio))];
   $('badge-total-muni').textContent = fmtN(munis.length) + ' municípios';
   $('chart-municipios').innerHTML = muniItems.length
     ? `<div class="rank-list">${muniItems.map(([nome, cnt], i) => `
@@ -215,14 +313,7 @@ function renderIndex() {
         </div>`).join('')}</div>`
     : '<div class="empty-state"><p>Sem dados para o filtro selecionado</p></div>';
 
-  // Tipo
-  const tipoCount = {};
-  achados.forEach(a => { tipoCount[a.tipo] = (tipoCount[a.tipo] || 0) + 1; });
-  const tipoItems = Object.entries(tipoCount).sort((a, b) => b[1] - a[1]);
-  const tipoMax = tipoItems[0]?.[1] || 1;
-  $('chart-tipo').innerHTML = buildBarList(tipoItems, tipoMax, () => 'blue');
-
-  // Opinião
+  // ── Opinião (placeholder — pizza na Task 6) ──
   const opinCount = {};
   achados.forEach(a => {
     const rel = DATA.relatorios.find(r => r.id === a.relatorio_id);
@@ -231,7 +322,8 @@ function renderIndex() {
   const opinItems = Object.entries(opinCount).sort((a, b) => b[1] - a[1]);
   const opinMax = opinItems[0]?.[1] || 1;
   const opinColor = l => l === 'Irregular' ? 'red' : l === 'Regular' ? 'green' : 'orange';
-  $('chart-opiniao').innerHTML = buildBarList(opinItems, opinMax, opinColor);
+  const opinionPizzaEl = $('chart-opiniao-pizza');
+  if (opinionPizzaEl) opinionPizzaEl.innerHTML = buildBarList(opinItems, opinMax, opinColor);
 }
 
 /* ════════════════════════════════════════
