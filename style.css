@@ -431,3 +431,190 @@ td.mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: v
   .three-col     { grid-template-columns: 1fr 1fr; }
   .nav-link span { display: none; }
 }
+
+/* ── Hero KPIs — novo design ── */
+.kpi-glass .kpi-value {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.kpi-delta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  min-height: 1rem;
+}
+.kpi-delta.up  { color: #4ade80; }
+.kpi-delta.dn  { color: #f87171; }
+.kpi-delta.neu { color: rgba(255,255,255,0.4); }
+
+/* KPI opinião: nome + percentual em linha, mesmo tamanho */
+.kpi-opiniao {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+}
+.kpi-opiniao .sep {
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── Cards secundários ── */
+.sec-cards-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+.sec-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+.sec-card-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.375rem;
+}
+.sec-card-value {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.sec-card-value.red   { color: var(--red); }
+.sec-card-value.green { color: var(--ok); }
+.sec-card-value.blue  { color: var(--primary); }
+.sec-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-2);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+.sec-card-delta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  min-height: 1rem;
+}
+.sec-card-delta.dn { color: var(--red); }
+.sec-card-delta.up { color: var(--ok); }
+
+/* ── Cabeçalho de seção ── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-badge {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px 0.625rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ── Grid 3 colunas ── */
+.three-col {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 900px) {
+  .sec-cards-4     { grid-template-columns: 1fr 1fr; }
+  .three-col       { grid-template-columns: 1fr; }
+}
+
+/* ── Barras empilhadas — evolução por ano ── */
+.stacked-wrap { display: flex; flex-direction: column; gap: 0.875rem; }
+.stacked-row  { display: flex; align-items: center; gap: 0.625rem; }
+.stacked-year {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-2);
+  width: 36px;
+  flex-shrink: 0;
+}
+.stacked-bar {
+  flex: 1;
+  display: flex;
+  height: 22px;
+  border-radius: 5px;
+  overflow: hidden;
+  gap: 1px;
+}
+.stacked-seg { height: 100%; }
+.stacked-total {
+  font-size: 0.72rem;
+  color: var(--muted);
+  width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.stacked-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 1rem;
+}
+.stacked-leg-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  color: var(--text-2);
+}
+.stacked-leg-dot { width: 10px; height: 10px; border-radius: 2px; }
+
+/* ── Pizza chart — opinião ── */
+.pie-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+.pie-legend { display: flex; flex-direction: column; gap: 0.625rem; }
+.pie-item   { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; }
+.pie-dot    { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.pie-item-label { color: var(--text-2); flex: 1; }
+.pie-item-val   { font-weight: 700; color: var(--text); }
+.pie-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+.pie-badge {
+  font-size: 0.72rem;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-weight: 600;
+}
+.pie-badge.ok   { background: #E8F5EE; color: var(--ok); }
+.pie-badge.warn { background: #FFF4E5; color: var(--warn); }
+.pie-badge.red  { background: #FBE9EB; color: var(--red); }
+.pie-badge.neu  { background: var(--surface-2); color: var(--neutral); }
