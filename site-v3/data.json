@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-17T23:48:04+00:00",
+  "gerado_em": "2026-05-18T13:48:33+00:00",
   "versao": "1.1.0",
   "relatorios": [
     {
@@ -144,6 +144,19 @@
       "opiniao_auditoria": "Regular com Ressalvas",
       "fonte_extracao": "gemini_legacy",
       "n_achados": 22
+    },
+    {
+      "id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
+      "arquivo": "Capela.pdf",
+      "ano": 2023,
+      "municipio": "Capela",
+      "gestor": "Prefeitura Municipal de Capela",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006942/2024",
+      "opiniao_auditoria": "Regular com Ressalvas",
+      "fonte_extracao": "parser_2024",
+      "n_achados": 1
     },
     {
       "id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
@@ -4461,6 +4474,26 @@
       "analise_tecnica": "O gestor alega que ocorreu erro de digitação no nome do servidor citado no apontamento, esta área técnica realizou nova consulta ao Portal\nda Transparência em 24/10/2024 e localizou o servidor Sérgio Silva Monteiro, ocupante de cargo efetivo. Dessa forma, fica sanado o apontamento. Relatório técnico sobre as contas de Governo\ndo Chefe do Executivo Municipal RESUMO"
     },
     {
+      "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
+      "ano": 2023,
+      "municipio": "Capela",
+      "auditor": null,
+      "relator": "Maria Cleide Costa Beserra",
+      "numero_processo": "TC/1.006942/2024",
+      "codigo": "III.01",
+      "tipo": "Não classificado",
+      "secao": "2. Instrumentos De Planejamento",
+      "base_normativa": null,
+      "descricao": "",
+      "houve_defesa": true,
+      "situacao": "nao_consta",
+      "recomendacao": null,
+      "determinacao": null,
+      "valor_financeiro": null,
+      "defesa_gestor": "Não foram enviados os anexos, devido ao responsável dos envios achar que só a lei seria suficiente para atendimento do pleito, diante dessa falta\nresultante em impropriedade estamos enviando os anexos da referida lei.",
+      "analise_tecnica": "O gestor afirma que a ausência dos anexos da Lei de Diretrizes Orçamentárias – LDO foi devido ao fato de o responsável entender que o\nenvio, apenas, do corpo da lei atenderia o pleito. Outrossim, foram enviados os anexos da referida lei. Todavia, o art. 4º, §1º da LRF afirma que os\nreferidos anexos compõem a LDO. Além disso, os anexos da LDO compõem o rol de documentos que devem ser encaminhados a esta Corte de\nContas, conforme item 20 do anexo I da Resolução Normativa 01/2016 do TCE/AL. Dessa forma, fica mantido o apontamento a título de\nrecomendação para os exercícios seguintes.\nClassificação do\nNº Seção do Relatório Situação identificada Base Normativa\nAchado\n2.3."
+    },
+    {
       "relatorio_id": "fb84caf35301c8e6a7e66c52eed51e38ba47ed66356656bfab4c13bd935436ce",
       "ano": 2024,
       "municipio": "Atalaia",
@@ -4823,12 +4856,12 @@
   ],
   "agregacoes": {
     "totais": {
-      "relatorios": 12,
-      "achados": 233,
+      "relatorios": 13,
+      "achados": 234,
       "saneados": 96,
       "mantidos": 130,
-      "com_defesa": 199,
-      "municipios": 11,
+      "com_defesa": 200,
+      "municipios": 12,
       "anos": [
         2023,
         2024
@@ -4838,12 +4871,14 @@
       "mantido": 130,
       "sanado_total": 83,
       "afastado": 7,
-      "sanado_parcial": 13
+      "sanado_parcial": 13,
+      "nao_consta": 1
     },
     "por_tipo": {
       "Impropriedade": 116,
       "Inconsistência": 66,
-      "Irregularidade": 51
+      "Irregularidade": 51,
+      "Não classificado": 1
     },
     "por_secao": {
       "6. Gestão Fiscal": 50,
@@ -4852,7 +4887,7 @@
       "3. Aspectos Orçamentários E Financeiros": 40,
       "9. Transparência E Controle Interno": 29,
       "5. Repasses Do Duodécimo": 8,
-      "2. Instrumentos De Planejamento": 6,
+      "2. Instrumentos De Planejamento": 7,
       "8. Previdência": 6,
       "7.1. Educação": 2,
       "1. Introdução": 1,
@@ -4870,10 +4905,11 @@
       "Água Branca": 18,
       "Belém": 10,
       "Cajueiro": 8,
-      "Piranhas": 5
+      "Piranhas": 5,
+      "Capela": 1
     },
     "por_ano": {
-      "2023": 215,
+      "2023": 216,
       "2024": 18
     },
     "por_base_normativa": {
@@ -4916,7 +4952,8 @@
         "mantido": 96,
         "sanado_total": 83,
         "afastado": 7,
-        "sanado_parcial": 13
+        "sanado_parcial": 13,
+        "nao_consta": 1
       },
       "sem_defesa": {
         "mantido": 34
@@ -5047,7 +5084,8 @@
     "tipo_por_secao": {
       "2. Instrumentos De Planejamento": {
         "Irregularidade": 3,
-        "Impropriedade": 3
+        "Impropriedade": 3,
+        "Não classificado": 1
       },
       "3. Aspectos Orçamentários E Financeiros": {
         "Impropriedade": 26,
@@ -5144,6 +5182,9 @@
         "mantido": 16,
         "sanado_total": 5,
         "afastado": 1
+      },
+      "Capela": {
+        "nao_consta": 1
       }
     },
     "por_municipio_por_ano": {
@@ -5159,7 +5200,8 @@
           "Água Branca": 18,
           "Belém": 10,
           "Cajueiro": 8,
-          "Piranhas": 5
+          "Piranhas": 5,
+          "Capela": 1
         },
         "situacao_por_municipio": {
           "Anadia": {
@@ -5208,6 +5250,9 @@
             "mantido": 16,
             "sanado_total": 5,
             "afastado": 1
+          },
+          "Capela": {
+            "nao_consta": 1
           }
         }
       },
@@ -5226,14 +5271,14 @@
       }
     },
     "por_opiniao": {
-      "Regular com Ressalvas": 6,
+      "Regular com Ressalvas": 7,
       "Irregular": 5,
       "Regular": 1
     },
     "por_relator": {
       "Rodrigo Siqueira Cavalcante": 4,
+      "Maria Cleide Costa Beserra": 4,
       "Anselmo Roberto De Almeida Brito": 3,
-      "Maria Cleide Costa Beserra": 3,
       "Rosa Maria Ribeiro De Albuquerque": 2
     },
     "opiniao_por_relator": {
@@ -5249,7 +5294,7 @@
         "Irregular": 2
       },
       "Maria Cleide Costa Beserra": {
-        "Regular com Ressalvas": 2,
+        "Regular com Ressalvas": 3,
         "Irregular": 1
       }
     }
