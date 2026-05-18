@@ -465,15 +465,13 @@ function renderIndex() {
   $('badge-total-muni').textContent = muniTop.length + ' municípios';
   $('chart-municipios').innerHTML = muniTop.length
     ? `<div class="bar-list">${muniTop.map(([nome, d], i) => {
-        const dom = Object.entries(d.sit).sort((a,b) => b[1]-a[1])[0]?.[0] ?? 'nao_consta';
-        const barColor = { mantido:'var(--red)', sanado_total:'var(--ok)', sanado_parcial:'var(--warn)', afastado:'var(--neutral)', nao_consta:'var(--muted)' }[dom] ?? 'var(--muted)';
         const w = pct(d.total, muniTop[0][1].total);
         return `<div class="bar-row" style="cursor:pointer" onclick="location.href='achados.html?municipio=${encodeURIComponent(nome)}'">
           <div class="bar-meta">
             <span class="bar-name">${i+1}. ${escHtml(nome)}</span>
             <span class="bar-count">${fmtN(d.total)}</span>
           </div>
-          <div class="bar-track"><div class="bar-fill" style="width:${w};background:${barColor}"></div></div>
+          <div class="bar-track"><div class="bar-fill blue" style="width:${w}"></div></div>
         </div>`;
       }).join('')}</div>`
     : '<div class="empty-state"><p>Sem dados</p></div>';
