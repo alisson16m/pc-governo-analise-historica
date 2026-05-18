@@ -62,6 +62,16 @@ _RE_SUBCAP_NUMERADO = re.compile(
     re.IGNORECASE,
 )
 
+# Regex para extrair tipo e situação diretamente do texto plano do RESUMO
+_RE_TIPO_TEXTO = re.compile(
+    r"\b(Impropriedade|Irregularidade|Inconsist[eê]ncia|Inefici[eê]ncia|Inefic[aá]cia)\b",
+    re.IGNORECASE,
+)
+_RE_SITUACAO_TEXTO = re.compile(
+    r"\b(Sanado\s+Parcial|Sanado\s+Total|Sanado|Mantido|Afastado|N[aã]o\s+Consta)\b",
+    re.IGNORECASE,
+)
+
 # Clusters consonantais que NUNCA iniciam palavras portuguesas.
 # Quando aparecem após um espaço numa célula PDF, indicam sílaba quebrada pelo
 # pdfplumber (ex: "Compleme ntar" → "Complementar", "impor tante" → "importante").
@@ -75,6 +85,17 @@ _RE_SILABA = re.compile(
 
 def _norm(s: str) -> str:
     return (s or "").strip().lower()
+
+
+def _sit(sit_raw: Optional[str]) -> Optional["Situacao"]:
+    """Normaliza situação com fallback para remover espaços espúrios ('Man tido' → 'Mantido')."""
+    if not sit_raw:
+        return None
+    result = normalizar_situacao(sit_raw)
+    if result not in (None, Situacao.NAO_CONSTA):
+        return result
+    result2 = normalizar_situacao(sit_raw.replace(" ", ""))
+    return result2 if result2 not in (None, Situacao.NAO_CONSTA) else result
 
 
 def _cel(s: Optional[str]) -> str:
@@ -104,6 +125,166 @@ def _mapear_colunas(header: list[str]) -> Optional[dict[str, int]]:
     return None
 
 
+def _parse_tabela_compacta(
+    tabela: list,
+    secoes: list,
+    texto: "RelatorioTexto",
+) -> "Optional[Achado]":
+    """Extrai achado de tabela compacta sem cabeçalho (formato 8-cols do RESUMO).
+
+    O pdfplumber divide o RESUMO em uma tabela-mestra de 14 colunas (que contém
+    o III.01) e em tabelas menores de 8 colunas para os demais achados.  Nessas
+    tabelas menores, situação/tipo/base frequentemente aparecem em linhas de
+    continuação — por isso é preciso agregar TODAS as linhas antes de extrair.
+
+    Estratégia: agrupa valores por coluna (ignorando Nones), depois varre da
+    direita para esquerda para identificar situação → tipo → base; o restante
+    vira descrição.
+    """
+    # Agrega valores por coluna, ignorando células vazias
+    ncols = max((len(r) for r in tabela if r), default=0)
+    if not ncols:
+        return None
+
+    por_coluna: dict[int, list[str]] = {}
+    for row in tabela:
+        for i, val in enumerate(row or []):
+            c = _cel(val)
+            if c:
+                por_coluna.setdefault(i, []).append(c)
+
+    # Código na primeira linha, primeira coluna
+    codigo = _normalizar_codigo(por_coluna.get(0, [""])[0])
+    if not codigo:
+        return None
+
+    # Seção na primeira linha, segunda coluna
+    secao_col = (por_coluna.get(1) or [""])[0]
+
+    usadas: set[int] = {0, 1}
+    sit_raw: Optional[str] = None
+    tipo = "Não classificado"
+    base: Optional[str] = None
+
+    # Varredura da direita: localiza situação, tipo e base por conteúdo
+    for i in range(ncols - 1, 1, -1):
+        vals = por_coluna.get(i, [])
+        if not vals:
+            continue
+        # Situação: procura valor explicitamente reconhecível (não apenas NAO_CONSTA)
+        sit_found = next(
+            (v for v in vals
+             if normalizar_situacao(v) not in (None, Situacao.NAO_CONSTA)
+             or normalizar_situacao(v.replace(" ", "")) not in (None, Situacao.NAO_CONSTA)),
+            None,
+        )
+        tipo_found = next((v for v in vals if _e_tipo(v)), None)
+        if sit_raw is None and sit_found:
+            sit_raw = sit_found
+            usadas.add(i)
+        elif tipo == "Não classificado" and tipo_found:
+            tipo = tipo_found
+            usadas.add(i)
+        elif base is None:
+            base = " ".join(vals)
+            usadas.add(i)
+            break
+
+    # Descrição: une todos os valores das colunas não usadas (cols 2..N)
+    descricao = " ".join(
+        v
+        for i in range(2, ncols)
+        if i not in usadas
+        for v in por_coluna.get(i, [])
+    )
+
+    situacao = _sit(sit_raw)
+    houve_defesa = bool(situacao and situacao != Situacao.NAO_CONSTA)
+
+    idx = achar_indice_codigo(texto, codigo)
+    secao_textual = secao_de_linha(secoes, idx) if idx is not None else None
+    if secao_textual and not _RE_CAP_CONTEINER.search(secao_textual):
+        secao = secao_textual
+    else:
+        secao = secao_col or secao_textual or "Tabela de Achados"
+
+    return Achado(
+        codigo=codigo,
+        tipo=tipo,
+        secao=secao,
+        base_normativa=base or None,
+        descricao=descricao,
+        houve_defesa=houve_defesa,
+        situacao=situacao,
+        recomendacao=None,
+        determinacao=None,
+        valor_financeiro=_parse_valor(descricao),
+    )
+
+
+def _parse_formato_texto_resumo(
+    texto: "RelatorioTexto",
+    achados_existentes: set,
+    secoes: list,
+) -> "list[Achado]":
+    """Extrai achados do texto plano do RESUMO para os que o pdfplumber não captura.
+
+    O pdfplumber às vezes deixa de incluir certas linhas do RESUMO nas tabelas
+    extraídas (linhas formatadas de modo diferente no PDF).  Esta função varre o
+    texto linearizado das mesmas páginas e acrescenta qualquer III.XX que ainda
+    não foi encontrado pelas estratégias de tabela.
+
+    Só é chamada quando já existe resultado de tabela (resultado não-None).
+    """
+    paginas = _paginas_subcap_achados(texto)
+    if not paginas:
+        return []
+
+    texto_resumo = "\n".join(p.texto for p in paginas)
+    matches = list(_RE_CODIGO_LOOSE.finditer(texto_resumo))
+
+    novos: list[Achado] = []
+    for k, m in enumerate(matches):
+        codigo = f"III.{int(m.group(1)):02d}"
+        if codigo in achados_existentes:
+            continue
+
+        # Janela de texto: deste código até o início do próximo (ou +800 chars)
+        inicio = m.start()
+        fim = matches[k + 1].start() if k + 1 < len(matches) else min(inicio + 800, len(texto_resumo))
+        bloco = texto_resumo[inicio:fim]
+
+        m_tipo = _RE_TIPO_TEXTO.search(bloco)
+        tipo = m_tipo.group(0).capitalize() if m_tipo else "Não classificado"
+
+        m_sit = _RE_SITUACAO_TEXTO.search(bloco)
+        sit_raw = m_sit.group(0) if m_sit else None
+        situacao = _sit(sit_raw)
+        houve_defesa = bool(situacao and situacao != Situacao.NAO_CONSTA)
+
+        idx = achar_indice_codigo(texto, codigo)
+        secao_textual = secao_de_linha(secoes, idx) if idx is not None else None
+        if secao_textual and not _RE_CAP_CONTEINER.search(secao_textual):
+            secao = secao_textual
+        else:
+            secao = "Tabela de Achados"
+
+        novos.append(Achado(
+            codigo=codigo,
+            tipo=tipo,
+            secao=secao,
+            base_normativa=None,
+            descricao="",
+            houve_defesa=houve_defesa,
+            situacao=situacao,
+            recomendacao=None,
+            determinacao=None,
+            valor_financeiro=None,
+        ))
+
+    return novos
+
+
 def _parse_valor(texto: Optional[str]) -> Optional[Decimal]:
     if not texto:
         return None
@@ -130,13 +311,29 @@ def parse(texto: RelatorioTexto) -> Optional[list[Achado]]:
     Estratégia 1: tabela com linha de cabeçalho nomeada.
     Estratégia 2: tabela posicional no capítulo RESUMO >
                   'Irregularidades, Inconsistências e Impropriedades'.
+    Estratégia 3 (suplementar): texto plano do RESUMO para achados que o
+                  pdfplumber não captura em tabela.
 
     Retorna None se nenhuma tabela compatível for encontrada — sinal para
     cair no parser legacy via Gemini."""
     resultado = _parse_formato_cabecalho(texto)
-    if resultado is not None:
+    if resultado is None:
+        resultado = _parse_formato_posicional(texto)
+    if resultado is None:
+        return None  # nenhuma tabela encontrada → cai no Gemini
+
+    # Suplementa com achados que as tabelas deixaram passar (pdfplumber por
+    # vezes não extrai todas as linhas de uma tabela mista no RESUMO)
+    existentes = {a.codigo for a in resultado}
+    secoes = extrair_secoes(texto)
+    extras = _parse_formato_texto_resumo(texto, existentes, secoes)
+    if not extras:
         return resultado
-    return _parse_formato_posicional(texto)
+
+    todos: dict[str, Achado] = {a.codigo: a for a in resultado}
+    for a in extras:
+        todos.setdefault(a.codigo, a)
+    return sorted(todos.values(), key=lambda a: a.codigo)
 
 
 # ---------------------------------------------------------------------------
@@ -164,7 +361,16 @@ def _parse_formato_cabecalho(texto: RelatorioTexto) -> Optional[list[Achado]]:
                 and header
                 and _RE_CODIGO_LOOSE.search(header[0])
             ):
-                # Exceção: página de continuação sem cabeçalho
+                # Continuação sem cabeçalho.  Se a tabela tem menos colunas do
+                # que o mapa espera, é o formato compacto do RESUMO (8-cols):
+                # situação/tipo frequentemente aparecem em linhas de continuação,
+                # por isso processamos a tabela inteira de uma vez.
+                if len(tabela[0]) <= max(mapa_ativo.values()):
+                    achado_comp = _parse_tabela_compacta(tabela, secoes, texto)
+                    if achado_comp:
+                        encontrou_tabela = True
+                        achados.append(achado_comp)
+                    continue
                 mapa = mapa_ativo
                 linhas_dados = tabela
             else:
@@ -178,6 +384,7 @@ def _parse_formato_cabecalho(texto: RelatorioTexto) -> Optional[list[Achado]]:
                 if not any(linha):
                     continue
                 # Pula linhas com menos colunas do que o mapeamento requer
+                # (tabelas compactas são tratadas no nível de tabela acima)
                 if mapa and len(linha) <= max(mapa.values()):
                     continue
                 codigo_raw = linha[mapa["numero"]] if mapa.get("numero") is not None else ""
@@ -190,7 +397,7 @@ def _parse_formato_cabecalho(texto: RelatorioTexto) -> Optional[list[Achado]]:
                 sit_raw = linha[mapa["situacao"]] if "situacao" in mapa else None
                 rec = _cel(linha[mapa["recomendacao"]]) if "recomendacao" in mapa and linha[mapa["recomendacao"]] else None
                 det = _cel(linha[mapa["determinacao"]]) if "determinacao" in mapa and linha[mapa["determinacao"]] else None
-                situacao = normalizar_situacao(sit_raw)
+                situacao = _sit(sit_raw)
                 houve_defesa = bool(situacao and situacao != Situacao.NAO_CONSTA)
                 idx_global = achar_indice_codigo(texto, codigo)
                 secao = secao_de_linha(secoes, idx_global) if idx_global is not None else "Tabela de Achados"
@@ -356,7 +563,7 @@ def _parse_formato_posicional(texto: RelatorioTexto) -> Optional[list[Achado]]:
                 rec = cols[5] if len(cols) > 5 else None
                 sit_raw = cols[6] if len(cols) > 6 else None
 
-                situacao = normalizar_situacao(sit_raw) if sit_raw else None
+                situacao = _sit(sit_raw)
                 houve_defesa = bool(situacao and situacao != Situacao.NAO_CONSTA)
 
                 idx = achar_indice_codigo(texto, codigo)
