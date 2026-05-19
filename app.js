@@ -583,28 +583,15 @@ function renderAchadosPage(page) {
   const tbody = $('achados-body');
 
   tbody.innerHTML = slice.map((a, i) => {
-    const uid = `acc-${start + i}`;
+    const idx = start + i;
     return `
-    <tr class="accordion-row" data-uid="${uid}" onclick="toggleAccordion('${uid}')">
+    <tr class="accordion-row" onclick="openAchadoModal(${idx})">
       <td>${escHtml(a.municipio)}</td>
       <td>${a.ano}</td>
       <td class="mono">${escHtml(a.codigo)}</td>
       <td>${escHtml(a.tipo)}</td>
       <td><span class="badge ${SITUACAO_BADGE[a.situacao] || 'badge-gray'}">${SITUACAO_LABEL[a.situacao] || a.situacao}</span></td>
-      <td style="width:32px"><span class="accordion-toggle">▶</span></td>
-    </tr>
-    <tr class="accordion-detail" id="${uid}">
-      <td colspan="6">
-        <div class="accordion-content">
-          <strong>Descrição:</strong> ${escHtml(a.descricao)}<br><br>
-          ${a.recomendacao ? `<strong>Recomendação:</strong> ${escHtml(a.recomendacao)}<br><br>` : ''}
-          ${a.determinacao ? `<strong>Determinação:</strong> ${escHtml(a.determinacao)}<br><br>` : ''}
-          ${a.base_normativa ? `<strong>Base normativa:</strong> ${escHtml(a.base_normativa)}<br><br>` : ''}
-          <strong>Seção:</strong> ${escHtml(a.secao)}
-          &nbsp;·&nbsp; <strong>Processo:</strong> <span class="mono">${escHtml(a.numero_processo)}</span>
-          &nbsp;·&nbsp; <strong>Defesa:</strong> ${a.houve_defesa ? 'Sim' : 'Não'}
-        </div>
-      </td>
+      <td style="width:32px"><span class="row-open-icon">↗</span></td>
     </tr>`;
   }).join('');
 
@@ -624,16 +611,68 @@ function renderAchadosPage(page) {
   pag.innerHTML = btns.join('');
 }
 
-function toggleAccordion(uid) {
-  const detail = $(uid);
-  const row = document.querySelector(`[data-uid="${uid}"]`);
-  const isOpen = detail.classList.contains('open');
-  document.querySelectorAll('.accordion-detail.open').forEach(el => {
-    el.classList.remove('open');
-    document.querySelector(`[data-uid="${el.id}"]`)?.classList.remove('open');
-  });
-  if (!isOpen) { detail.classList.add('open'); row?.classList.add('open'); }
+const SITUACAO_MODAL_CLASS = {
+  mantido: 'mantido', sanado_total: 'sanado', sanado_parcial: 'sanado-parcial',
+  afastado: 'afastado', nao_consta: 'afastado',
+};
+
+function openAchadoModal(idx) {
+  const a = FILTERED_ACHADOS[idx];
+  if (!a) return;
+
+  function set(id, text) { const el = $(id); if (el) el.textContent = text ?? ''; }
+  function show(id, vis) { const el = $(id); if (el) el.style.display = vis ? '' : 'none'; }
+
+  set('modal-super',     `Achado · ${a.ano}`);
+  set('modal-municipio', a.municipio);
+  set('modal-code',      a.codigo);
+  set('modal-tipo',      a.tipo);
+
+  const sitEl = $('modal-sit');
+  sitEl.textContent = SITUACAO_LABEL[a.situacao] || a.situacao;
+  sitEl.className   = `modal-badge-sit ${SITUACAO_MODAL_CLASS[a.situacao] || ''}`;
+
+  set('modal-descricao', a.descricao);
+
+  show('modal-wrap-rec',  !!a.recomendacao);
+  if (a.recomendacao)  set('modal-recomendacao', a.recomendacao);
+
+  show('modal-wrap-det',  !!a.determinacao);
+  if (a.determinacao)  set('modal-determinacao', a.determinacao);
+
+  show('modal-wrap-norm', !!a.base_normativa);
+  if (a.base_normativa) set('modal-normativa', a.base_normativa);
+
+  const temDefesa = a.defesa_gestor || a.analise_tecnica;
+  show('modal-divider-def', !!temDefesa);
+
+  show('modal-wrap-def', !!a.defesa_gestor);
+  if (a.defesa_gestor)   set('modal-defesa-gestor', a.defesa_gestor);
+
+  show('modal-wrap-ana', !!a.analise_tecnica);
+  if (a.analise_tecnica) set('modal-analise-tecnica', a.analise_tecnica);
+
+  set('modal-secao',    a.secao    || '—');
+  set('modal-processo', a.numero_processo || '—');
+  set('modal-relator',  a.relator  || '—');
+
+  show('modal-wrap-sem-defesa', !a.houve_defesa);
+  show('modal-sep-def',         !a.houve_defesa);
+
+  $('modal-backdrop').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
+
+function closeAchadoModal() {
+  $('modal-backdrop').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function onModalBackdropClick(e) {
+  if (e.target === $('modal-backdrop')) closeAchadoModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAchadoModal(); });
 
 /* ════════════════════════════════════════
    MUNICÍPIOS — municipios.html
