@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-19T17:38:27+00:00",
+  "gerado_em": "2026-05-19T18:26:42+00:00",
   "versao": "1.1.0",
   "relatorios": [
     {
@@ -12,7 +12,7 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "opiniao_auditoria": "Regular com Ressalvas",
-      "fonte_extracao": "parser_2024",
+      "fonte_extracao": "gemini_legacy",
       "n_achados": 21
     },
     {
@@ -183,15 +183,15 @@
       "codigo": "III.01",
       "tipo": "Irregularidade",
       "secao": "2. Instrumentos De Planejamento",
-      "base_normativa": null,
-      "descricao": "da Constituição",
+      "base_normativa": "Art. 165, § 8º, da Constituição Federal",
+      "descricao": "Inclusão de matérias estranhas à previsão de receitas e à fixação de despesas não contemplada pelas exceções legais, desobedecendo o Princípio da Exclusividade.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Elaborar as próximas Leis Orçamentárias Anuais (LOA) em conformidade com o que é exigido pela Constituição Federal de 1988, incluindo o atendimento ao Princípio da Exclusividade.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconhece a falha quanto ao princípio da exclusividade na LOA, justificando que o dispositivo irregular não gerou execução orçamentária ou financeira. A defesa argumenta, ainda, que não houve abertura indevida de créditos suplementares pelo Legislativo e compromete-se a observar estritamente as normas orçamentárias nos próximos exercícios.",
-      "analise_tecnica": "O ente jurisdicionado admitiu a irregularidade na abertura de créditos especiais, confirmando que adotará as recomendações deste Tribunal para garantir a futura observância ao princípio da exclusividade orçamentária. Diante disso, o entendimento inicial do auditor foi mantido, ratificando-se a necessidade de adequação às normas constitucionais sobre a matéria."
+      "defesa_gestor": "O gestor reconheceu a inclusão indevida de matéria estranha na Lei Orçamentária Anual (LOA), comprometendo-se a observar o princípio da exclusividade nos próximos exercícios. Adicionalmente, alegou que o referido dispositivo não gerou execução financeira e que a abertura de créditos suplementares respeitou a legalidade, sendo realizada exclusivamente pelo Poder Executivo.",
+      "analise_tecnica": "Como analista do Tribunal, segue o resumo do achado:\n\nA justificativa do Ente de que a abertura de crédito especial baseou-se em leis específicas foi rejeitada, uma vez que não supre o descumprimento do princípio da exclusividade. Diante do reconhecimento da irregularidade pelo jurisdicionado e do compromisso de adequação, mantém-se a manutenção do entendimento técnico e da recomendação emitida."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -203,15 +203,15 @@
       "codigo": "III.02",
       "tipo": "Impropriedade",
       "secao": "3. Aspectos Orçamentários E Financeiros",
-      "base_normativa": null,
-      "descricao": "Orçamentários e arrecadação utilizado como recurso para",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Infringência à norma contábil, tendo em vista a atualização da previsão da receita em montante acima do excesso de arrecadação utilizado como recurso para abertura de créditos adicionais.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Atentar-se às normas contábeis na elaboração dos demonstrativos, tais como MCASP, a fim de preservar a fidedignidade da informação contábil.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor argumenta que o excesso de arrecadação deve ser apurado por fonte de recursos específica, e não pelo valor total da execução orçamentária, permitindo a abertura de créditos adicionais mesmo em cenários de frustração de receita global. Para sustentar a legalidade da medida, invoca o conceito de excesso de arrecadação previsto no art. 43, § 3º, da Lei nº 4.320/64 e apresenta demonstrativos comparativos das receitas por fonte no exercício de 2023.",
-      "analise_tecnica": "Identificou-se uma divergência de R$ 30,7 milhões na previsão atualizada da receita no Balanço Orçamentário, pois o montante não reflete corretamente a soma da previsão inicial com os créditos adicionais abertos por excesso de arrecadação, em desacordo com o MCASP. Como a defesa não apresentou justificativas pertinentes ao erro contábil, mantém-se a irregularidade e recomenda-se ao gestor maior rigor na observância das normas contábeis para assegurar a fidedignidade dos demonstrativos."
+      "defesa_gestor": "O gestor argumenta que o excesso de arrecadação deve ser apurado considerando fontes de recursos específicas, e não apenas o resultado global da execução orçamentária. Com base no art. 43, § 3º, da Lei nº 4.320/64, sustenta que havia saldo suficiente por fonte para justificar a abertura de créditos adicionais suplementares no exercício de 2023.",
+      "analise_tecnica": "Constatou-se uma divergência de R$ 30,7 milhões entre a previsão atualizada da receita no Balanço Orçamentário e as normas do MCASP, que exigem a atualização dos valores sempre que houver abertura de créditos adicionais. Como a defesa não justificou a inconsistência, mantém-se o apontamento, com recomendação ao gestor para que observe rigorosamente as normas contábeis na elaboração de demonstrativos, visando a fidedignidade da informação."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -221,17 +221,17 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.03",
-      "tipo": "Inconsistência",
+      "tipo": "Irregularidade",
       "secao": "3. Aspectos Orçamentários E Financeiros",
-      "base_normativa": null,
-      "descricao": "Orçamentários e Lei nº Tal situação configura uma infração ao",
+      "base_normativa": "Art. 43, §3º, da Lei nº 4.320/64",
+      "descricao": "Abertura de créditos suplementares utilizando o excesso de arrecadação como recurso, sem a devida comprovação do excesso correspondente.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
-      "valor_financeiro": null,
-      "defesa_gestor": "Como analista, apresento o resumo da manifestação:\n\nO gestor apresentou o Quadro de Apuração do Excesso de Arrecadação por Fonte de Recursos, em atendimento à determinação desta Corte. O documento visa sanear o achado de auditoria relativo ao relatório técnico das contas de governo do Executivo Municipal.",
-      "analise_tecnica": "A análise técnica confirmou que os créditos adicionais abertos possuíam lastro financeiro suficiente, resultando no saneamento do achado relativo ao excesso de arrecadação. No que tange à divergência nos saldos de caixa, foi determinada a apresentação de esclarecimentos adicionais por parte do jurisdicionado para sanar as inconsistências entre os demonstrativos contábeis apresentados."
+      "valor_financeiro": 1355089.14,
+      "defesa_gestor": "O gestor apresentou, em sua defesa, o Quadro de Apuração do Excesso de Arrecadação segregado por fonte de recursos. O documento foi encaminhado em atendimento à determinação desta Corte para fins de composição do relatório técnico das contas de governo.",
+      "analise_tecnica": "Após a análise técnica do achado nº 4, concluiu-se que o excesso de arrecadação por fonte de recurso estava devidamente lastreado, sendo o apontamento considerado sanado. Quanto à divergência nos saldos de caixa, a unidade técnica determinou que o jurisdicionado apresente os esclarecimentos necessários em sede de contraditório e ampla defesa para sanar a inconsistência contábil identificada."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -241,16 +241,16 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.04",
-      "tipo": "Não classificado",
+      "tipo": "Inconsistência",
       "secao": "4. Aspectos Patrimoniais",
-      "base_normativa": null,
-      "descricao": "Patrimoniais a Pagar (peça 38) registraram o valor de Setor Público",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Inconsistência nas informações relacionadas ao Caixa entre o Balanço Patrimonial, Balanço Financeiro, Demonstrativo da Disponibilidade de Caixa e o Quadro Demonstrativo dos Saldos Bancários.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor apresentou os extratos bancários anteriormente omitidos na Prestação de Contas, em atendimento à determinação do Tribunal. Com a juntada dos documentos comprobatórios, o achado de auditoria foi sanado.",
+      "defesa_gestor": "O gestor municipal apresentou a documentação faltante, consistente nos extratos bancários das contas elencadas na Tabela 20 do relatório técnico. Com a juntada dos documentos, o achado de auditoria foi devidamente sanado, atendendo à determinação estabelecida pelo Tribunal.",
       "analise_tecnica": null
     },
     {
@@ -263,14 +263,14 @@
       "codigo": "III.05",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
-      "base_normativa": null,
-      "descricao": "Prestação de Contas extratos das contas",
+      "base_normativa": "Resolução Normativa nº 01/2016 - TCE/AL",
+      "descricao": "Não foram anexados à Prestação de Contas extratos das contas bancárias elencadas na Tabela 20.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Observar o normativo acerca do envio de documentação comprobatória do saldo bancário em 31/12.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconheceu a ausência de segregação contábil específica da Dívida Ativa, conforme exigido pelo art. 39, §1º, da Lei nº 4.320/64, justificando que os valores foram registrados de forma genérica na rubrica de \"Créditos a Curto Prazo\". A defesa comprometeu-se a regularizar a classificação contábil e a realizar a correta distinção entre Ativo Circulante e Não Circulante nos próximos exercícios, em observância ao MCASP e ao PCASP.",
+      "defesa_gestor": "O gestor reconheceu a ausência de segregação específica para a Dívida Ativa no plano de contas, justificando que os valores foram registrados genericamente sob a rubrica de \"Créditos a Curto Prazo\". Em defesa, a administração comprometeu-se a ajustar a classificação contábil nos próximos exercícios, assegurando a conformidade com as normas do MCASP e do PCASP.",
       "analise_tecnica": null
     },
     {
@@ -283,14 +283,14 @@
       "codigo": "III.06",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
-      "base_normativa": null,
-      "descricao": "Orçada com a Arrecadada (peça 10), Lei nº",
+      "base_normativa": "Art. 39, §1º, da Lei nº 4.320/64",
+      "descricao": "Ausência de registro da Dívida Ativa em conta específica, seja no Ativo Circulante ou Não Circulante.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Escriturar em registro próprio a Dívida Ativa Tributária e Não Tributária segregando em ativo circulante e não circulante.",
       "determinacao": null,
-      "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica que o repasse do duodécimo observou a base de cálculo correta ao incluir as compensações financeiras decorrentes da Lei Complementar nº 194/2022, que haviam sido inicialmente omitidas na memória de cálculo. A defesa sustenta que tais valores integram a receita tributária arrecadada no exercício anterior e anexa documentos comprobatórios para demonstrar a regularidade da execução orçamentária e o cumprimento do limite constitucional.",
+      "valor_financeiro": 30401.09,
+      "defesa_gestor": "O gestor justifica que a divergência no repasse do duodécimo decorreu da inclusão de receitas de compensação financeira da Lei Complementar nº 194/2022 na base de cálculo, argumentando que tais valores possuem natureza tributária e devem compor o montante para efeito do art. 29-A da Constituição Federal. Para sanar o apontamento, a defesa apresentou a memória de cálculo retificada e a documentação contábil que comprova a integração dessas receitas na base de cálculo do exercício de 2022.",
       "analise_tecnica": null
     },
     {
@@ -301,17 +301,17 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.07",
-      "tipo": "Não classificado",
+      "tipo": "Irregularidade",
       "secao": "5. Repasses Do Duodécimo",
-      "base_normativa": null,
-      "descricao": "Constituição Duodécimo Executivo à Câmara Municipal superou o Federal.",
+      "base_normativa": "Art. 29-A, I, da Constituição Federal",
+      "descricao": "O total de valores repassados pelo Poder Executivo à Câmara Municipal superou o limite constitucional.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
-      "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica que as compensações financeiras decorrentes da Lei Complementar nº 194/2022 foram devidamente incluídas na base de cálculo do duodécimo de 2023, em conformidade com o art. 29-A da Constituição Federal. Para comprovar a regularidade da execução orçamentária, apresentou o Anexo X do Balanço Anual de 2022 e a respectiva memória de cálculo, atestando que tais valores constam na rubrica de transferências estaduais.",
-      "analise_tecnica": "A defesa justificou a inclusão das compensações financeiras do ICMS na base de cálculo do duodécimo, argumentando que, embora a contabilização tenha divergido da Nota Técnica da STN nº 1740/2023, o procedimento respeitou a natureza tributária da receita. A análise técnica confirmou que os repasses efetuados pelo Poder Executivo ao Legislativo mantiveram-se dentro do limite constitucional de 7%, saneando assim a irregularidade quanto ao valor transferido."
+      "valor_financeiro": 18470.28,
+      "defesa_gestor": "O gestor justifica que as compensações financeiras decorrentes da Lei Complementar nº 194/2022 foram devidamente incluídas na base de cálculo do duodécimo de 2023, cumprindo o disposto no art. 29-A da Constituição Federal. Para comprovar a regularidade, apresentou a memória de cálculo e o Anexo X do Balanço Anual de 2022, onde os referidos valores foram registrados sob a rubrica de transferências estaduais.",
+      "analise_tecnica": "A defesa comprovou que, apesar de uma divergência na classificação contábil, a inclusão das compensações financeiras do ICMS na base de cálculo do duodécimo está alinhada ao entendimento da Nota Técnica STN 1740/2023. Verificou-se que o limite constitucional para o repasse ao Poder Legislativo foi respeitado, sanando a irregularidade quanto ao valor dos repasses. Por fim, foi mantida a determinação para que o Executivo envie, nos próximos exercícios, a documentação comprobatória das datas de transferência, conforme exige o art. 168 da Constituição Federal."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -321,16 +321,16 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.08",
-      "tipo": "Não classificado",
+      "tipo": "Impropriedade",
       "secao": "5. Repasses Do Duodécimo",
-      "base_normativa": null,
-      "descricao": "Constituição Duodécimo apresenta as datas em que os repasses Federal. foram realizados.",
+      "base_normativa": "Art. 168, da Constituição Federal",
+      "descricao": "A relação dos valores mensais dos repasses de duodécimo não apresenta as datas em que os repasses foram realizados.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "Em sua defesa, o gestor reconheceu a impropriedade apontada e comprovou a retificação dos demonstrativos fiscais. O ente realizou a devida correção dos valores da Receita Corrente Líquida e promoveu a republicação dos documentos corrigidos no sistema SICONFI e no Portal da Transparência municipal.",
+      "defesa_gestor": "O gestor reconheceu a impropriedade apontada e informou que realizou a retificação dos demonstrativos fiscais, conforme as determinações da equipe técnica. A defesa anexou os documentos corrigidos e comprovou a republicação dos dados atualizados no SICONFI e no Portal da Transparência do Município, visando o saneamento do achado.",
       "analise_tecnica": null
     },
     {
@@ -341,17 +341,17 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.09",
-      "tipo": "Não classificado",
+      "tipo": "Inconsistência",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "-",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)",
+      "descricao": "Divergência entre a apuração da unidade técnica e os valores apresentados no Demonstrativo da Receita Corrente Líquida, com dedução indevida de transferências obrigatórias.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
-      "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconheceu a falha apontada e informou a retificação dos demonstrativos (RREO e RGF), com a devida republicação no SICONF e no Portal da Transparência do Município. Adicionalmente, apresentou a documentação corrigida referente à Receita Corrente Líquida e aos limites de endividamento e de despesas com pessoal para saneamento da irregularidade.",
-      "analise_tecnica": "O gestor regularizou o cálculo da Receita Corrente Líquida após retificar deduções indevidas e comprovar a republicação dos dados nos sistemas oficiais, sanando a irregularidade contábil. Contudo, o achado principal permanece pendente, visto que a unidade técnica ainda aponta o descumprimento do limite legal de despesa com pessoal. Assim, mantém-se a determinação para que o gestor adote medidas de recondução do gasto aos limites previstos na Lei de Responsabilidade Fiscal."
+      "valor_financeiro": 1501248.0,
+      "defesa_gestor": "O gestor reconheceu a falha apontada e informou a retificação e republicação dos demonstrativos (RREO e RGF) no Portal da Transparência do Município e no sistema SICONF. Para comprovar o saneamento da irregularidade, a defesa apresentou os documentos corrigidos referentes à Receita Corrente Líquida e aos limites de endividamento e despesa com pessoal.",
+      "analise_tecnica": "O gestor sanou a irregularidade inicial ao corrigir os demonstrativos da Receita Corrente Líquida, incluindo as deduções devidas e excluindo lançamentos indevidos, com a devida publicação no SICONFI e Portal da Transparência. Contudo, persiste a irregularidade quanto ao descumprimento do limite de despesa com pessoal previsto na LRF. Por esse motivo, mantém-se a determinação para que o gestor comprove as medidas adotadas para a recondução da despesa aos parâmetros legais."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -361,17 +361,17 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.10",
-      "tipo": "Não classificado",
+      "tipo": "Irregularidade",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "Complementar",
+      "base_normativa": "Art. 20, III, b, da Lei Complementar nº 101/2000 – LRF",
+      "descricao": "Descumprimento do limite de despesa de pessoal por parte do Executivo municipal.",
       "houve_defesa": true,
       "situacao": "afastado",
-      "recomendacao": null,
+      "recomendacao": "Dar continuidade à redução gradativa de despesa com pessoal até o completo reenquadramento, dentro do prazo legal.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica o descumprimento do limite de despesa com pessoal em 2023 devido a fatores imprevisíveis, como reajustes legais, crescimento vegetativo da folha, demandas extraordinárias na saúde e educação e queda na arrecadação. Em contrapartida, a administração alega ter implementado medidas corretivas, incluindo o controle de admissões, a revisão de gratificações e a modernização administrativa, visando o reenquadramento nos limites legais.",
-      "analise_tecnica": "Aqui está o resumo objetivo do achado:\n\nEmbora a despesa com pessoal do Município tenha atingido 59,26% da Receita Corrente Líquida (RCL), superando o limite de 54% da LRF, a situação está em conformidade com o regime de transição da LC nº 178/2021. O ente tem cumprido a meta de redução anual exigida para o reenquadramento até 2032, motivo pelo qual a irregularidade foi afastada. Recomenda-se apenas a continuidade das medidas de controle e redução gradativa da despesa até o alcance do limite legal."
+      "defesa_gestor": "O gestor justifica o descumprimento do limite de despesa com pessoal em 2023 devido a fatores imprevisíveis, como reajustes legais, crescimento vegetativo da folha, demandas extraordinárias na saúde e educação, além da queda na Receita Corrente Líquida. Em contrapartida, informa ter adotado medidas corretivas, incluindo o controle de admissões, a revisão de gratificações e a reorganização administrativa, visando à recondução progressiva aos limites legais.",
+      "analise_tecnica": "Embora o Município tenha registrado despesa com pessoal de 59,26% da Receita Corrente Líquida (RCL), superando o limite legal de 54%, a situação está em conformidade com o regime de transição da Lei Complementar nº 178/2021. O ente cumpriu a meta de redução anual exigida para o período, razão pela qual a conduta não foi classificada como irregularidade, sendo recomendada a continuidade do ajuste gradativo até o reenquadramento final."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -381,17 +381,17 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.11",
-      "tipo": "Não classificado",
+      "tipo": "Irregularidade",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "Complementar",
+      "base_normativa": "Art. 19, III, da Lei Complementar nº 101/2000 – LRF",
+      "descricao": "Despesas Totais com Pessoal atingiram 63,72% da RCL ajustada, descumprindo o limite máximo consolidado.",
       "houve_defesa": true,
       "situacao": "afastado",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconheceu a importância da observância aos limites de despesa com pessoal estabelecidos pela Lei de Responsabilidade Fiscal. Em sua defesa, informou que adotou medidas corretivas no exercício subsequente, reduzindo o índice de gastos para 61,23% ao final de 2024, em conformidade com a Lei Complementar nº 178/2021.",
-      "analise_tecnica": "O Município regularizou a situação da despesa com pessoal ao comprovar a trajetória de redução e o ajuste no Relatório de Gestão Fiscal (RGF), em conformidade com a LC nº 178/2021. Embora o achado tenha sido descaracterizado como irregularidade, recomenda-se que a gestão mantenha o monitoramento contínuo para assegurar o reenquadramento definitivo nos prazos legais."
+      "defesa_gestor": "O gestor reconheceu a importância da observância aos limites de gastos com pessoal estabelecidos pela Lei de Responsabilidade Fiscal (LRF). Em sua defesa, informou a adoção de medidas corretivas que resultaram na redução do índice de despesas para 61,23% ao final de 2024, em conformidade com a Lei Complementar nº 178/2021.",
+      "analise_tecnica": "O Município regularizou a situação referente ao excesso de despesa com pessoal ao comprovar a trajetória de retorno aos limites estabelecidos pela LC nº 178/2021. Diante disso, o achado foi saneado, sendo recomendada à gestão a continuidade do monitoramento e a adoção de medidas para assegurar o reenquadramento definitivo dentro do prazo legal."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -401,17 +401,17 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.12",
-      "tipo": "Não classificado",
+      "tipo": "Irregularidade",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "Complementar",
+      "base_normativa": "Art. 15, da Lei Complementar nº 178/2021",
+      "descricao": "O ente não atingiu o estabelecido pela LC 178/2021 e aumentou o percentual de excesso do limite da Despesa com Pessoal.",
       "houve_defesa": true,
       "situacao": "afastado",
-      "recomendacao": null,
+      "recomendacao": "Dar continuidade à redução gradativa de despesa com pessoal até o completo reenquadramento, dentro do prazo legal.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justificou a necessidade de ajustes na Receita Corrente Líquida (RCL) para deduzir repasses federais vinculados à saúde, conforme as diretrizes da Lei Complementar nº 178/2021 e do Manual de Demonstrativos Fiscais da STN. Com a retificação metodológica, o índice de Despesa Total com Pessoal foi reduzido de 61,30% para 59,26%, enquadrando-se, assim, dentro do limite legal estabelecido pela Lei de Responsabilidade Fiscal.",
-      "analise_tecnica": "Aqui está o resumo solicitado:\n\nO município cumpriu a meta de redução da despesa com pessoal exigida pelo regime de transição da LC 178/2021, afastando a caracterização de irregularidade quanto ao limite de gastos. Contudo, foi identificada a ausência da publicação da Tabela de Trajetória de Retorno no Relatório de Gestão Fiscal, motivando uma determinação para que o ente providencie a devida divulgação. A gestão deve manter a redução gradativa das despesas até o reenquadramento definitivo dentro do prazo legal."
+      "defesa_gestor": "O gestor justificou que o percentual de Despesa Total com Pessoal (DTP) foi reajustado de 61,30% para 59,26% após a correção metodológica no cálculo da Receita Corrente Líquida (RCL). A retificação baseou-se na dedução de repasses vinculados do Ministério da Saúde, adequando o índice aos limites da Lei de Responsabilidade Fiscal, conforme orientações da Secretaria do Tesouro Nacional e da LC nº 178/2021.",
+      "analise_tecnica": "O ente cumpriu a meta de redução das despesas com pessoal exigida pela LC 178/2021, afastando a irregularidade, embora ainda permaneça acima do limite da LRF. Contudo, foi constatada a impropriedade quanto à ausência de publicação da Tabela de Trajetória de Retorno no Relatório de Gestão Fiscal (RGF), motivo pelo qual se determinou a sua regularização."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -421,17 +421,17 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.13",
-      "tipo": "Não classificado",
+      "tipo": "Impropriedade",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "Fiscal",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)",
+      "descricao": "Não foi identificada a publicação da Tabela de Trajetória de Retorno ao Limite da Despesa com Pessoal no Regime Extraordinário (LC 178/2021).",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor apresentou a tabela de Trajetória de Retorno ao Limite da Despesa com Pessoal, em conformidade com a LC 178/2021. O documento foi devidamente formalizado e encontra-se disponível para consulta no SICONF e no Portal da Transparência.",
-      "analise_tecnica": "O achado relativo à ausência de trajetória de retorno ao limite da despesa com pessoal foi considerado sanado após a apresentação da documentação comprobatória pela defesa. Contudo, persiste a impropriedade quanto ao descumprimento das metas fiscais de 2023, motivada por distorções significativas entre o planejamento e a execução orçamentária. Nesse sentido, mantém-se a recomendação para que o gestor aprimore o cumprimento das metas fiscais e o alinhamento das variáveis orçamentárias aos objetivos municipais."
+      "defesa_gestor": "O gestor apresentou, em sua defesa, a tabela de \"Trajetória de Retorno ao Limite da Despesa com Pessoal\", em conformidade com a LC 178/2021. O documento foi devidamente publicado no SICONF e no Portal da Transparência, visando atender à determinação deste Tribunal.",
+      "analise_tecnica": "O achado relativo à ausência de trajetória de retorno ao limite da despesa com pessoal foi considerado sanado após a apresentação da documentação comprobatória pela defesa. Contudo, persiste a impropriedade quanto ao descumprimento das metas fiscais de 2023, motivando a recomendação para que o gestor alinhe o planejamento orçamentário à execução das variáveis fiscais."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -443,14 +443,14 @@
       "codigo": "III.14",
       "tipo": "Impropriedade",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "Fiscal",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)",
+      "descricao": "Administração não cumpriu as metas fiscais fixadas na LDO/2023, apresentando distorções significativas entre planejamento e execução.",
       "houve_defesa": true,
-      "situacao": null,
-      "recomendacao": null,
+      "situacao": "mantido",
+      "recomendacao": "Estabelecer e cumprir as metas fiscais para que essas metas representem os resultados a serem alcançados para variáveis fiscais.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconheceu a impropriedade apontada referente à inadequação do Anexo 11 aos padrões da Portaria STN nº 710/2021. Em sua defesa, o responsável apresentou o relatório retificado, buscando sanar a irregularidade técnica detectada pela auditoria.",
+      "defesa_gestor": "O gestor reconheceu a irregularidade apontada e apresentou, em sua defesa, o relatório retificado em conformidade com a Portaria STN nº 710/2021. Dessa forma, a medida adotada pelo ente atende à determinação da equipe de auditoria, visando sanar a impropriedade na classificação das fontes de recursos.",
       "analise_tecnica": null
     },
     {
@@ -461,17 +461,17 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.15",
-      "tipo": "Não classificado",
+      "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
-      "base_normativa": null,
-      "descricao": "exercício",
+      "base_normativa": "Portaria STN n.710 de 25/02/21",
+      "descricao": "Anexo 11 fora do padrão estabelecido pela Portaria STN n.710/2021 quanto à classificação por fonte ou destinação de recursos.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor, em sua manifestação, alega ter atendido à determinação do Tribunal mediante a apresentação do relatório solicitado. A defesa fundamenta o cumprimento da obrigação com base nas diretrizes estabelecidas pela Portaria STN nº 710/2021.",
-      "analise_tecnica": "O gestor apresentou os documentos comprobatórios das fontes de recurso em conformidade com a legislação vigente, sanando a impropriedade apontada inicialmente sobre a aplicação de verbas do FUNDEB. Diante da regularização documental, o achado foi considerado superado pela equipe técnica."
+      "defesa_gestor": "O gestor limitou-se a informar o envio do relatório solicitado, alegando conformidade com a Portaria STN nº 710/2021. Contudo, a manifestação não apresentou justificativas de mérito ou esclarecimentos específicos sobre o achado de auditoria, restringindo-se ao cumprimento formal da entrega do documento.",
+      "analise_tecnica": "O apontamento referente à aplicação de recursos do FUNDEB acima do montante das receitas foi considerado sanado após a apresentação, pelo gestor, do Anexo 11 com as respectivas fontes de recursos. A documentação anexada à defesa comprovou a conformidade com a Portaria STN nº 710/2021, atendendo ao que havia sido determinado na auditoria."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -481,17 +481,17 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.16",
-      "tipo": "Não classificado",
+      "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
-      "base_normativa": null,
-      "descricao": "seus demonstrativos contábeis. FUNDEB.",
+      "base_normativa": "Lei Federal nº 14.113/2020",
+      "descricao": "Aplicação de recursos em montante superior ao total das receitas do FUNDEB.",
       "houve_defesa": true,
-      "situacao": null,
-      "recomendacao": null,
+      "situacao": "sanado_total",
+      "recomendacao": "Atentar-se à elaboração consistente dos seus demonstrativos contábeis.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor argumenta que o cumprimento do percentual superior a 70% na remuneração dos profissionais da educação básica decorreu da aplicação de saldos remanescentes do FUNDEB de exercícios anteriores. Defende que a utilização desses recursos seguiu estritamente as finalidades legais da Lei nº 14.113/2020, sem desvio de finalidade ou irregularidades, reforçando o compromisso com a valorização da categoria.",
-      "analise_tecnica": "Após a análise dos esclarecimentos do gestor, a área técnica constatou que o município aplicou 94,34% dos recursos do FUNDEB na remuneração dos profissionais da educação, superando o mínimo legal de 70% e sanando o apontamento inicial sobre esse percentual. Contudo, foi identificada uma execução financeira superior à receita efetivamente recebida, o que sinaliza possível ausência de lastro financeiro e inconsistências contábeis. Diante disso, recomenda-se que o gestor apresente esclarecimentos adicionais sobre a regularidade dessas despesas."
+      "defesa_gestor": "O gestor argumenta que o cumprimento do percentual superior a 70% na remuneração dos profissionais da educação decorreu da utilização regular de saldos remanescentes de exercícios anteriores, conforme autorizado pela legislação do FUNDEB. Defende que a aplicação dos recursos observou integralmente a destinação vinculada e os princípios da administração pública, inexistindo qualquer irregularidade ou desvio de finalidade.",
+      "analise_tecnica": "Embora a análise técnica tenha confirmado o cumprimento do limite constitucional de 70% de aplicação do Fundeb na remuneração dos profissionais da educação (índice de 94,34%), foi identificada uma impropriedade na gestão financeira. O município executou despesas acima das receitas efetivamente recebidas, o que sugere a utilização de recursos sem lastro financeiro e demanda esclarecimentos adicionais do gestor. Diante das divergências entre os demonstrativos contábeis, recomenda-se maior rigor na consistência das informações prestadas."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -503,15 +503,15 @@
       "codigo": "III.17",
       "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
-      "base_normativa": null,
-      "descricao": "ente",
+      "base_normativa": "Lei Federal nº 14.113/2020",
+      "descricao": "Aplicação a maior de recursos do FUNDEB, sugerindo gastos sem lastro financeiro e possível utilização incorreta da fonte.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Adotar mecanismos de controle e acompanhamento da execução orçamentária e financeira dos recursos vinculados.",
       "determinacao": null,
-      "valor_financeiro": null,
-      "defesa_gestor": "O gestor defende a regularidade da aplicação dos recursos do FUNDEB em 2023, alegando que o montante total de R$ 23.506.900,41 incluiu tanto os repasses do exercício quanto os saldos remanescentes de 2022. Sustenta, ainda, que não houve desvio de finalidade ou gastos acima da disponibilidade financeira, estando as despesas devidamente comprovadas nos registros contábeis e em conformidade com as normas de ensino.",
-      "analise_tecnica": "A análise técnica constatou que o município realizou despesas com recursos do FUNDEB acima do valor efetivamente recebido, configurando ausência de lastro financeiro, motivo pelo qual a defesa do gestor foi rejeitada. Adicionalmente, identificou-se o descumprimento dos prazos para transmissão de dados ao SIOPE, ensejando a recomendação de maior rigor no controle orçamentário e no envio das informações obrigatórias para evitar sanções administrativas."
+      "valor_financeiro": 25048179.92,
+      "defesa_gestor": "O gestor sustenta a regularidade na aplicação dos recursos do FUNDEB no exercício de 2023, totalizando R$ 23.506.900,41, valor que inclui o saldo remanescente do ano anterior. A defesa argumenta que as despesas foram devidamente registradas nos sistemas contábeis, respeitando os limites legais e a vinculação constitucional da verba para a manutenção e desenvolvimento do ensino.",
+      "analise_tecnica": "Aqui está o resumo objetivo da análise técnica:\n\nA auditoria constatou que o município realizou despesas com recursos do Fundeb acima do montante efetivamente recebido no exercício, configurando gastos sem o devido lastro financeiro. Diante da irregularidade, a defesa do gestor foi rejeitada, mantendo-se a recomendação para a implementação de mecanismos de controle que assegurem a compatibilidade entre a execução orçamentária e a disponibilidade de receita. Adicionalmente, foi apontada a impropriedade referente ao atraso na transmissão de dados ao SIOPE, com determinação para a regularização do envio nos prazos legais."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -523,14 +523,14 @@
       "codigo": "III.18",
       "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
-      "base_normativa": null,
-      "descricao": "MEC",
+      "base_normativa": "LC 101/2000 / Portaria MEC nº 844/2008",
+      "descricao": "Publicação em atraso do Demonstrativo das Receitas e Despesas com Manutenção e Desenvolvimento do Ensino no SIOPE.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Adotar as providências necessárias para assegurar a alimentação e envio tempestivo das informações do SIOPE.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justificou o atraso no envio de informações ao SIOPS alegando falhas operacionais e demora na disponibilização de sistema pelo Ministério da Saúde, sustentando a ausência de dolo ou má-fé. O órgão técnico, embora tenha reconhecido a regularização posterior da pendência e a adoção de medidas preventivas, manteve a classificação da ocorrência como impropriedade por descumprimento do prazo legal.",
+      "defesa_gestor": "O gestor justificou o atraso no envio dos dados ao SIOPS atribuindo a falha a problemas técnicos na disponibilização do sistema pelo Ministério da Saúde, conforme comunicado oficial. A defesa não foi integralmente acatada, mantendo-se a classificação de impropriedade pelo descumprimento do prazo legal, embora tenha sido reconhecida a regularização posterior da pendência e a adoção de medidas preventivas.",
       "analise_tecnica": null
     },
     {
@@ -543,15 +543,15 @@
       "codigo": "III.19",
       "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
-      "base_normativa": null,
-      "descricao": "Despesas",
+      "base_normativa": "LC 101/2000 / LC 141/2012",
+      "descricao": "Não publicação no SIOPS do Demonstrativo das Receitas e Despesas com Ações e Serviços Públicos de Saúde referentes ao 1º ao 5° bimestres de 2023.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Adotar as providências necessárias para assegurar a alimentação e envio tempestivo das informações do SIOPS.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica o envio intempestivo das informações ao SIOPS referentes ao exercício de 2023 alegando atraso na disponibilização da versão do sistema pelo Ministério da Saúde, conforme reconhecido pelo Comunicado nº 02/2024. Ressalta que os dados foram transmitidos logo após a normalização e confirmam o cumprimento do limite constitucional de aplicação em saúde, solicitando o acolhimento da justificativa diante de fatores técnicos alheios à sua vontade.",
-      "analise_tecnica": "Como analista do Tribunal de Contas, apresento o resumo do achado:\n\nO gestor não comprovou a omissão no envio dos demonstrativos do SIOPS (1º ao 5º bimestre de 2023), resultando na rejeição de sua justificativa e na manutenção da irregularidade pelo descumprimento de prazos legais. Adicionalmente, constatou-se a falta de publicidade de dados orçamentários e de pessoal no Portal da Transparência, infringindo a Lei de Responsabilidade Fiscal. Recomenda-se a imediata regularização das pendências para evitar sanções e assegurar o exercício do controle social."
+      "defesa_gestor": "O gestor justifica o envio intempestivo das informações ao SIOPS referentes a 2023 devido ao atraso na disponibilização da nova versão do sistema pelo Ministério da Saúde. Argumenta que o descumprimento do prazo decorreu de fatores técnicos alheios à vontade municipal e ressalta que o limite mínimo constitucional de aplicação em saúde foi devidamente cumprido.",
+      "analise_tecnica": "Como analista, apresento o resumo do achado de auditoria:\n\nO gestor não comprovou justificativa para a omissão no envio dos demonstrativos do SIOPS referentes aos cinco primeiros bimestres de 2023, sendo mantida a irregularidade pelo descumprimento dos prazos legais. Adicionalmente, constatou-se a falta de transparência na gestão pública devido à ausência de dados essenciais da execução orçamentária e da folha de pagamento no Portal da Transparência. Diante disso, recomenda-se a regularização imediata do envio dos dados ao sistema e a atualização do portal sob pena de sanções."
     },
     {
       "relatorio_id": "15368081ee5a1d3180c74e5207f2b0347f700c0ca0c7a98c519461981b43ac84",
@@ -561,16 +561,16 @@
       "relator": "Rodrigo Siqueira Cavalcante",
       "numero_processo": "TC/1.006421/2024",
       "codigo": "III.20",
-      "tipo": "Não classificado",
+      "tipo": "Impropriedade",
       "secao": "9. Transparência E Controle Interno",
-      "base_normativa": null,
-      "descricao": "–",
+      "base_normativa": "Art. 48, da Lei Complementar nº 101/2000 – LRF",
+      "descricao": "Portal da Transparência não mantido devidamente atualizado, inviabilizando o controle social.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor apresentou a documentação solicitada, incluindo a Lei Municipal nº 555/2021, que regulamenta o Sistema de Controle Interno, e a relação nominal dos servidores vinculados ao referido órgão. Com o envio das informações, o responsável busca sanar a irregularidade apontada pela auditoria quanto à transparência e composição do corpo funcional do setor.",
+      "defesa_gestor": "O gestor apresentou, em sede de defesa, a Lei Municipal nº 555/2021, que regulamenta o Sistema de Controle Interno, bem como a relação atualizada dos servidores lotados no órgão. Com a entrega desses documentos, a administração busca sanar a irregularidade apontada, que se referia à impossibilidade de verificar a composição do corpo funcional da unidade de controle.",
       "analise_tecnica": null
     },
     {
@@ -583,14 +583,14 @@
       "codigo": "III.21",
       "tipo": "Irregularidade",
       "secao": "9. Transparência E Controle Interno",
-      "base_normativa": null,
-      "descricao": "Interno",
+      "base_normativa": "Instrução Normativa nº 03/2011 - TCE/AL",
+      "descricao": "Link contendo informações relativas aos servidores não estava acessível, impossibilitando verificar a existência de servidores efetivos na Controladoria.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Realizar o concurso de Auditor de Controle Interno.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a manutenção de cargos efetivos em conformidade com a regra constitucional do concurso público, ainda que em desacordo com a IN nº 003/2011. Diante disso, o achado foi mantido pela auditoria, sendo determinada a realização de concurso específico para o cargo de Auditor de Controle Interno.",
+      "defesa_gestor": "Como analista, apresento o resumo do ponto central da defesa e da conclusão da auditoria:\n\nO gestor justificou a manutenção de servidores em detrimento da realização de concurso público, sob a alegação de observância às normas vigentes e aos preceitos constitucionais. No entanto, a equipe técnica refutou o argumento, mantendo o achado e determinando a obrigatoriedade da realização de concurso público para o cargo de Auditor de Controle Interno.",
       "analise_tecnica": null
     },
     {
@@ -3271,7 +3271,7 @@
       "determinacao": null,
       "valor_financeiro": null,
       "defesa_gestor": "O gestor informou que a Controladoria Geral do Município ainda não possui servidores concursados, mas destacou que há um certame em andamento para a regularização do quadro de pessoal. Adicionalmente, foi encaminhada a cópia da Lei de Criação do Sistema de Controle Interno, conforme solicitado pela auditoria.",
-      "analise_tecnica": null
+      "analise_tecnica": "O relatório técnico aponta a persistência de irregularidades estruturais no Sistema de Controle Interno do município, destacando a falta de servidores concursados e a precariedade dos vínculos funcionais, o que compromete a independência e a eficácia da fiscalização. Diante da manutenção de diversas falhas orçamentárias, financeiras e de transparência após o contraditório, a unidade técnica concluiu pela irregularidade das contas do gestor municipal referentes ao exercício de 2023."
     },
     {
       "relatorio_id": "bb9e8528b15c8728279c7e5fef66c83545af20df712914c3d289ebcca4a05aef",
@@ -5298,8 +5298,8 @@
     "totais": {
       "relatorios": 13,
       "achados": 256,
-      "saneados": 99,
-      "mantidos": 138,
+      "saneados": 100,
+      "mantidos": 139,
       "com_defesa": 221,
       "municipios": 12,
       "anos": [
@@ -5308,17 +5308,17 @@
       ]
     },
     "por_situacao": {
-      "mantido": 138,
-      "sanado_total": 86,
+      "mantido": 139,
+      "sanado_total": 87,
       "afastado": 8,
-      "nao_consta": 11,
-      "sanado_parcial": 13
+      "sanado_parcial": 13,
+      "nao_consta": 9
     },
     "por_tipo": {
-      "Impropriedade": 128,
-      "Inconsistência": 67,
-      "Irregularidade": 49,
-      "Não classificado": 12
+      "Impropriedade": 133,
+      "Inconsistência": 68,
+      "Irregularidade": 54,
+      "Não classificado": 1
     },
     "por_secao": {
       "6. Gestão Fiscal": 55,
@@ -5354,11 +5354,15 @@
       "2024": 18
     },
     "por_base_normativa": {
-      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)": 11,
-      "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)": 11,
+      "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)": 14,
+      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)": 13,
       "Lei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal (LRF)": 6,
       "MCASP 10ª Edição": 6,
       "MCASP - 9ª Edição": 5,
+      "Art. 43, §3º, da Lei nº 4.320/64": 3,
+      "Art. 29-A, I, da Constituição Federal": 3,
+      "Lei Federal nº 14.113/2020": 3,
+      "LC 101/2000 / LC 141/2012": 3,
       "Lei Complementar n° 101/2000 - LRF": 3,
       "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) e Manual de Demonstrativos Fiscais (MDF 13ª edição": 3,
       "Instrução Normativa nº 03/2011": 3,
@@ -5368,9 +5372,10 @@
       "Lei Complementar nº 101/2000 - LRF": 3,
       "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte V - Tópico 2": 3,
       "Resolução Normativa TCE/AL nº 003/2024": 3,
+      "Resolução Normativa nº 01/2016 - TCE/AL": 2,
+      "LC 101/2000 / Portaria MEC nº 844/2008": 2,
       "Art.9º da LRF": 2,
       "Resolução Normativa nº 001/2016 - TCE/AL": 2,
-      "LC 101/2000 / LC 141/2012": 2,
       "Instrução Normativa nº 03/2011 - TCE/AL.": 2,
       "Art. 43, §3º, da Lei nº 4.320/64.": 2,
       "Lei Complementar nº 101/2000 - LRF.": 2,
@@ -5378,23 +5383,18 @@
       "Art. 52 da Lei Complementar nº 101/2000 - LRF": 2,
       "Art.212 da CF e Portaria STN n.710/2021": 2,
       "Parágrafo Único do art. 109 da EC 119/2022": 2,
-      "Artigo 247 da Portaria MTP nº 1.467/2022": 2,
-      "Art. 48 da LRF": 2,
-      "Manual de Contabilidade Aplicada ao Setor Público (MCASP) - 9ª Edição": 2,
-      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição).": 2,
-      "Lei 4.320/64 e Lei 101/00 - LRF": 2,
-      "Art. 29-A, I, da Constituição Federal": 2
+      "Artigo 247 da Portaria MTP nº 1.467/2022": 2
     },
     "por_auditor": {
       "de Controle Interno": 39
     },
     "defesa_x_situacao": {
       "com_defesa": {
-        "mantido": 104,
-        "sanado_total": 86,
+        "mantido": 105,
+        "sanado_total": 87,
         "afastado": 8,
-        "nao_consta": 10,
-        "sanado_parcial": 13
+        "sanado_parcial": 13,
+        "nao_consta": 8
       },
       "sem_defesa": {
         "mantido": 34,
@@ -5449,6 +5449,12 @@
         "municipio": "Boca da Mata",
         "valor": 30715369.79,
         "descricao": "Conforme Demonstrativo da Dívida Consolidada (peça 35), o ente apresentou o mesmo valor de disponibilidade de caixa bruta nos exercícios de 2022 e 2023, cujo montante diverge do valor informado no bal"
+      },
+      {
+        "codigo": "III.17",
+        "municipio": "Anadia",
+        "valor": 25048179.92,
+        "descricao": "Aplicação a maior de recursos do FUNDEB, sugerindo gastos sem lastro financeiro e possível utilização incorreta da fonte."
       },
       {
         "codigo": "III.17",
@@ -5515,12 +5521,6 @@
         "municipio": "Canapi",
         "valor": 6160000.0,
         "descricao": "Divergência de R$ 6,16 milhões entre os valores de Superávit Financeiro apurado no Exercício Anterior utilizado para abertura de Créditos Adicionais, expostos nos Demonstrativos e nos Quadros informad"
-      },
-      {
-        "codigo": "III.21",
-        "municipio": "Canapi",
-        "valor": 6160000.0,
-        "descricao": "Divergência de R$ 6,16 milhões em relação aos valores de saldo e inscrições de Restos a Pagar Processados e Não Processados, conforme comparativo entre Balanço Orçamentário, Balanço Financeiro e Demon"
       }
     ],
     "tipo_por_secao": {
@@ -5530,37 +5530,34 @@
       },
       "3. Aspectos Orçamentários E Financeiros": {
         "Impropriedade": 28,
-        "Inconsistência": 10,
-        "Irregularidade": 4
+        "Inconsistência": 9,
+        "Irregularidade": 5
       },
       "4. Aspectos Patrimoniais": {
         "Impropriedade": 23,
-        "Inconsistência": 19,
-        "Não classificado": 2,
-        "Irregularidade": 1
+        "Inconsistência": 20,
+        "Irregularidade": 1,
+        "Não classificado": 1
       },
       "5. Repasses Do Duodécimo": {
-        "Irregularidade": 6,
-        "Não classificado": 2,
+        "Irregularidade": 7,
+        "Impropriedade": 1,
         "Inconsistência": 1
       },
       "6. Gestão Fiscal": {
-        "Inconsistência": 25,
-        "Impropriedade": 16,
-        "Irregularidade": 9,
-        "Não classificado": 5
+        "Inconsistência": 26,
+        "Impropriedade": 17,
+        "Irregularidade": 12
       },
       "7. Análise Dos Limites Constitucionais": {
-        "Impropriedade": 33,
+        "Impropriedade": 35,
         "Irregularidade": 11,
-        "Inconsistência": 5,
-        "Não classificado": 2
+        "Inconsistência": 5
       },
       "9. Transparência E Controle Interno": {
-        "Impropriedade": 14,
+        "Impropriedade": 15,
         "Irregularidade": 11,
-        "Inconsistência": 7,
-        "Não classificado": 1
+        "Inconsistência": 7
       },
       "8. Previdência": {
         "Impropriedade": 5,
@@ -5584,10 +5581,9 @@
     },
     "situacao_por_municipio": {
       "Anadia": {
-        "mantido": 8,
-        "sanado_total": 8,
-        "afastado": 3,
-        "nao_consta": 2
+        "mantido": 9,
+        "sanado_total": 9,
+        "afastado": 3
       },
       "Atalaia": {
         "mantido": 24,
@@ -5659,10 +5655,9 @@
         },
         "situacao_por_municipio": {
           "Anadia": {
-            "mantido": 8,
-            "sanado_total": 8,
-            "afastado": 3,
-            "nao_consta": 2
+            "mantido": 9,
+            "sanado_total": 9,
+            "afastado": 3
           },
           "Atalaia": {
             "mantido": 14,
