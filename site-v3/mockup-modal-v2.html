@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Mockup 2 — Painel Lateral</title>
+  <style>
+    :root {
+      --bg:              #F2F2F2;
+      --surface:         #FFFFFF;
+      --surface-2:       #F7F7F7;
+      --primary:         #1C588C;
+      --primary-dark:    #0e3a60;
+      --primary-darker:  #0a2540;
+      --red:             #A6121F;
+      --ok:              #1B7A4A;
+      --ok-dim:          rgba(27,122,74,0.12);
+      --warn:            #FF7B00;
+      --warn-dim:        rgba(255,123,0,0.12);
+      --neutral:         #6B7E99;
+      --neutral-dim:     rgba(107,126,153,0.12);
+      --text:            #18293C;
+      --text-2:          #3D5166;
+      --muted:           #7A8FA6;
+      --border:          #DDE3EC;
+      --radius:          10px;
+      --radius-sm:       6px;
+      --shadow:          0 1px 4px rgba(0,0,0,0.08), 0 2px 10px rgba(0,0,0,0.06);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    .topnav { height: 52px; background: var(--primary); display: flex; align-items: center; padding: 0 1.5rem; gap: 0.75rem; position: sticky; top: 0; z-index: 200; }
+    .nav-logo { width: 28px; height: 28px; background: var(--red); border-radius: 6px; color: #fff; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .nav-title { color: #fff; font-weight: 700; font-size: 0.95rem; }
+    .nav-subtitle { color: rgba(255,255,255,0.65); font-size: 0.8rem; }
+
+    .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 2rem 2rem 1.75rem; }
+    .page-header-label { color: rgba(255,255,255,0.6); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .page-header-title { color: #fff; font-size: 1.6rem; font-weight: 800; margin-bottom: 0.35rem; }
+    .page-header-sub { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+
+    .page-content { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .card-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem 0.75rem; border-bottom: 1px solid var(--border); }
+    .card-title { font-weight: 700; font-size: 0.95rem; }
+    .card-badge { font-size: 0.78rem; font-weight: 600; background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: 2px 10px; color: var(--muted); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.855rem; }
+    th { text-align: left; padding: 0.6rem 1rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); background: var(--surface-2); }
+    td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .accordion-row { cursor: pointer; transition: background 0.15s; }
+    .accordion-row:hover { background: #EEF3F8; }
+    .accordion-row.selected { background: #E3EDF7; border-left: 3px solid var(--primary); }
+    .accordion-row.selected td:first-child { padding-left: calc(1rem - 3px); }
+    .mono { font-family: 'Consolas', monospace; font-size: 0.82rem; }
+    .badge { display: inline-block; padding: 3px 9px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+    .badge-red    { background: rgba(166,18,31,0.10); color: var(--red); }
+    .badge-green  { background: var(--ok-dim);  color: var(--ok); }
+    .badge-orange { background: var(--warn-dim); color: var(--warn); }
+    .badge-gray   { background: var(--neutral-dim); color: var(--neutral); }
+    .row-icon { width: 26px; height: 26px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; transition: all 0.15s; }
+    .accordion-row:hover .row-icon,
+    .accordion-row.selected .row-icon { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+    .mockup-note { background: #fffbe6; border: 1px solid #f0c040; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.82rem; color: #7a5e00; margin-bottom: 1.5rem; }
+    .demo-hint { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 1rem; }
+
+    /* ═══ PAINEL LATERAL ═══ */
+    .panel-overlay {
+      position: fixed; inset: 0;
+      background: rgba(10, 37, 64, 0.35);
+      z-index: 400;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .panel-overlay.open { opacity: 1; pointer-events: all; }
+
+    .side-panel {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(480px, 100vw);
+      background: var(--surface);
+      box-shadow: -6px 0 40px rgba(0,0,0,0.18);
+      z-index: 500;
+      display: flex; flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .side-panel.open { transform: translateX(0); }
+
+    /* Cabeçalho do painel */
+    .panel-header {
+      background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 1.1rem 1.25rem 1rem;
+      flex-shrink: 0;
+    }
+    .panel-header-top {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem;
+    }
+    .panel-close {
+      width: 30px; height: 30px; border-radius: 8px; border: none; cursor: pointer;
+      background: rgba(255,255,255,0.15); color: #fff; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.15s; margin-top: 2px;
+    }
+    .panel-close:hover { background: rgba(255,255,255,0.28); }
+    .panel-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; }
+    .panel-municipio { color: #fff; font-size: 1.05rem; font-weight: 800; }
+    .panel-code { font-family: 'Consolas', monospace; font-size: 0.8rem; color: rgba(255,255,255,0.75); background: rgba(255,255,255,0.12); padding: 1px 7px; border-radius: 4px; }
+
+    /* Pills de metadados no cabeçalho */
+    .panel-pills { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .panel-pill { font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: rgba(255,255,255,0.13); color: rgba(255,255,255,0.82); border: 1px solid rgba(255,255,255,0.15); }
+    .panel-pill.mantido  { background: rgba(166,18,31,0.30); color: #ffd0d4; border-color: rgba(166,18,31,0.4); }
+    .panel-pill.sanado   { background: rgba(27,122,74,0.35); color: #a6f0c6; border-color: rgba(27,122,74,0.4); }
+    .panel-pill.afastado { background: rgba(107,126,153,0.30); color: #d0dce8; border-color: rgba(107,126,153,0.4); }
+
+    /* Corpo do painel */
+    .panel-body { flex: 1; overflow-y: auto; padding: 1.25rem; display: flex; flex-direction: column; gap: 0; }
+
+    /* Bloco de seção dentro do painel */
+    .panel-block { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .panel-block:last-child { border-bottom: none; }
+    .panel-block-label {
+      font-size: 0.67rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .panel-block-label::before {
+      content: ''; display: inline-block; width: 3px; height: 12px;
+      border-radius: 2px; background: currentColor;
+    }
+    .panel-block-label.rec::before  { color: var(--ok); }
+    .panel-block-label.det::before  { color: var(--warn); }
+    .panel-block-label.norm::before { color: var(--neutral); }
+    .panel-block-label.def::before  { color: #7B61FF; }
+    .panel-block-label.ana::before  { color: #0097A7; }
+
+    .panel-block-text { font-size: 0.86rem; line-height: 1.7; color: var(--text-2); }
+
+    /* Rodapé do painel */
+    .panel-footer {
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+      padding: 0.9rem 1.25rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      flex-shrink: 0;
+    }
+    .panel-meta-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .panel-meta-item { display: flex; flex-direction: column; gap: 0.15rem; }
+    .panel-meta-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+    .panel-meta-value { font-size: 0.82rem; font-weight: 500; color: var(--text); }
+    .panel-meta-value.mono { font-family: 'Consolas', monospace; font-size: 0.78rem; }
+
+    .badge-sem-defesa { display: inline-flex; align-items: center; font-size: 0.73rem; font-weight: 700; padding: 2px 9px; border-radius: 20px; background: rgba(166,18,31,0.08); color: var(--red); border: 1px solid rgba(166,18,31,0.2); width: fit-content; }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-logo">TC</div>
+  <span class="nav-title">TCE-AL</span>
+  <span class="nav-subtitle">· Observatório de Contas Municipais</span>
+</nav>
+
+<div class="page-header">
+  <p class="page-header-label">Observatório de Contas Municipais · TCE-AL</p>
+  <h1 class="page-header-title">Banco de Achados</h1>
+  <p class="page-header-sub">Todos os achados das prestações de contas municipais</p>
+</div>
+
+<div class="page-content">
+  <div class="mockup-note">
+    <strong>Mockup 2 — Painel lateral deslizante.</strong> Clique em qualquer linha para abrir. Tecle <kbd>Esc</kbd> ou clique fora para fechar. · <a href="mockup-modal.html">← Ver Mockup 1</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Achados</span>
+      <span class="card-badge">256 achados</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Município</th><th>Ano</th><th>Código</th><th>Tipo</th><th>Situação</th><th></th></tr>
+      </thead>
+      <tbody id="tbody">
+        <tr class="accordion-row" onclick="openPanel(0, this)">
+          <td>Anadia</td><td>2023</td><td class="mono">III.01</td><td>Irregularidade</td>
+          <td><span class="badge badge-red">Mantido</span></td><td><span class="row-icon">→</span></td>
+        </tr>
+        <tr class="accordion-row" onclick="openPanel(1, this)">
+          <td>Anadia</td><td>2023</td><td class="mono">III.02</td><td>Impropriedade</td>
+          <td><span class="badge badge-red">Mantido</span></td><td><span class="row-icon">→</span></td>
+        </tr>
+        <tr class="accordion-row" onclick="openPanel(2, this)">
+          <td>Anadia</td><td>2023</td><td class="mono">III.03</td><td>Irregularidade</td>
+          <td><span class="badge badge-green">Sanado Total</span></td><td><span class="row-icon">→</span></td>
+        </tr>
+        <tr class="accordion-row" onclick="openPanel(3, this)">
+          <td>Maceió</td><td>2023</td><td class="mono">III.01</td><td>Impropriedade</td>
+          <td><span class="badge badge-orange">Sanado Parcial</span></td><td><span class="row-icon">→</span></td>
+        </tr>
+        <tr class="accordion-row" onclick="openPanel(4, this)">
+          <td>Arapiraca</td><td>2022</td><td class="mono">III.05</td><td>Irregularidade</td>
+          <td><span class="badge badge-gray">Afastado</span></td><td><span class="row-icon">→</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="demo-hint">↑ Clique em qualquer linha para abrir o painel</p>
+</div>
+
+<!-- OVERLAY + PAINEL -->
+<div class="panel-overlay" id="panel-overlay" onclick="closePanel()"></div>
+
+<aside class="side-panel" id="side-panel" role="dialog" aria-modal="true">
+
+  <!-- Cabeçalho -->
+  <div class="panel-header">
+    <div class="panel-header-top">
+      <div>
+        <div class="panel-label" id="p-super">Achado · 2023</div>
+        <div style="display:flex;align-items:center;gap:0.55rem;margin-bottom:0.4rem">
+          <span class="panel-municipio" id="p-municipio"></span>
+          <span class="panel-code" id="p-code"></span>
+        </div>
+      </div>
+      <button class="panel-close" onclick="closePanel()" aria-label="Fechar">✕</button>
+    </div>
+    <div class="panel-pills">
+      <span class="panel-pill" id="p-tipo"></span>
+      <span class="panel-pill" id="p-sit"></span>
+    </div>
+  </div>
+
+  <!-- Corpo -->
+  <div class="panel-body" id="panel-body"></div>
+
+  <!-- Rodapé -->
+  <div class="panel-footer">
+    <div class="panel-meta-row">
+      <div class="panel-meta-item">
+        <span class="panel-meta-label">Processo</span>
+        <span class="panel-meta-value mono" id="p-processo">—</span>
+      </div>
+      <div class="panel-meta-item">
+        <span class="panel-meta-label">Seção</span>
+        <span class="panel-meta-value" id="p-secao">—</span>
+      </div>
+      <div class="panel-meta-item">
+        <span class="panel-meta-label">Relator</span>
+        <span class="panel-meta-value" id="p-relator">—</span>
+      </div>
+    </div>
+    <div id="p-sem-defesa" style="display:none">
+      <span class="badge-sem-defesa">Sem defesa</span>
+    </div>
+  </div>
+
+</aside>
+
+<script>
+const ACHADOS = [
+  {
+    municipio: 'Anadia', ano: 2023, codigo: 'III.01', tipo: 'Irregularidade', situacao: 'mantido',
+    relator: 'Cons. José Alfredo Medeiros',
+    descricao: 'Inclusão de matérias estranhas à previsão de receitas e à fixação de despesas não contemplada pelas exceções legais, desobedecendo o Princípio da Exclusividade, extraído do disposto no art. 165, § 8º da Constituição Federal.',
+    recomendacao: 'Elaborar as próximas Leis Orçamentárias Anuais (LOA) em conformidade com o que é exigido pela Constituição Federal de 1988, incluindo o atendimento ao Princípio da Exclusividade.',
+    determinacao: null,
+    base_normativa: 'Art. 165, § 8º, da Constituição Federal.',
+    defesa_gestor: 'O gestor alegou que a inclusão das matérias decorreu de orientação da Procuradoria Municipal, que indicou não haver vedação expressa no ordenamento jurídico local para tal procedimento. Sustentou, ainda, que a prática foi adotada nos exercícios anteriores sem qualquer ressalva por parte deste Tribunal.',
+    analise_tecnica: 'A argumentação do gestor não merece acolhimento. O Princípio da Exclusividade, previsto no art. 165, § 8º da Constituição Federal, é norma de observância obrigatória por todos os entes federados, independentemente de regulamentação local.',
+    secao: '2. Instrumentos De Planejamento', numero_processo: 'TC/I.006421/2024', houve_defesa: true,
+  },
+  {
+    municipio: 'Anadia', ano: 2023, codigo: 'III.02', tipo: 'Impropriedade', situacao: 'mantido',
+    relator: 'Cons. José Alfredo Medeiros',
+    descricao: 'Ausência de comprovação de realização de audiências públicas para elaboração da Lei de Diretrizes Orçamentárias e da Lei Orçamentária Anual, contrariando o art. 48, § 1º, I, da Lei de Responsabilidade Fiscal.',
+    recomendacao: 'Realizar e documentar, com as devidas publicações, as audiências públicas exigidas na elaboração dos instrumentos orçamentários.',
+    determinacao: null,
+    base_normativa: 'Art. 48, § 1º, I, da Lei Complementar nº 101/2000 (LRF).',
+    defesa_gestor: null, analise_tecnica: null,
+    secao: '2. Instrumentos De Planejamento', numero_processo: 'TC/I.006421/2024', houve_defesa: false,
+  },
+  {
+    municipio: 'Anadia', ano: 2023, codigo: 'III.03', tipo: 'Irregularidade', situacao: 'sanado_total',
+    relator: 'Cons. José Alfredo Medeiros',
+    descricao: 'Pagamento de diárias em desacordo com o Decreto Municipal nº 003/2018, sem a devida prestação de contas dos valores recebidos pelos servidores.',
+    recomendacao: 'Exigir a prestação de contas das diárias concedidas e adequar os procedimentos ao normativo municipal vigente.',
+    determinacao: null,
+    base_normativa: 'Decreto Municipal nº 003/2018; art. 68 da Lei nº 4.320/1964.',
+    defesa_gestor: 'O gestor apresentou documentação comprobatória das prestações de contas das diárias, demonstrando que os procedimentos foram regularizados após a abertura do processo de auditoria.',
+    analise_tecnica: 'A documentação apresentada demonstra a efetiva regularização das impropriedades apontadas. As prestações de contas das diárias foram apresentadas e estão em conformidade com o Decreto Municipal nº 003/2018.',
+    secao: '5. Recursos Humanos', numero_processo: 'TC/I.006421/2024', houve_defesa: true,
+  },
+  {
+    municipio: 'Maceió', ano: 2023, codigo: 'III.01', tipo: 'Impropriedade', situacao: 'sanado_parcial',
+    relator: 'Cons.ª Patrícia Ayres',
+    descricao: 'Publicação intempestiva de atos oficiais no Diário Oficial do Município, em desacordo com os prazos previstos na Lei Orgânica Municipal e na Lei de Acesso à Informação.',
+    recomendacao: 'Adotar rotina de publicação tempestiva dos atos administrativos, especialmente contratos, convênios e empenhos, no Diário Oficial do Município.',
+    determinacao: null,
+    base_normativa: 'Art. 8º da Lei nº 12.527/2011 (LAI); Lei Orgânica Municipal.',
+    defesa_gestor: 'O gestor reconheceu a falha nos prazos de publicação e apresentou plano de ação para implantação de sistema automatizado de publicação, com previsão de operacionalização para o exercício seguinte.',
+    analise_tecnica: 'A defesa demonstrou regularização parcial. Os documentos comprovam que apenas 60% dos atos foram publicados tempestivamente após a notificação. O achado permanece parcialmente subsistente.',
+    secao: '1. Transparência e Publicidade', numero_processo: 'TC/I.009102/2024', houve_defesa: true,
+  },
+  {
+    municipio: 'Arapiraca', ano: 2022, codigo: 'III.05', tipo: 'Irregularidade', situacao: 'afastado',
+    relator: 'Cons. Fernando Neves',
+    descricao: 'Contratação direta sem licitação, mediante dispensa, para serviços de engenharia em valor superior ao limite legal previsto para a modalidade, caracterizando fracionamento de despesa.',
+    recomendacao: null,
+    determinacao: 'Instaurar tomada de contas especial para apuração dos valores pagos indevidamente e identificação dos responsáveis.',
+    base_normativa: 'Art. 24, I e II, da Lei nº 8.666/1993; Súmula TCE-AL nº 12.',
+    defesa_gestor: null, analise_tecnica: null,
+    secao: '6. Licitações e Contratos', numero_processo: 'TC/I.004877/2023', houve_defesa: false,
+  },
+];
+
+const SIT_LABEL = { mantido:'Mantido', sanado_total:'Sanado Total', sanado_parcial:'Sanado Parcial', afastado:'Afastado', nao_consta:'Não Consta' };
+const SIT_CLASS = { mantido:'mantido', sanado_total:'sanado', sanado_parcial:'sanado', afastado:'afastado', nao_consta:'afastado' };
+
+let selectedRow = null;
+
+function block(labelText, labelClass, text) {
+  return `<div class="panel-block">
+    <div class="panel-block-label ${labelClass}">${labelText}</div>
+    <div class="panel-block-text">${text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+  </div>`;
+}
+
+function openPanel(idx, row) {
+  const a = ACHADOS[idx];
+
+  if (selectedRow) selectedRow.classList.remove('selected');
+  selectedRow = row;
+  row.classList.add('selected');
+
+  document.getElementById('p-super').textContent     = `Achado · ${a.ano}`;
+  document.getElementById('p-municipio').textContent = a.municipio;
+  document.getElementById('p-code').textContent      = a.codigo;
+  document.getElementById('p-tipo').textContent      = a.tipo;
+
+  const sitEl = document.getElementById('p-sit');
+  sitEl.textContent = SIT_LABEL[a.situacao] || a.situacao;
+  sitEl.className   = `panel-pill ${SIT_CLASS[a.situacao] || ''}`;
+
+  let html = '';
+  html += block('Descrição', '', a.descricao);
+  if (a.recomendacao)   html += block('Recomendação', 'rec', a.recomendacao);
+  if (a.determinacao)   html += block('Determinação', 'det', a.determinacao);
+  if (a.base_normativa) html += block('Base normativa', 'norm', a.base_normativa);
+  if (a.defesa_gestor)  html += block('Defesa do Jurisdicionado', 'def', a.defesa_gestor);
+  if (a.analise_tecnica) html += block('Análise da Defesa', 'ana', a.analise_tecnica);
+  document.getElementById('panel-body').innerHTML = html;
+
+  document.getElementById('p-processo').textContent = a.numero_processo || '—';
+  document.getElementById('p-secao').textContent    = a.secao || '—';
+  document.getElementById('p-relator').textContent  = a.relator || '—';
+
+  document.getElementById('p-sem-defesa').style.display = !a.houve_defesa ? '' : 'none';
+
+  document.getElementById('panel-overlay').classList.add('open');
+  document.getElementById('side-panel').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePanel() {
+  document.getElementById('panel-overlay').classList.remove('open');
+  document.getElementById('side-panel').classList.remove('open');
+  document.body.style.overflow = '';
+  if (selectedRow) { selectedRow.classList.remove('selected'); selectedRow = null; }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+</script>
+</body>
+</html>

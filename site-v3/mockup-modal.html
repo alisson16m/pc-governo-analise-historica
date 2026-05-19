@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Mockup 1 — Modal Centralizado</title>
+  <style>
+    :root {
+      --bg:              #F2F2F2;
+      --surface:         #FFFFFF;
+      --surface-2:       #F7F7F7;
+      --primary:         #1C588C;
+      --primary-dark:    #0e3a60;
+      --primary-darker:  #0a2540;
+      --red:             #A6121F;
+      --ok:              #1B7A4A;
+      --ok-dim:          rgba(27,122,74,0.12);
+      --warn:            #FF7B00;
+      --warn-dim:        rgba(255,123,0,0.12);
+      --neutral:         #6B7E99;
+      --neutral-dim:     rgba(107,126,153,0.12);
+      --text:            #18293C;
+      --text-2:          #3D5166;
+      --muted:           #7A8FA6;
+      --border:          #DDE3EC;
+      --radius:          10px;
+      --radius-sm:       6px;
+      --shadow:          0 1px 4px rgba(0,0,0,0.08), 0 2px 10px rgba(0,0,0,0.06);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+
+    .topnav { height: 52px; background: var(--primary); display: flex; align-items: center; padding: 0 1.5rem; gap: 0.75rem; position: sticky; top: 0; z-index: 200; }
+    .nav-logo { width: 28px; height: 28px; background: var(--red); border-radius: 6px; color: #fff; font-size: 0.7rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .nav-title { color: #fff; font-weight: 700; font-size: 0.95rem; }
+    .nav-subtitle { color: rgba(255,255,255,0.65); font-size: 0.8rem; }
+
+    .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 2rem 2rem 1.75rem; }
+    .page-header-label { color: rgba(255,255,255,0.6); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .page-header-title { color: #fff; font-size: 1.6rem; font-weight: 800; margin-bottom: 0.35rem; }
+    .page-header-sub { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+
+    .page-content { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .card-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem 0.75rem; border-bottom: 1px solid var(--border); }
+    .card-title { font-weight: 700; font-size: 0.95rem; }
+    .card-badge { font-size: 0.78rem; font-weight: 600; background: var(--surface-2); border: 1px solid var(--border); border-radius: 20px; padding: 2px 10px; color: var(--muted); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.855rem; }
+    th { text-align: left; padding: 0.6rem 1rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); background: var(--surface-2); }
+    td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .accordion-row { cursor: pointer; transition: background 0.15s; }
+    .accordion-row:hover { background: #EEF3F8; }
+    .mono { font-family: 'Consolas', monospace; font-size: 0.82rem; }
+    .badge { display: inline-block; padding: 3px 9px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+    .badge-red    { background: rgba(166,18,31,0.10); color: var(--red); }
+    .badge-green  { background: var(--ok-dim);  color: var(--ok); }
+    .badge-orange { background: var(--warn-dim); color: var(--warn); }
+    .badge-gray   { background: var(--neutral-dim); color: var(--neutral); }
+    .row-icon { width: 26px; height: 26px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; cursor: pointer; transition: background 0.15s, color 0.15s; }
+    .accordion-row:hover .row-icon { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+    .mockup-note { background: #fffbe6; border: 1px solid #f0c040; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.82rem; color: #7a5e00; margin-bottom: 1.5rem; }
+    .demo-hint { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 1rem; }
+
+    /* ═══ MODAL ═══ */
+    .modal-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(10, 37, 64, 0.55);
+      backdrop-filter: blur(3px);
+      z-index: 500;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem;
+      animation: fadeIn 0.18s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .modal {
+      background: var(--surface);
+      border-radius: 14px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+      width: 100%; max-width: 700px;
+      max-height: 90vh;
+      display: flex; flex-direction: column;
+      animation: slideUp 0.22s ease;
+      overflow: hidden;
+    }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+    .modal-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 1.25rem 1.5rem;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+      flex-shrink: 0;
+    }
+    .modal-header-meta { display: flex; flex-direction: column; gap: 0.45rem; }
+    .modal-super { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.50); margin-bottom: 0.55rem; }
+    .modal-title-row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .modal-municipio { color: #fff; font-size: 1.1rem; font-weight: 800; }
+    .modal-sep { color: rgba(255,255,255,0.35); font-size: 1rem; font-weight: 300; }
+    .modal-code { font-family: 'Consolas', monospace; font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.90); }
+    .modal-tipo { font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.80); }
+    .modal-badge-sit { font-size: 0.78rem; font-weight: 700; padding: 3px 11px; border-radius: 20px; color: #fff; white-space: nowrap; }
+    .modal-badge-sit.mantido        { background: #A6121F; }
+    .modal-badge-sit.sanado         { background: #1B7A4A; }
+    .modal-badge-sit.sanado-parcial { background: #D96400; }
+    .modal-badge-sit.afastado       { background: #3A82B5; }
+
+    .modal-close { width: 32px; height: 32px; border-radius: 8px; border: none; cursor: pointer; background: rgba(255,255,255,0.15); color: #fff; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s; }
+    .modal-close:hover { background: rgba(255,255,255,0.28); }
+
+    .modal-body { padding: 1.4rem 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
+
+    .modal-section { display: flex; flex-direction: column; gap: 0.35rem; }
+    .modal-section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .modal-section-text {
+      font-size: 0.87rem; line-height: 1.7; color: var(--text-2);
+      background: var(--surface-2); border-left: 3px solid var(--primary);
+      padding: 0.75rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .modal-section-text.rec  { border-left-color: var(--ok); }
+    .modal-section-text.det  { border-left-color: var(--warn); }
+    .modal-section-text.norm { border-left-color: var(--neutral); }
+    .modal-section-text.def  { border-left-color: #7B61FF; }
+    .modal-section-text.ana  { border-left-color: #0097A7; }
+
+    .modal-divider { border: none; border-top: 1px solid var(--border); margin: 0.25rem 0; }
+
+    .modal-footer {
+      padding: 0.85rem 1.5rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+      display: flex; align-items: center; flex-wrap: wrap; gap: 1rem;
+      flex-shrink: 0;
+    }
+    .modal-footer-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--muted); }
+    .modal-footer-item strong { color: var(--text); font-weight: 600; }
+    .modal-footer-sep { color: var(--border); }
+
+    /* Badge "Sem defesa" no footer */
+    .badge-sem-defesa { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.73rem; font-weight: 700; padding: 2px 9px; border-radius: 20px; background: rgba(166,18,31,0.08); color: var(--red); border: 1px solid rgba(166,18,31,0.2); }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-logo">TC</div>
+  <span class="nav-title">TCE-AL</span>
+  <span class="nav-subtitle">· Observatório de Contas Municipais</span>
+</nav>
+
+<div class="page-header">
+  <p class="page-header-label">Observatório de Contas Municipais · TCE-AL</p>
+  <h1 class="page-header-title">Banco de Achados</h1>
+  <p class="page-header-sub">Todos os achados das prestações de contas municipais</p>
+</div>
+
+<div class="page-content">
+  <div class="mockup-note">
+    <strong>Mockup 1 — Modal centralizado.</strong> Clique em qualquer linha para abrir. Tecle <kbd>Esc</kbd> ou clique fora para fechar. · <a href="mockup-modal-v2.html">Ver Mockup 2 →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Achados</span>
+      <span class="card-badge">256 achados</span>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Município</th><th>Ano</th><th>Código</th><th>Tipo</th><th>Situação</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr class="accordion-row" onclick="openModal(0)">
+          <td>Anadia</td><td>2023</td><td class="mono">III.01</td><td>Irregularidade</td>
+          <td><span class="badge badge-red">Mantido</span></td><td><span class="row-icon">↗</span></td>
+        </tr>
+        <tr class="accordion-row" onclick="openModal(1)">
+          <td>Anadia</td><td>2023</td><td class="mono">III.02</td><td>Impropriedade</td>
+          <td><span class="badge badge-red">Mantido</span></td><td><span class="row-icon">↗</span></td>
+        </tr>
+        <tr class="accordion-row" onclick="openModal(2)">
+          <td>Anadia</td><td>2023</td><td class="mono">III.03</td><td>Irregularidade</td>
+          <td><span class="badge badge-green">Sanado Total</span></td><td><span class="row-icon">↗</span></td>
+        </tr>
+        <tr class="accordion-row" onclick="openModal(3)">
+          <td>Maceió</td><td>2023</td><td class="mono">III.01</td><td>Impropriedade</td>
+          <td><span class="badge badge-orange">Sanado Parcial</span></td><td><span class="row-icon">↗</span></td>
+        </tr>
+        <tr class="accordion-row" onclick="openModal(4)">
+          <td>Arapiraca</td><td>2022</td><td class="mono">III.05</td><td>Irregularidade</td>
+          <td><span class="badge badge-gray">Afastado</span></td><td><span class="row-icon">↗</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="demo-hint">↑ Clique em qualquer linha para abrir o modal</p>
+</div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modal-backdrop" style="display:none" onclick="onBackdropClick(event)">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="modal-super" id="modal-super">Achado · 2023</span>
+        <div class="modal-title-row">
+          <span class="modal-municipio" id="modal-municipio"></span>
+          <span class="modal-sep">·</span>
+          <span class="modal-code" id="modal-code"></span>
+          <span class="modal-sep">·</span>
+          <span class="modal-tipo" id="modal-tipo"></span>
+          <span class="modal-sep">·</span>
+          <span class="modal-badge-sit" id="modal-sit"></span>
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <span class="modal-section-label">Descrição</span>
+        <div class="modal-section-text" id="modal-descricao"></div>
+      </div>
+
+      <div class="modal-section" id="wrap-recomendacao" style="display:none">
+        <span class="modal-section-label">Recomendação</span>
+        <div class="modal-section-text rec" id="modal-recomendacao"></div>
+      </div>
+
+      <div class="modal-section" id="wrap-determinacao" style="display:none">
+        <span class="modal-section-label">Determinação</span>
+        <div class="modal-section-text det" id="modal-determinacao"></div>
+      </div>
+
+      <div class="modal-section" id="wrap-normativa" style="display:none">
+        <span class="modal-section-label">Base normativa</span>
+        <div class="modal-section-text norm" id="modal-normativa"></div>
+      </div>
+
+      <hr class="modal-divider" id="divider-defesa" style="display:none">
+
+      <div class="modal-section" id="wrap-defesa-gestor" style="display:none">
+        <span class="modal-section-label">Defesa do Jurisdicionado</span>
+        <div class="modal-section-text def" id="modal-defesa-gestor"></div>
+      </div>
+
+      <div class="modal-section" id="wrap-analise-tecnica" style="display:none">
+        <span class="modal-section-label">Análise da Defesa</span>
+        <div class="modal-section-text ana" id="modal-analise-tecnica"></div>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <div class="modal-footer-item">
+        <strong>Seção:</strong> <span id="modal-secao">—</span>
+      </div>
+      <span class="modal-footer-sep">·</span>
+      <div class="modal-footer-item">
+        <strong>Processo:</strong> <span id="modal-processo" style="font-family:monospace;font-size:0.76rem">—</span>
+      </div>
+      <span class="modal-footer-sep">·</span>
+      <div class="modal-footer-item">
+        <strong>Relator:</strong> <span id="modal-relator">—</span>
+      </div>
+      <span class="modal-footer-sep" id="sep-sem-defesa" style="display:none">·</span>
+      <div class="modal-footer-item" id="wrap-sem-defesa" style="display:none">
+        <span class="badge-sem-defesa">Sem defesa</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const ACHADOS = [
+  {
+    municipio: 'Anadia', ano: 2023, codigo: 'III.01', tipo: 'Irregularidade', situacao: 'mantido',
+    relator: 'Cons. José Alfredo Medeiros',
+    descricao: 'Inclusão de matérias estranhas à previsão de receitas e à fixação de despesas não contemplada pelas exceções legais, desobedecendo o Princípio da Exclusividade, extraído do disposto no art. 165, § 8º da Constituição Federal.',
+    recomendacao: 'Elaborar as próximas Leis Orçamentárias Anuais (LOA) em conformidade com o que é exigido pela Constituição Federal de 1988, incluindo o atendimento ao Princípio da Exclusividade.',
+    determinacao: null,
+    base_normativa: 'Art. 165, § 8º, da Constituição Federal.',
+    defesa_gestor: 'O gestor alegou que a inclusão das matérias decorreu de orientação da Procuradoria Municipal, que indicou não haver vedação expressa no ordenamento jurídico local para tal procedimento. Sustentou, ainda, que a prática foi adotada nos exercícios anteriores sem qualquer ressalva por parte deste Tribunal.',
+    analise_tecnica: 'A argumentação do gestor não merece acolhimento. O Princípio da Exclusividade, previsto no art. 165, § 8º da Constituição Federal, é norma de observância obrigatória por todos os entes federados, independentemente de regulamentação local. A prática reiterada de irregularidade não a converte em legalidade.',
+    secao: '2. Instrumentos De Planejamento',
+    numero_processo: 'TC/I.006421/2024',
+    houve_defesa: true,
+  },
+  {
+    municipio: 'Anadia', ano: 2023, codigo: 'III.02', tipo: 'Impropriedade', situacao: 'mantido',
+    relator: 'Cons. José Alfredo Medeiros',
+    descricao: 'Ausência de comprovação de realização de audiências públicas para elaboração da Lei de Diretrizes Orçamentárias e da Lei Orçamentária Anual, contrariando o art. 48, § 1º, I, da Lei de Responsabilidade Fiscal.',
+    recomendacao: 'Realizar e documentar, com as devidas publicações, as audiências públicas exigidas na elaboração dos instrumentos orçamentários.',
+    determinacao: null,
+    base_normativa: 'Art. 48, § 1º, I, da Lei Complementar nº 101/2000 (LRF).',
+    defesa_gestor: null,
+    analise_tecnica: null,
+    secao: '2. Instrumentos De Planejamento',
+    numero_processo: 'TC/I.006421/2024',
+    houve_defesa: false,
+  },
+  {
+    municipio: 'Anadia', ano: 2023, codigo: 'III.03', tipo: 'Irregularidade', situacao: 'sanado_total',
+    relator: 'Cons. José Alfredo Medeiros',
+    descricao: 'Pagamento de diárias em desacordo com o Decreto Municipal nº 003/2018, sem a devida prestação de contas dos valores recebidos pelos servidores.',
+    recomendacao: 'Exigir a prestação de contas das diárias concedidas e adequar os procedimentos ao normativo municipal vigente.',
+    determinacao: null,
+    base_normativa: 'Decreto Municipal nº 003/2018; art. 68 da Lei nº 4.320/1964.',
+    defesa_gestor: 'O gestor apresentou documentação comprobatória das prestações de contas das diárias, demonstrando que os procedimentos foram regularizados após a abertura do processo de auditoria.',
+    analise_tecnica: 'A documentação apresentada demonstra a efetiva regularização das impropriedades apontadas. As prestações de contas das diárias foram apresentadas e estão em conformidade com o Decreto Municipal nº 003/2018. O achado está sanado.',
+    secao: '5. Recursos Humanos',
+    numero_processo: 'TC/I.006421/2024',
+    houve_defesa: true,
+  },
+  {
+    municipio: 'Maceió', ano: 2023, codigo: 'III.01', tipo: 'Impropriedade', situacao: 'sanado_parcial',
+    relator: 'Cons.ª Patrícia Ayres',
+    descricao: 'Publicação intempestiva de atos oficiais no Diário Oficial do Município, em desacordo com os prazos previstos na Lei Orgânica Municipal e na Lei de Acesso à Informação.',
+    recomendacao: 'Adotar rotina de publicação tempestiva dos atos administrativos, especialmente contratos, convênios e empenhos, no Diário Oficial do Município.',
+    determinacao: null,
+    base_normativa: 'Art. 8º da Lei nº 12.527/2011 (LAI); Lei Orgânica Municipal.',
+    defesa_gestor: 'O gestor reconheceu a falha nos prazos de publicação e apresentou plano de ação para implantação de sistema automatizado de publicação, com previsão de operacionalização para o exercício seguinte. Demonstrou que parte dos atos foram regularizados no decorrer do exercício.',
+    analise_tecnica: 'A defesa demonstrou regularização parcial. Embora o gestor tenha apresentado plano de ação, os documentos comprovam que apenas 60% dos atos foram publicados tempestivamente após a notificação. O achado permanece parcialmente subsistente.',
+    secao: '1. Transparência e Publicidade',
+    numero_processo: 'TC/I.009102/2024',
+    houve_defesa: true,
+  },
+  {
+    municipio: 'Arapiraca', ano: 2022, codigo: 'III.05', tipo: 'Irregularidade', situacao: 'afastado',
+    relator: 'Cons. Fernando Neves',
+    descricao: 'Contratação direta sem licitação, mediante dispensa, para serviços de engenharia em valor superior ao limite legal previsto para a modalidade, caracterizando fracionamento de despesa.',
+    recomendacao: null,
+    determinacao: 'Instaurar tomada de contas especial para apuração dos valores pagos indevidamente e identificação dos responsáveis.',
+    base_normativa: 'Art. 24, I e II, da Lei nº 8.666/1993; Súmula TCE-AL nº 12.',
+    defesa_gestor: null,
+    analise_tecnica: null,
+    secao: '6. Licitações e Contratos',
+    numero_processo: 'TC/I.004877/2023',
+    houve_defesa: false,
+  },
+];
+
+const SIT_LABEL = { mantido:'Mantido', sanado_total:'Sanado Total', sanado_parcial:'Sanado Parcial', afastado:'Afastado', nao_consta:'Não Consta' };
+const SIT_CLASS = { mantido:'mantido', sanado_total:'sanado', sanado_parcial:'sanado-parcial', afastado:'afastado', nao_consta:'afastado' };
+
+function set(id, text) { document.getElementById(id).textContent = text; }
+function show(id, vis) { document.getElementById(id).style.display = vis ? '' : 'none'; }
+
+function openModal(idx) {
+  const a = ACHADOS[idx];
+
+  set('modal-super',     `Achado · ${a.ano}`);
+  set('modal-municipio', a.municipio);
+  set('modal-code',      a.codigo);
+  set('modal-tipo',      a.tipo);
+
+  const sitEl = document.getElementById('modal-sit');
+  sitEl.textContent = SIT_LABEL[a.situacao] || a.situacao;
+  sitEl.className   = `modal-badge-sit ${SIT_CLASS[a.situacao] || ''}`;
+
+  set('modal-descricao', a.descricao);
+
+  show('wrap-recomendacao', !!a.recomendacao);
+  if (a.recomendacao) set('modal-recomendacao', a.recomendacao);
+
+  show('wrap-determinacao', !!a.determinacao);
+  if (a.determinacao) set('modal-determinacao', a.determinacao);
+
+  show('wrap-normativa', !!a.base_normativa);
+  if (a.base_normativa) set('modal-normativa', a.base_normativa);
+
+  const temDefesaOuAnalise = a.defesa_gestor || a.analise_tecnica;
+  show('divider-defesa', !!temDefesaOuAnalise);
+
+  show('wrap-defesa-gestor', !!a.defesa_gestor);
+  if (a.defesa_gestor) set('modal-defesa-gestor', a.defesa_gestor);
+
+  show('wrap-analise-tecnica', !!a.analise_tecnica);
+  if (a.analise_tecnica) set('modal-analise-tecnica', a.analise_tecnica);
+
+  set('modal-secao',    a.secao || '—');
+  set('modal-processo', a.numero_processo || '—');
+  set('modal-relator',  a.relator || '—');
+
+  // Mostrar "Sem defesa" somente quando NÃO houve defesa
+  show('wrap-sem-defesa', !a.houve_defesa);
+  show('sep-sem-defesa',  !a.houve_defesa);
+
+  document.getElementById('modal-backdrop').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-backdrop').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function onBackdropClick(e) {
+  if (e.target === document.getElementById('modal-backdrop')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>

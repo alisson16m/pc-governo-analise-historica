@@ -93,6 +93,71 @@
   </div>
 </div>
 
+<!-- Modal de achado -->
+<div class="modal-backdrop" id="modal-backdrop" style="display:none" onclick="onModalBackdropClick(event)">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="modal-super" id="modal-super"></span>
+        <div class="modal-title-row">
+          <span class="modal-municipio" id="modal-municipio"></span>
+          <span class="modal-sep">·</span>
+          <span class="modal-code" id="modal-code"></span>
+          <span class="modal-sep">·</span>
+          <span class="modal-tipo" id="modal-tipo"></span>
+          <span class="modal-sep">·</span>
+          <span class="modal-badge-sit" id="modal-sit"></span>
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeAchadoModal()" aria-label="Fechar">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <span class="modal-section-label">Descrição</span>
+        <div class="modal-section-text" id="modal-descricao"></div>
+      </div>
+      <div class="modal-section" id="modal-wrap-rec" style="display:none">
+        <span class="modal-section-label">Recomendação</span>
+        <div class="modal-section-text rec" id="modal-recomendacao"></div>
+      </div>
+      <div class="modal-section" id="modal-wrap-det" style="display:none">
+        <span class="modal-section-label">Determinação</span>
+        <div class="modal-section-text det" id="modal-determinacao"></div>
+      </div>
+      <div class="modal-section" id="modal-wrap-norm" style="display:none">
+        <span class="modal-section-label">Base normativa</span>
+        <div class="modal-section-text norm" id="modal-normativa"></div>
+      </div>
+      <hr class="modal-divider" id="modal-divider-def" style="display:none">
+      <div class="modal-section" id="modal-wrap-def" style="display:none">
+        <span class="modal-section-label">Defesa do Jurisdicionado</span>
+        <div class="modal-section-text def" id="modal-defesa-gestor"></div>
+      </div>
+      <div class="modal-section" id="modal-wrap-ana" style="display:none">
+        <span class="modal-section-label">Análise da Defesa</span>
+        <div class="modal-section-text ana" id="modal-analise-tecnica"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="modal-footer-item">
+        <strong>Seção:</strong> <span id="modal-secao">—</span>
+      </div>
+      <span class="modal-footer-sep">·</span>
+      <div class="modal-footer-item">
+        <strong>Processo:</strong> <span id="modal-processo" style="font-family:monospace;font-size:0.76rem">—</span>
+      </div>
+      <span class="modal-footer-sep">·</span>
+      <div class="modal-footer-item">
+        <strong>Relator:</strong> <span id="modal-relator">—</span>
+      </div>
+      <span class="modal-footer-sep" id="modal-sep-def" style="display:none">·</span>
+      <div class="modal-footer-item" id="modal-wrap-sem-defesa" style="display:none">
+        <span class="badge-sem-defesa">Sem defesa</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>
