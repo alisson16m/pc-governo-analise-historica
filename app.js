@@ -22,6 +22,7 @@ const SITUACAO_LABEL = {
   sanado_total: 'Sanado Total',
   sanado_parcial: 'Sanado Parcial',
   afastado: 'Afastado',
+  nao_consta: 'Não consta',
 };
 const SITUACAO_COLOR = {
   mantido: 'red', sanado_total: 'green', sanado_parcial: 'orange',
@@ -430,7 +431,7 @@ function renderIndex() {
   $('badge-total-sit').textContent = fmtN(total) + ' achados';
   const sitCount = {};
   achados.forEach(a => { const s = a.situacao || 'nao_consta'; sitCount[s] = (sitCount[s] || 0) + 1; });
-  const sitColorCss = { mantido: 'var(--red)', sanado_total: 'var(--ok)', sanado_parcial: 'var(--warn)', afastado: 'var(--neutral)' };
+  const sitColorCss = { mantido: 'var(--red)', sanado_total: 'var(--ok)', sanado_parcial: 'var(--warn)', afastado: 'var(--neutral)', nao_consta: 'var(--muted)' };
   const sitItems = Object.entries(sitCount)
     .filter(([s]) => sitColorCss[s])
     .sort((a, b) => b[1] - a[1])

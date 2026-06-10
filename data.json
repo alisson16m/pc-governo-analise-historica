@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-06-10T18:39:30+00:00",
+  "gerado_em": "2026-06-10T19:04:32+00:00",
   "versao": "1.1.0",
   "relatorios": [
     {
@@ -142,7 +142,7 @@
       "relator": "Maria Cleide Costa Beserra",
       "numero_processo": "TC/1.007367/2024",
       "opiniao_auditoria": "Regular com Ressalvas",
-      "fonte_extracao": "parser_2024",
+      "fonte_extracao": "gemini_legacy",
       "n_achados": 22
     },
     {
@@ -4043,15 +4043,15 @@
       "codigo": "III.01",
       "tipo": "Impropriedade",
       "secao": "3. Aspectos Orçamentários E Financeiros",
-      "base_normativa": null,
-      "descricao": "limite para abertura de créditos suplementares não",
+      "base_normativa": "Artigo 1º, §1º, da LRF n.101/2000",
+      "descricao": "O §4º do artigo 7º da LDO 2023 é um dispositivo inapropriado para a abertura de créditos adicionais, pois amplia a possibilidade de abertura de créditos suplementares pelo Chefe do Executivo sem anuência do Legislativo, descaracterizando a peça orçamentária como instrumento de planejamento.",
       "houve_defesa": true,
-      "situacao": null,
-      "recomendacao": null,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que esse tipo de dispositivo seja suprimido das próximas leis de diretrizes orçamentárias.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor defende que a abertura de créditos suplementares prevista no § 4º do art. 25 da LDO 2023 não fere os princípios da LRF, justificando que a norma visa apenas assegurar o pagamento de despesas obrigatórias e de execução contínua. Alega, ainda, que a medida reflete o planejamento da administração pública e que o referido dispositivo foi previamente ratificado pelo Poder Legislativo municipal.",
-      "analise_tecnica": "O jurisdicionado justifica a abertura de créditos suplementares com base na LDO, alegando a necessidade de reforço para despesas obrigatórias e a anuência do Poder Legislativo. Contudo, a auditoria mantém o apontamento, pois a autorização genérica permitiu a alteração de parcela expressiva do orçamento sem participação legislativa, comprometendo o planejamento orçamentário. O achado permanece classificado como impropriedade, sendo determinada a regularização da documentação pertinente."
+      "defesa_gestor": "O gestor defende que a exceção prevista no § 4º do art. 25 da LDO/2023 visa garantir o pagamento de despesas obrigatórias e impositivas, evitando a descontinuidade de serviços essenciais. Argumenta, ainda, que a norma não fere os princípios da LRF e foi devidamente ratificada pelo Poder Legislativo, possuindo precedentes em legislações anteriores.",
+      "analise_tecnica": "O jurisdicionado alega que a autorização contida na LDO para abertura de créditos suplementares visava atender despesas obrigatórias com anuência legislativa e observância de práticas adotadas por outros entes. Contudo, a auditoria concluiu que o dispositivo permitiu a alteração de parcela expressiva do orçamento sem a participação direta do Legislativo, ferindo o princípio do planejamento orçamentário. Diante disso, o achado foi mantido, sendo determinado ao gestor a apresentação da base legal que autorizou as aberturas de créditos realizadas."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4063,15 +4063,15 @@
       "codigo": "III.02",
       "tipo": "Impropriedade",
       "secao": "3. Aspectos Orçamentários E Financeiros",
-      "base_normativa": null,
-      "descricao": "",
+      "base_normativa": "Resolução Normativa TCE/AL n° 001/2016",
+      "descricao": "Abertura de créditos suplementares sem comprovação de autorização Legislativa, devido ao não encaminhamento das referidas Leis.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
-      "determinacao": null,
+      "determinacao": "Determina-se ao gestor o encaminhamento das Leis em âmbito de defesa.",
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconhece a falha administrativa na ausência de remessa das leis autorizativas de créditos suplementares a este Tribunal, justificando o ocorrido como um equívoco operacional. Para sanar a pendência, encaminhou a documentação comprobatória das normas (Leis nº 3.565/2023 e suas alterações) e demonstrou que as mesmas constam no Portal da Transparência do Município. Por fim, o responsável compromete-se a adotar medidas para evitar a reincidência da omissão.",
-      "analise_tecnica": "O jurisdicionado sanou a irregularidade apontada ao apresentar, em sede de defesa, as leis de autorização para a abertura de créditos suplementares. O apontamento, inicialmente motivado pela ausência da documentação e por imprecisões na descrição das bases legais, foi considerado superado após o esclarecimento de que o equívoco na fundamentação citada decorreu de uma incorreção formal no relatório do controle interno."
+      "defesa_gestor": "O gestor reconhece a falha na ausência de remessa das leis autorizativas de créditos suplementares a esta Corte, atribuindo o ocorrido a um erro operacional. Em resposta, apresenta os atos normativos devidamente publicados no portal da transparência e compromete-se a aprimorar os procedimentos de controle para evitar reincidências.",
+      "analise_tecnica": "O jurisdicionado sanou a irregularidade apontada ao apresentar, em sede de defesa, a documentação comprobatória das leis autorizativas para abertura de créditos adicionais. O auditor esclareceu que a divergência anterior decorreu de um erro formal na descrição da fundamentação legal, ficando, portanto, afastada a necessidade de determinação corretiva sobre o tema."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4083,15 +4083,15 @@
       "codigo": "III.03",
       "tipo": "Impropriedade",
       "secao": "3. Aspectos Orçamentários E Financeiros",
-      "base_normativa": null,
-      "descricao": "",
+      "base_normativa": "Resolução Normativa TCE/AL n° 001/2016",
+      "descricao": "Não encaminhamento das Leis que autorizaram a abertura dos créditos especiais.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
-      "determinacao": null,
+      "determinacao": "Determina-se ao gestor o encaminhamento das Leis em âmbito de defesa.",
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a abertura de créditos especiais no exercício de 2023 por meio da apresentação das respectivas leis autorizativas e comprovações de publicação oficial, detalhando a finalidade de cada aporte. Quanto aos instrumentos de flexibilização orçamentária (remanejamento, transposição e transferência) não utilizados, o responsável comprometeu-se a adequar as previsões na próxima Lei de Diretrizes Orçamentárias (LDO) às normas do MCASP.",
-      "analise_tecnica": "O jurisdicionado apresentou as leis autorizativas necessárias, sanando a irregularidade referente à abertura de créditos especiais. Contudo, persiste a divergência de valores entre o balanço patrimonial e o demonstrativo de saldos bancários, razão pela qual permanece a determinação para que o município apresente esclarecimentos sobre a inconsistência no saldo de caixa."
+      "defesa_gestor": "O gestor justificou a abertura de créditos especiais em 2023 por meio das Leis nº 3.569, 3.589, 3.601 e 3.611, apresentando os respectivos comprovantes de publicação oficial. Em relação à irregularidade apontada sobre instrumentos de flexibilização orçamentária não implementados, o responsável comprometeu-se a promover a adequação conceitual na próxima Lei de Diretrizes Orçamentárias (LDO), em conformidade com o MCASP.",
+      "analise_tecnica": "Como analista, apresento o resumo do achado:\n\nO município apresentou divergência entre o saldo de caixa registrado no balanço (R$ 306,28 milhões) e o indicado no quadro demonstrativo de saldos bancários (R$ 326,99 milhões). Embora o jurisdicionado tenha saneado a irregularidade quanto à abertura de créditos especiais, permanece a necessidade de prestar esclarecimentos adicionais sobre a inconsistência nos saldos financeiros apurados."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4103,15 +4103,15 @@
       "codigo": "III.04",
       "tipo": "Inconsistência",
       "secao": "4. Aspectos Patrimoniais",
-      "base_normativa": null,
-      "descricao": "Equivalentes de Aplicada ao Setor",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Divergência entre o saldo em caixa informado no balanço (306,28 milhões) e o saldo no Quadro Demonstrativo dos Saldos Bancários (326,99 milhões).",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Recomenda-se que o gestor apresente nas futuras prestações de contas a composição detalhada dos saldos bancários com documentos comprobatórios.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a divergência nos saldos bancários apontada pela auditoria alegando que a composição dos valores segue as normas do MCASP e do PCASP. A defesa sustenta que a diferença decorre da exclusão de investimentos com atributo \"Patrimonial\" (R$ 9,99 milhões) do cálculo de caixa e equivalentes, os quais possuem natureza diversa das rubricas financeiras integrantes do balanço.",
-      "analise_tecnica": "O jurisdicionado justificou a divergência nos saldos financeiros alegando tratar-se de contas de investimentos e cauções, porém, a ausência de detalhamento das contas bancárias específicas impediu a conciliação e a validação dos registros contábeis. Diante da insuficiência probatória e da falta de extratos para conferência, o achado foi mantido, determinando-se que o gestor apresente a composição detalhada e os documentos comprobatórios das rubricas em futuras prestações de contas."
+      "defesa_gestor": "O gestor justifica a divergência nos saldos bancários apontados alegando que a diferença decorre da exclusão de investimentos com atributo patrimonial (P), os quais não integram o conceito de caixa e equivalentes de caixa segundo o MCASP. Defende que a composição dos valores deve observar estritamente as rubricas de atributo financeiro, motivo pelo qual solicita o acolhimento dos esclarecimentos para sanar a inconsistência.",
+      "analise_tecnica": "O jurisdicionado justificou a divergência nos saldos bancários apontando a inclusão de rubricas de investimentos e cauções; contudo, a falta de detalhamento das contas impede a conciliação e a validação dos registros. Diante disso, o apontamento foi mantido, sendo determinado que o gestor apresente a composição detalhada dos saldos acompanhada dos respectivos extratos comprobatórios."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4122,16 +4122,16 @@
       "numero_processo": "TC/1.007367/2024",
       "codigo": "III.05",
       "tipo": "Impropriedade",
-      "secao": "4.2. Caixa E Equivalentes De Caixa",
-      "base_normativa": "Resolução Normativa nº 01/2016.",
-      "descricao": "Da análise comparativa entre os extratos bancários disponibilizados (peça 66) e o quadro demonstrativo dos saldos bancários (peça 65), constatou-se a ausência de diversos extratos, conforme listados no Apêndice I.",
+      "secao": "4. Aspectos Patrimoniais",
+      "base_normativa": "Resolução Normativa nº 01/2016",
+      "descricao": "Ausência de diversos extratos bancários necessários para a análise comparativa com o quadro demonstrativo dos saldos.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": "Recomenda-se, portanto, uma revisão minuciosa dos documentos e uma conciliação bancária mais precisa, de modo a assegurar que os registros contábeis estejam plenamente alinhados com os extratos bancários, e que todas as inconsistências sejam devidamente justificadas, garantindo a conformidade das informações apresentadas.",
+      "recomendacao": "Recomenda-se uma revisão minuciosa dos documentos e uma conciliação bancária mais precisa.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": null,
-      "analise_tecnica": null
+      "defesa_gestor": "Como analista, apresento o resumo do ponto de defesa:\n\nO gestor reconhece a falha na remessa incompleta dos extratos bancários do exercício de 2023. Em contrapartida, apresenta os documentos faltantes no Anexo III 05 e solicita o saneamento da irregularidade diante da entrega tardia dos comprovantes.",
+      "analise_tecnica": "A auditoria identificou inconsistências entre o Quadro Demonstrativo de Saldos Bancários e os extratos apresentados, totalizando uma divergência de R$ 32.114.655,66. O achado fundamenta-se na ausência de documentos comprobatórios, na apresentação de extratos de exercício diverso e em divergências não justificadas, inclusive em contas do RPPS. Diante disso, mantém-se o apontamento, recomendando-se o aperfeiçoamento da conciliação bancária para assegurar a fidedignidade e a conformidade dos registros contábeis."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4143,15 +4143,15 @@
       "codigo": "III.06",
       "tipo": "Inconsistência",
       "secao": "4. Aspectos Patrimoniais",
-      "base_normativa": null,
-      "descricao": "bancárias quando comparado os Extratos e o Quadro Aplicada ao Setor",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Divergência de valores nas contas bancárias ao comparar os Extratos com o Quadro Demonstrativo de Saldos Bancários.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Recomenda-se que o setor contábil aperfeiçoe a conciliação bancária.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor foi devidamente notificado, contudo, optou por não apresentar qualquer manifestação ou justificativa acerca do achado de auditoria. Dessa forma, o prazo legal para a defesa transcorreu sem a interposição de elementos que pudessem descaracterizar a irregularidade apontada.",
-      "analise_tecnica": "Como analista, apresento o resumo do achado:\n\nO órgão auditado apresentou falhas na transparência contábil ao omitir o detalhamento do imobilizado e as políticas de depreciação nas notas explicativas. Diante da ausência de defesa pelo gestor, foi mantida a impropriedade e determinada a inclusão dessas informações conforme as normas do Manual de Contabilidade Aplicada ao Setor Público (MCASP)."
+      "defesa_gestor": "O gestor foi devidamente notificado, contudo, optou por não apresentar manifestação acerca do achado de auditoria. Dessa forma, o prazo para esclarecimentos transcorreu sem qualquer resposta ou justificativa por parte do responsável.",
+      "analise_tecnica": "O achado de auditoria foi mantido devido à ausência de defesa do gestor quanto à insuficiência de informações sobre o ativo imobilizado e suas políticas contábeis. Recomenda-se que o ente atualize as notas explicativas, em conformidade com o MCASP, para garantir a transparência e a precisão das demonstrações contábeis."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4163,15 +4163,15 @@
       "codigo": "III.07",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
-      "base_normativa": null,
-      "descricao": "imobilizado nem as políticas contábeis relevantes, Aplicada ao Setor",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "As notas explicativas não detalham a conta do imobilizado nem as políticas contábeis relevantes, como as de depreciação.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Recomenda-se que o ente inclua em suas notas explicativas informações detalhadas sobre o imobilizado e as políticas contábeis adotadas.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor municipal deixou transcorrer o prazo sem apresentar qualquer manifestação ou justificativa quanto aos achados de auditoria. Diante da ausência de defesa, o relatório técnico prossegue com a análise das contas de governo à revelia do responsável.",
-      "analise_tecnica": "Aqui está o resumo do achado:\n\nO auditor manteve o apontamento de impropriedade devido à ausência de detalhamento da conta de estoques nas notas explicativas das demonstrações contábeis, agravada pela falta de defesa do gestor. Recomenda-se que o órgão passe a incluir informações detalhadas sobre os estoques e as políticas contábeis adotadas, em conformidade com o Manual de Contabilidade Aplicada ao Setor Público (MCASP)."
+      "defesa_gestor": "O gestor municipal não apresentou qualquer justificativa ou defesa técnica em resposta ao achado de auditoria apontado. Diante da ausência de manifestação, o relatório técnico segue para análise das contas de Governo do Chefe do Executivo sem elementos de contraposição por parte do responsável.",
+      "analise_tecnica": "Aqui está o resumo solicitado:\n\nO achado refere-se à ausência de detalhamento da conta de estoques nas notas explicativas, em desacordo com o Manual de Contabilidade Aplicada ao Setor Público (MCASP). Diante da ausência de defesa do gestor, a impropriedade foi mantida, sendo recomendada a inclusão das informações detalhadas para garantir a transparência das demonstrações contábeis."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4183,15 +4183,15 @@
       "codigo": "III.08",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
-      "base_normativa": null,
-      "descricao": "verifica-se a ausência de detalhamento da conta",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Ausência de detalhamento da conta estoques nas notas explicativas.",
       "houve_defesa": true,
-      "situacao": null,
-      "recomendacao": null,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se que as notas explicativas incluam informações detalhadas sobre o estoque e as políticas contábeis adotadas.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor não apresentou defesa tempestiva quanto ao achado de auditoria apontado. Dessa forma, não foram trazidos aos autos elementos ou justificativas que pudessem elidir a irregularidade identificada.",
-      "analise_tecnica": "O Tribunal de Contas manteve o achado de inconsistência nos valores das transferências de emendas parlamentares declarados no Demonstrativo da Receita Corrente Líquida, dada a ausência de defesa do gestor. Foi determinada a retificação imediata dos cálculos e dos respectivos demonstrativos fiscais, com o devido envio ao contraditório e republicação nos portais de transparência e no SICONFI."
+      "defesa_gestor": "O gestor, devidamente notificado, absteve-se de apresentar manifestação acerca do achado de auditoria. Dessa forma, não foram trazidos aos autos elementos ou justificativas capazes de elidir a irregularidade apontada.",
+      "analise_tecnica": "O achado refere-se a uma divergência entre os valores das emendas parlamentares registrados no Demonstrativo da Receita Corrente Líquida e os dados oficiais do Tesouro Nacional. Diante da ausência de defesa do gestor, o Tribunal determinou a retificação das memórias de cálculo, a correção dos demonstrativos contábeis e a republicação dos dados corrigidos nos portais de transparência."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4203,15 +4203,15 @@
       "codigo": "III.09",
       "tipo": "Inconsistência",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "Transparente (Apêndice IV), o valor correto para as Demonstrativos Fiscais",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)",
+      "descricao": "Divergência no valor das emendas individuais entre o Painel do Tesouro Nacional (R$ 11.648.596,00) e o demonstrativo apresentado (R$ 11.245.740,00).",
       "houve_defesa": true,
       "situacao": "sanado_total",
-      "recomendacao": null,
+      "recomendacao": "Recomenda-se a atualização imediata dos demonstrativos fiscais no Portal da Transparência.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconheceu a procedência da divergência apontada pela equipe de auditoria quanto ao valor das emendas parlamentares individuais. Para sanar a irregularidade, informou que o demonstrativo da Receita Corrente Líquida (RREO) foi retificado e reenviado com o montante correto de R$ 11.648.596,00.",
-      "analise_tecnica": "O jurisdicionado reconheceu as inconsistências nos valores das Emendas Parlamentares na Receita Corrente Líquida e promoveu as devidas correções no sistema SICONFI, saneando o achado de auditoria. Contudo, persiste a necessidade de atualização imediata dos demonstrativos fiscais no Portal da Transparência municipal para garantir a transparência exigida pela Lei de Responsabilidade Fiscal."
+      "defesa_gestor": "O gestor reconheceu a procedência da divergência apontada pela equipe de auditoria quanto ao valor das emendas parlamentares individuais. Como medida saneadora, informou o envio do demonstrativo retificado (Anexo 03, Tabela 3.2 do RREO relativo ao 6º bimestre de 2023) contendo o valor correto de R$ 11.648.596,00.",
+      "analise_tecnica": "O jurisdicionado sanou a irregularidade apontada, uma vez que as correções da Receita Corrente Líquida foram devidamente processadas e validadas no sistema SICONFI. Contudo, como os dados permanecem desatualizados no Portal da Transparência municipal, recomenda-se a imediata regularização da publicidade das informações fiscais para garantir o cumprimento da Lei de Responsabilidade Fiscal."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4223,15 +4223,15 @@
       "codigo": "III.10",
       "tipo": "Inconsistência",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "dessas transferências é de R$ 23.476.004,00, Demonstrativos Fiscais",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)",
+      "descricao": "Divergência no valor das transferências de emendas individuais e de bancada entre o Painel do Tesouro/FNS (R$ 23.476.004,00) e o demonstrativo (R$ 25.914.486,00).",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Recomenda-se ao gestor deduzir da Receita Corrente Líquida as transferências obrigatórias da União conforme a legislação.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a divergência de R$ 303.468,00 no registro das transferências destinadas aos Agentes de Saúde afirmando que o recurso, embora empenhado em 2023, foi creditado apenas em 02/01/2024. A defesa argumenta que o registro contábil está correto, pois a administração municipal observou o regime de caixa para a contabilização da receita, em conformidade com o art. 35 da Lei nº 4.320/1964.",
-      "analise_tecnica": "O gestor justificou a divergência nos repasses aos Agentes de Endemias como uma variação de exercício financeiro, mas não apresentou documentação comprobatória sobre o complemento federal destinado aos Agentes de Saúde. Diante disso, e considerando a inconsistência de R$ 469.779,08 na Despesa Total com Pessoal, foi determinado que o jurisdicionado apresente a memória de cálculo detalhada para garantir o contraditório e a ampla defesa."
+      "defesa_gestor": "O gestor justifica a divergência de R$ 303.468,00 no registro das transferências destinadas aos Agentes de Saúde pela aplicação do regime de caixa para o reconhecimento de receitas, conforme preceitua a Lei nº 4.320/1964. O responsável argumenta que, embora a ordem bancária tenha sido emitida em 2023, o crédito efetivo na conta ocorreu apenas em 02/01/2024, justificando, portanto, o registro contábil no exercício seguinte.",
+      "analise_tecnica": "O gestor justificou a diferença nos repasses aos Agentes de Combate às Endemias pelo critério de competência, embora não tenha apresentado documentação que comprovasse o recebimento de valores complementares destinados aos Agentes Comunitários de Saúde. Diante disso, mantém-se o apontamento sobre a divergência de R$ 469.779,08 na Despesa Total com Pessoal, sendo determinada a apresentação da memória de cálculo detalhada para saneamento da inconsistência."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4243,15 +4243,15 @@
       "codigo": "III.11",
       "tipo": "Inconsistência",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "inconsistências nos valores referentes a Vencimentos,",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)",
+      "descricao": "Diferença de R$ 469.779,08 entre a Despesa Total com Pessoal apurada pela equipe técnica e a apresentada no demonstrativo, devido a inconsistências na segregação de despesas.",
       "houve_defesa": true,
-      "situacao": null,
-      "recomendacao": null,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se a implementação de revisões nos procedimentos contábeis e segregação das despesas entre poderes.",
       "determinacao": null,
-      "valor_financeiro": null,
-      "defesa_gestor": "O gestor apresentou a memória de cálculo das despesas com pessoal, justificando a exclusão de valores do Poder Legislativo do demonstrativo do Executivo entre setembro e dezembro de 2023, baseando-se em diretrizes do SICONFI/STN. Defende a manutenção dos dados anteriores a agosto para preservar a série histórica e afirma que, mesmo com o ajuste, o percentual de 47,55% da Receita Corrente Líquida (RCL) permanece abaixo do limite prudencial.",
-      "analise_tecnica": "Como analista, apresento o resumo do achado técnico:\n\nO gestor justificou a divergência nos valores de Despesa com Pessoal alegando erro de segregação entre os poderes, porém, não houve a devida correção das informações no sistema SICONFI, mantendo-se o apontamento. Adicionalmente, identificou-se a omissão de dados essenciais sobre metas fiscais na LDO de 2023, sendo determinado que o ente regularize a contabilização das despesas e observe estritamente as diretrizes do Manual de Demonstrativos Fiscais."
+      "valor_financeiro": 469779.08,
+      "defesa_gestor": "O gestor apresentou a memória de cálculo das despesas com pessoal, justificando a exclusão dos valores do Poder Legislativo referentes ao período de setembro a dezembro de 2023, baseada em ajustes nas Matrizes de Saldos Contábeis do SICONFI. A defesa argumenta que a divergência nos critérios de apuração, mantidos de janeiro a agosto por preservação da série histórica, resultou em um índice de 47,55% da RCL, mantendo-se, portanto, abaixo do limite prudencial.",
+      "analise_tecnica": "Como analista do Tribunal de Contas, apresento o resumo da análise técnica:\n\nO gestor justificou a divergência nos valores da Despesa Total com Pessoal alegando erro de contabilização, porém, constatou-se que o demonstrativo no sistema SICONFI permanece sem a devida correção, mantendo-se o apontamento. Além disso, identificou-se a ausência de informações obrigatórias sobre metas fiscais na LDO de 2023, sendo necessária a adoção de medidas para assegurar a conformidade contábil e a transparência da gestão fiscal, conforme as normas vigentes."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4263,15 +4263,15 @@
       "codigo": "III.12",
       "tipo": "Impropriedade",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "pública consolidada na LDO de 2022, conforme",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 12ª Edição)",
+      "descricao": "O ente não forneceu os valores previstos para receitas e despesas primárias, bem como para a dívida pública consolidada na LDO de 2022.",
       "houve_defesa": true,
-      "situacao": null,
-      "recomendacao": null,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se a disponibilização da Lei nº 3.564/2023 no Portal da Transparência.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica que a divergência nos valores de metas fiscais decorreu de atualização posterior realizada por meio da Lei nº 3.564/2023, que adequou as receitas e despesas ao cenário real. Adicionalmente, comprometeu-se a observar integralmente o Manual de Demonstrativos Fiscais (MDF) vigente nas próximas elaborações da LDO para evitar inconsistências nos anexos.",
-      "analise_tecnica": "Aqui está o resumo do achado de auditoria:\n\nO jurisdicionado não comprovou a atualização das metas fiscais por meio da Lei nº 3.564/2023, uma vez que o documento não foi anexado aos autos nem disponibilizado no Portal da Transparência, impossibilitando a validação das informações. Adicionalmente, constatou-se uma inconsistência entre os demonstrativos de Resultado Primário e Nominal e os valores fixados na LDO, sendo recomendada a regularização imediata da publicidade documental e o alinhamento dos dados orçamentários."
+      "defesa_gestor": "O gestor justifica que a divergência nos valores de metas fiscais decorreu da atualização posterior dos anexos da LDO pela Lei nº 3.564/2023, que adequou as receitas e despesas aos valores consolidados. Ademais, compromete-se a observar integralmente o Manual de Demonstrativos Fiscais (MDF) vigente em futuras peças orçamentárias para garantir a conformidade técnica exigida por este Tribunal.",
+      "analise_tecnica": "O jurisdicionado não comprovou a atualização das metas fiscais mencionada, visto que a Lei nº 3.564/2023 não foi anexada aos autos nem disponibilizada no Portal da Transparência. Adicionalmente, constatou-se uma inconsistência entre os demonstrativos de resultados primário e nominal e a LDO, sendo recomendada a devida regularização e o cumprimento das normas de transparência."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4283,15 +4283,15 @@
       "codigo": "III.13",
       "tipo": "Inconsistência",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "das Metas do Art.4º da LC nº",
+      "base_normativa": "Inciso II, Parágrafo 2º do Art.4º da LC nº 101/2000",
+      "descricao": "As metas fiscais nos demonstrativos de Resultado Primário e Nominal não estão alinhadas com os valores previstos no anexo de metas fiscais da LDO.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Recomenda-se que os demonstrativos das metas fiscais considerem os valores previstos na LDO.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica que a divergência nas Metas de Resultado Primário e Nominal no RREO ocorreu devido a uma falha de comunicação interna, que impediu o envio da Lei nº 3.564/2023 (atualização da LDO) à área técnica responsável. Como medida corretiva, a administração comprometeu-se a aprimorar o monitoramento das alterações legislativas e a observar rigorosamente o Manual de Demonstrativos Fiscais (MDF) vigente.",
-      "analise_tecnica": "O gestor não justificou a falha na integração dos anexos da LDO ao Relatório Resumido da Execução Orçamentária, mantendo-se a irregularidade pelo descumprimento das normas de transparência. Adicionalmente, foi constatado o não atingimento das metas de resultados primário e nominal, resultando na recomendação de medidas corretivas para assegurar o equilíbrio fiscal e o rigoroso cumprimento da LRF."
+      "defesa_gestor": "O gestor justifica a divergência nos dados do RREO pela falha no encaminhamento da Lei nº 3.564/2023, que atualizou as metas da LDO, à equipe técnica responsável pela elaboração do relatório. Em resposta ao achado, o responsável comprometeu-se a adotar maior rigor no acompanhamento de alterações legislativas e na conformidade dos anexos ao Manual de Demonstrativos Fiscais (MDF).",
+      "analise_tecnica": "Como analista, resumo o achado nos seguintes termos:\n\nO gestor não justificou satisfatoriamente a falha no envio dos anexos da LDO, o que comprometeu a fidedignidade do Relatório Resumido da Execução Orçamentária (RREO), sendo mantido o apontamento pela auditoria. Adicionalmente, identificou-se o descumprimento das metas de resultados primário e nominal, ensejando recomendação para adoção de estratégias que assegurem o equilíbrio fiscal e a conformidade com a Lei de Responsabilidade Fiscal."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4303,15 +4303,15 @@
       "codigo": "III.14",
       "tipo": "Impropriedade",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "das Metas",
+      "base_normativa": "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)",
+      "descricao": "O ente não alcançou a meta estabelecida para os Resultados Primário e Nominal.",
       "houve_defesa": true,
-      "situacao": "afastado",
-      "recomendacao": null,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se adotar estratégias para corrigir os déficits primário e nominal e assegurar o equilíbrio fiscal.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica o não atingimento das metas fiscais de 2023 devido a um cenário de queda real na receita, causado por fatores como a redução na arrecadação do ICMS, a diminuição de transferências e a frustração de expectativas de arrecadação do FPM. Argumenta, ainda, que o resultado foi impactado por um quadro econômico atípico, marcado por pressão orçamentária pós-pandemia e aumento nas demandas de serviços públicos essenciais.",
-      "analise_tecnica": "O gestor justificou o déficit fiscal de 2023 pela queda na arrecadação, aumento de despesas pós-pandemia e uso de reservas, mas os argumentos foram considerados insuficientes para elidir a irregularidade, sendo mantido o achado. Além disso, foi identificada uma divergência contábil de R$ 15.035,75 entre o Demonstrativo da Disponibilidade de Caixa e o Balanço Financeiro. Em razão disso, o Tribunal determinou que o gestor apresente esclarecimentos sobre a inconsistência no processo de contraditório e ampla defesa."
+      "defesa_gestor": "O gestor justifica o descumprimento das metas fiscais de 2023 como resultado de um cenário de crise atípico, caracterizado pela queda real das receitas municipais e pela defasagem entre o crescimento das transferências correntes e a inflação. Aponta como causas principais a redução na arrecadação decorrente de alterações no ICMS, a queda no IRPJ e o aumento de despesas vinculadas a demandas pós-pandemia.",
+      "analise_tecnica": "O gestor justificou o déficit fiscal de 2023 pela queda na arrecadação federal e municipal, agravada por demandas represadas na saúde, o que exigiu o uso de reservas financeiras. Contudo, a defesa foi considerada insuficiente para elidir o achado, mantendo-se a irregularidade. Adicionalmente, foi identificada uma inconsistência de R$ 15.035,75 entre o Demonstrativo da Disponibilidade de Caixa e o Balanço Financeiro, motivando a determinação de esclarecimentos adicionais."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4323,15 +4323,15 @@
       "codigo": "III.15",
       "tipo": "Inconsistência",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
-      "descricao": "dos Restos a Financeiro (peça 13), identifica-se uma disparidade de Aplicada ao Setor",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Disparidade de R$ 15.035,75 entre o Demonstrativo da Disponibilidade de Caixa e dos Restos a Pagar e o Balanço Financeiro.",
       "houve_defesa": true,
-      "situacao": "sanado_total",
+      "situacao": "afastado",
       "recomendacao": null,
       "determinacao": null,
-      "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a divergência nos valores de restos a pagar informando que o Relatório de Gestão Fiscal (RGF) do Executivo não contempla os dados da Câmara Municipal. Segundo a defesa, a disparidade decorre da consolidação exclusiva do Balanço Financeiro, ao passo que o RGF não integra as informações do Legislativo, conforme comprovado no anexo apresentado.",
-      "analise_tecnica": "Como analista deste Tribunal, apresento o resumo do achado:\n\nA inconsistência contábil inicialmente apontada foi sanada após a constatação de que o saldo de restos a pagar referia-se a despesas do Poder Legislativo, não incluídas nos demonstrativos do Executivo. Contudo, persiste a irregularidade quanto à aplicação em educação, visto que o município deixou de aplicar R$ 17,4 milhões relativos ao complemento da diferença não investida nos exercícios de 2020 e 2021, em desacordo com a EC 119/2022."
+      "valor_financeiro": 15035.75,
+      "defesa_gestor": "O gestor justifica a divergência nos restos a pagar de pessoal pela ausência de consolidação dos dados do Legislativo no Relatório de Gestão Fiscal (RGF) enviado pelo Executivo. Argumenta que, embora o Balanço Financeiro seja consolidado, o RGF restringe-se aos dados do Executivo, e apresentou documentação anexa para comprovar a regularidade das informações.",
+      "analise_tecnica": "Como analista, apresento o resumo do trecho da auditoria:\n\nO auditor saneou a irregularidade referente à divergência nos Restos a Pagar, confirmando que a inconsistência decorreu da exclusão dos dados do Poder Legislativo nos demonstrativos do Executivo. Contudo, o achado referente à área de Educação foi mantido, pois, embora o limite constitucional de 2023 tenha sido atingido, o Ente deixou de aplicar R$ 17,4 milhões relativos ao complemento de exercícios anteriores (2020 e 2021)."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4343,15 +4343,15 @@
       "codigo": "III.16",
       "tipo": "Irregularidade",
       "secao": "7. Análise Dos Limites Constitucionais",
-      "base_normativa": null,
-      "descricao": "119/2022.",
+      "base_normativa": "Parágrafo Único do art. 109 da EC 119/2022",
+      "descricao": "Deixou de aplicar R$ 17.423.395,73 referente ao complemento da diferença não aplicada nos exercícios de 2020 e 2021.",
       "houve_defesa": true,
-      "situacao": null,
+      "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
-      "valor_financeiro": null,
-      "defesa_gestor": "O gestor alega que o déficit na aplicação em MDE decorre de gestões anteriores e invoca o princípio da intranscendência subjetiva para afastar sua responsabilidade. Argumenta que adotou medidas judiciais, complementou gastos em exercícios recentes e apresentou um plano de compensação aprovado pelo Ministério Público, pleiteando assim a regularidade das contas de 2023.",
-      "analise_tecnica": "Após nova apuração técnica, constatou-se um déficit de R$ 17.389.178,54 na aplicação em Manutenção e Desenvolvimento do Ensino (MDE) referente aos exercícios de 2020 e 2021. Embora o apontamento seja sanado por acordo judicial que prevê a recomposição dos valores, a equipe técnica recomenda que o gestor observe rigorosamente os prazos da LRF para o envio de demonstrativos ao SIOPE, visando evitar sanções e a suspensão de transferências voluntárias."
+      "valor_financeiro": 17423395.73,
+      "defesa_gestor": "O gestor justifica o déficit na aplicação mínima em educação (MDE) alegando que os valores a menor referem-se a gestões anteriores, invocando o princípio da intranscendência subjetiva das sanções. A defesa destaca que a atual administração adotou medidas judiciais contra a ex-prefeita, realizou complementações parciais conforme a EC 119/2022 e apresentou plano de compensação aprovado pelo Ministério Público para regularizar os passivos.",
+      "analise_tecnica": "Após nova análise técnica, apurou-se um déficit de R$ 17.389.178,54 na aplicação em Manutenção e Desenvolvimento do Ensino (MDE) referente aos exercícios de 2020 e 2021, valor que diverge do montante apresentado pelo gestor devido à utilização de dados do Portal da Transparência. \n\nConsiderando a celebração de acordo judicial homologado, no qual o município se comprometeu com um plano de recomposição dos valores não aplicados, a auditoria conclui que o achado está sanado. Por fim, recomenda-se ao gestor rigor no cumprimento dos prazos de envio de demonstrativos ao SIOPE, conforme exigido pela Lei de Responsabilidade Fiscal, para evitar sanções administrativas e financeiras."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4363,15 +4363,15 @@
       "codigo": "III.17",
       "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
-      "base_normativa": null,
-      "descricao": "nº",
+      "base_normativa": "LC 101/2000 / Portaria MEC nº 844/2008",
+      "descricao": "Publicação em atraso do Demonstrativo das Receitas e Despesas com Manutenção e Desenvolvimento do Ensino (MDE) do 6º bimestre de 2023 no SIOPE.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Recomenda-se cumprir os prazos de envio estabelecidos pela LRF.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor não apresentou manifestação tempestiva acerca do achado de auditoria. Dessa forma, a irregularidade permanece sem contra-argumentação ou elementos probatórios por parte do responsável.",
-      "analise_tecnica": "O Município de Arapiraca apresentou atraso na publicação de demonstrativos de receitas e despesas com saúde no sistema SIOPS referentes a cinco bimestres de 2023. Diante da ausência de justificativa por parte do gestor, o apontamento foi mantido, com recomendação para que a prefeitura regularize o cumprimento dos prazos estabelecidos pela LRF para evitar a suspensão de transferências voluntárias."
+      "defesa_gestor": "O gestor não apresentou defesa tempestiva frente ao achado de auditoria. Dessa forma, o ponto permanece sem manifestação ou justificativa por parte do responsável.",
+      "analise_tecnica": "Aqui está o resumo do achado de auditoria:\n\nO município de Arapiraca descumpriu os prazos legais para a publicação dos Demonstrativos de Ações e Serviços Públicos de Saúde (ASPS) no sistema SIOPS referentes a cinco bimestres de 2023. Diante da ausência de justificativa do gestor, o apontamento foi mantido, com recomendação para a regularização do envio dos dados a fim de evitar sanções como a suspensão de transferências voluntárias."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4383,15 +4383,15 @@
       "codigo": "III.18",
       "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
-      "base_normativa": null,
-      "descricao": "Despesas",
+      "base_normativa": "LC 101/2000 / LC 141/2012",
+      "descricao": "Publicação em atraso do Demonstrativo das Receitas e Despesas com Ações e Serviços Públicos de Saúde (ASPS) de 5 bimestres de 2023 no SIOPS.",
       "houve_defesa": true,
-      "situacao": null,
-      "recomendacao": null,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se cumprir os prazos de envio estabelecidos pela LRF.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor atribui o atraso na publicação do SIOPS durante todo o exercício de 2023 a falhas técnicas no sistema e na disponibilização de arquivos pelo órgão central. A defesa sustenta que a impossibilidade de cumprimento dos prazos foi documentada por meio de diversos comunicados oficiais (CSIOPS), que confirmaram a indisponibilidade das ferramentas necessárias para o preenchimento e homologação dos dados.",
-      "analise_tecnica": "Como analista, apresento o resumo do achado:\n\nO atraso na homologação dos dados no SIOPS não foi justificado por problemas técnicos, visto que a irregularidade persistiu mesmo em períodos sem falhas no sistema. Paralelamente, identificou-se que o RPPS municipal não cumpre integralmente os requisitos da Portaria MTP nº 1.467/2022, sendo necessária a regularização documental junto ao CADPREV para conformidade com a legislação federal."
+      "defesa_gestor": "O gestor atribui o atraso na publicação das informações do SIOPS durante todo o exercício de 2023 a problemas técnicos sistêmicos e à disponibilização tardia de novas versões do software pelo órgão central. Para sustentar a justificativa, o responsável apresentou diversos comunicados oficiais que comprovam a indisponibilidade das ferramentas necessárias para a transmissão e homologação dos dados ao longo dos bimestres.",
+      "analise_tecnica": "Como analista, apresento o resumo do achado:\n\nO gestor justificou o atraso na homologação do SIOPS por falhas técnicas do sistema, porém a auditoria constatou reincidência e descumprimento de prazos mesmo em períodos sem intercorrências operacionais, mantendo-se a recomendação. Adicionalmente, identificou-se que o RPPS local não atende aos critérios legais previstos na Portaria MTP nº 1.467/2022, sendo necessário que o município regularize a documentação junto ao CADPREV."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4403,15 +4403,15 @@
       "codigo": "III.19",
       "tipo": "Impropriedade",
       "secao": "8. Previdência",
-      "base_normativa": null,
-      "descricao": "8. Previdência",
+      "base_normativa": "Artigo 247 da Portaria MTP nº 1.467/2022",
+      "descricao": "O RPPS não atende a alguns critérios estabelecidos na Portaria MTP nº 1.467/2022.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Recomenda-se assegurar a conformidade com os critérios e requisitos estabelecidos, enviando a documentação ao CADPREV.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a irregularidade do Certificado de Regularidade Previdenciária (CRP) alegando que a inconsistência na base de dados de 2020 está em processo de retificação. Quanto aos problemas na segregação de massa, informa que os estudos técnicos exigidos para a extinção do regime estão sendo elaborados por profissional habilitado para posterior envio ao Ministério da Previdência, visando à regularização da situação.",
-      "analise_tecnica": "O gestor alegou que a regularização dos demonstrativos previdenciários está em curso, mas a defesa foi considerada insuficiente para sanar a irregularidade apontada, sendo mantido o achado. Paralelamente, identificou-se o descumprimento da Lei de Responsabilidade Fiscal na gestão da transparência municipal, resultando na determinação para que o Executivo publique o PPA, documentos de prestações de contas e atas de audiências públicas."
+      "defesa_gestor": "O gestor justifica a irregularidade no Certificado de Regularidade Previdenciária (CRP) alegando que as inconsistências na base de dados de 2020 já estão em processo de retificação pelos setores competentes. Quanto à segregação de massa, informa que os estudos técnicos exigidos para a sua extinção, conforme a legislação vigente, estão sendo elaborados por profissional habilitado para posterior envio ao Ministério da Previdência. A expectativa do município é que, sanadas essas pendências documentais, o CRP seja regularizado administrativamente.",
+      "analise_tecnica": "Como analista do Tribunal de Contas, apresento o resumo técnico dos achados:\n\nO gestor não logrou sanar a irregularidade previdenciária, persistindo o apontamento devido à ausência de documentos técnicos para a regularização do CRP. Adicionalmente, foi identificada falha na transparência municipal, resultando em determinação para a publicação integral do PPA, documentos de prestação de contas e atas de audiências públicas no Portal da Transparência."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4423,15 +4423,15 @@
       "codigo": "III.20",
       "tipo": "Irregularidade",
       "secao": "9. Transparência E Controle Interno",
-      "base_normativa": null,
-      "descricao": "apresentando dados incompletos, inviabilizando o Responsabilidade",
+      "base_normativa": "Lei de Responsabilidade Fiscal n.101/2000",
+      "descricao": "Desobediência à LRF em 3 pontos, apresentando dados incompletos no Portal da Transparência, inviabilizando o controle social.",
       "houve_defesa": true,
-      "situacao": null,
-      "recomendacao": null,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se publicar no Portal da Transparência os documentos e informações referentes à Prestação de Contas.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconhece as falhas apontadas na transparência pública e informa que já adotou medidas para a regularização das publicações exigidas, como o PPA e atas de audiências fiscais. Quanto à ausência de registros formais, o município justificou o modelo de escuta social adotado e comprometeu-se a formalizar as atas de audiências públicas e as futuras publicações no Portal da Transparência.",
-      "analise_tecnica": "Como analista, apresento o resumo do achado de auditoria:\n\nO ente cumpriu a publicidade do PPA e das atas de audiências públicas, porém mantém pendente a disponibilização da prestação de contas no portal oficial, independentemente da emissão de parecer prévio. Adicionalmente, foram constatadas inconsistências entre o relatório do controle interno e os demonstrativos contábeis, sendo recomendada a devida retificação e alinhamento das informações."
+      "defesa_gestor": "O gestor reconhece as falhas apontadas na transparência pública e informa a adoção de medidas saneadoras, como a publicação do PPA, de atas de audiências fiscais e a regularização das futuras prestações de contas. Além disso, compromete-se a formalizar as audiências públicas a partir de 2025 e a documentar adequadamente o processo de escuta social, apresentando comprovantes de regularização para os itens já sanados.",
+      "analise_tecnica": "Como analista deste Tribunal, apresento o resumo do achado:\n\nO ente cumpriu a transparência do PPA e das metas fiscais, porém foi determinado que publique a Prestação de Contas no portal, independentemente da emissão de parecer prévio. Adicionalmente, identificaram-se inconsistências entre o relatório do Controle Interno e os demonstrativos contábeis, sendo recomendado o alinhamento dessas informações para assegurar a fidedignidade da prestação de contas."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4443,15 +4443,15 @@
       "codigo": "III.21",
       "tipo": "Inconsistência",
       "secao": "9. Transparência E Controle Interno",
-      "base_normativa": null,
-      "descricao": "ao Setor",
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
+      "descricao": "Inconsistências nas informações contidas no relatório da unidade de controle interno do ente.",
       "houve_defesa": true,
       "situacao": "mantido",
-      "recomendacao": null,
+      "recomendacao": "Recomenda-se alinhar as informações do relatório de Controle Interno com os demonstrativos enviados na prestação de contas.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconheceu a ocorrência de lapsos técnicos na elaboração do Relatório de Controle Interno, que geraram divergências entre os valores apresentados e os registros constantes no Balanço Geral de 2023. A defesa ratifica os montantes consignados no Balanço Geral como os valores corretos para a Dívida Consolidada Líquida e para a Demonstração das Variações Patrimoniais, sustentando que tais equívocos não comprometem a capacidade de pagamento do ente municipal.",
-      "analise_tecnica": "Como analista do Tribunal de Contas, resumo o achado da seguinte forma:\n\nO controle interno de Arapiraca apresenta deficiências qualitativas em seus relatórios e uma estrutura de pessoal composta majoritariamente por cargos comissionados, em desacordo com a necessidade de servidores efetivos. Diante disso, o Tribunal mantém a recomendação para que o município regularize o quadro de pessoal via concurso público e aprimore a qualidade técnica dos documentos emitidos pela unidade."
+      "defesa_gestor": "O gestor reconhece a ocorrência de falhas técnicas e divergências nos dados constantes no Relatório do Controle Interno referentes à Dívida Consolidada Líquida e à Demonstração das Variações Patrimoniais de 2023. A defesa atribui os erros a equívocos operacionais de sua equipe técnica e ratifica os valores corretos conforme registrados no Balanço Geral do exercício. Por fim, assegura que as divergências apontadas não alteram a análise da situação fiscal do ente, dado que a capacidade de pagamento da dívida permanece inalterada.",
+      "analise_tecnica": "Como analista deste Tribunal, apresento o resumo do achado:\n\nA auditoria identificou falhas qualitativas no relatório do Controle Interno e a ausência de servidores efetivos na composição da equipe da Controladoria do Município de Arapiraca, com exceção de um único cargo. Diante da persistência da irregularidade, recomenda-se ao gestor a realização de concurso público para o provimento de Auditores de Controle Interno e a regularização dos relatórios nos próximos exercícios."
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -4463,15 +4463,15 @@
       "codigo": "III.22",
       "tipo": "Inconsistência",
       "secao": "9. Transparência E Controle Interno",
-      "base_normativa": null,
-      "descricao": "Interno de Arapiraca, exceto do servidor Sérgio IN 03/2011",
+      "base_normativa": "IN 03/2011",
+      "descricao": "Dados incompletos no Portal da Transparência sobre a equipe da Central de Controle Interno, faltando informações de servidor e vínculo efetivo.",
       "houve_defesa": true,
       "situacao": "sanado_total",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justificou a divergência na identificação do servidor do controle interno como um erro de digitação no sobrenome, que consta corretamente como \"Sérgio Silva Monteiro\" em seus registros funcionais. Para sanar o apontamento, apresentou a portaria de nomeação do servidor e indicou o link para consulta no Portal da Transparência, comprometendo-se a retificar o relatório em questão.",
-      "analise_tecnica": "O apontamento inicial foi sanado após a verificação de que houve um erro de digitação no nome do servidor. Nova consulta ao Portal da Transparência confirmou a regularidade da situação do funcionário Sérgio Silva Monteiro, ocupante de cargo efetivo."
+      "defesa_gestor": "O gestor justifica que a impossibilidade de localizar o servidor no Portal da Transparência decorreu de um erro de digitação na grafia do sobrenome no Relatório de Controle Interno. A defesa esclarece que o nome correto é Sérgio Silva Monteiro e apresenta a portaria de nomeação e o link atualizado do portal para comprovar a regularidade do vínculo funcional.",
+      "analise_tecnica": "O apontamento inicial foi sanado após a verificação de que o nome do servidor citado decorreu de um erro de digitação. Nova consulta ao Portal da Transparência confirmou a regularidade da situação funcional do servidor Sérgio Silva Monteiro, permitindo a regularização da irregularidade apontada."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4490,8 +4490,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justificou a ausência dos anexos na remessa original alegando ter considerado suficiente o envio apenas do texto da lei. Diante da falha apontada, o responsável apresentou a documentação faltante para sanear a impropriedade identificada pela auditoria.",
-      "analise_tecnica": "O gestor falhou ao encaminhar apenas o corpo da Lei de Diretrizes Orçamentárias (LDO), omitindo os anexos obrigatórios exigidos pela Lei de Responsabilidade Fiscal (LRF) e pela Resolução Normativa 01/2016 do TCE/AL. Diante da irregularidade constatada, o apontamento foi mantido sob a forma de recomendação para que a falha não se repita em exercícios futuros."
+      "defesa_gestor": "O gestor justifica a ausência dos documentos anexos na remessa inicial como um erro de interpretação do responsável pelo envio, que acreditava ser suficiente a citação da norma legal. Para sanar a irregularidade apontada, a defesa encaminha agora a documentação complementar que havia sido omitida.",
+      "analise_tecnica": "Aqui está o resumo do achado:\n\nO gestor deixou de enviar os anexos obrigatórios da Lei de Diretrizes Orçamentárias, justificando a falha por uma interpretação equivocada da norma. A irregularidade persiste, visto que a documentação é indispensável conforme a Lei de Responsabilidade Fiscal e a Resolução Normativa 01/2016 do TCE/AL, resultando na manutenção do apontamento como recomendação para exercícios futuros."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4503,15 +4503,15 @@
       "codigo": "III.02",
       "tipo": "Impropriedade",
       "secao": "2. Instrumentos De Planejamento",
-      "base_normativa": null,
+      "base_normativa": "Lei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal (LRF)",
       "descricao": "Orçamentária",
       "houve_defesa": true,
       "situacao": "mantido",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor municipal justificou a ausência dos documentos exigidos como um equívoco do responsável pelo envio, que acreditava ser suficiente a remessa apenas da lei. Em resposta à irregularidade apontada, a defesa encaminhou os anexos faltantes para sanar a pendência documental.",
-      "analise_tecnica": "Como analista, apresento o resumo do achado:\n\nO gestor justificou a ausência dos anexos da LOA como um equívoco de interpretação, apesar de sua posterior apresentação. Contudo, a falha persiste como irregularidade, uma vez que o envio integral da documentação é obrigatório por norma deste Tribunal e pela LRF, resultando na manutenção de recomendação para os próximos exercícios. Além disso, identificou-se a violação ao princípio da exclusividade na Lei Municipal nº 980/2022, devido à inclusão indevida de dispositivos estranhos à peça orçamentária."
+      "defesa_gestor": "O gestor justificou a ausência dos documentos exigidos como uma falha operacional decorrente de um equívoco do responsável pelo envio, que considerou suficiente a remuneração apenas da lei. Em resposta à irregularidade, o Executivo municipal encaminhou agora os anexos complementares para sanar a pendência.",
+      "analise_tecnica": "Como analista deste Tribunal, apresento o resumo da análise técnica:\n\nO gestor justificou a ausência dos anexos da LOA como um equívoco de interpretação, tendo encaminhado os documentos posteriormente. Contudo, o achado foi mantido como recomendação, visto que a legislação federal e a normativa deste Tribunal exigem a integridade documental da lei orçamentária. Paralelamente, identificou-se uma irregularidade formal na Lei Municipal nº 980/2022 por violação ao princípio da exclusividade, em desacordo com a Constituição Federal."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4530,8 +4530,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor contesta a irregularidade apontada, argumentando que o conteúdo da LOA trata exclusivamente de matéria orçamentária, sem dispositivos estranhos ao tema. O responsável alega, ainda, que a eventual alteração na LDO e no PPA justifica-se pela interdependência da tríade orçamentária e questiona a ineditismo da notificação em seu histórico de gestão.",
-      "analise_tecnica": "O achado de auditoria aponta que a inclusão de dispositivos na LOA que alteram o PPA e a LDO viola o princípio da exclusividade previsto no art. 165, § 8º, da Constituição Federal, visto que tais medidas não se enquadram nas exceções legais permitidas. Além disso, foi constatada a inobservância ao Manual de Contabilidade Aplicada ao Setor Público (MCASP), devido à ausência de atualização das receitas ao utilizar o excesso de arrecadação para a abertura de créditos adicionais."
+      "defesa_gestor": "O gestor contesta a irregularidade apontada, argumentando que o conteúdo da LOA trata exclusivamente de matéria orçamentária e nega a existência de dispositivos estranhos na peça. Adicionalmente, defende a compatibilidade entre LDO, PPA e LOA, sustentando que eventuais modificações legais seguem a natureza da tríade orçamentária.",
+      "analise_tecnica": "Aqui está o resumo do achado de auditoria:\n\nO gestor justificou a inclusão de matéria estranha na Lei Orçamentária Anual (LOA) alegando conformidade com a legislação, mas a auditoria manteve a irregularidade por violação ao princípio da exclusividade previsto no art. 165, § 8º, da Constituição Federal. Adicionalmente, foi constatada a inobservância do Manual de Contabilidade Aplicada ao Setor Público (MCASP) pela não atualização das receitas diante da utilização de excesso de arrecadação em créditos adicionais."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4543,15 +4543,15 @@
       "codigo": "III.04",
       "tipo": "Impropriedade",
       "secao": "3. Aspectos Orçamentários E Financeiros",
-      "base_normativa": null,
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
       "descricao": "Contabilidade Aplicada",
       "houve_defesa": true,
       "situacao": "mantido",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor atribuiu a falha à desatualização do sistema contábil, ressaltando que o erro não comprometeu a apuração técnica do excesso de arrecadação. Como medida corretiva, encaminhou a documentação contábil retificada com os demonstrativos devidamente atualizados.",
-      "analise_tecnica": "O gestor abriu créditos suplementares acima do limite percentual estabelecido pela LOA 2023, justificando a irregularidade como uma falha de atualização no sistema contábil. Embora o Balanço Orçamentário tenha sido retificado após o prazo, o Tribunal manteve o apontamento da impropriedade para prevenir a reincidência em exercícios futuros."
+      "defesa_gestor": "O gestor justifica a falha na prestação de contas pela desatualização do sistema contábil, ressaltando que tal inconsistência não comprometeu a apuração técnica do excesso de arrecadação. Como medida corretiva, apresentou a nova peça contábil contendo o demonstrativo atualizado para sanear a irregularidade apontada.",
+      "analise_tecnica": "O gestor abriu créditos suplementares que excederam o limite percentual estabelecido pela Lei Orçamentária Anual (LOA) de 2023. Embora a defesa tenha alegado falha técnica no sistema contábil e apresentado a regularização extemporânea, o apontamento foi mantido para evitar reincidências em exercícios futuros."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4570,8 +4570,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor alega que houve um erro técnico na apuração dos dados, sustentando que a soma dos créditos suplementares e especiais foi feita incorretamente. Argumenta que, ao segregar apenas os créditos suplementares, o montante de R$ 51.181.374,55 representa 59,99% do orçamento, mantendo-se dentro do limite de 60% autorizado pela LOA.",
-      "analise_tecnica": "O apontamento referente ao descumprimento do limite de abertura de créditos suplementares previsto na LOA foi afastado, após a retificação de cálculo comprovar a observância dos percentuais estabelecidos. Contudo, subsiste uma inconsistência de R$ 96.663,27 identificada na conciliação bancária entre os extratos e o saldo de caixa apresentado pelo gestor."
+      "defesa_gestor": "O gestor argumenta que o apontamento decorreu de um erro técnico na soma dos créditos, que erroneamente incluiu créditos especiais junto aos suplementares. Com a devida segregação, a defesa demonstra que o montante de créditos suplementares utilizados totalizou R$ 51.181.374,55, mantendo o município dentro do limite de 60% estabelecido pela LOA (59,99%).",
+      "analise_tecnica": "O apontamento inicial relativo ao descumprimento do limite de créditos adicionais da LOA foi afastado, após a correção de equívoco no cálculo técnico que comprovou a conformidade do gestor. Em contrapartida, foi identificada uma nova inconsistência contábil de R$ 96.663,27 entre os extratos bancários e o resumo das contas do ente, demandando análise adicional."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4590,8 +4590,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor contesta a metodologia de fiscalização, alegando que o auditor utilizou saldos diários disponíveis em vez do resultado consolidado do mês. A defesa sustenta que a divergência apontada na conta 58.042-2 decorre de uma interpretação equivocada de uma consulta de saldo pontual datada de 5 de janeiro.",
-      "analise_tecnica": "Após a análise dos esclarecimentos do gestor, a divergência de saldos bancários foi reduzida a um valor de R$ 12,19, sendo considerada sanada devido à sua imaterialidade. Contudo, persiste a impropriedade relativa à ausência de notas explicativas justificando a variação patrimonial dos bens móveis e imóveis do município, em desconformidade com o Manual de Contabilidade Aplicada ao Setor Público."
+      "defesa_gestor": "O gestor contesta o achado de auditoria alegando erro metodológico na análise dos saldos bancários, afirmando que a fiscalização utilizou o saldo do dia da impressão em vez do resultado consolidado do mês. Como exemplo, o responsável aponta divergência na conta 58.042-2, sustentando que a disparidade decorre da consulta a um saldo diário específico e não ao fluxo mensal.",
+      "analise_tecnica": "Após a análise dos esclarecimentos apresentados pelo gestor, constatou-se que a divergência nos saldos bancários é de apenas R$ 12,19, sendo considerada imaterial e, portanto, sanada. Contudo, persiste a impropriedade relativa à ausência de notas explicativas que justifiquem a variação no valor do imobilizado do município, em desacordo com o Manual de Contabilidade Aplicada ao Setor Público (MCASP)."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4610,8 +4610,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor argumenta que o levantamento apontado como irregular foi realizado de maneira genérica, baseando-se na classificação das despesas de capital. Sustenta, ainda, que os registros seguiram as diretrizes estabelecidas no Anexo XVIII do relatório técnico sobre as contas de governo do Executivo Municipal.",
-      "analise_tecnica": "Como analista, apresento o resumo do achado:\n\nO gestor não comprovou a regularidade do registro de depreciação, exaustão e amortização no Balanço Patrimonial e na Demonstração das Variações Patrimoniais, em desacordo com o Manual de Contabilidade Aplicada ao Setor Público (MCASP 9ª ed.). Diante da insuficiência das justificativas apresentadas, o apontamento de impropriedade foi mantido pela unidade técnica."
+      "defesa_gestor": "O gestor argumenta que o levantamento apontado pela auditoria foi realizado de forma genérica, sem a devida especificação. Além disso, sustenta que o lançamento das despesas de capital seguiu estritamente o procedimento previsto no Anexo XVIII do Inventário das Contas do Ativo Permanente.",
+      "analise_tecnica": "O achado refere-se à ausência de registro da depreciação, exaustão e amortização do imobilizado no Balanço Patrimonial e na Demonstração das Variações Patrimoniais, em desacordo com o MCASP (9ª ed.). As justificativas apresentadas pelo gestor em fase de defesa foram consideradas insuficientes, razão pela qual o apontamento de impropriedade foi mantido."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4623,15 +4623,15 @@
       "codigo": "III.08",
       "tipo": "Impropriedade",
       "secao": "4. Aspectos Patrimoniais",
-      "base_normativa": null,
+      "base_normativa": "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)",
       "descricao": "4.3 Imobilizado",
       "houve_defesa": true,
       "situacao": "mantido",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a não apresentação das informações solicitadas pela ausência de envio dos relatórios de depreciação e demais registros por parte do Setor de Patrimônio. Dessa forma, a defesa reconhece a falta documental, atribuindo a falha ao fluxo de informações entre os departamentos internos da administração municipal.",
-      "analise_tecnica": "Aqui está o resumo do achado:\n\nO achado de irregularidade foi mantido devido à ausência de defesa por parte do gestor responsável. A falha consiste na omissão das datas de repasse do duodécimo na documentação apresentada, o que impossibilita a verificação do cumprimento das normas constitucionais vigentes."
+      "defesa_gestor": "O gestor justifica o não atendimento do item pela ausência de envio de relatórios sobre depreciação e lançamentos contábeis por parte do Setor de Patrimônio. Dessa forma, a falha é atribuída à falta de colaboração técnica interna necessária para a correta instrução das contas do Executivo Municipal.",
+      "analise_tecnica": "O achado referente à irregularidade nos repasses de duodécimo foi mantido devido à ausência de defesa por parte do gestor. A falha consiste na omissão das datas de efetivação dos repasses na documentação apresentada, o que impossibilita a verificação do cumprimento das normas constitucionais vigentes."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4650,8 +4650,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor alega ter cumprido integralmente os prazos legais para o repasse do duodécimo, conforme demonstrado na tabela apresentada na defesa. A argumentação sustenta a regularidade das transferências financeiras citadas no relatório técnico das contas de governo.",
-      "analise_tecnica": "Aqui está o resumo solicitado:\n\nO apontamento relativo aos repasses do duodécimo foi sanado, uma vez que a documentação apresentada e a consulta ao Portal da Transparência confirmaram a regularidade dos prazos. Contudo, persiste uma inconsistência no cálculo da Receita Corrente Líquida, cujo valor apresentado pelo ente diverge do apurado pela equipe técnica à luz da Lei de Responsabilidade Fiscal."
+      "defesa_gestor": "O gestor sustenta a regularidade dos repasses do duodécimo, afirmando que os valores foram transferidos rigorosamente dentro do prazo legal. A defesa fundamenta essa posição na apresentação de tabela comprobatória e no relatório técnico relativo às contas do Governo Municipal.",
+      "analise_tecnica": "Aqui está o resumo solicitado:\n\nO apontamento relativo aos repasses do duodécimo foi sanado, uma vez que a documentação apresentada e a consulta ao portal da transparência confirmaram o cumprimento dos prazos constitucionais. No entanto, subsiste uma inconsistência no cálculo da Receita Corrente Líquida, apresentando divergência entre o valor apurado pela equipe técnica e o declarado pelo ente municipal."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4670,8 +4670,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconheceu a inconsistência nos valores apresentados, justificando-a como resultado de uma defasagem técnica no sistema contábil. Como medida corretiva, informou que o software foi atualizado e que os registros financeiros já foram devidamente regularizados.",
-      "analise_tecnica": "O gestor reconheceu a divergência de R$ 3.869.027,00 na Receita Corrente Líquida, atribuindo o erro a uma falha de atualização no sistema. Embora o demonstrativo tenha sido corrigido após o prazo regulamentar, o apontamento foi mantido a título de recomendação para assegurar a conformidade nos próximos exercícios."
+      "defesa_gestor": "O gestor reconheceu a incorreção nos valores apresentados, justificando-a como uma falha decorrente de um sistema contábil desatualizado. Informou, ainda, que o sistema foi atualizado e os valores devidamente corrigidos.",
+      "analise_tecnica": "O gestor reconheceu a divergência de R$ 3,8 milhões na Receita Corrente Líquida, atribuindo o erro a uma falha na atualização do sistema, que já foi corrigida. Apesar da regularização, o achado foi mantido como recomendação para evitar a reincidência da falha nos próximos exercícios."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4690,8 +4690,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": 81433555.15,
-      "defesa_gestor": "O gestor justifica a divergência apontada como decorrente de uma desatualização sistêmica, já corrigida mediante a emissão de nova Receita Corrente Líquida (RCL). Adicionalmente, contesta o critério técnico da auditoria, alegando que o relatório de apuração estaria em desacordo com o item 03.03.05.04 do Manual de Demonstrativos Fiscais (13ª edição).",
-      "analise_tecnica": "O gestor não deduziu os recursos destinados aos agentes de saúde do cálculo da despesa com pessoal, contrariando o art. 198, § 11, da CF/88, sob a justificativa de dúvidas quanto aos modelos do MDF. Embora tenha havido uma atualização posterior, o prazo regulamentar foi descumprido e o ente permanece em extrapolação dos limites da LRF, mantendo-se o apontamento como irregularidade e recomendando-se a adequação dos sistemas para evitar reincidências."
+      "defesa_gestor": "O gestor justifica a divergência na Receita Corrente Líquida (RCL) pela desatualização do sistema, informando que o ajuste já foi realizado. Adicionalmente, contesta o critério utilizado pela equipe técnica de auditoria, alegando que o relatório está em desacordo com as orientações do Manual de Demonstrativos Fiscais (13ª edição) no que tange à apuração da RCL.",
+      "analise_tecnica": "O gestor não deduziu corretamente os repasses destinados aos agentes de saúde e endemias no cálculo de despesa com pessoal, contrariando o art. 198, § 11, da Constituição Federal. Embora tenha tentado regularizar a situação após o prazo legal, o achado foi mantido como irregularidade. Recomenda-se ao gestor a devida atualização do sistema para garantir a conformidade nos próximos exercícios e evitar o descumprimento dos limites da Lei de Responsabilidade Fiscal."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4703,15 +4703,15 @@
       "codigo": "III.12",
       "tipo": "Irregularidade",
       "secao": "6. Gestão Fiscal",
-      "base_normativa": null,
+      "base_normativa": "Lei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal (LRF)",
       "descricao": "Despesa com",
       "houve_defesa": true,
       "situacao": "mantido",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a divergência nos valores reportados como um erro decorrente da desatualização do sistema de controle utilizado à época. Informa que as devidas correções foram realizadas, apresentando o relatório técnico atualizado referente às contas de governo do Executivo Municipal como comprovação da regularização.",
-      "analise_tecnica": "O gestor solicitou a dedução de R$ 1.695.600,00 referentes a vencimentos de agentes de saúde (ACS/ACE), conforme entendimento técnico sobre o cálculo da despesa com pessoal. Contudo, mesmo após a readequação dos cálculos pela equipe técnica, o município de Capela manteve a Despesa Total com Pessoal (DTP) em 55,34% da Receita Corrente Líquida, superando o limite máximo legal de 54%. O achado foi mantido pelo auditor, ressaltando que a ausência de alertas prévios do Tribunal não exime o gestor do cumprimento da Lei de Responsabilidade Fiscal."
+      "defesa_gestor": "O gestor justifica a divergência nos valores apontados como sendo decorrente de uma desatualização do sistema utilizado. Informa, ainda, que as correções necessárias já foram realizadas, culminando na elaboração de um relatório técnico sobre as contas do Executivo Municipal.",
+      "analise_tecnica": "O gestor solicitou a dedução de R$ 1.695.600,00 referentes a vencimentos de agentes comunitários de saúde, amparado em normas que permitem a exclusão desses valores do limite de despesa com pessoal da LRF. Após o recálculo técnico, confirmou-se que o município ainda ultrapassa o limite máximo permitido (55,34% da RCL), mantendo-se o apontamento de irregularidade nas contas de 2023, independentemente de eventuais alegações de recondução posterior ou ausência de alerta prévio do Tribunal."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4730,8 +4730,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "Como analista, o resumo técnico do ponto apresentado é:\n\nO gestor encaminhou os anexos da Lei de Diretrizes Orçamentárias (LDO) referentes ao exercício de 2023. A documentação apresentada visa sanar a pendência documental apontada no achado de auditoria relativo à ausência ou irregularidade desses registros.",
-      "analise_tecnica": "O gestor apresentou os documentos da LDO, sanando o apontamento referente ao descumprimento das metas fiscais de resultado primário e nominal, que apresentaram desvios significativos em relação ao previsto. Contudo, persiste a inconsistência técnica identificada nos registros de Restos a Pagar, que apresentam divergências entre o Balanço Financeiro e o demonstrativo específico."
+      "defesa_gestor": "Como analista, o resumo técnico do ponto apresentado é:\n\nO gestor encaminhou a documentação relativa aos Anexos da Lei de Diretrizes Orçamentárias (LDO) referentes ao exercício de 2023. O envio visa sanar a pendência documental identificada no achado de auditoria, submetendo os dados à análise deste Tribunal.",
+      "analise_tecnica": "O gestor apresentou os anexos da LDO, o que saneou a irregularidade referente ao não atingimento das metas fiscais de resultado primário e nominal. Contudo, persiste o achado de inconsistência técnica entre o Balanço Financeiro e o Demonstrativo de Restos a Pagar. A situação identificada diverge das normas estabelecidas pelo Manual de Contabilidade Aplicada ao Setor Público (MCASP)."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4750,8 +4750,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a divergência nos dados dos Restos a Pagar no Relatório de Gestão Fiscal (RGF) como um erro operacional do sistema contábil, apresentando a peça retificada em anexo. Adicionalmente, contesta o valor de R$ 19 milhões apontado pela auditoria, argumentando que o passivo circulante total é de aproximadamente R$ 8 milhões e possui lastro financeiro suficiente para sua quitação.",
-      "analise_tecnica": "O gestor justificou a irregularidade na aplicação de recursos do VAAT como erro sistêmico, informando que a correção já foi realizada. No entanto, o achado foi mantido pelo tribunal sob a forma de recomendação, devido ao descumprimento do prazo regulamentar para o envio dos dados em conformidade. O órgão técnico ressaltou, ainda, a correção de um erro material no valor anteriormente apontado no relatório preliminar."
+      "defesa_gestor": "O gestor justifica a divergência nos dados dos Restos a Pagar no RGF como um erro de processamento do sistema contábil, apresentando a versão retificada em anexo. Adicionalmente, contesta o valor de 19 milhões de reais apontado pela auditoria, alegando que o passivo circulante total é de aproximadamente 8 milhões, montante considerado compatível com a capacidade de pagamento do município.",
+      "analise_tecnica": "O gestor justificou a irregularidade na aplicação dos recursos do VAAT como erro sistêmico, o qual alega ter sido corrigido após a retificação de valores no relatório conclusivo. Contudo, como a regularização ocorreu fora do prazo legal (30/04/2024), o achado de irregularidade foi mantido, acompanhado de recomendação para a atualização do sistema de controle."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4770,8 +4770,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor argumenta que realizou a correta segregação dos recursos do VAAT (fonte 1.542.000), conforme demonstrado no Balancete Orçamentário da Despesa. Sustenta, ainda, que o controle efetuado na dotação específica até junho comprova o cumprimento da aplicação mínima no ensino infantil.",
-      "analise_tecnica": "O gestor municipal comprovou, mediante a apresentação de balancete, a aplicação de 78,63% da complementação da União ao FUNDEB (VAAT) na educação infantil, sanando a irregularidade quanto ao limite mínimo exigido. No entanto, persiste a irregularidade referente ao descumprimento do art. 27 da Lei nº 14.113/2020, uma vez que o ente aplicou apenas 12,03% em despesas de capital."
+      "defesa_gestor": "O gestor argumenta que houve o devido controle e segregação dos recursos do VAAT (fonte 1.542.000) na dotação específica voltada ao ensino infantil. Para comprovar a regularidade, apresentou como evidência o balancete orçamentário da despesa referente ao período encerrado em junho.",
+      "analise_tecnica": "Após a análise dos documentos apresentados pela defesa, verificou-se que o município cumpriu a exigência constitucional de aplicar, no mínimo, 50% da complementação VAAT do FUNDEB na Educação Infantil, atingindo o percentual de 78,63%. Contudo, persiste a irregularidade referente às despesas de capital, pois o ente aplicou apenas 12,03%, descumprindo o limite estabelecido no art. 27 da Lei Federal nº 14.113/2020."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4790,8 +4790,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconhece a falha na classificação orçamentária de R$ 16.075,00, atribuindo-a a um erro operacional do servidor responsável, que utilizou a fonte de recurso incorreta. A defesa alega que, se o valor fosse classificado na dotação adequada, o percentual de investimento em educação atingiria 16,60%, cumprindo o limite legal exigido. Por fim, solicita a aplicação do princípio da razoabilidade, ressaltando que o município alcançou um investimento total de 34,04% em educação.",
-      "analise_tecnica": "Aqui está o resumo do achado de auditoria:\n\nO município tentou justificar a classificação incorreta de despesas utilizando fonte diversa da exigida (VAAT) para cumprir indicadores legais, porém o argumento foi rejeitado por contrariar as normas do Manual de Demonstrativos Fiscais. Além disso, constatou-se a publicação em atraso dos demonstrativos de receitas e despesas com educação no SIOPE referentes a três bimestres de 2023, configurando descumprimento da Lei de Responsabilidade Fiscal."
+      "defesa_gestor": "O gestor reconhece a irregularidade na classificação da despesa de capital no valor de R$ 16.075,00, atribuindo o fato a um erro operacional do servidor municipal. Alega que, com a reclassificação correta dos recursos do FUNDEB, o percentual de aplicação atingiria 16,60%, cumprindo a exigência legal. Por fim, solicita a aplicação do princípio da razoabilidade, ressaltando que o município investiu 34,04% em educação, superando o índice constitucional.",
+      "analise_tecnica": "Aqui está o resumo objetivo do achado:\n\nO município de Capela justificou erroneamente a classificação de despesas para cumprir indicadores do VAAT, utilizando fonte inadequada em desacordo com o Manual de Demonstrativos Fiscais. Adicionalmente, foi constatada a publicação em atraso do Demonstrativo de Receitas e Despesas com Educação no SIOPE, referente a três bimestres de 2023, descumprindo a Lei de Responsabilidade Fiscal."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4810,8 +4810,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "Como analista, apresento o resumo do ponto de vista do gestor:\n\nO gestor justifica o atraso no envio de dados como decorrência de falhas técnicas nos sistemas do Ministério da Educação e da dependência de liberações externas. Argumenta, contudo, que a irregularidade formal é mitigada pelo cumprimento do percentual constitucional de 34,4% de aplicação em educação.",
-      "analise_tecnica": "O Município de Capela atrasou a publicação de cinco bimestres do Demonstrativo de ASPS no sistema SIOPS durante o exercício de 2023, descumprindo as normas da Lei de Responsabilidade Fiscal. O gestor alegou falhas no sistema do Ministério da Educação, mas não apresentou comprovações documentais. Diante da ausência de justificativa válida, a irregularidade foi mantida pela equipe técnica."
+      "defesa_gestor": "O gestor justifica que os atrasos no envio de informações decorreram de falhas técnicas nos sistemas do Ministério da Educação e da necessidade de procedimentos corretivos externos. Em sua defesa, argumenta que o descumprimento dos prazos é mitigado pelo fato de o município ter atingido o percentual de 34,4% de aplicação em educação, superando o limite constitucional.",
+      "analise_tecnica": "O Município de Capela apresentou atraso na publicação do Demonstrativo das Receitas e Despesas com Ações e Serviços Públicos de Saúde (ASPS) no sistema SIOPS referente a cinco bimestres de 2023. A justificativa do gestor, baseada em supostas falhas técnicas do Ministério da Educação, foi rejeitada por ausência de comprovação documental. Diante disso, a irregularidade foi mantida pela equipe técnica."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4823,15 +4823,15 @@
       "codigo": "III.18",
       "tipo": "Impropriedade",
       "secao": "7. Análise Dos Limites Constitucionais",
-      "base_normativa": null,
+      "base_normativa": "Lei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal (LRF)",
       "descricao": "Despesas",
       "houve_defesa": true,
       "situacao": "mantido",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a falha no lançamento de dados no SIOPS alegando dificuldades sistêmicas decorrentes de atrasos recorrentes na liberação da plataforma pelo órgão responsável. Para embasar sua defesa, o responsável apresentou notícias que corroborariam a existência de instabilidades técnicas no sistema.",
-      "analise_tecnica": "Embora tenha sido confirmada a existência de atrasos na liberação do sistema pelo Ministério da Saúde, a defesa do gestor foi rejeitada, pois houve demora injustificada no envio dos dados mesmo após a disponibilidade da plataforma. Consequentemente, mantém-se o apontamento de impropriedade referente à ausência de publicidade de documentos obrigatórios da prestação de contas de 2023, em descumprimento à Lei de Responsabilidade Fiscal."
+      "defesa_gestor": "Aqui está o resumo solicitado:\n\nO gestor justifica a falha no registro de informações do SIOPS atribuindo-a a problemas técnicos recorrentes e atrasos na liberação das estruturas do próprio sistema pelo órgão central. Para corroborar sua argumentação, a defesa sustenta que tais dificuldades são enfrentadas por diversas gestões municipais, apresentando notícias como evidência das instabilidades relatadas.",
+      "analise_tecnica": "Embora tenha sido confirmada a existência de atrasos por parte do Ministério da Saúde na liberação do sistema SIOPS, a justificativa do gestor foi rejeitada, pois houve demora injustificada na homologação dos dados após a disponibilização da ferramenta. Adicionalmente, o achado foi mantido devido à identificação de falhas na transparência da gestão, caracterizadas pela ausência de publicação de documentos da prestação de contas de 2023 e de registros de audiências públicas."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4850,8 +4850,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "Como analista, o resumo técnico do ponto apresentado é:\n\nO gestor reconhece a necessidade de atualização do Portal da Transparência e informou que a equipe responsável realizará a regularização dos dados. A defesa limita-se a um compromisso de saneamento da falha apontada, sem apresentar justificativas para a omissão anterior ou cronograma detalhado de cumprimento.",
-      "analise_tecnica": "O gestor alegou que o Portal da Transparência seria atualizado, porém, após diligência, constatou-se que as informações permanecem defasadas, mantendo-se a irregularidade. Adicionalmente, confirmou-se o descumprimento da Lei de Responsabilidade Fiscal pela ausência de realização de audiências públicas obrigatórias, mantendo-se o achado de impropriedade."
+      "defesa_gestor": "Como analista, o resumo técnico do ponto apresentado é:\n\nO gestor reconhece a necessidade de atualização do Portal da Transparência e informou que a equipe responsável já foi acionada para regularizar a inserção dos dados. A medida visa sanar a falha de publicidade apontada pela auditoria por meio da atualização direta das informações pendentes.",
+      "analise_tecnica": "O gestor alegou que as pendências no Portal da Transparência seriam regularizadas, porém, a equipe técnica constatou que as atualizações não foram efetivadas, mantendo-se o achado. Além disso, foi confirmada a irregularidade na ausência de realização de audiências públicas, em descumprimento ao que determina a Lei de Responsabilidade Fiscal (LRF)."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4863,15 +4863,15 @@
       "codigo": "III.20",
       "tipo": "Impropriedade",
       "secao": "9. Transparência E Controle Interno",
-      "base_normativa": null,
+      "base_normativa": "Lei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal (LRF)",
       "descricao": "Lei de",
       "houve_defesa": true,
       "situacao": "mantido",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconheceu a ausência da realização das audiências públicas apontada pela auditoria. Em sua defesa, comprometeu-se a sanar a irregularidade em exercícios futuros, alegando que o apontamento foi devidamente levado ao conhecimento da administração.",
-      "analise_tecnica": "Como analista, apresento o resumo do achado:\n\nO gestor incorreu em descumprimento da Lei de Responsabilidade Fiscal ao omitir a realização de audiências públicas obrigatórias. Adicionalmente, foi identificada a inobservância da IN nº 03/2011, uma vez que o controle interno deixou de abordar diversos pontos críticos da gestão, como estrutura administrativa, gestão de pessoal, obras e convênios."
+      "defesa_gestor": "O gestor reconheceu a ausência da realização das audiências públicas apontada pela auditoria. Em sua justificativa, comprometeu-se a regularizar a prática nos exercícios subsequentes, sem apresentar elementos que alterem o fato ou a irregularidade constatada.",
+      "analise_tecnica": "O achado de auditoria aponta o descumprimento de dispositivos da LRF pela ausência de audiências públicas. Adicionalmente, foi identificada a impropriedade no controle interno por falhas na instrução normativa nº 03/2011, que deixou de abordar temas essenciais como gestão de pessoal, obras, tecnologia da informação e convênios."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4890,8 +4890,8 @@
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "Como analista, apresento o resumo do ponto apresentado:\n\nO gestor apresentou novo relatório com o objetivo de sanar as pendências apontadas anteriormente no processo de auditoria. O documento busca prestar os esclarecimentos necessários sobre os temas questionados pela equipe técnica.",
-      "analise_tecnica": "Aqui está o resumo do achado de auditoria:\n\nO ente não comprovou a composição do Sistema de Controle Interno (SCI) exclusivamente por servidores efetivos, conforme exigido pela IN nº 03/2011. Embora tenha apresentado novo parecer em sede de defesa, o documento foi insuficiente para sanar a irregularidade, sendo mantido o apontamento sob a forma de recomendação para os próximos exercícios."
+      "defesa_gestor": "Como o trecho fornecido é extremamente genérico e não detalha os argumentos de mérito, o resumo deve refletir essa característica:\n\nO gestor apresentou novo relatório de controle visando esclarecer os apontamentos realizados pela equipe de auditoria. O documento busca atender às solicitações de informações complementares, tratando dos temas específicos questionados no achado.",
+      "analise_tecnica": "O ente apresentou um novo parecer do Controle Interno em fase de defesa, porém o documento não foi suficiente para sanar a irregularidade apontada. Dessa forma, o achado referente à ausência de comprovação da composição do Sistema de Controle Interno por servidores efetivos, conforme a IN nº 03/2011, foi mantido e convertido em recomendação para os próximos exercícios."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4903,15 +4903,15 @@
       "codigo": "III.22",
       "tipo": "Irregularidade",
       "secao": "9. Transparência E Controle Interno",
-      "base_normativa": null,
+      "base_normativa": "Instrução Normativa nº 03/2011",
       "descricao": "Normativa nº",
       "houve_defesa": true,
       "situacao": "mantido",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor justifica a fragilidade do controle interno pela estrutura reduzida de uma prefeitura de pequeno porte, que mantém apenas um servidor comissionado na coordenação do setor. Argumenta, ainda, que a nomeação de cargo em comissão para essa função encontra amparo legal no art. 2º da instrução normativa aplicável, a qual dispensaria a exigência de vínculo efetivo.",
-      "analise_tecnica": "O gestor municipal descumpre a Instrução Normativa nº 003/2011 ao manter apenas um servidor comissionado na coordenação do Sistema de Controle Interno. A norma exige que, em órgãos com membro único, o responsável possua obrigatoriamente vínculo efetivo com a administração pública, razão pela qual a irregularidade foi mantida."
+      "defesa_gestor": "O gestor justifica a fragilidade do Controle Interno alegando que, devido ao pequeno porte do município, a estrutura é composta por apenas um servidor em cargo comissionado. Argumenta, ainda, que tal nomeação encontra respaldo legal no art. 2º da instrução normativa pertinente, a qual não exigiria vínculo efetivo para a função de coordenação.",
+      "analise_tecnica": "O gestor municipal descumpre a Instrução Normativa nº 003/2011 ao manter o Órgão Central do Sistema de Controle Interno composto exclusivamente por servidor comissionado. A norma exige que, em órgãos com apenas um integrante, este possua vínculo efetivo com a administração pública, razão pela qual o apontamento foi mantido."
     },
     {
       "relatorio_id": "fa832ba9e7f6cf3fb7cd127722323c82743fa6353d0b2d6b9ddb1c079b5d5bbe",
@@ -4923,10 +4923,10 @@
       "codigo": "III.23",
       "tipo": "Impropriedade",
       "secao": "Tabela De Achados",
-      "base_normativa": null,
-      "descricao": "",
+      "base_normativa": "Lei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal (LRF)",
+      "descricao": "O ente não atingiu as metas fiscais relacionadas aos resultados primário e nominal.",
       "houve_defesa": false,
-      "situacao": null,
+      "situacao": "mantido",
       "recomendacao": null,
       "determinacao": null,
       "valor_financeiro": null,
@@ -5299,7 +5299,7 @@
       "relatorios": 13,
       "achados": 256,
       "saneados": 108,
-      "mantidos": 140,
+      "mantidos": 148,
       "com_defesa": 221,
       "municipios": 12,
       "anos": [
@@ -5308,11 +5308,10 @@
       ]
     },
     "por_situacao": {
-      "mantido": 140,
+      "mantido": 148,
       "sanado_total": 87,
       "afastado": 8,
-      "sanado_parcial": 13,
-      "nao_consta": 8
+      "sanado_parcial": 13
     },
     "por_tipo": {
       "Impropriedade": 134,
@@ -5322,7 +5321,7 @@
     "por_secao": {
       "6. Gestão Fiscal": 55,
       "7. Análise Dos Limites Constitucionais": 51,
-      "4. Aspectos Patrimoniais": 44,
+      "4. Aspectos Patrimoniais": 45,
       "3. Aspectos Orçamentários E Financeiros": 42,
       "9. Transparência E Controle Interno": 33,
       "2. Instrumentos De Planejamento": 9,
@@ -5330,7 +5329,6 @@
       "8. Previdência": 6,
       "7.1. Educação": 2,
       "1. Introdução": 1,
-      "4.2. Caixa E Equivalentes De Caixa": 1,
       "Tabela De Achados": 1,
       "7.2. Fundo De Manutenção E Desenvolvimento Da Educação Básica – Fundeb": 1,
       "7.3. Saúde": 1
@@ -5354,51 +5352,49 @@
       "2024": 18
     },
     "por_base_normativa": {
-      "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)": 14,
-      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)": 13,
-      "Lei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal (LRF)": 6,
+      "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição)": 21,
+      "Manual de Demonstrativos Fiscais (MDF - 13ª Edição)": 18,
+      "Lei Complementar nº 101/2000 - Lei de Responsabilidade Fiscal (LRF)": 11,
       "MCASP 10ª Edição": 6,
       "MCASP - 9ª Edição": 5,
+      "LC 101/2000 / LC 141/2012": 4,
+      "Instrução Normativa nº 03/2011": 4,
       "Art. 43, §3º, da Lei nº 4.320/64": 3,
       "Art. 29-A, I, da Constituição Federal": 3,
       "Lei Federal nº 14.113/2020": 3,
-      "LC 101/2000 / LC 141/2012": 3,
+      "LC 101/2000 / Portaria MEC nº 844/2008": 3,
       "Lei Complementar n° 101/2000 - LRF": 3,
       "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) e Manual de Demonstrativos Fiscais (MDF 13ª edição": 3,
-      "Instrução Normativa nº 03/2011": 3,
       "MDF 13a edição": 3,
+      "Parágrafo Único do art. 109 da EC 119/2022": 3,
+      "Artigo 247 da Portaria MTP nº 1.467/2022": 3,
       "Instrução Normativa nº 03/2011 – TCE/AL": 3,
       "Lei 4.320/64, Lei 101/00, CF Art. 70, 71 e 205, Lei 9.304/96 Art. 69 e Lei 14.113/20": 3,
       "Lei Complementar nº 101/2000 - LRF": 3,
       "Manual de Contabilidade Aplicada ao Setor Público (MCASP - 9ª Edição) - Parte V - Tópico 2": 3,
       "Resolução Normativa TCE/AL nº 003/2024": 3,
       "Resolução Normativa nº 01/2016 - TCE/AL": 2,
-      "LC 101/2000 / Portaria MEC nº 844/2008": 2,
       "Art.9º da LRF": 2,
       "Resolução Normativa nº 001/2016 - TCE/AL": 2,
+      "IN 03/2011": 2,
       "Instrução Normativa nº 03/2011 - TCE/AL.": 2,
       "Art. 43, §3º, da Lei nº 4.320/64.": 2,
       "Lei Complementar nº 101/2000 - LRF.": 2,
       "Art. 43 da Lei Federal nº 4.320/64": 2,
-      "Art. 52 da Lei Complementar nº 101/2000 - LRF": 2,
-      "Art.212 da CF e Portaria STN n.710/2021": 2,
-      "Parágrafo Único do art. 109 da EC 119/2022": 2,
-      "Artigo 247 da Portaria MTP nº 1.467/2022": 2
+      "Art. 52 da Lei Complementar nº 101/2000 - LRF": 2
     },
     "por_auditor": {
       "de Controle Interno": 39
     },
     "defesa_x_situacao": {
       "com_defesa": {
-        "mantido": 106,
+        "mantido": 113,
         "sanado_total": 87,
         "afastado": 8,
-        "sanado_parcial": 13,
-        "nao_consta": 7
+        "sanado_parcial": 13
       },
       "sem_defesa": {
-        "mantido": 34,
-        "nao_consta": 1
+        "mantido": 35
       }
     },
     "valores_top": [
@@ -5487,6 +5483,12 @@
         "descricao": "Divergência de R$ 18,95 milhões na Previsão Atualizada da Receita entre a apuração da área técnica e a exposta pelo ente no Balanço Orçamentário."
       },
       {
+        "codigo": "III.16",
+        "municipio": "Arapiraca",
+        "valor": 17423395.73,
+        "descricao": "Deixou de aplicar R$ 17.423.395,73 referente ao complemento da diferença não aplicada nos exercícios de 2020 e 2021."
+      },
+      {
         "codigo": "III.12",
         "municipio": "Campo Alegre",
         "valor": 16097736.76,
@@ -5515,12 +5517,6 @@
         "municipio": "Canapi",
         "valor": 6324063.28,
         "descricao": "O total das despesas realizadas nas Ações e Serviços Públicos de Saúde (ASPS) em 2023 (R$ 6.324.063,28) corresponde a um percentual de 13,97%, descumprindo o disposto na Lei Complementar Federal n° 14"
-      },
-      {
-        "codigo": "III.04",
-        "municipio": "Canapi",
-        "valor": 6160000.0,
-        "descricao": "Divergência de R$ 6,16 milhões entre os valores de Superávit Financeiro apurado no Exercício Anterior utilizado para abertura de Créditos Adicionais, expostos nos Demonstrativos e nos Quadros informad"
       }
     ],
     "tipo_por_secao": {
@@ -5534,7 +5530,7 @@
         "Irregularidade": 5
       },
       "4. Aspectos Patrimoniais": {
-        "Impropriedade": 23,
+        "Impropriedade": 24,
         "Inconsistência": 20,
         "Irregularidade": 1
       },
@@ -5563,9 +5559,6 @@
         "Irregularidade": 1
       },
       "1. Introdução": {
-        "Impropriedade": 1
-      },
-      "4.2. Caixa E Equivalentes De Caixa": {
         "Impropriedade": 1
       },
       "Tabela De Achados": {
@@ -5627,16 +5620,14 @@
         "mantido": 9
       },
       "Arapiraca": {
-        "nao_consta": 7,
+        "mantido": 16,
         "sanado_total": 5,
-        "mantido": 9,
         "afastado": 1
       },
       "Capela": {
-        "mantido": 17,
+        "mantido": 18,
         "afastado": 1,
-        "sanado_total": 4,
-        "nao_consta": 1
+        "sanado_total": 4
       }
     },
     "por_municipio_por_ano": {
@@ -5699,16 +5690,14 @@
             "mantido": 9
           },
           "Arapiraca": {
-            "nao_consta": 7,
+            "mantido": 16,
             "sanado_total": 5,
-            "mantido": 9,
             "afastado": 1
           },
           "Capela": {
-            "mantido": 17,
+            "mantido": 18,
             "afastado": 1,
-            "sanado_total": 4,
-            "nao_consta": 1
+            "sanado_total": 4
           }
         }
       },
