@@ -396,7 +396,7 @@ function renderIndex() {
   const muniSetCount = [...new Set(achados.map(a => a.municipio).filter(Boolean))].length;
   const mantidos  = achados.filter(a => a.situacao === 'mantido').length;
   const sanados   = achados.filter(a =>
-    a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial'
+    a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial' || a.situacao === 'afastado'
   ).length;
   const comDefesa = achados.filter(a => a.houve_defesa).length;
 
@@ -415,7 +415,7 @@ function renderIndex() {
     const totAnt = achAnt.length;
     const mantAnt = totAnt ? Math.round(achAnt.filter(a => a.situacao === 'mantido').length / totAnt * 100) : 0;
     const sanAnt  = totAnt ? Math.round(achAnt.filter(a =>
-      a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial'
+      a.situacao === 'sanado_total' || a.situacao === 'sanado_parcial' || a.situacao === 'afastado'
     ).length / totAnt * 100) : 0;
 
     renderSecDelta('sc-mantidos-delta', pctMantidos - mantAnt);
@@ -829,7 +829,7 @@ function renderInsights() {
   const t  = ag.totais;
   const sitAg = ag.por_situacao;
   const pctMantido  = Math.round((sitAg.mantido || 0) / t.achados * 100);
-  const pctSaneado  = Math.round(((sitAg.sanado_total || 0) + (sitAg.sanado_parcial || 0)) / t.achados * 100);
+  const pctSaneado  = Math.round(((sitAg.sanado_total || 0) + (sitAg.sanado_parcial || 0) + (sitAg.afastado || 0)) / t.achados * 100);
   const topMuni  = Object.entries(ag.por_municipio).sort((a, b) => b[1] - a[1])[0];
   const topTipo  = Object.entries(ag.por_tipo).sort((a, b) => b[1] - a[1])[0];
   const topSecao = Object.entries(ag.por_secao).sort((a, b) => b[1] - a[1])[0];
@@ -844,7 +844,7 @@ function renderInsights() {
       texto: `De ${fmtN(t.achados)} achados analisados, ${fmtN(sitAg.mantido)} permanecem como irregularidade confirmada. Isso indica que a maioria das falhas identificadas não foi corrigida dentro do prazo do contraditório.` },
     { cor: 'green',
       titulo: `${pctSaneado}% foram saneados`,
-      texto: `${fmtN((sitAg.sanado_total || 0) + (sitAg.sanado_parcial || 0))} achados foram total ou parcialmente corrigidos, demonstrando que o processo de contraditório produz resultados relevantes em parcela dos casos.` },
+      texto: `${fmtN((sitAg.sanado_total || 0) + (sitAg.sanado_parcial || 0) + (sitAg.afastado || 0))} achados foram corrigidos (total ou parcialmente) ou afastados após análise da defesa, demonstrando que o processo de contraditório produz resultados relevantes em parcela dos casos.` },
     { cor: '',
       titulo: `${escHtml(topMuni?.[0])} lidera em achados`,
       texto: `O município de ${escHtml(topMuni?.[0])} concentra ${fmtN(topMuni?.[1])} achados — o maior volume entre todos os municípios analisados no período.` },
