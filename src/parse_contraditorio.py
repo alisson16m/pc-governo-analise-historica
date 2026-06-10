@@ -5,8 +5,6 @@ import re
 
 from .extract_text import RelatorioTexto
 
-_MAX_CHARS = 800
-
 # Título do capítulo: linha isolada ou com prefixo "N |" (pdfplumber mescla colunas do sumário)
 _RE_TITULO = re.compile(
     r'^(?:\d+\s*[|.]\s*)?CONTRADIT[ÓO]RIO(?:\s+E\s+AMPLA\s+DEFESA)?',
@@ -28,14 +26,16 @@ _RE_JUNK = re.compile(
 )
 
 _RE_DEFESA = re.compile(
-    r'(?:DEFESA\s+APRESENTADA|Defesa\s+apresentada)[^\n]*\n',
-    re.IGNORECASE,
+    r'^DEFESA\s+APRESENTADA[^\n]*\n',
+    re.MULTILINE | re.IGNORECASE,
 )
 _RE_ANALISE = re.compile(
-    r'(?:AN[ÁA]LISE\s+T[ÉE]CNICA|An[áa]lise\s+t[ée]cnica)[^\n]*\n',
-    re.IGNORECASE,
+    r'^AN[ÁA]LISE\s+T[ÉE]CNICA[^\n]*\n',
+    re.MULTILINE | re.IGNORECASE,
 )
 _RE_CODIGO = re.compile(r'\(?III\.(\d{2,3})\)?')
+# Cabeçalho de próximo achado — delimita o fim da análise técnica do achado anterior
+_RE_PROX_ACHADO = re.compile(r'^ACHADO\s+\d+\s*$', re.MULTILINE | re.IGNORECASE)
 
 # Capítulo declara explicitamente que o gestor não apresentou defesa alguma
 _RE_SEM_DEFESA_GLOBAL = re.compile(
@@ -61,13 +61,14 @@ def _limpar(txt: str) -> str:
     return txt
 
 
-def _truncar(txt: str) -> str:
+_MAX_CHARS_DEFESA = 3000
+
+def _truncar_defesa(txt: str) -> str:
     txt = txt.strip()
-    if len(txt) <= _MAX_CHARS:
+    if len(txt) <= _MAX_CHARS_DEFESA:
         return txt
-    # Trunca na última frase completa dentro do limite
-    corte = txt.rfind('.', 0, _MAX_CHARS)
-    return txt[: corte + 1] if corte > 0 else txt[:_MAX_CHARS]
+    corte = txt.rfind('.', 0, _MAX_CHARS_DEFESA)
+    return txt[: corte + 1] if corte > 0 else txt[:_MAX_CHARS_DEFESA]
 
 
 def extrair(texto: RelatorioTexto) -> dict:
@@ -130,15 +131,17 @@ def extrair(texto: RelatorioTexto) -> dict:
         if a_m:
             defesa_txt = cap_txt[d_m.end() : a_m.start()]
             prox_defesa = defesas[i + 1] if i + 1 < len(defesas) else None
-            fim_analise = prox_defesa.start() if prox_defesa else len(cap_txt)
+            prox_achado_m = _RE_PROX_ACHADO.search(cap_txt, a_m.end())
+            fim_candidates = [x.start() for x in [prox_defesa, prox_achado_m] if x is not None]
+            fim_analise = min(fim_candidates) if fim_candidates else len(cap_txt)
             analise_txt: str | None = cap_txt[a_m.end() : fim_analise]
         else:
             defesa_txt = cap_txt[d_m.end() :]
             analise_txt = None
 
         resultado[codigo] = {
-            "defesa_gestor": _truncar(defesa_txt) or None,
-            "analise_tecnica": _truncar(analise_txt) if analise_txt else None,
+            "defesa_gestor": _truncar_defesa(defesa_txt) or None,
+            "analise_tecnica": analise_txt.strip() if analise_txt else None,
         }
 
     # Caso 3: ANÁLISE TÉCNICA sem DEFESA APRESENTADA → houve_defesa=False
@@ -166,12 +169,13 @@ def extrair(texto: RelatorioTexto) -> dict:
 
         prox_d = next((d for d in defesas if d.start() > a_m.end()), None)
         prox_a = analises[i + 1] if i + 1 < len(analises) else None
-        candidates = [x.start() for x in [prox_d, prox_a] if x is not None]
+        prox_achado_m2 = _RE_PROX_ACHADO.search(cap_txt, a_m.end())
+        candidates = [x.start() for x in [prox_d, prox_a, prox_achado_m2] if x is not None]
         fim = min(candidates) if candidates else len(cap_txt)
 
         resultado[codigo] = {
             "defesa_gestor": None,
-            "analise_tecnica": _truncar(cap_txt[a_m.end() : fim]),
+            "analise_tecnica": cap_txt[a_m.end() : fim].strip(),
             "houve_defesa": False,
         }
 
@@ -202,7 +206,7 @@ def resumir_texto(texto: str, rotulo: str) -> "str | None":
         raise RuntimeError("GEMINI_API_KEY não definido. Configure .env")
 
     client = genai.Client(api_key=key)
-    model_name = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+    model_name = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
 
     @com_rate_limit
     def _chamar():
