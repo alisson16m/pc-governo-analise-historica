@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-06-10T18:25:59+00:00",
+  "gerado_em": "2026-06-10T18:39:30+00:00",
   "versao": "1.1.0",
   "relatorios": [
     {
@@ -4121,17 +4121,17 @@
       "relator": "Maria Cleide Costa Beserra",
       "numero_processo": "TC/1.007367/2024",
       "codigo": "III.05",
-      "tipo": "Não classificado",
-      "secao": "4. Aspectos Patrimoniais",
-      "base_normativa": null,
-      "descricao": "Caixa extratos bancários, e que todas as ausência de diversos extratos, conforme listados no inconsistências sejam devidamente Apêndice I. justificadas, garantindo a conformidade das informações apresentadas. Recomenda-se que o setor contábil Manual de do município aperfeiçoe a 4.2. Caixa e Identificou-se uma divergência de valores nas contas Contabilidade conciliação bancária, garantindo Equivalentes de",
+      "tipo": "Impropriedade",
+      "secao": "4.2. Caixa E Equivalentes De Caixa",
+      "base_normativa": "Resolução Normativa nº 01/2016.",
+      "descricao": "Da análise comparativa entre os extratos bancários disponibilizados (peça 66) e o quadro demonstrativo dos saldos bancários (peça 65), constatou-se a ausência de diversos extratos, conforme listados no Apêndice I.",
       "houve_defesa": true,
-      "situacao": null,
-      "recomendacao": null,
+      "situacao": "mantido",
+      "recomendacao": "Recomenda-se, portanto, uma revisão minuciosa dos documentos e uma conciliação bancária mais precisa, de modo a assegurar que os registros contábeis estejam plenamente alinhados com os extratos bancários, e que todas as inconsistências sejam devidamente justificadas, garantindo a conformidade das informações apresentadas.",
       "determinacao": null,
       "valor_financeiro": null,
-      "defesa_gestor": "O gestor reconhece a falha na remessa integral dos extratos bancários referentes ao exercício de 2023. Em contrapartida, apresentou a documentação pendente no Anexo III 05 deste processo e solicita a desconsideração da irregularidade.",
-      "analise_tecnica": "A auditoria identificou a ausência de extratos bancários e divergências significativas entre o Quadro Demonstrativo de Saldos e os documentos apresentados, totalizando uma inconsistência de R$ 32.114.655,66. Além disso, a análise foi comprometida pela apresentação de documentos de exercício incorreto e falhas na conciliação, especialmente nas contas vinculadas ao RPPS. Diante disso, recomenda-se ao gestor o aprimoramento dos controles contábeis e a regularização das conciliações para assegurar a fidedignidade e a conformidade das contas."
+      "defesa_gestor": null,
+      "analise_tecnica": null
     },
     {
       "relatorio_id": "e957d626db515dc698d96bc689d74fa36a95aef97e5aaaf1beb5659aca362a0a",
@@ -5299,7 +5299,7 @@
       "relatorios": 13,
       "achados": 256,
       "saneados": 108,
-      "mantidos": 139,
+      "mantidos": 140,
       "com_defesa": 221,
       "municipios": 12,
       "anos": [
@@ -5308,22 +5308,21 @@
       ]
     },
     "por_situacao": {
-      "mantido": 139,
+      "mantido": 140,
       "sanado_total": 87,
       "afastado": 8,
       "sanado_parcial": 13,
-      "nao_consta": 9
+      "nao_consta": 8
     },
     "por_tipo": {
-      "Impropriedade": 133,
+      "Impropriedade": 134,
       "Inconsistência": 68,
-      "Irregularidade": 54,
-      "Não classificado": 1
+      "Irregularidade": 54
     },
     "por_secao": {
       "6. Gestão Fiscal": 55,
       "7. Análise Dos Limites Constitucionais": 51,
-      "4. Aspectos Patrimoniais": 45,
+      "4. Aspectos Patrimoniais": 44,
       "3. Aspectos Orçamentários E Financeiros": 42,
       "9. Transparência E Controle Interno": 33,
       "2. Instrumentos De Planejamento": 9,
@@ -5331,6 +5330,7 @@
       "8. Previdência": 6,
       "7.1. Educação": 2,
       "1. Introdução": 1,
+      "4.2. Caixa E Equivalentes De Caixa": 1,
       "Tabela De Achados": 1,
       "7.2. Fundo De Manutenção E Desenvolvimento Da Educação Básica – Fundeb": 1,
       "7.3. Saúde": 1
@@ -5390,11 +5390,11 @@
     },
     "defesa_x_situacao": {
       "com_defesa": {
-        "mantido": 105,
+        "mantido": 106,
         "sanado_total": 87,
         "afastado": 8,
         "sanado_parcial": 13,
-        "nao_consta": 8
+        "nao_consta": 7
       },
       "sem_defesa": {
         "mantido": 34,
@@ -5536,8 +5536,7 @@
       "4. Aspectos Patrimoniais": {
         "Impropriedade": 23,
         "Inconsistência": 20,
-        "Irregularidade": 1,
-        "Não classificado": 1
+        "Irregularidade": 1
       },
       "5. Repasses Do Duodécimo": {
         "Irregularidade": 7,
@@ -5564,6 +5563,9 @@
         "Irregularidade": 1
       },
       "1. Introdução": {
+        "Impropriedade": 1
+      },
+      "4.2. Caixa E Equivalentes De Caixa": {
         "Impropriedade": 1
       },
       "Tabela De Achados": {
@@ -5625,9 +5627,9 @@
         "mantido": 9
       },
       "Arapiraca": {
-        "nao_consta": 8,
+        "nao_consta": 7,
         "sanado_total": 5,
-        "mantido": 8,
+        "mantido": 9,
         "afastado": 1
       },
       "Capela": {
@@ -5697,9 +5699,9 @@
             "mantido": 9
           },
           "Arapiraca": {
-            "nao_consta": 8,
+            "nao_consta": 7,
             "sanado_total": 5,
-            "mantido": 8,
+            "mantido": 9,
             "afastado": 1
           },
           "Capela": {
