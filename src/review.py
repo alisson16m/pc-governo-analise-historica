@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Optional
 
 from . import cache
-from .schema import Achado, Relatorio, Situacao
+from .schema import Achado, Situacao
 
 CSV_PATH = Path("data/review.csv")
 
@@ -137,15 +137,19 @@ def _mesclar(a: Achado, e: dict) -> Achado:
         except Exception:
             pass
 
-    return Achado(
-        codigo=a.codigo,
-        tipo=_v("tipo") or a.tipo,
-        secao=_v("secao") or a.secao,
-        base_normativa=_v("base_normativa") or a.base_normativa,
-        descricao=_v("descricao") or a.descricao,
-        houve_defesa=(e.get("houve_defesa", "").strip().lower() == "true"),
-        situacao=situacao,
-        recomendacao=_v("recomendacao") or a.recomendacao,
-        determinacao=_v("determinacao") or a.determinacao,
-        valor_financeiro=valor_dec,
-    )
+    # model_copy preserva os campos que não existem no CSV
+    # (defesa_gestor, analise_tecnica, resumo_defesa, resumo_analise)
+    update: dict = {
+        "tipo": _v("tipo") or a.tipo,
+        "secao": _v("secao") or a.secao,
+        "base_normativa": _v("base_normativa") or a.base_normativa,
+        "descricao": _v("descricao") or a.descricao,
+        "situacao": situacao,
+        "recomendacao": _v("recomendacao") or a.recomendacao,
+        "determinacao": _v("determinacao") or a.determinacao,
+        "valor_financeiro": valor_dec,
+    }
+    hd_raw = (e.get("houve_defesa") or "").strip().lower()
+    if hd_raw in ("true", "false"):
+        update["houve_defesa"] = hd_raw == "true"
+    return a.model_copy(update=update)

@@ -68,7 +68,8 @@ _RE_TIPO_TEXTO = re.compile(
     re.IGNORECASE,
 )
 _RE_SITUACAO_TEXTO = re.compile(
-    r"\b(Sanado\s+Parcial|Sanado\s+Total|Sanado|Mantido|Afastado|N[aã]o\s+Consta)\b",
+    r"\b(Sanado\s+Parcial(?:mente)?|Parcialmente\s+Sanado|Sanado\s+Total(?:mente)?"
+    r"|Totalmente\s+Sanado|Sanado|Mantido|Afastado|N[aã]o\s+Consta)\b",
     re.IGNORECASE,
 )
 

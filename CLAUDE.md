@@ -20,9 +20,12 @@ uv run python -m src.cli publicar
 
 # Preview site locally (site-v3 is the active frontend; site/ is the original, kept for reference)
 python -m http.server -d site-v3 8000
+
+# Run the test suite (pytest is installed by plain `uv sync` via the dev dependency group)
+uv run python -m pytest tests/ -q
 ```
 
-There are no automated tests. Smoke-test a change with `--limite 3` on a small PDF set.
+Automated tests live in `tests/` (parsers, review merge, rate limit, enrich heuristics). For end-to-end changes, also smoke-test with `--limite 3` on a small PDF set.
 
 ## Architecture
 
@@ -48,7 +51,7 @@ site-v3/data.json  ← single payload consumed by the static frontend (vanilla J
 ### Parser duality (`parse_2024` vs `parse_legacy`)
 
 - `parse_2024.parse()` returns **`None`** (not an empty list) when no matching table is found — that `None` is the explicit signal to fall through to Gemini. An empty list `[]` means a table was found but had no valid achados.
-- `parse_legacy.parse()` sends the relevant PDF text to `gemini-2.0-flash` (or the model in `GEMINI_MODEL`) with a structured JSON prompt. Rate limits are enforced by `rate_limit.py` using `GEMINI_RPM` / `GEMINI_RPD` from `.env`.
+- `parse_legacy.parse()` sends the relevant PDF text to Gemini (`GEMINI_MODEL` from `.env`, falling back to `rate_limit.MODELO_PADRAO` — the single source of truth for the default model) with a structured JSON prompt. Rate limits are enforced by `rate_limit.py` using `GEMINI_RPM` / `GEMINI_RPD` from `.env`; slot reservation is atomic (file lock), so parallel workers (`PCG_WORKERS`) cannot burst past the limits.
 - **Estratégia 4 in `parse_2024.parse()`**: even on the deterministic path, if more than 2 achados are still missing a description after the table/text strategies, `parse_2024` calls Gemini (`_suplementar_resumo_gemini`) with just the RESUMO excerpt to fill in the missing fields. This means `parse_2024` is no longer 100% Gemini-free — it shares the same `GEMINI_RPM`/`GEMINI_RPD` quota as `parse_legacy`. When batch-processing many reports, both paths can consume the daily quota.
 
 ### Core data model (`src/schema.py`)
@@ -75,6 +78,7 @@ The active site is `site-v3/` — pure HTML + vanilla JS consuming `site-v3/data
 ## Key conventions
 
 - Package manager: **`uv`** — always use `uv run` or `uv sync`, never bare `pip`.
+- If `uv sync` fails with Windows error 396 ("links físicos incompatíveis" — OneDrive/hardlink clash), prefix with `UV_LINK_MODE=copy`.
 - All domain identifiers are in **Portuguese** (municipio, achado, relatorio, gestor, etc.).
 - `enrich.py` uses regex heuristics on the first ~8 000 chars of the PDF; the municipality list covers AL's 102 municipalities by substring match.
 - `data/review.csv` edits are additive: only rows with `revisado=true` overwrite cache entries; unedited rows are left intact on re-generation.

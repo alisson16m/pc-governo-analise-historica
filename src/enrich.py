@@ -6,8 +6,7 @@ from typing import Optional
 
 from .extract_text import RelatorioTexto
 
-# Lista parcial dos 102 municípios de AL — completar conforme necessário.
-# Para o piloto, casamento por substring case-insensitive já cobre a maioria.
+# Lista completa dos 102 municípios de AL (casamento por substring case-insensitive).
 MUNICIPIOS_AL: tuple[str, ...] = (
     "Maceió", "Arapiraca", "Palmeira dos Índios", "Rio Largo", "Penedo",
     "União dos Palmares", "São Miguel dos Campos", "Santana do Ipanema",
@@ -34,6 +33,8 @@ MUNICIPIOS_AL: tuple[str, ...] = (
     "Teotônio Vilela", "Maribondo",
     "Chã Preta", "Paulo Jacinto",
     "Campestre",
+    "Batalha", "Jacuípe", "Jaramataia", "Pariconha", "Porto de Pedras",
+    "Santana do Mundaú", "São Miguel dos Milagres",
 )
 
 # Ordena por comprimento decrescente para testar nomes mais específicos primeiro

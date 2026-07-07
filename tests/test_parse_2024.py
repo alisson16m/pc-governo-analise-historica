@@ -68,6 +68,31 @@ def test_subcap_numerado_com_hifen_simples():
     assert _RE_SUBCAP_NUMERADO.match(titulo) is not None
 
 
+from src.parse_2024 import _RE_SITUACAO_TEXTO, _sit
+from src.schema import Situacao
+
+
+def test_sanado_parcialmente_e_classificado_como_parcial():
+    """'Sanado Parcialmente' no texto do RESUMO não pode virar sanado_total."""
+    bloco = "III.05 Descrição do achado ... Impropriedade Sanado Parcialmente"
+    m = _RE_SITUACAO_TEXTO.search(bloco)
+    assert m is not None
+    assert _sit(m.group(0)) == Situacao.SANADO_PARCIAL
+
+
+def test_sanado_totalmente_e_classificado_como_total():
+    bloco = "III.06 Descrição do achado ... Irregularidade Sanado Totalmente"
+    m = _RE_SITUACAO_TEXTO.search(bloco)
+    assert m is not None
+    assert _sit(m.group(0)) == Situacao.SANADO_TOTAL
+
+
+def test_sanado_isolado_continua_total():
+    m = _RE_SITUACAO_TEXTO.search("... achado Sanado após defesa")
+    assert m is not None
+    assert _sit(m.group(0)) == Situacao.SANADO_TOTAL
+
+
 from pathlib import Path
 from src.extract_text import RelatorioTexto, Pagina
 from src.parse_2024 import _parse_formato_cabecalho

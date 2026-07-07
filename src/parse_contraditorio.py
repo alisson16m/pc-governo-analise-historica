@@ -198,7 +198,7 @@ def resumir_texto(texto: str, rotulo: str) -> "str | None":
     import os
     from google import genai
     from dotenv import load_dotenv
-    from .rate_limit import com_rate_limit, marcar_esgotado
+    from .rate_limit import com_rate_limit, marcar_esgotado, modelo_gemini
 
     load_dotenv()
     key = os.getenv("GEMINI_API_KEY")
@@ -206,7 +206,7 @@ def resumir_texto(texto: str, rotulo: str) -> "str | None":
         raise RuntimeError("GEMINI_API_KEY não definido. Configure .env")
 
     client = genai.Client(api_key=key)
-    model_name = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
+    model_name = modelo_gemini()
 
     @com_rate_limit
     def _chamar():

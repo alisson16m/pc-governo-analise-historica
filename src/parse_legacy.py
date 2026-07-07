@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from decimal import Decimal
 
 from .extract_text import RelatorioTexto, achar_indice_codigo, extrair_secoes, secao_de_linha
-from .rate_limit import com_rate_limit, marcar_esgotado
+from .rate_limit import com_rate_limit, marcar_esgotado, modelo_gemini
 from .schema import Achado, normalizar_situacao
 
 load_dotenv()
@@ -120,7 +120,7 @@ def _chamar_gemini(trecho: str):
     from google.genai import types
 
     client = _client()
-    model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite")
+    model_name = modelo_gemini()
     return client.models.generate_content(
         model=model_name,
         contents=PROMPT.replace("{TRECHO}", trecho),
