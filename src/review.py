@@ -9,6 +9,7 @@ Fluxo:
 from __future__ import annotations
 
 import csv
+from decimal import Decimal
 from pathlib import Path
 from typing import Optional
 
@@ -22,7 +23,6 @@ CAMPOS = [
     "arquivo",
     "ano",
     "municipio",
-    "orgao",
     "codigo",
     "tipo",
     "secao",
@@ -53,7 +53,6 @@ def gerar_csv() -> Path:
                     "arquivo": r.arquivo,
                     "ano": r.ano_exercicio,
                     "municipio": r.municipio or "",
-                    "orgao": r.orgao,
                     "codigo": a.codigo,
                     "tipo": a.tipo,
                     "secao": a.secao,
@@ -68,7 +67,11 @@ def gerar_csv() -> Path:
                     "revisado": "false",
                 }
                 if chave in existentes:
-                    base.update({k: v for k, v in existentes[chave].items() if v not in ("", None)})
+                    ant = existentes[chave]
+                    # Só preserva edições explícitas (revisado=true); linhas não
+                    # revisadas são descartadas para que o cache atualizado prevaleça.
+                    if ant.get("revisado", "").strip().lower() == "true":
+                        base.update({k: v for k, v in ant.items() if v not in ("", None)})
                 w.writerow(base)
     return CSV_PATH
 
@@ -130,7 +133,6 @@ def _mesclar(a: Achado, e: dict) -> Achado:
     valor_dec = a.valor_financeiro
     if valor:
         try:
-            from decimal import Decimal
             valor_dec = Decimal(valor.replace(",", "."))
         except Exception:
             pass

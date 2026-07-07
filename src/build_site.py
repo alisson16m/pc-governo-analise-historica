@@ -21,7 +21,7 @@ from . import cache
 from .planilha_pc import carregar_lookup, enriquecer
 from .schema import Situacao
 
-SITE_DATA = Path("site/data.json")
+SITE_DATA = Path("site-v3/data.json")
 FINAL_JSON = Path("data/final.json")
 
 
@@ -33,6 +33,8 @@ def _serializar(o: Any):
 
 def build() -> Path:
     rels = cache.listar()
+    if not rels:
+        raise RuntimeError("Nenhum relatório no cache. Rode 'extrair' primeiro.")
     achados_flat: list[dict] = []
     relatorios_out: list[dict] = []
     lookup = carregar_lookup()
@@ -47,7 +49,6 @@ def build() -> Path:
             "arquivo": Path(r.arquivo).name,
             "ano": r.ano_exercicio,
             "municipio": r.municipio,
-            "orgao": r.orgao,
             "gestor": r.gestor,
             "auditor": r.auditor,
             "relator": relator,
@@ -61,7 +62,6 @@ def build() -> Path:
                 "relatorio_id": r.id,
                 "ano": r.ano_exercicio,
                 "municipio": r.municipio,
-                "orgao": r.orgao,
                 "auditor": r.auditor,
                 "relator": relator,
                 "numero_processo": numero_processo,
@@ -75,8 +75,8 @@ def build() -> Path:
                 "recomendacao": a.recomendacao,
                 "determinacao": a.determinacao,
                 "valor_financeiro": float(a.valor_financeiro) if a.valor_financeiro is not None else None,
-                "defesa_gestor": a.defesa_gestor,
-                "analise_tecnica": a.analise_tecnica,
+                "defesa_gestor": a.resumo_defesa,
+                "analise_tecnica": a.resumo_analise,
             })
 
     agregacoes = _agregar(achados_flat, relatorios_out)
@@ -123,6 +123,8 @@ def _agregar(achados: list[dict], relatorios: list[dict]) -> dict:
     com_defesa = 0
     sit_por_municipio: dict[str, Counter[str]] = defaultdict(Counter)
     tipo_por_secao: dict[str, Counter[str]] = defaultdict(Counter)
+    mun_ano_count: dict[int, Counter[str]] = defaultdict(Counter)
+    sit_por_mun_ano: dict[int, dict[str, Counter[str]]] = defaultdict(lambda: defaultdict(Counter))
 
     for a in achados:
         sit = a.get("situacao") or "nao_consta"
@@ -134,6 +136,9 @@ def _agregar(achados: list[dict], relatorios: list[dict]) -> dict:
             sit_por_municipio[a["municipio"]][sit] += 1
         if a.get("ano"):
             ano_count[a["ano"]] += 1
+            if a.get("municipio"):
+                mun_ano_count[a["ano"]][a["municipio"]] += 1
+                sit_por_mun_ano[a["ano"]][a["municipio"]][sit] += 1
         if a.get("base_normativa"):
             base_count[a["base_normativa"][:120]] += 1
         if a.get("auditor"):
@@ -157,6 +162,17 @@ def _agregar(achados: list[dict], relatorios: list[dict]) -> dict:
             })
 
     valores_top.sort(key=lambda x: x["valor"] or 0, reverse=True)
+
+    # Agregações por opinião do auditor e por relator (baseado nos relatórios)
+    opiniao_count: Counter[str] = Counter()
+    relator_count: Counter[str] = Counter()
+    opiniao_por_relator: dict[str, Counter[str]] = defaultdict(Counter)
+    for r in relatorios:
+        op = r.get("opiniao_auditoria") or "Não identificada"
+        rel = r.get("relator") or "Não identificado"
+        opiniao_count[op] += 1
+        relator_count[rel] += 1
+        opiniao_por_relator[rel][op] += 1
 
     return {
         "totais": {
@@ -182,6 +198,18 @@ def _agregar(achados: list[dict], relatorios: list[dict]) -> dict:
         "valores_top": valores_top[:20],
         "tipo_por_secao": {s: dict(tipo_por_secao[s].most_common(10)) for s in tipo_por_secao},
         "situacao_por_municipio": {m: dict(sit_por_municipio[m]) for m in sit_por_municipio},
+        "por_municipio_por_ano": {
+            str(ano): {
+                "por_municipio": _topn(mun_ano_count[ano], 50),
+                "situacao_por_municipio": {
+                    m: dict(sit_por_mun_ano[ano][m]) for m in sit_por_mun_ano[ano]
+                },
+            }
+            for ano in sorted(mun_ano_count)
+        },
+        "por_opiniao": dict(opiniao_count),
+        "por_relator": _topn(relator_count, 50),
+        "opiniao_por_relator": {rel: dict(opiniao_por_relator[rel]) for rel in opiniao_por_relator},
     }
 
 

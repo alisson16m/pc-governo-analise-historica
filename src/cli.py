@@ -177,6 +177,7 @@ def _aplicar_contraditorio(achados: list, contraditorio: dict) -> list:
                     a.resumo_analise = parse_contraditorio.resumir_texto(
                         a.analise_tecnica, "análise técnica do auditor"
                     )
+                    a.analise_tecnica = None  # não persiste texto bruto; só o resumo
             except RuntimeError as _e:
                 if "cota" in str(_e).lower() or "quota" in str(_e).lower():
                     pass  # cota Gemini esgotada; resumos via backfill-resumo
@@ -264,6 +265,7 @@ def backfill_resumo() -> None:
                 resumo = parse_contraditorio.resumir_texto(a.analise_tecnica, "análise técnica do auditor")
                 if resumo:
                     a.resumo_analise = resumo
+                    a.analise_tecnica = None  # migra: não persiste texto bruto
                     modificado = True
                     processados += 1
         if modificado:
@@ -303,7 +305,7 @@ def revisar(
 
 @app.command()
 def build() -> None:
-    """Constrói site/data.json a partir do cache (linhas revisadas)."""
+    """Constrói site-v3/data.json a partir do cache (linhas revisadas)."""
     from . import build_site
     saida = build_site.build()
     print(f"[green]Portal atualizado: {saida}")
@@ -313,12 +315,12 @@ def build() -> None:
 def publicar() -> None:
     """Commit + push para o GitHub Pages (branch gh-pages)."""
     import subprocess
-    subprocess.run(["git", "add", "site/data.json", "site/"], check=True)
+    subprocess.run(["git", "add", "site-v3/data.json", "site-v3/"], check=True)
     subprocess.run(["git", "commit", "-m", "atualiza banco de achados"], check=False)
     subprocess.run(["git", "push"], check=False)
-    # Publica site/ no branch gh-pages (servido pelo GitHub Pages)
+    # Publica site-v3/ no branch gh-pages (servido pelo GitHub Pages)
     result = subprocess.run(
-        ["git", "subtree", "split", "--prefix", "site", "HEAD"],
+        ["git", "subtree", "split", "--prefix", "site-v3", "HEAD"],
         capture_output=True, text=True, check=True,
     )
     sha = result.stdout.strip()

@@ -72,6 +72,22 @@ _RE_SITUACAO_TEXTO = re.compile(
     re.IGNORECASE,
 )
 
+# Padrões que marcam o início de uma base normativa
+_RE_BASE_INICIO = re.compile(
+    r"\b("
+    r"Lei\s+(?:Complementar|Federal|Estadual|Municipal|Org[aâ]nica)\s+n[oº°.]?"
+    r"|Constitui[çc][aã]o\s+Federal"
+    r"|CF[/\s]?88"
+    r"|Decreto(?:-Lei)?\s+n[oº°.]?"
+    r"|Instru[çc][aã]o\s+Normativa(?:\s+n[oº°.]?)?"
+    r"|NBASP|MCASP"
+    r"|Manual\s+de\s+Contabilidade"
+    r"|IN\s+n[oº°.]"
+    r"|Artigo\s+\d"
+    r")",
+    re.IGNORECASE,
+)
+
 # Clusters consonantais que NUNCA iniciam palavras portuguesas.
 # Quando aparecem após um espaço numa célula PDF, indicam sílaba quebrada pelo
 # pdfplumber (ex: "Compleme ntar" → "Complementar", "impor tante" → "importante").
@@ -112,6 +128,35 @@ def _e_tipo(s: str) -> bool:
     return _norm(s) in _TIPOS_CLASSIFICACAO
 
 
+def _merge_linhas_continuacao(linhas: list, numero_col: int) -> list:
+    """Mescla linhas de continuação (sem código III.XX) na linha precedente.
+
+    O pdfplumber frequentemente quebra uma linha de tabela longa em duas:
+    - Linha A: tem o código (III.XX) mas células do meio podem estar vazias
+    - Linha B: sem código, contém os valores que faltavam na linha A
+
+    Esta função une B em A preenchendo apenas as células que estavam vazias.
+    """
+    merged: list = []
+    current: list = []
+    for linha in linhas:
+        if not any(linha):
+            continue
+        val_num = linha[numero_col] if numero_col < len(linha) else None
+        has_codigo = bool(_normalizar_codigo(str(val_num or "")))
+        if has_codigo:
+            if current:
+                merged.append(current)
+            current = list(linha)
+        elif current:
+            for i, val in enumerate(linha):
+                if i < len(current) and val and not current[i]:
+                    current[i] = val
+    if current:
+        merged.append(current)
+    return merged
+
+
 def _mapear_colunas(header: list[str]) -> Optional[dict[str, int]]:
     mapa: dict[str, int] = {}
     for i, h in enumerate(header):
@@ -143,7 +188,10 @@ def _parse_tabela_compacta(
     """
     # Agrega valores por coluna, ignorando células vazias
     ncols = max((len(r) for r in tabela if r), default=0)
-    if not ncols:
+    # Tabelas de 1-2 colunas são parágrafos de texto (ex: "(III.14) Pelo exposto..."),
+    # não tabelas estruturadas de achados — evita criar achados vazios que bloqueiam
+    # o fallback para Gemini em relatórios como Anadia 2023.
+    if ncols < 3:
         return None
 
     por_coluna: dict[int, list[str]] = {}
@@ -222,6 +270,54 @@ def _parse_tabela_compacta(
     )
 
 
+_RE_SECAO_PREFIXO = re.compile(
+    r"^[\d]+(?:\.[\d]+)*\.?\s+"     # "2.3." ou "4.3" ou "12.1."
+    r"[A-ZÁÉÍÓÚÂÊÔÃÕÇ][^\n]{3,70}"  # título curto em maiúscula
+    r"(?=\s)",                        # seguido de espaço
+)
+
+
+def _extrair_descricao_base(bloco: str) -> tuple[str, Optional[str]]:
+    """Extrai (descrição, base_normativa) de um bloco de texto linearizado de achado.
+
+    O bloco contém código + seção + descrição + base + tipo + situação numa só string.
+    Remove código, tipo e situação das extremidades e usa a última citação legal
+    para separar descrição de base normativa.
+    """
+    texto = re.sub(r"\s+", " ", bloco).strip()
+
+    # Determina o fim útil: antes do tipo e da situação
+    fim = len(texto)
+    m_sit = _RE_SITUACAO_TEXTO.search(texto)
+    if m_sit:
+        fim = min(fim, m_sit.start())
+    m_tipo = _RE_TIPO_TEXTO.search(texto)
+    if m_tipo:
+        fim = min(fim, m_tipo.start())
+    texto = texto[:fim].strip()
+
+    # Remove o código do início (III.XX)
+    texto = _RE_CODIGO_LOOSE.sub("", texto, count=1).strip()
+
+    # Remove nome de seção numerada do início (ex: "3.1. Resultado Orçamentário")
+    m_sec = _RE_SECAO_PREFIXO.match(texto)
+    if m_sec:
+        texto = texto[m_sec.end():].strip()
+
+    # Separa base normativa pela ÚLTIMA citação legal identificável
+    cits = list(_RE_BASE_INICIO.finditer(texto))
+    if cits:
+        last = cits[-1]
+        descricao = texto[: last.start()].strip()
+        base = texto[last.start() :].strip()[:300]
+    else:
+        descricao = texto
+        base = None
+
+    # Limita descrição a 600 chars
+    return descricao[:600], base or None
+
+
 def _parse_formato_texto_resumo(
     texto: "RelatorioTexto",
     achados_existentes: set,
@@ -230,9 +326,10 @@ def _parse_formato_texto_resumo(
     """Extrai achados do texto plano do RESUMO para os que o pdfplumber não captura.
 
     O pdfplumber às vezes deixa de incluir certas linhas do RESUMO nas tabelas
-    extraídas (linhas formatadas de modo diferente no PDF).  Esta função varre o
-    texto linearizado das mesmas páginas e acrescenta qualquer III.XX que ainda
-    não foi encontrado pelas estratégias de tabela.
+    extraídas (ex: linhas com fundo colorido em tabelas de cores alternadas).
+    Esta função varre o texto linearizado das mesmas páginas e acrescenta qualquer
+    III.XX que ainda não foi encontrado pelas estratégias de tabela, extraindo
+    também descrição e base normativa do texto plano.
 
     Só é chamada quando já existe resultado de tabela (resultado não-None).
     """
@@ -262,6 +359,8 @@ def _parse_formato_texto_resumo(
         situacao = _sit(sit_raw)
         houve_defesa = bool(situacao and situacao != Situacao.NAO_CONSTA)
 
+        descricao, base = _extrair_descricao_base(bloco)
+
         idx = achar_indice_codigo(texto, codigo)
         secao_textual = secao_de_linha(secoes, idx) if idx is not None else None
         if secao_textual and not _RE_CAP_CONTEINER.search(secao_textual):
@@ -273,13 +372,13 @@ def _parse_formato_texto_resumo(
             codigo=codigo,
             tipo=tipo,
             secao=secao,
-            base_normativa=None,
-            descricao="",
+            base_normativa=base,
+            descricao=descricao,
             houve_defesa=houve_defesa,
             situacao=situacao,
             recomendacao=None,
             determinacao=None,
-            valor_financeiro=None,
+            valor_financeiro=_parse_valor(descricao),
         ))
 
     return novos
@@ -313,6 +412,11 @@ def parse(texto: RelatorioTexto) -> Optional[list[Achado]]:
                   'Irregularidades, Inconsistências e Impropriedades'.
     Estratégia 3 (suplementar): texto plano do RESUMO para achados que o
                   pdfplumber não captura em tabela.
+    Estratégia 4 (suplementar via Gemini): quando >2 achados ainda ficam sem
+                  descrição após as estratégias anteriores (ex: tabelas com
+                  linhas de fundo colorido que o pdfplumber não detecta),
+                  extrai o trecho do RESUMO e chama o Gemini para preencher
+                  apenas os achados incompletos.
 
     Retorna None se nenhuma tabela compatível for encontrada — sinal para
     cair no parser legacy via Gemini."""
@@ -322,18 +426,133 @@ def parse(texto: RelatorioTexto) -> Optional[list[Achado]]:
     if resultado is None:
         return None  # nenhuma tabela encontrada → cai no Gemini
 
-    # Suplementa com achados que as tabelas deixaram passar (pdfplumber por
-    # vezes não extrai todas as linhas de uma tabela mista no RESUMO)
-    existentes = {a.codigo for a in resultado}
+    # Suplementa com achados que as tabelas deixaram passar.
+    # "Completos" = têm descrição E tipo reconhecido → excluídos da varredura de texto.
+    # "Incompletos" (ex: tabela com células deslocadas pelo pdfplumber) → incluídos
+    # na varredura para receber descrição, tipo e base do texto linearizado.
+    def _completo(a: "Achado") -> bool:
+        # Descrições com menos de 30 chars são fragmentos (artefatos do pdfplumber)
+        return len(a.descricao) >= 30 and a.tipo != "Não classificado"
+
+    existentes_completos = {a.codigo for a in resultado if _completo(a)}
     secoes = extrair_secoes(texto)
-    extras = _parse_formato_texto_resumo(texto, existentes, secoes)
-    if not extras:
-        return resultado
+    extras = _parse_formato_texto_resumo(texto, existentes_completos, secoes)
 
     todos: dict[str, Achado] = {a.codigo: a for a in resultado}
     for a in extras:
-        todos.setdefault(a.codigo, a)
+        existing = todos.get(a.codigo)
+        if existing is None:
+            todos[a.codigo] = a
+        else:
+            if not existing.descricao and a.descricao:
+                existing.descricao = a.descricao
+            if existing.tipo == "Não classificado" and a.tipo != "Não classificado":
+                existing.tipo = a.tipo
+            if existing.base_normativa is None and a.base_normativa:
+                existing.base_normativa = a.base_normativa
+
+    # Estratégia 4: se muitos achados ainda incompletos, aciona Gemini
+    incompletos = {a.codigo for a in todos.values() if not _completo(a)}
+    if len(incompletos) > 2:
+        gemini_extras = _suplementar_resumo_gemini(texto, incompletos)
+        for a in gemini_extras:
+            existing = todos.get(a.codigo)
+            if existing is None:
+                todos[a.codigo] = a
+            else:
+                if not existing.descricao and a.descricao:
+                    existing.descricao = a.descricao
+                if existing.tipo == "Não classificado" and a.tipo != "Não classificado":
+                    existing.tipo = a.tipo
+                if existing.base_normativa is None and a.base_normativa:
+                    existing.base_normativa = a.base_normativa
+                if existing.situacao is None and a.situacao:
+                    existing.situacao = a.situacao
+
     return sorted(todos.values(), key=lambda a: a.codigo)
+
+
+def _suplementar_resumo_gemini(
+    texto: RelatorioTexto,
+    codigos_faltando: set[str],
+) -> list[Achado]:
+    """Usa Gemini para extrair achados incompletos do subcapítulo Irregularidades.
+
+    Chamado apenas quando o parser determinístico encontrou achados mas muitos
+    deles ficaram sem descrição (ex: tabela com linhas coloridas não detectadas
+    pelo pdfplumber). Envia só o texto das páginas do RESUMO — trecho pequeno,
+    chamada rápida e barata.
+    """
+    import json as _json
+
+    paginas = _paginas_subcap_achados(texto)
+    if not paginas:
+        return []
+    trecho = "\n".join(p.texto for p in paginas)[:80_000]
+    if not trecho.strip():
+        return []
+
+    try:
+        from .parse_legacy import (  # type: ignore
+            _chamar_gemini,
+            _normalizar_tipo,
+            _normalizar_codigo as _norm_cod,
+        )
+        from .schema import normalizar_situacao
+    except Exception:
+        return []
+
+    try:
+        resp = _chamar_gemini(trecho)
+    except Exception:
+        return []
+
+    bruto = resp.text or "{}"
+    try:
+        dados = _json.loads(bruto)
+    except _json.JSONDecodeError:
+        m = re.search(r"\{[\s\S]*\}", bruto)
+        if not m:
+            return []
+        dados = _json.loads(m.group(0))
+
+    secoes = extrair_secoes(texto)
+    out: list[Achado] = []
+    for it in dados.get("achados") or []:
+        codigo = _norm_cod(it.get("codigo") or "")
+        if not codigo or codigo not in codigos_faltando:
+            continue
+        situacao = normalizar_situacao(it.get("situacao"))
+        idx = achar_indice_codigo(texto, codigo)
+        secao = secao_de_linha(secoes, idx) if idx is not None else (it.get("secao") or "Indefinida")
+        vf = None
+        try:
+            raw_vf = it.get("valor_financeiro")
+            if raw_vf not in (None, ""):
+                vf = Decimal(str(raw_vf))
+        except Exception:
+            pass
+        descricao = (it.get("descricao") or "").strip()
+        out.append(Achado(
+            codigo=codigo,
+            tipo=_normalizar_tipo(it.get("tipo") or ""),
+            secao=secao or it.get("secao") or "Indefinida",
+            base_normativa=_str_ou_none_local(it.get("base_normativa")),
+            descricao=descricao,
+            houve_defesa=bool(it.get("houve_defesa")),
+            situacao=situacao,
+            recomendacao=_str_ou_none_local(it.get("recomendacao")),
+            determinacao=_str_ou_none_local(it.get("determinacao")),
+            valor_financeiro=vf or _parse_valor(descricao),
+        ))
+    return out
+
+
+def _str_ou_none_local(v) -> Optional[str]:
+    if v is None:
+        return None
+    s = str(v).strip()
+    return s or None
 
 
 # ---------------------------------------------------------------------------
@@ -378,6 +597,9 @@ def _parse_formato_cabecalho(texto: RelatorioTexto) -> Optional[list[Achado]]:
 
             if not linhas_dados:
                 continue
+
+            numero_col = mapa.get("numero", 0)
+            linhas_dados = _merge_linhas_continuacao(linhas_dados, numero_col)
 
             encontrou_tabela = True
             for linha in linhas_dados:
@@ -538,7 +760,7 @@ def _parse_formato_posicional(texto: RelatorioTexto) -> Optional[list[Achado]]:
         for tabela in pag.tabelas:
             if not tabela:
                 continue
-            for linha in tabela:
+            for linha in _merge_linhas_continuacao(tabela, 0):
                 if not linha or not linha[0]:
                     continue
                 codigo = _normalizar_codigo(str(linha[0]))

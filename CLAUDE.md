@@ -18,8 +18,8 @@ uv run python -m src.cli revisar --aplicar
 uv run python -m src.cli build
 uv run python -m src.cli publicar
 
-# Preview site locally
-python -m http.server -d site 8000
+# Preview site locally (site-v3 is the active frontend; site/ is the original, kept for reference)
+python -m http.server -d site-v3 8000
 ```
 
 There are no automated tests. Smoke-test a change with `--limite 3` on a small PDF set.
@@ -40,15 +40,16 @@ PDFs/AAAA/*.pdf
 data/extracted/*.json
   → review.py        → data/review.csv   (human edits; key = relatorio_id + codigo)
   → review.py        ← data/review.csv   (only rows with revisado=true are applied back)
-  → build_site.py    → site/data.json + data/final.json   (pre-computed aggregations)
+  → build_site.py    → site-v3/data.json + data/final.json   (pre-computed aggregations)
 
-site/data.json  ← single payload consumed by the static frontend (vanilla JS)
+site-v3/data.json  ← single payload consumed by the static frontend (vanilla JS)
 ```
 
 ### Parser duality (`parse_2024` vs `parse_legacy`)
 
 - `parse_2024.parse()` returns **`None`** (not an empty list) when no matching table is found — that `None` is the explicit signal to fall through to Gemini. An empty list `[]` means a table was found but had no valid achados.
 - `parse_legacy.parse()` sends the relevant PDF text to `gemini-2.0-flash` (or the model in `GEMINI_MODEL`) with a structured JSON prompt. Rate limits are enforced by `rate_limit.py` using `GEMINI_RPM` / `GEMINI_RPD` from `.env`.
+- **Estratégia 4 in `parse_2024.parse()`**: even on the deterministic path, if more than 2 achados are still missing a description after the table/text strategies, `parse_2024` calls Gemini (`_suplementar_resumo_gemini`) with just the RESUMO excerpt to fill in the missing fields. This means `parse_2024` is no longer 100% Gemini-free — it shares the same `GEMINI_RPM`/`GEMINI_RPD` quota as `parse_legacy`. When batch-processing many reports, both paths can consume the daily quota.
 
 ### Core data model (`src/schema.py`)
 
@@ -60,15 +61,15 @@ All inter-module contracts go through Pydantic models:
 
 ### Cache
 
-The cache is keyed by SHA-256 of the PDF file (`data/extracted/<sha256>.json`). Reprocessing is skipped unless `--forcar` is passed. The cache directory is gitignored — only `data/final.json` and `site/` are committed.
+The cache is keyed by SHA-256 of the PDF file (`data/extracted/<sha256>.json`). Reprocessing is skipped unless `--forcar` is passed. The cache directory is gitignored — only `data/final.json` and `site-v3/` are committed.
 
 ### Frontend
 
-The static site (`site/`) is pure HTML + vanilla JS consuming `site/data.json`. `build_site.py` pre-computes all aggregations (by município, tipo, situação, auditor, ano, etc.) so the frontend does no server-side work. GitHub Pages serves the `/site` folder from the `main` branch.
+The active site is `site-v3/` — pure HTML + vanilla JS consuming `site-v3/data.json`. `build_site.py` pre-computes all aggregations (by município, tipo, situação, auditor, ano, etc.) so the frontend does no server-side work. GitHub Pages serves the `site-v3/` folder (via `git subtree split`) from the `gh-pages` branch. The original `site/` is kept for reference but is no longer the build target.
 
 ## Claude tooling
 
-- **Skill `pipeline-achados`**: handles all pipeline commands (`extrair`, `revisar`, `build`, `publicar`).
+- **Skill `pipeline-achados`**: handles all pipeline commands (`extrair`, `revisar`, `build`, `publicar`, `backfill_contraditorio`, `backfill_opiniao`, `backfill_resumo`).
 - **Subagent `extrator-achados`**: use during human review when a specific PDF excerpt needs classification (tipo, situação, recomendação, determinação).
 
 ## Key conventions

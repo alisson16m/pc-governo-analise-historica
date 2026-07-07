@@ -2,7 +2,7 @@
 
 **Data:** 2026-05-16  
 **Projeto:** Portal PCG · TCE-AL — Banco de Achados  
-**Escopo:** Reescrever os arquivos de `site/` (pasta servida pelo GitHub Pages) com o novo design v3
+**Escopo:** Criar pasta `site-v3/` com todos os arquivos do novo design. Não altera `site/` nem `site-v2/`.
 
 ---
 
@@ -19,10 +19,10 @@
 
 ## Arquitetura de arquivos
 
-A v3 **substitui** os arquivos de `site/` no lugar (não cria nova pasta). As páginas existentes são mantidas:
+A v3 cria uma **nova pasta `site-v3/`**. As pastas `site/` e `site-v2/` não são tocadas.
 
 ```
-site/
+site-v3/
   index.html       ← Visão Geral (homepage)
   achados.html     ← Banco de Achados (tabela filtrável)
   municipios.html  ← Por Município
@@ -31,10 +31,12 @@ site/
   pareceres.html   ← Opinião do Auditor
   insights.html    ← Insights
   sobre.html       ← Sobre
-  style.css        ← substituído completamente
-  app.js           ← substituído completamente
-  data.json        ← gerado pelo pipeline (não alterado)
+  style.css        ← novo design completo
+  app.js           ← novo JS completo
+  data.json        ← symlink ou cópia de site/data.json
 ```
+
+O servidor de preview é iniciado com `python -m http.server -d site-v3 8003` e o link entregue ao usuário ao final.
 
 ---
 
@@ -212,9 +214,9 @@ Todas compartilham o mesmo top nav e estrutura geral. O hero é substituído por
 
 ## O que NÃO muda
 
-- `data.json` — gerado pelo pipeline, não tocado
+- `site/` e `site-v2/` — intocados
+- `data.json` de `site/` — apenas copiado para `site-v3/`
 - Lógica de `build_site.py` — mantida
-- URLs das páginas — mantidas (SEO / bookmarks)
 - Estrutura de agregações em `data.json` — mantida
 
 ---

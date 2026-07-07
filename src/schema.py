@@ -36,6 +36,10 @@ class Achado(BaseModel):
     recomendacao: Optional[str] = None
     determinacao: Optional[str] = None
     valor_financeiro: Optional[Decimal] = None
+    defesa_gestor: Optional[str] = None
+    analise_tecnica: Optional[str] = None
+    resumo_defesa: Optional[str] = None
+    resumo_analise: Optional[str] = None
 
 
 class ParecerPrevio(BaseModel):
@@ -56,10 +60,11 @@ class Relatorio(BaseModel):
     arquivo: str
     ano_exercicio: int
     municipio: Optional[str] = None
-    orgao: str
     gestor: Optional[str] = None
     auditor: Optional[str] = None
     relator: Optional[str] = None
+    numero_processo: Optional[str] = None
+    opiniao_auditoria: Optional[str] = None
     data_publicacao: Optional[date] = None
     fonte_extracao: str = Field(description="'parser_2024' | 'gemini_legacy'")
     achados: list[Achado] = Field(default_factory=list)
